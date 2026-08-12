@@ -1,0 +1,228 @@
+<!doctype html>   <!-- note: code written with utf8, not ANSI, encoding -->
+<html lang="zh-Hant-TW">            
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <title>X-MARKUS Converting Page</title>
+
+   <script src="components/js/jquery.min.js"></script>
+   <script src='components/js/jquery-ui.min.js'></script>      <!-- for draggable (table column resizable in the future...) -->
+
+   <link rel="stylesheet" href="components/css/fontawesome/css/all.min.css">
+   <link rel="stylesheet" href="components/css/jquery-ui.min.css">          <!-- for div/iframe resizable -->
+   
+   <script src="js/DocuSky.connectivity.js"></script>
+
+   <style>
+   html, body { 
+      /*display: flex;*/     /* 讓兩個 iframes 並列 */
+      height: 100vh;
+      width: 100%;
+      height: 100%;
+      margin: 0;         /* Space from this element (entire page) and others */
+      padding: 0;        /* space from content and border */
+      line-height: 1.35em;
+      font-family: Inter, "sans-serif", "微軟正黑體","Helvetica", "Arial","LiHei Pro","黑體-繁";
+   }
+   
+   div.headerBar { box-sizing: border-box;          /* 含 padding 的總寬高 */
+                   background-color:#efefef; 
+                   color:#757575; 
+                   padding-top:10px;
+                   height:50px; 
+                   width:100%;
+                 }
+   
+   .funcButton {    
+      width:30px;
+      height:30px;
+      background-color:#FFFFFF;
+      color:#BFBFBF; 
+      border-radius:6px; 
+      padding:4px 5px;
+      margin-left:2px;
+      margin-right:3px;
+      cursor:pointer;
+      font-size:20px;
+      /* border:2px solid #c7c7c7; */
+   }
+   
+   .funcButton:hover {
+      /*background-color:#3379b5;
+      color:#ff8800;*/
+      background-color:#3379b5;
+      color:#FFFFFF;
+      /*border:2px solid #0f172a;*/
+   }
+   
+   .funcButtonTerm {
+      font-size:0.9em;
+   }
+   
+   #divActions {
+      width: 100%;
+      height: 60px;
+   }
+   
+   span.action {
+      background-color:#bfbfbf;
+      color:#000000;
+      padding:16px 32px;
+      border-radius:12px;
+      cursor:pointer;
+   }
+
+   span.action:hover {
+      background-color:#7890ab; 
+      color:white;
+   }
+   </style>
+</head>
+<body>
+   <div id="headerBar" class="headerBar">
+      <table class="headerBar" width="100%">
+      <tr>
+         <td align="left" width="180">
+             <span style="padding-left:16px; font-weight:bold; font-size:24px; font-weight:bold;">Converting</span>
+         </td>
+         <td>
+            <span id="refreshConverting" class="funcButton" title="Refresh Converting Page">
+               <i class="fa fa-refresh" style="padding-left:2px; padding-right:2px; transform:rotate(60deg);"></i>
+               <span class="funcButtonTerm">Refresh</span>
+            </span>
+            <span id="databaseMerging" class="funcButton" title="Merge Multiple DocuXml files" xstyle="display:none">
+               <i class="fa fa-file-circle-plus" style="padding-left:2px; padding-right:2px;"></i>
+               <span class="funcButtonTerm" style="padding-right:3px">Merge DBs</span>
+            </span>
+         </td>
+         <td>
+          <!--
+          <a class="topAnchor" href="../../index.html">Home</a> 
+          | <a class="topAnchor" href="DocuMerger.html">Merge DocuXml</a>
+          -->
+          </td>
+      </tr>
+      </table>
+   </div>
+   <div id="divIframes" style="width:100%;">
+      <!--
+      <iframe id="iframe_Comarkus2D" src="Comarkus2D.html" frameBorder="0" width="49%"></iframe>
+      <iframe id="iframe_Immarkus2D" src="Immarkus2D.html" frameBorder="0" width="51%"></iframe>
+      -->
+   </div>
+   <div id="divActions" style="display:none">
+      <center>
+         <!-- merge DocuXml ?? -->
+         <span class="action" action="analysis">Converting and Analyzing</span>
+         &#160;&#160;&#160;
+         <span class="action" action="download">Download for further Analysis</span>
+      </center>
+   </div>
+</body>
+
+<script>
+   // 2025-01-17: 為了 UI workflow，想了想 Converting page 似乎也只能透過 postMessage 傳遞訊息來進行版面控制
+   const EnableMessageViaParent = true;
+   
+   const SubIframeToolIds = [ "Comarkus2D",
+                              "Immarkus2D",
+                            ];
+                      
+   var FuncToolsMap = { "Comarkus2D": { url: "Comarkus2D.html", width: "62%" },
+                        "Immarkus2D": { url: "Immarkus2D.html", width: "38%" },
+                      };
+
+   var ToolPostingLastMessage = '';          // 2025-01-17: 存放最後一個動作是來自 Comarkus2D 或 Immarkus2D，使用者點擊 converting-and-analyzing 或 download 後，據此呼叫 tool 的 js 進行轉換或下載
+                      
+   // ---------------------------------------------------------------
+
+   window.onload = (function(e) {
+      window.setTimeout(function() {          // 2025-01-08: 需過一陣子再設定 src，否則可能會停留在舊的 iframe
+         resizeViewport();
+         SubIframeToolIds.forEach(function(toolId) {
+            let url = FuncToolsMap[toolId].url;
+            let width = FuncToolsMap[toolId].width;
+            let html = `<iframe id="iframe_${toolId}" class="tool" frameBorder="0" src="${url}" width="${width}%" height="100%" xstyle="height:100vh;"></iframe>`;
+            $("#divIframes").append(html);
+         });
+      }, 100);
+   });
+   
+   $(window).resize(function() {
+      resizeViewport();                             // 2024-11-20
+   });
+   
+   $("span.action").click(function() {
+      // 2025-01-17
+      let action = $(this).attr("action");
+      let iframeId = "iframe_" + ToolPostingLastMessage;
+      //alert(iframeId + ':' + action);
+      
+      let iframeWindow = document.getElementById(iframeId).contentWindow;
+      
+      // 2025-01-17: 以下僅能在 non-XSS 狀況下執行（且需假設 Comarkus2D 和 Immarkus2D 都有相同的 doPostMessage() 函式）
+      //let iframeDoc = iframeWindow.document;     // Oops, Permission denied to access property "document" on cross-origin object!
+      //$(iframeDoc).find("#butPass2XmarkusAnalyzer").click();
+      //iframeWindow.doPostMessage(ToolPostingLastMessage, "XmarkusAnalyzer");
+
+      let wrapper = { source: "ConvertingPage",
+                      target: ToolPostingLastMessage,
+                      parameters: [],              // 2025-02-20
+                      type: "json",
+                      message: action
+                    };
+      iframeWindow.postMessage(wrapper, '*');
+   });
+   
+   // -------------------------------
+   //      PostMessage handler
+   // -------------------------------
+   
+   window.addEventListener("message", messageHandler, false);
+   
+   function messageHandler(evt) {
+      if (!EnableMessageViaParent) return;      // 需打開此參數才能套用以下程式
+      //alert(evt.origin);                      // invoker URL hostname
+      //alert(evt.source);                      // invoker DOM object
+      
+      // 可透過此物件回傳訊息... （但瀏覽器可能會攔住，並加上一些提示訊息）
+      try {
+         if (!evt.data) return;                              // to prevent "SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data"
+         let {source, target, parameters, type, message} = evt.data;
+         //alert("Message Handler -- I'm Converting page:\n" + JSON.stringify(evt.data));
+         
+         // 2025-06-07: 新版不再需透過 converting page 顯示下一步的 buttons
+         //if (source == "Comarkus2D" || source == "Immarkus2D") {
+         //   ToolPostingLastMessage = source;
+         //   $("#divActions").show();
+         //}
+      } catch (e) {
+         alert(e.name + ": " + e.message);
+      }
+   }
+
+   function resizeViewport() {
+      let w = window.innerWidth - 24;
+      let h = window.innerHeight - 50 - 4;       // header 50px, bottom buttons 60px (2025-06-07 不再需空出 bottom bottoms 高度）
+      let css = { width: w + 'px',
+                  height: h + 'px',
+                  //border: '2px solid red',
+                };
+      $("#divIframes").css(css);
+   }
+
+   $("#refreshConverting").click(function() {
+      // 2025-01-18
+      window.location.reload();
+   });
+   
+   $("#databaseMerging").click(function() {
+      let wrapper = { source: "ConvertingPage",
+                      target: "DocuMerger",
+                      parameters: [],
+                      type: "json",
+                      message: "Invoke DocuMerger",
+                    };
+      window.parent.postMessage(wrapper, '*');
+   });
+</script>
+</html>

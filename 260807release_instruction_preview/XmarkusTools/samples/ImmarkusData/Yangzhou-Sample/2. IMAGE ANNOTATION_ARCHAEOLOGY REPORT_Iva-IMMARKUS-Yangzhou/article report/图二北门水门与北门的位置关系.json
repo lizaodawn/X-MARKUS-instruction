@@ -1,0 +1,206 @@
+[
+  {
+    "id": "a5646892-02b8-49c2-a1e6-d1903c9f2b9c",
+    "target": {
+      "source": "图二北门水门与北门的位置关系.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"585.0860103665866,37.19999842717096 750.8045197315705,73.94301465156747 751.5543589743589,252.69554858268273 750.8045197315705,263.2839691450137 624.8285611979167,264.406852338742 495.1030769230769,327.39487279647443 504.1013537910657,579.3470576046675 564.0900172776442,581.5966165239383 553.5919383513622,340.14249004657455 630.0774358974359,292.151583971855 783.0485133713943,286.15270526592553 782.2985093649839,52.197151426657726 614.3303998898236,17.703699270395177 614.3303998898236,16.203984742776008 614.3303998898236,15.454127478966399 614.3303998898236,15.454127478966399\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "98611258-e2b7-4cb2-b9ca-feea30573d16",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "road",
+        "properties": {
+          "ID": "yangzhou_cheng_beimen_lu",
+          "name": "扬州北门道露",
+          "materials": "earth",
+          "location": [
+            32.407351932418,
+            119.43450203979052
+          ],
+          "date start": "960 CE",
+          "date end": "1279 CE",
+          "date dynasty": "宋",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33345"
+        },
+        "created": "2024-01-30T12:05:47.850Z"
+      }
+    ],
+    "created": "2024-01-30T12:05:43.991Z",
+    "creator": {
+      "isGuest": true,
+      "id": "2GVnA1atU3jhG5ow0wh9"
+    },
+    "modified": "2024-01-31T08:05:07.739Z"
+  },
+  {
+    "id": "c21191be-4b4e-421f-ad45-1d0fb873d833",
+    "target": {
+      "source": "图二北门水门与北门的位置关系.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"195.231978547133,593.5458114732302 195.63117557141243,394.34983768500314 269.5290697089514,100.70776064749033 69.69284295393851,104.95335541681031 127.45291889369372,370.91723098828805 133.16382390081617,420.44663044232215 134.3496465236907,592.0946877934238 136.1154915205196,594.6103539455219 143.1789011470475,595.4933060831487\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "e5bd8b9d-853c-42c9-9c81-2a526c7151c0",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_watergate",
+        "properties": {
+          "ID": "yangzhou_cheng_shuimen",
+          "name": "扬州城水门",
+          "materials": "earth;brick;stone",
+          "location": [
+            32.407351932418,
+            119.43450203979052
+          ],
+          "date start": "960 CE",
+          "date end": "1279 CE",
+          "date dynasty": "宋",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33345",
+          "inference": "abandonment"
+        },
+        "created": "2024-01-30T12:07:02.203Z"
+      }
+    ],
+    "created": "2024-01-30T12:07:08.799Z",
+    "creator": {
+      "isGuest": true,
+      "id": "2GVnA1atU3jhG5ow0wh9"
+    },
+    "modified": "2025-05-23T12:10:46.028Z"
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "42dd70f2-d8bb-4c8d-85a1-f4986d2460de",
+    "body": {
+      "value": " 2A layer",
+      "source": "Archaeology Individual image Schema",
+      "properties": {
+        "Image_title_ch": "北门水门与北门的位置关系图",
+        "Image_title_py": "Beimen Shuimen Yu Beimen De Weizhi Guanxi Tu",
+        "Image_title_en ": "Plan of the Relationship Between North Gate and the Water Gate",
+        "Image_author": "unknown",
+        "Image_no": "2",
+        "Page": "25",
+        "Publication_time ": "2005",
+        "Publication_place ": "北京市",
+        "Place_covered": "揚州",
+        "Image_format": "png",
+        "Genre": "drawing",
+        "Pixel_h": {
+          "value": 891,
+          "unit": "px"
+        },
+        "Pixel_w": {
+          "value": 658,
+          "unit": "px"
+        },
+        "Language ": "Chinese",
+        "date of image ": "2005",
+        "Institution_dg ": "CNKI",
+        "Person_dg": "Iva Stojević"
+      },
+      "purpose": "describing"
+    },
+    "target": {
+      "source": "db8b1b501ac1abaa"
+    }
+  },
+  {
+    "id": "10a14281-191e-41d6-af12-ee2944f854fe",
+    "target": {
+      "source": "图二北门水门与北门的位置关系.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><g><path fill-rule=\"evenodd\" d=\"M 274.1028534108825,247.95741478050803 L 288.08250903446515,97.12436436351702 L 743.524722930481,91.23821437408743 L 742.0532348318111,250.90051447456648 L 639.0452642259818,247.53590218061237 L 634.6306517339096,242.07124009173478 L 429.3505533689613,245.7501085344719 L 427.1432224235814,423.8066644009339 L 288.8182777831438,423.8066644009339 L 292.4971215265373,252.37205197192384 Z\" /><path fill-rule=\"evenodd\" d=\"M 627.2729642471227,287.68905070587607 L 744.2605657771908,288.4248194545548 L 747.9393848212405,416.44897691414695 L 628.7445017444802,416.44897691414695 Z\" /></g></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "88808045-6043-416d-bed9-ec745e498e83",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_barbican",
+        "properties": {
+          "ID": "yangzhou_wengcheng",
+          "name": "扬州瓮城",
+          "materials": "earth;brick",
+          "location": [
+            32.407351932418,
+            119.43450203979052
+          ],
+          "date start": "960 CE",
+          "date end": "1279 CE",
+          "date dynasty": "宋",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33345",
+          "inference": "abandonment"
+        },
+        "created": "2025-05-23T12:44:30.263Z",
+        "modified": "2025-05-23T13:09:54.591Z"
+      }
+    ],
+    "created": "2025-05-23T12:45:45.804Z",
+    "creator": {
+      "isGuest": true,
+      "id": "QXYd4xLp7NDFOIcH4p92"
+    },
+    "modified": "2025-05-23T13:04:29.515Z"
+  },
+  {
+    "id": "c0e2db1f-618a-4eff-8fe1-1788e4cd0e0a",
+    "target": {
+      "source": "图二北门水门与北门的位置关系.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><g><path fill-rule=\"evenodd\" d=\"M 49.10335785700385,435.8753691388233 L 108.70857164004187,433.6525184034716 L 109.4365804937346,586.7083825067988 L 52.04642050204682,585.9726384574637 Z\" /><path fill-rule=\"evenodd\" d=\"M 217.99850768425077,428.396959457888 L 257.4888329819436,428.6692801648925 L 288.1666561472162,423.3690131620376 L 288.1666561472162,421.33639012176263 L 293.67137321901635,426.6334231759552 L 286.4206725066475,257.0255361968 L 265.22212985624725,250.7127261919569 L 288.1666561472162,109.1253026157122 L 288.1666561472162,92.39863584556446 L 542.2690214039458,92.39863584556446 L 740.91925260691,90.06775744552606 L 740.9563982149094,92.39863584556446 L 742.4554039623832,92.39863584556446 L 742.4554039623832,186.46090340566886 L 746.1988232958302,421.3596097820463 L 880.6910891315258,419.56773447374366 L 879.2194034381063,578.4839614487983 L 217.99850768425077,587.3131864329425 Z\" /></g></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "2d5915d0-4d2b-49a8-94ac-949a5d99c7e8",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall",
+        "properties": {
+          "ID": "yangzhou_cheng",
+          "name": "扬州城",
+          "materials": "earth;brick;stone",
+          "location": [
+            32.407351932418,
+            119.43450203979052
+          ],
+          "date start": "907 CE",
+          "date end": "1279 CE",
+          "date dynasty": "五代;宋",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33345"
+        },
+        "created": "2025-05-23T13:04:03.663Z",
+        "modified": "2025-05-23T13:49:52.719Z"
+      }
+    ],
+    "created": "2025-05-23T13:04:10.165Z",
+    "creator": {
+      "isGuest": true,
+      "id": "Zh_f7cfHnRViXu7ifaAE"
+    }
+  }
+]

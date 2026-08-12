@@ -1,0 +1,1466 @@
+﻿<!doctype html>   <!-- note: code written with utf8, not ANSI, encoding -->
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <title>Event Relation VizTool</title>
+
+   <style>
+      * {}  /* empty stylesheet0 solves the problem */
+   </style>
+
+   <link rel="stylesheet" href="components/css/fontawesome/css/all.min.css">
+   <link rel="stylesheet" href="components/css/tabulator/tabulator.min.css">
+   <!-- <link rel="stylesheet" href="components/css/select2.css"> -->
+   
+   <!-- 從 file:// 協議加載的文件被視為來源為 null，導致不符合同源政策...  
+        加上 crossorigin="anonymous" 對 Firefox OK（可讀取 CssRules），
+        但對 Chrome 反而會導致無法載入該 CSS => 將 CSS 直接寫到這份 html 中
+        <link rel="stylesheet" href="css/EventRelLite-graph.css"> 
+   -->
+   <link rel="stylesheet" href="css/EventConnectionGraph-main.css">
+   <script src="components/js/d3.min.js"></script>   <!--<script src="https://d3js.org/d3.v7.min.js"></script>-->
+
+   <script src="components/js/jquery.min.js"></script>
+   <script src='components/js/jquery-ui.min.js'></script>            <!-- for draggable (table column resizable in the future...) -->
+   <script src='components/js/select2.min.js'></script>              <!-- 2025-07-25 -->
+
+   <script src="components/js/FileSaver.min.js"></script>            <!-- 儲存檔案 -->
+   <script src="components/js/tabulator.min.js" type="text/javascript"></script>
+   <script src="components/js/treejs-customized.js"></script>        <!-- https://github.com/daweilv/treejs -->
+   <script src="components/js/xlsx.full.min.js"></script>
+   
+   <script src="js/DocuSky.connectivity.js"></script>                <!-- 2024-08-25 -->
+	<script src="components/js/docusky.ui.getDbCorpusDocumentsSimpleUI.js"></script>   <!-- 可透過 widget 取得 DocuXml -->
+   
+   <style id="EventConnectionGraphCss">
+      /* css for EventConnectionGraph svg graph */
+      
+      /* 2026-01-24: 即使新版瀏覽器 (Firefox/Chrome/Edge)，似乎仍不支援 SVG2 -- 無法利用 z-index 調整物件顯示層次 */
+      svg {
+         /*border: 1px solid #ccc;*/
+      }
+
+      .line {
+         stroke: #9F9F9F;
+         stroke-width: 1px;
+      }
+      
+      .dispGroupLabel {
+         font-family: Inter, "sans-serif", "微軟正黑體", "Arial","LiHei Pro","黑體-繁", "Helvetica";
+         font-size: 12px;
+         fill: black;
+         text-anchor: middle;
+         pointer-events: none;
+      }
+      
+      .fontWhiteBorderEffect {               /* 2025-03-17 */
+         /*font-weight: bold;*/              /* 讓字型加粗，有助於邊框更加明顯 */
+         text-shadow: 3px 3px 2em white,     /* 右下邊的邊框 */
+                     -3px -3px 2em white,    /* 左上邊的邊框 */
+                      3px -3px 2em white,    /* 右上邊的邊框 */
+                     -3px 3px 2em white;     /* 左下邊的邊框 */
+      }
+      
+      .fontSizeXsmall {
+         font-size:8px;
+      }
+              
+      .fontSizeSmall {
+         font-size:10px;
+      }
+              
+      .fontSizeMedium {
+         font-size:12px;
+      }
+              
+      .fontSizeLarge {
+         font-size:14px;
+      }
+              
+      .fontSizeXlarge {
+         font-size:16px;
+      }
+              
+      .fontSize2Xlarge {
+         font-size:18px;
+      }
+
+      .shrinkedObject {
+         /*
+         fill: lightblue;
+         stroke: steelblue;
+         */
+         stroke-width: 2px;
+      }
+      
+      draggableRect {
+         /*
+         fill: lightblue;
+         stroke: steelblue;
+         */
+         fill-opacity: 0.4;
+         stroke-width: 2px;
+         cursor: pointer;
+      }
+      
+      div.foreignRect {
+         /*
+         border: 2px solid steelblue;
+         background-color: lightblue;
+         */
+         border-radius: 6px;
+         padding: 2px;
+         font-size: 0.8em;
+         text-align: left;
+         overflow-y: auto;
+         overflow-x: hidden;     /* works for exported .svg */
+      }
+      
+      div.nodeEventHtml {
+         font-family: Inter, "sans-serif", "微軟正黑體", "Arial","LiHei Pro","黑體-繁", "Helvetica";
+      }
+      
+      div.commonNodeTitle {
+         width: 90%;             /* 右方留位置給「X」關閉 content panel */
+         padding: 6px;
+         overflow: clip;
+         text-align: center;
+         background-color: #345678;
+         color: white;
+         font-size:1.05em;        /* 0.8 * 1.1 */
+         border-radius:4px;
+         margin-bottom: 8px;
+         line-height:1.65em;
+      }
+      
+      div.eventNodeTitle {
+         width: 90%;            /* 如同 commonNodeTitle，最右方留空擺放「X」關閉 content panel */
+         padding: 6px;
+         overflow: clip;
+         text-align: center;
+         background-color: #876543;
+         color: white;
+         font-size:1.05em;        /* 0.8 * 1.1 */
+         border-radius:4px;
+         margin-bottom: 8px;
+         line-height:1.65em;
+      }
+      
+      div.eventItems {            /* 顯示事件項目列表 */
+         padding:3px;
+         background-color:#eaeaea;
+      }
+
+      /*
+      div.eventNodeTitle:hover {
+         background-color: teal;
+      }
+      */
+      
+      div.eventNodeTitleDark {
+         background-color: #EFEFEF;
+         color: #0F0F0F;
+      }
+      
+      div.eventNodeTitleLight {
+         background-color: #0F0F0F;
+         color: #EFEFEF;
+      }
+      
+      div.nodeEventHtml {
+         font-family: Inter, "sans-serif", "微軟正黑體", "Arial","LiHei Pro","黑體-繁", "Helvetica";
+         line-height: 1.65em;
+         /*font-size: smaller;*/
+      }
+      
+      div.comarkusTagBundle {
+         padding:3px 0px;
+      }
+      
+      div.eventNodeLine, div.commonNodeLine {
+         line-height:1.65em;
+         /*font-size:smaller;*/
+         /*font-size: calc(100% - 1px);*/
+         font-size:92%;
+         padding-left:6px;
+         border-left:orange 4px solid;
+      }
+      
+      div.sourceNodeMetadata {
+         line-height:1.5em;
+         font-size:85%;
+         padding:3px;
+         border: 1px solid #123456;
+         border-radius:4px;
+         color:#1f1f1f;
+         margin-bottom:6px;
+         margin-top:6px;
+         word-break:break-all;
+      }
+      
+      div.imageMetadata {
+         line-height:1.5em;
+         font-size:85%;
+         padding:3px;
+         border: 1px solid #123456;
+         border-radius:4px;
+         color:#1f1f1f;
+         margin-bottom:6px;
+         margin-top:6px;
+         word-break:break-all;
+      }
+      
+      div.imagePieceMetadata {
+         line-height:1.5em;
+         font-size:85%;
+         padding:3px;
+         border: 1px solid #123456;
+         border-radius:4px;
+         color:#1f1f1f;
+         margin-bottom:6px;
+      }
+      
+      div.metadataLine {                  /* 2025-06-01 */
+         line-height:1.65em;
+         /*font-size:smaller;*/
+         /*font-size: calc(100% - 1px);*/
+         font-size:92%;
+      }
+      
+      div.eventContentXml {               /* 2025-05-20 */
+         padding-top:6px;
+         background-color:#fafafa;
+         color:#123456;
+         border-radius:4px;
+      }
+      
+      div.eventContentXml .highlight {    /* 2025-05-29 */
+         background-color:#123456;
+         color:#f7f7f7;
+         padding:1px;
+      }
+
+      div.eventTextDarkColor {
+         color: #070707;
+      }
+      
+      div.eventTextLightColor {
+         color: #F7F7F7;
+      }
+      
+      div.foreignRect img {
+         max-width: 100%;         /* 圖片最大寬度為父元素寬度 */
+         /*max-height: 100%;*/    /* 圖片最大高度為父元素高度 */
+         width: auto;             /* 自動調整寬度 */
+         height: auto;            /* 自動調整高度 */
+         /*
+         position: absolute;  圖片絕對定位，相對於父元素 
+         top: 50%;            將圖片垂直居中
+         left: 50%;           將圖片水平居中
+         transform: translate(-50%, -50%);  通過移動來實現垂直和水平居中
+         */
+      }
+      
+      div.clickable {
+         cursor: pointer;
+      }
+      
+      div.clickable:hover {
+         text-decoration: underline;
+      }
+      
+      /*
+      span.immarkusPieceRefId {
+         cursor:pointer;
+      }
+      
+      span.immarkusPieceRefId:hover {
+         text-decoration: underline;
+      }
+      */
+      
+      div.dragHandle {
+         width:100%;
+         padding:4px 2px;
+         margin:2px 0px; 
+         background-color:#dfdfdf;
+         color:#123456;
+         border-radius: 4px;
+         cursor: move;
+         user-select: none;
+      }
+      
+      span.resizeNode, span.closeNode {        /* 調整展開節點大小，以及關閉（縮小）展開的節點 */            
+         margin:12px 3px;
+         padding:3px 4px;
+         border-radius:4px;
+         cursor:pointer;
+         color:#789abc;
+      }
+      
+      span.resizeNode:hover, span.closeNode:hover {
+         background-color:#789abc;
+         color:#efefef;
+      }
+      
+      span.butLinkBack {
+         padding:2px 5px;
+         border-radius:3px;
+      }
+      
+      span.butLinkBack:hover {
+         background-color:#efefef;
+         color:#789abc;
+      }
+      
+      div.immarkusPieceIdBar {               /* 2025-01-02 */
+         font-family: Inter, "sans-serif", "微軟正黑體", "Arial","LiHei Pro","黑體-繁", "Helvetica";
+         width: 98%;
+         text-align: center;
+         font-size:1.05em;
+         border-radius:4px;
+         margin-top: 8px;
+         margin-bottom: 10px;
+         margin-right: 10px;
+         padding: 3px;
+         background-color:#3379b5;
+         color:#efefef;
+         /*cursor:pointer;*/
+      }
+      
+      /*
+      div.immarkusPieceIdBar:hover {
+         text-decoration: underline;
+      }
+      */
+      
+      div.immarkusPieceHighlighted {         /* 2025-01-03 */
+         background-color:#ff8800;
+      }
+
+      /* for svg */
+      text.highlighted {
+         fill: red;
+         font-size: 120%;
+      }
+      
+      /* color set A */
+      
+      .colorSetA00 {
+         border: 2px solid #0F0F0F;
+         background-color: #EFEFEF;
+         fill: #EFEFEF;
+         stroke: #0F0F0F;
+         color: #0F0F0F;
+      }
+      
+      .colorSetA01 {
+         border: 2px solid #333;
+         background-color: #F0F0F0;
+         fill: #F0F0F0;
+         stroke: #333;
+         color: #333;
+      }
+      
+      .colorSetA02 {
+         border: 2px solid #1F1F1F;
+         background-color: #EFEFEF;
+         fill: #EFEFEF;
+         stroke: #1F1F1F;
+         color: #1F1F1F;
+      }
+      
+      .colorSetA03 {
+         border: 2px solid #345678;          /* not pure B/W */
+         background-color: #d7d7d7;
+         fill: #345678;
+         stroke: #d7d7d7;
+         color: #d7d7d7;
+      }
+      
+      .colorSetA04 {
+         border: 2px solid #757575;
+         background-color: #0f172a;
+         fill: #0f172a;
+         stroke: #757575;
+         color: #757575;
+      }
+      
+      .colorSetA05 {
+         border: 2px solid #CFCFCF;
+         background-color: #1F1F1F;
+         fill: #1F1F1F;
+         stroke: #CFCFCF;
+         color: #CFCFCF;
+      }
+      
+      .colorSetA06 {
+         border: 2px solid #BFBFBF;
+         background-color: #2F2F2F;
+         fill: #2F2F2F;
+         stroke: #BFBFBF;
+         color: #BFBFBF;
+      }
+      
+      .colorSetA07 {
+         border: 2px solid white;
+         background-color: #3F3F3F;
+         fill: #3F3F3F;
+         stroke: white;
+         color: white;
+      }
+      
+      
+      /* color set B: 前 8 項淡色背景，後 8 項深色背景 */
+      
+      .colorSetB00 {
+         border: 2px solid steelblue;
+         stroke: steelblue;
+         color: steelblue;
+         background-color: lightblue;
+         fill: lightblue;
+      }
+      
+      .colorSetB01 {
+         border: 2px solid firebrick;
+         stroke: firebrick;
+         color: firebrick;
+         background-color: #FBE9E7;          /* 淺磚紅 */
+         fill: #FBE9E7;
+      }
+
+      .colorSetB02 {
+         border: 2px solid darkorange;
+         stroke: darkorange;
+         color: darkorange;
+         background-color: #FFF3E0;  /* 淺橘黃 */
+         fill: #FFF3E0;
+      }
+      
+      .colorSetB03 {
+         border: 2px solid purple;
+         stroke: purple;
+         color: purple;
+         background-color: lavender;
+         fill: lavender;
+      }
+      
+      .colorSetB04 {
+         border: 2px solid seagreen;
+         stroke: seagreen;
+         color: seagreen;
+         background-color: #E0F2F1;  /* 淺綠藍 */
+         fill: #E0F2F1;
+      }
+      
+      .colorSetB05 {
+         border: 2px solid #E91E63;
+         stroke: #E91E63;
+         color: #E91E63;
+         background-color: #FCE4EC;
+         fill: #FCE4EC;
+      }
+      
+      .colorSetB06 {
+         border: 2px solid darkslateblue;
+         stroke: darkslateblue;
+         color: darkslateblue;
+         background-color: #ccddee;
+         fill: #ccddee;
+      }
+      
+      .colorSetB07 {                        /* 灰色 */
+         border: 2px solid #333;
+         stroke: #333;
+         color: #333;
+         background-color: #F0F0F0;
+         fill: #F0F0F0;
+      }
+
+      .colorSetB08 {                           /* green */
+         border: 2px solid green;              /* orig #C8E6C9 */
+         stroke: green;
+         color: green;
+         background-color: #4CAF50;
+         fill: #4CAF50;
+      }
+      
+      .colorSetB09 {
+         border: 2px solid #b45fd9;
+         stroke: #b45fd9;
+         color: #b45fd9;
+         background-color: #9C27B0;            /* purple */
+         fill: #9C27B0;
+      }
+      
+      .colorSetB10 {
+         border: 2px solid #56789a;            /* blue */
+         stroke: #56789a;
+         color: #56789a;
+         background-color: #252f85;
+         fill: #252f85;
+      }
+
+      .colorSetB11 {
+         border: 2px solid #B2EBF2;       /* 淺青藍 */
+         stroke: #B2EBF2;
+         color: #B2EBF2;
+         background-color: #0097A7;       /* 深青 */
+         fill: #0097A7;
+      }
+      
+      .colorSetB12 {
+         border: 2px solid #FFE082;       /* 淺金黃 */
+         stroke: #FFE082;
+         color: #FFE082;
+         background-color: #FF8F00;       /* 深琥珀橘 */
+         fill: #FF8F00;
+      }
+      
+      .colorSetB13 {
+         border: 2px solid #eb2fb5;           /* red */
+         stroke: #eb2fb5;
+         color: #eb2fb5;
+         background-color: #c40808;
+         fill: #c40808;
+      }
+      
+      .colorSetB14 {
+         border: 2px solid #D7CCC8;       /* 淺棕灰 */
+         stroke: #D7CCC8;
+         color: #D7CCC8;
+         background-color: #5D4037;       /* 深咖啡 */
+         fill: #5D4037;
+      }
+
+      .colorSetB15 {
+         border: 2px solid #e7e7e7;       /* 灰色 */
+         stroke: #e7e7e7;
+         color: #e7e7e7;
+         background-color: #2f2f2f;
+         fill: #2f2f2f;
+      }
+      
+      /*
+      .baseFading {
+         stroke: #f0f0f0;
+         fill: #f0f0f0;
+      }
+      */
+      
+      .colorFading {
+         stroke: #f0f0f0;
+         fill: #f0f0f0;
+      }
+      
+      path.starHighlight {
+         stroke: #84b067;           /* green (original 'darkorange') */
+      }
+      
+      path.hoverHighlight {
+         stroke: #123456 !important;
+      }
+
+      path.edgeHighlight {          /* hover over a single link */
+         stroke:red;
+      }
+      
+      text.flagTextIcon {
+         font-size:smaller;
+         fill:#506070;              /* svg 更改 text 字型顏色 */
+      }
+
+      /* ------- node label colors -------- */
+      
+      .nodeLabelColor00 {
+         color: black;
+         fill: black;
+      }
+
+      .nodeLabelColor01 {
+         color: red;
+         fill: red;
+      }
+      
+      .nodeLabelColor02 {
+         color: blue;
+         fill: blue;
+      }
+      
+      .nodeLabelColor03 {
+         color: green;
+         fill: green;
+      }
+
+      .nodeLabelColor04 {
+         color: purple;
+         fill: purple;
+      }
+
+      .nodeLabelColor05 {
+         color: orange;
+         fill: orange;
+      }
+      
+      .nodeLabelColor06 {         /* a bit dark blue */
+         color: #123456;
+         fill: #123456;
+      }
+      
+      .nodeLabelColor07 {         /* a bit brown */
+         color: #654321;
+         fill: #654321;
+      }
+      
+      text.graphTitleClass {      /* svg 3 */
+         font-size: 125%;
+         font-weight: bold;
+      }
+
+      /* MARKUS color scheme */
+      
+      PersonName { color:#d9534f; }
+      LocName { color:#428bca; }
+      Office { color:#5bc0de; } 
+      
+      Udef_work { color:#993300; }
+      Udef_object { color:#333399; }
+      Udef_object_height { color:#3366ff; }
+      Udef_object_length { color:#00ccff; }
+      Udef_object_width { color:#99ccff; }
+      Udef_material { color:#008080; }
+      Udef_material_quant { color:#339966; }
+      Udef_obj_meaning { color:#ffcc99; }
+      Udef_cost { color:#ffcc00; }
+      Udef_labor { color:#c0c0c0; }
+      Udef_deity { color:#808000; }
+      Udef_obj_part { color:#800080; }
+      Udef_obj_part_quant { color:#800000; }
+      Udef_obj_part_height { color:#ff99cc; }
+      Udef_obj_part_length { color:#993366; }
+      Udef_obj_part_width { color:#ff00ff; }
+      Udef_action { color:#ff6600; }
+      Udef_action_cause { color:#ff9900; }
+      Udef_soccat { color:#666699; }
+      Udef_timePeriod { color:#449d44; }
+      Udef_duration { color:#99cc00; }
+
+   </style>
+
+</head>
+<body>
+   <div id="divControlBanner" class="headerBar x-linear-gradient-headerBar">
+      <table class="headerBar" width="100%" height="50" cellpadding="0" cellspacing="0">   <!-- 這個部分，各項工具需一致 -->
+      <tr>
+         <td align="left" width="300" style="padding-top:6px;">
+             <span id="toolTitle" style="padding-left:16px; font-weight:bold; font-size:24px;">
+             Visualising Relations
+             </span>
+         </td>
+         <td align="left" width="560">
+            <span id="butResetPage" class="funcButton" title="reset and reload page">
+               <i class="fa fa-refresh"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">reset</span>
+            </span>
+
+            <span id="butLoadDocuXmlFile" class="funcButton highlightAtStart" style="display:none;" title="import DocuXml from a local DocuXml file">  <!-- 多次載入可疊加 -->
+               <i class="fa-solid fa-file-import"></i>
+               <span id="spanLoadDocuXmlFile" class="funcButtonTerm" style="padding-right:5px;">import</span>
+            </span>
+            <label for="loadDocuXmlFile">   <!-- 注意：點選 butLoadDocuXmlFile 後由 js 觸發 loadDocuXmlFile，因此不能放在 butLoadDocuXmlFile 內 -->
+               <input id="loadDocuXmlFile" type="file" style="display:none" autocomplete="off" accept=".xml"></input>
+            <label>
+
+            <span id="butShowGraphControlPanel" class="funcButton" title="show/hide control panel">
+               <i class="fa-solid fa-gear" style="transform:rotate(45deg);"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">settings</span>
+            </span>
+
+            <span id="butExportSvgFile" class="funcButton" style="display:none" title="Export graph as an SVG file">
+               <i class="fa-solid fa-file-export"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">SVG</span>
+            </span>
+
+            <span id="butExportXmlFile" class="funcButton" xstyle="display:none" title="Export the filtered result to an XML file">
+               <i class="fa-solid fa-file-export"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">XML</span>
+            </span>
+
+            <span id="butExportExcelFile" class="funcButton experimentFeatures" style="display:none" title="Export graph to an Excel file">
+               <i class="fa-solid fa-file-export"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">Excel</span>
+            </span>
+         </td>
+         <td align="right">
+            <span id="spanDocuXmlFilename" class="docuXmlFilename">      
+               <!-- 只展示最後一個載入檔名 -->
+            </span>
+            &#160;
+            <span class="experimentFeatures" style="display:none; position:fixed; top:15px; right:10px;">
+               <span id="butFetchDocuXml" class="topButton enableDocuSkyConnectivity" title="從 DocuSky 取得數據">DocuSky</span>
+               <span id="butTableView" title="TableEditor" class="topButton ">TableEditor</span>
+               <span id="butGraphView" title="GraphView" class="topButton">Graph</span>
+            </span>
+         </td>
+      </tr>
+      </table>
+   </div>
+
+   <!-- plotting areas (share the same place, at most one displayed) -->
+   <!-- divControlBanner 和 graphArea/tableArea 都改為 position:absolute; width:100%，且設定 z-index 讓 divControlBanner 總是在 areas 上方 -->
+   <div id="divLeftSidebar" class="leftSidebar" style="display:none; z-index:2;">   <!-- 需加上 z-index，否則會被蓋掉？ -->
+      <div id="funcButResetPage" class="funcButton" title="reset and reload page"><i class="fa fa-refresh"></i></div>
+      <div id="funcButLoadDocuXmlFile" class="funcButton  highlightAtStart" title="import DocuXml from a local DocuXml file"><i class="fa-solid fa-file-import"></i></div>
+      <div id="funcButShowGraphControlPanel" class="funcButton" title="show/hide control panel"><i class="fa-solid fa-gear"></i></div>
+      <div id="funcButExportSvgFile" class="funcButton" title="Export graph as a SVG file"><i class="fa-solid fa-file-export"></i></div>
+      <div id="funcButExportExcelFile" class="funcButton experimentFeatures" style="display:none" title="Export graph as an Excel file"><i class="fa-solid fa-file-export"></i></div>
+      <div id="funcButExportXmlFile" class="funcButton" style="display:none" title="Export graph as an XML file"><i class="fa-solid fa-file-export"></i></div>
+   </div>
+   
+   <!--
+   <div id="startInstructions" style="position:absolute; top:200px; width:100%;">
+      <center><h2 style="color:#7890ab">Click the import button (on the top bar) to select a database for analysis</h2></center>
+   </div>
+   -->
+   
+   <div id="graphArea" class="graphAreaContainer">
+      <div class="container" style="position:absolute; top:50px; left:0px;">
+         <div id="spanSvgArea" style="width:100%;">      <!-- "flex:1" will occupy the remaining space? -->
+            <svg id="svgArea" width="100%" height="100%"></svg>
+            <!-- 加入淺灰色背景
+               <rect width="100%" height="100%" fill="#f0f0f0" /> 
+            -->
+         </div>
+      </div>
+   </div>
+   
+   <div id="divControlPanelContainer">
+      <div id="graphControlPanel" class="graphControlPanel" style="display:none; padding:3px;">
+         <div style="margin-top:6px">
+            <span id="subPanelButtons">
+               <span id="butEventNodeFiltering" title="event filtering" class="panelTab active" style="padding-left:8px">
+                  <i class="fa-solid fa-filter"></i>
+               </span>
+               <span id="butFeaturesToDisplay" title="select features (connection nodes) to display" class="panelTab active" style="padding-left:8px">
+                  <i class="fa-solid fa-display"></i>
+               </span>
+               <span id="butNodeLabeling" title="node labeling" class="panelTab inactive" style="padding-left:8px">
+                  <i class="fa-solid fa-tags"></i> 
+               </span>
+               <span id="butNodeStyling" title="node style settings" class="experimentFeatures panelTab inactive" style="display:none; padding:5px 8px;">
+                  <i class="fa-solid fa-palette"></i>
+               </span>
+               <button id="butCheckNodesToDisplay" title="check nodes to display" class="button inactive experimentFeatures" style="display:none">fine-selection</button>
+               <button id="butTagUnification" title="node tag+content unification" class="button inactive experimentFeatures" style="display:none">unification</button>
+            </span>
+            <span class="floatRight" style="margin-right:0px">
+               <button id="butHideGraphControlPanel" title="hide control panel" class="button" style="border:none">X</span>
+            </span>
+         </div>
+         
+         <div>
+            <div id="divControlPanel" style="margin-top:10px; line-height:150%;">
+               <!-- sub-panels: filtering, check-nodes, labeling, styling, unification -->
+               <!-- filtering -->
+               <div id="divNodeFilteringAndDisplay" class="subPanel">
+                  <div style="width:100%">
+                     Compute nodes satisfying the conditions
+                     <span class="floatRight" style="display:none">
+                        <button title="reset filters" class="button butResetFilters">CLEAR FILTER</button>
+                     </span>
+                  </div>
+                  
+                  <div id="filterEventsBlock" class="filterTagBlock">
+                     <div id="divEventTimeFilter" class="filterEventsSubBlock">
+                        <table width="100%" cellpadding="3" cellspacing="1" style="font-size:1em; line-height:120%;">
+                           <tr><td colspan="3" align="center" style="padding:3px; background-color:#7f7f7f; color:#f7f7f7;">
+                              Time filter (only applies to Event)
+                           </td></tr>
+                           <tr><td align="left" width="120">
+                                  <label for="inputTNB" class="form-label" title="TNB (event time not before)">Year not before</label>:
+                               </td>
+                               <td width="54%">
+                                  <input type="range" id="inputTNB" min="0" max="2100" value="0" step="1" style="width:100%; margin:0px" autocomplete="off"></input>
+                               </td>
+                               <td align="right">
+                                  <input type="text" id="inputTNBval" size="3" value="0" style="text-align:right;" autocomplete="off"></input>
+                               </td>
+                           </tr>
+                           <tr><td align="left" width="120"><label for="inputTNA" class="form-label" title="TNA (event time not after)">Year not after</label>:</td>
+                               <td width="54%">
+                                  <input type="range" id="inputTNA" min="0" max="2100" value="2100" step="1" style="width:100%; margin:0px" autocomplete="off"></input>
+                               </td>
+                               <td align="right">
+                                  <input type="text" id="inputTNAval" size="3" value="2100" style="text-align:right;" autocomplete="off"></input>
+                               </td>
+                           </tr>
+                           <tr><td colspan="3" align="left">
+                              <input id="includeEventNodesWithoutTimeInfo" type="checkbox" checked="checked" autocomplete="off">
+                                 &#160;include events without time info
+                              </input>
+                           </td></tr>
+                        </table>
+                     </div>
+                  
+                     <!-- Filter by event-tags text (外層的 filters) -->
+                     <div id="divEventFeatureFilters" class="filterEventsSubBlock" style="overflow-y:auto; margin-top:6px;">
+                        <table id="eventFilters" cellpadding="2">
+                           <tr><td colspan="3" align="center" style="padding:3px; background-color:#7f7f7f; color:#f7f7f7;">
+                              Tag-feature filters (AND condition)
+                           </td></tr>
+                           <tr targetKey="filter_1">    <!-- 一組 filter_i 需用到兩個 <tr> rows，經由 targetKey 配對 -->
+                              <td valign="top">
+                                 <span class="filterLabel" style="margin-left:4px; height:36px">#1</span>:
+                              </td>
+                              <td valign="top" width="85%">
+                                 <div class="moreNodeTypes">
+                                    apply to node type: <select class="eventFilterNodeType" targetKey="filter_1"></select><br/>
+                                 </div>
+                                 <div class="singleNodeType" style="display:none">
+                                    filter
+                                 </div>
+                              </td>
+                              <td valign="top">
+                                 <button class="butAddEventTermsFilter">set</button>
+                              </td>
+                           </tr>
+                           <tr targetKey="filter_1">
+                              <td></td>
+                              <td colspan="2">
+                                 <textarea class="eventFilterByEventTerms" targetKey="filter_1">--</textarea>
+                              </td>
+                           </tr>
+                           <!-- 動態產生 filter_n (多組 filters) -->
+                        </table>
+                     </div>
+                  </div>
+
+                  <div id="divFilterExtraInfo">
+                     <div>
+                        <input id="hideIsolatedEventNodes" name="hideIsolatedEventNodes" title="hide isolated event nodes" type="checkbox" xchecked="checked"> remove nodes without connections</input><br/>
+                     </div>
+                     <div>
+                        <input id="showExtraConnections" name="showExtraConnections" title="display connected feature hierarchy nodes" type="checkbox" checked="checked"> display connected feature-hierarchy nodes</input><br/>
+                     </div>
+                     <div>
+                        <input id="pinNodesOnRedraw" name="pinNodesOnRedraw" title="pin nodes on redraw" type="checkbox" checked="checked"> preserve node positions on redraw</input><br/>
+                     </div>
+                     <div style="display:none">
+                        <input id="hideIsolatedCommonNodes" name="hideIsolatedCommonNodes" title="hide isolated common nodes" type="checkbox" checked="checked"> remove C-nodes without connections</input>
+                     </div>
+                     
+                     <!-- 注意：以下 butComputeFilteredNodes 有兩份: filterEventsBlock 和 divFeaturesToDisplay 各一份 -->
+                     <div style="margin-top:6px">
+                        <span>
+                           &#160; event and image nodes: <span title="E-nodes" class="checkedEventNodesCount">-</span>
+                           <br/>
+                           &#160; feature and source structure nodes: <span title="C-nodes" class="checkedCommonNodesCount">-</span>
+                        </span>
+                        <span class="floatRight">
+                           <button class="butComputeFilteredNodes" style="display:none;" title="compute event nodes by the time and tag-value conditions, and get common nodes whose degrees not less than the threshold">
+                              Compute filtered nodes
+                           </button>
+                        </span>
+                     </div>
+                     <div>
+                        <button title="clear filters" class="button butResetFilters" style="margin-top:8px; padding:5px 0px; width:98%">CLEAR ALL FILTERS</button>
+                     </div>
+                  </div>
+                  
+               </div>
+               <!-- end of filtering -->
+               
+               <!-- features-to-display -->
+               <div id="divFeaturesToDisplay" class="subPanel">
+                  <div>
+                     Select features to display:
+                     <select id="selectFeatureCategory" style="margin-left:6px;"></select>
+                  </div>
+                  <div id="filterCommonTagBlock" class="filterTagBlock">
+                  
+                     <div id="divCommonNodesToDisplay" class="filterTagList">
+                     </div>
+
+                     <table width="100%" style="margin-top:6px">
+                        <tr>
+                           <td>
+                              <button id="butCommonNodeClear" title="clear all checkboxes and text filter" class="button">clear</button>
+                              <button id="butCommonNodeTagSelectAll" title="select all checkboxes" class="button">all</button>
+                              <button id="butCommonNodeTagSelectInverse" title="toggle selected" class="button" style="display:none">inv</button>
+                              <button id="butCommonNodeDefault" title="select default checkboxes" class="button" style="display:none">default</button>
+                           </td>
+                           <td colspan="2" align="right">
+                              <!-- 可以僅顯示「包含某些詞彙」的 nodes... 但似乎用途不大 -->
+                              <span class="experimentFeatures" style="display:none" title="only display features which contains the specified terms">
+                                 terms filter:
+                                 <input id="commonNodeTermsFilter" type="text" size="22" val=""></input>
+                              </span>
+
+                              <span class="x-experimentFeatures" style="display:none">
+                                 <span title="select Common nodes with degree over the threshold">C-degree threshold</span>: 
+                                 <input id="commonNodeDegreeThreshold" type="text" size="2" value="1" style="text-align:right;"></input>
+                              </span>
+
+                              <span style="display:none">
+                                 <input id="showPrefixSymbols" name="showPrefixSymbols" title="display prefix symbols (*: Udef_Evt_, #: Udef_DocMeta_, ^: Udef_properties_)" type="checkbox" xchecked="checked">display prefix symbols (debugging)</input>
+                              </span>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="3">
+                              <input id="commonLabelAlwaysShowTag" name="commonLabelAlwaysShowTag" title="always show tag name in the feature label" type="checkbox" xchecked="checked" autocomplete="off">always include Tag in the labe of feature nodes</input>
+                           </td>
+                        </tr>
+                     </table>
+                     
+                     <!-- 注意：以下 butComputeFilteredNodes 有兩份: filterEventsBlock 和 divFeaturesToDisplay 各一份 -->
+                     <div style="margin-top:2px;">
+                        <span>
+                           <button class="butComputeFilteredNodes" style="display:none" title="compute event nodes by the time and tag-value conditions, and get common nodes whose degrees not less than the threshold">
+                              Compute filtered nodes
+                           </button>
+                        </span>
+                        <span xclass="floatRight">
+                           event/image nodes: <span class="checkedEventNodesCount">-</span>,
+                           feature nodes: <span class="checkedCommonNodesCount">-</span>
+                        </span>
+                     </div>
+                  </div>
+               </div>              
+               <!-- end of features-to-display -->
+               
+               
+               <!-- check-nodes (fine selection) -->
+               <div id="divCheckNodesToDisplay" class="subPanel">
+                  <div class="experimentFeatures" style="display:none">
+                     <table width="97%" cellpadding="3" cellspacing="1" style="font-size:0.9em; line-height:120%;">
+                        <tr>
+                           <td colspan="3">
+                              Query Filter: <input id="inputQueryFilter" type="text" size="24" autocomplete="off"></input>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="3" align="right">
+                              <button id="butApplyQueryToUpdateDisplayCheckboxes" title="apply query and time filter to check event nodes">apply filter to check event nodes</button>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+                  <table width="98%" style="padding-right:6px;">
+                     <tr style="background-color:#9F9F9F">
+                     <td colspan="2" style="color:#EFEFEF;">
+                        &#160; Check Nodes to Display
+                        <span class="floatRight">
+                        events: <span class="checkedEventNodesCount">-</span>,
+                        commons: <span class="checkedCommonNodesCount">-</span>
+                        </span>
+                     </td>
+                     </tr>
+                     <tr>
+                     <td colspan="2">
+                        <span>
+                           Event Preview: 
+                           <input name="inputNodeListDetails" type="radio" value="Y" autocomplete="off">Y</input>
+                           <input name="inputNodeListDetails" type="radio" value="N" checked="1" autocomplete="off">N</input>
+                        </span>
+
+                        <span class="floatRight">
+                           <span id="divTimeSpan" class="experimentFeatures" style="display:none">
+                              Year Span: <input id="inputTimeSpan" type="text" size="2" value="0" autocomplete="off"></input>
+                           </span>
+                        </div>
+                     </td>
+                     </tr>
+                  </table>
+                  
+                  <div id="divNodeDisplayList" class="nodeDisplayList">
+                     <!-- nodeDisplayTable -->
+                  </div>
+                  
+                  <div style="margin-left:4px; margin-right:6px;">
+                     <span class="floatLeft">
+                        <button id="butDisplaySelectAll" title="select all nodes" class="button">all</button>
+                        <button id="butDisplaySelectNone" title="unselect all nodes" class="button">none</button>
+                        <button id="butDisplayInverse" title="toggle selected" class="button">inv</button>
+                        <!--
+                        <button id="butRandomlySelect" title="randomly select nodes" class="button">random</button>
+                        -->
+                     </span>
+                     <span class="floatRight">
+                        <button id="butExtendSelectedCommonNodes" title="check event nodes that connect to checked common nodes" class="button">extend C</button>
+                        <button id="butExtendSelectedEventNodes" title="check common nodes (note: with checked tag-type specified in filtering subpanel) that connect to checked events">extend E</button>
+                        <!--
+                        <button id="butExtendNodes" title="check nodes that connect to checked nodes" class="button">extend</button>
+                        -->
+                        <button id="butUncheckIsolatedEventNodes" title="uncheck event nodes that do not connect to others" class="button">remove iso-E</button>
+                     </span>
+                  </div>
+               </div>
+               <!-- end of check-nodes -->
+               
+               <!-- labeling -->
+               <div id="divNodeLabeling" class="subPanel" style="display:none; overflow-y:hidden;">
+                  <center class="controlPanelLabel">
+                     Event/Image Node Label
+                  </center>
+                  <table id="tableNodeLabeling" width="100%">
+                  <tr style="display:none">
+                     <td colspan="2" align="left">
+                        Graph Title: <input id="graphTitle" type="text" size="40"></input>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td align="left">
+                        <div id="nodeLabelOptionsNodeType">
+                           Node Type: 
+                           <select id="selectNodeLabelingNodeType" name="selectNodeLabelingNodeType"></select>
+                        </div>
+                     </td>
+                  </tr>
+                  </table>
+                  
+                  <div id="divNodeLabelList">
+                  </div>
+               </div>
+               <!-- end of labeling -->
+               
+               <!-- styling -->
+               <div id="divNodeStyling" class="subPanel" style="display:none;">
+                  <div id="divViewportSize" class="experimentFeatures" style="display:none">
+                     <center class="controlPanelLabel">
+                        Viewport
+                     </center>
+                     <table>
+                     <tr>
+                        <td width="50%">width: <input id="viewportWidth" type="text" size="5" value="" autocomplete="off"></input></td>
+                        <td>height: <input id="viewportHeight" type="text" size="5" value="" autocomplete="off"></input></td>
+                     </tr>
+                     </table>
+                     <br/>
+                  </div>
+                  
+                  <div id="divNodeShape">
+                     <center class="controlPanelLabel">
+                        Node Style Settings
+                     </center>
+                     <!-- <div id="divNodeShapeOptionsTable"></div> -->
+                     <div style="margin-left:8px">
+                        <table cellpadding="3">
+                        <tr>
+                           <td>Node Color:</td>
+                           <td><button id="butSetNodeColor" style="margin-left:6px">set</button></td>
+                        </tr>
+                        <tr>
+                           <td>Node Label Color:</td>
+                           <td><button id="butSetNodeLabelColor" style="margin-left:6px">set</button></td>
+                        </tr>
+                        <tr>
+                           <td valign="top">Label Font Size:</td>
+                           <td>
+                              <input type="radio" name="nodeFontSize" value="small" autocomplete="off">Small</input>
+                              <input type="radio" name="nodeFontSize" value="medium" autocomplete="off">Medium</input>
+                              <input type="radio" name="nodeFontSize" value="large" checked="checked" autocomplete="off">Large</input>
+                              <br/>
+                              <input type="radio" name="nodeFontSize" value="xlarge" autocomplete="off">X-Large</input>
+                              <input type="radio" name="nodeFontSize" value="2xlarge" autocomplete="off">XX-Large</input>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td valign="top">Node Size:</td>
+                           <td>
+                              <input type="radio" name="nodeSize" value="small" autocomplete="off">Small</input>
+                              <input type="radio" name="nodeSize" value="medium" checked="checked" autocomplete="off">Medium</input>
+                              <br/>
+                              <input type="radio" name="nodeSize" value="large" autocomplete="off">Large</input>
+                              <input type="radio" name="nodeSize" value="xlarge" autocomplete="off">X-Large</input>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Link shape:</td>
+                           <td>
+                              <input type="radio" name="nodeLinkType" value="line" checked="checked">line</input>
+                              <input type="radio" name="nodeLinkType" value="arc">arc</input>
+                           </td>
+                        </tr>
+                       <tr>
+                           <td colspan="2" align="left">
+                              Hide node label: <span id="hideNodeLabelContainer" style="padding-right:8px"></span>
+                           </td>
+                        </tr>
+                        </table>
+                     </div>
+                  </div>
+                  
+                  <div id="divMiscellaneous" style="line-height:185%">
+                     <!--
+                     <center class="controlPanelLabel">
+                        Miscellaneous
+                     </center>
+                     -->
+                     
+                     <div class="experimentFeatures" style="display:none; margin-left:8px;">
+                        <table cellpadding="0" cellspacing="0">
+                        <tr>
+                           <td valign="top" align="left">Label position relative to node:</td>
+                           <td valign="top">
+                              <div id="divLabelPositionOptionsTable" style="margin-left:12px; line-height:125%;"></div>
+                           </td>
+                        </tr>
+                        </table>
+                     </div>
+                     <div class="experimentFeatures" style="display:none; margin-left:8px;">
+                        <table width="96%">
+                           <tr>
+                              <td>Repulsive strength:</td>
+                              <td>
+                                 <input type="range" id="forceModelRepulsiveStrengthSlider" min="1" max="100" value="10" step="1" style="width:100%; margin-top:12px" autocomplete="off"></input>
+                              </td>
+                              <td>
+                                 <input type="text" id="forceModelRepulsiveStrengthVal" size="3" value="10" style="text-align:right;" autocomplete="off"></input>
+                              </td>
+                           </tr>
+                        </table>
+                     </div>
+                  </div>
+
+                  <p/>                  
+                  <div>
+                     <center>
+                        <button id="butApplyStyleSettings" style="width:92%">Apply Style without Redraw</button>
+                     </center>
+                  </div>
+                  
+                  <!-- 把比較麻煩（尚未加入 Apply Style without Redraw）的部分放在此 -->
+                  <div style="margin-left:8px; margin-top:32px;">
+                     <table cellpadding="3">
+                        <tr class="experimentFeatures" style="display:none">
+                           <td>Node Shape:</td>
+                           <td><button id="butSetNodeShape" style="margin-left:6px">set</button></td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+               <!-- end of styling -->
+
+               <!-- unification -->
+               <div id="divTagUnification" class="subPanel" style="display:none;">
+                  <center class="controlPanelLabel">
+                     "&lt;Tag&gt;: &lt;Content&gt;" Unification
+                  </center>
+                  <div style="padding:5px; margin-top:5px;">
+                     click to import tag-unification mapping from a .txt file:
+                     <span id="butLoadTagUnifMapFile" class="button" style="padding-left:4px; padding-right:4px;" title="import tag-unification mapping file (*.txt)">  <!-- 新載入會覆蓋舊資料 -->
+                        <i class="fa-solid fa-file-import"></i>
+                     </span>
+                     <label for="loadTagUnifMapFile">   <!-- 注意：點選後由 js 觸發 <input> loadTagUnifMapFile，因此不能放在 butLoadTagUnifMapFile 內 -->
+                        <input id="loadTagUnifMapFile" type="file" style="display:none" autocomplete="off" accept=".txt"></input>
+                     <label>
+                  </div>
+                  <div class="tagUnificationList">
+                     <table id="tagUnificationMappingTable" width="100%" cellspacing="0" cellpadding="2">
+                     </table>
+                  </div>
+                  <div>
+                     <span class="floatRight">
+                        <button id="butSetTagUnificationMap">Set tag-unification map</button>
+                     </span>
+                  </div>
+               </div>
+               <!-- end of unification -->
+               
+            </div>    <!-- divControlPanel -->
+         </div>
+         
+         <!-- redraw button -->
+         <div id="divRedrawButton">
+            <span id="butApplySettingsAndRedraw" class="butLightBlue" style="padding:4px 40px;">REDRAW</span>
+         </div>
+      </div>    <!-- graphControlPanel -->
+      
+      <!-- 注意： butShowGraphControlPanel 並沒有放在 butHideGraphControlPanel 的同個區塊下 -->
+      <!--
+      <div id="graphControlPanelIcon" title="show control panel" style="position:fixed; top:48px; xleft:50px;">
+         <button id="butShowGraphControlPanel" class="button" style="display:none">&#9654;</button>
+      </div>
+      -->
+
+   </div>    <!-- divControlPanelContainer -->
+   
+   <div id="divNodeContentContainer">
+      <div class="nodeContentArea" style="display:none">
+         <span id="nodeId"></span>
+         <span class="floatRight" closeContentArea>
+            <button id="butHideNodeContentArea" title="hide node content area" class="button" style="border:none">X</button>
+         </span>
+         <div class="nodeContent">
+         </div>
+      </div>
+   </div>
+
+
+   <div id="tableArea" style="display:none; position:absolute; width:100%; top:60px; overflow:hidden; z-index:1;">
+      <div id="tableToolbar" style="width:100%; padding-bottom:8px;">
+         <span class="xfloatLeft">
+            <span id="tableSearch">Search: 
+               <input id="searchInput" type="text"></input>
+               <span id="butSearch" class="button">Go</span>
+            </span>
+         </span>
+         <span class="floatRight">
+            <span id="tableInfoDocs"></span> docs,
+            <span id="tableInfoRows"></span> rows,
+            EM/C nodes: <span id="tableInfoEMC"></span>
+            &#160;
+         </span>
+      </div>
+      <div id="tabulator"></div>
+      </div>
+   </div>
+   
+   <!-- overlay to work as a dialog box -->
+   <!--
+   <div id="myOverlay" class="overlay" style="display:none">
+      <div class="overlay-content">
+         <div class="overlayMessage">
+            <h3 style="line-height:140%">
+            Since the imported dataset contains an excessive number of nodes (resulting in 
+            a cluttered and disorganized graph),<br/>
+            this tool will initially select a random subset of nodes to display for 
+            improved clarity and convenience.<br/>
+            You can view all nodes available for display from the control panel.
+            </h3>
+         </div>
+         <br/>
+         <center>
+            <button id="butCloseOverlay">Continue</button>
+         </center>
+      </div>      
+   </div>
+   -->
+   
+   <div id="svgOverlay" class="svgOverlay" style="display:none">    <!-- 2025-06-02 animation 時，蓋住 svg area 不允許操作 -->
+   </div>
+   
+   <div id="overlayEventFilterEntityTerms" class="overlay4Settings" style="display:none" targetKey="(TBD)">
+      <div class="overlay-content-50percent">
+         <div class="overlayMessage">
+            <table width="100%">
+               <tr>
+                  <td colspan="3">  
+                     <div style="position:relative">
+                        Filter for <span id="filterNodeType"></span> nodes whose features contain the specified values:
+                        <!--
+                        <span style="position:absolute; right:0;">
+                           <button id="butFilterEntityTermsOverlayCancel">X</button>
+                        </span>
+                        -->
+                     </td>
+                  </td>
+               </tr>
+               <tr>
+                  <td id="subFilterColumn" colspan="3">
+                     <div class="subFilterTagAndValueBlock">   <!-- 2025-09-25: 改為固定只有一個 subFilterTagAndValueBlock，不再需要多份拷貝（因此可略去 @subFilterIdx） -->
+                        <table width="100%">
+                        <tr>
+                           <td width="40%" style="padding:4px;">      <!-- 不知哪裡 (子元素？）出錯，這 td 竟會吃掉 colspan="2" 的位置... -->
+                              <div class="divEntityTagList filterTagList" style="height:328px; width:98%; overflow:scroll;">
+                              </div>
+                           </td>
+                           <td colspan="2" style="padding:4px;">
+                              <!-- 概念上，在此是假設使用者在一個 subfilter 所勾選的 feature (entity tag) 會有相同 type/norm/value 結構，因此對這些 features 套用相同 filterTagValOptions 值是合理的 -->
+                              <div style="padding:4px">
+                              type of feature:
+                              <select class="filterTagValOptions" name="filterTagValOptions" title="use which part of value type/id/text for filtering">
+                                 <!-- 由於 COMARKUS 標籤值經常為 x/y/z 形式 (type/norm/value)，在此可選擇要以哪種方式加入 term list -->
+                                 <option value="full">all</option>
+                                 <option value="x">type</option>
+                                 <option value="y" selected="1">id</option>
+                                 <option value="z">text</option>
+                              </select>
+                              </div>
+                              
+                              <div class="divTagValueList filterTagList" style="height:300px; width:98%; overflow:scroll;">
+                              </div>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <button class="butEntityTagsSelectAll" title="select all checkboxes" class="button">all</button>
+                              <button class="butEntityTagSelectNone" title="de-select all checkboxes" class="button">clear</button>
+                           </td>
+                           <td>
+                              <button class="butFilterTagValSelectAll" title="select all checkboxes (except special [ANY] and [NONE])" class="button">all</button>
+                              <button class="butFilterTagValSelectNone" title="de-select all checkboxes" class="button">clear</button>
+                           </td>
+                           <td align="right">
+                           </td>
+                        </tr>
+               <!--
+               <tr class="subFilterBar">    !-- TODO: 多份 sub-filters，最終將這些 sub-filers 用 [OR] 串接起來 --
+                  <td colspan="3">   !-- #1, #2, #3, #4, etc. --
+                     Subfilter: <span id="spanSubFilterOptions"></span>
+                  </td>
+               </tr>
+               -->
+                        <tr>
+                           <td id="subFilterRows" colspan="3" style="padding:10px 0px; background-color:#DFDFDF;">
+                              <div class="subFilterTemplate" style="display:none">
+                                 <select class="subFilterOperation">
+                                    <option value="AND">AND</option>
+                                    <option value="OR">OR</option>
+                                 </select>
+                                 &#160;
+                                 features: <input type="text" class="filterTags" size="17" value=""></input>
+                                 &#160;
+                                 contain values: <input type="text" class="filterEntityTerms" title="format: <nodeType>:<tag>:<value>, where <nodeType> is optional, <tag> and <value> can be x|y|z" size="24" value=""></input>
+                                 <button class="button addSubFilter">add condition</button>                              
+                              </div>
+                              <div class="subFilter" key="0">
+                                 <span style="padding:0px 1.85em;">&#160;</span>
+                                 features: <input type="text" class="filterTags" size="17" value=""></input>
+                                 &#160;
+                                 contain values: <input type="text" class="filterEntityTerms" title="format: <nodeType>:<tag>:<value>, where <nodeType> is optional, <tag> and <value> can be x|y|z" size="24" value=""></input>
+                                 <button class="button addSubFilter">add condition</button>                              
+                              </div>
+                           </td>
+                        </tr>
+                        </table>
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="3" align="right">
+                     <br/>
+                     <center>   <!-- position:relative 讓 OK 鍵可貼齊 div 右邊緣 -->
+                        <span id="butFilterEntityTermsOverlayOK" class="button" style="padding-left:12px; padding-right:12px; border:none;">OK</span>
+                        &#160;
+                        <span id="butFilterEntityTermsOverlayCancel" class="button" style="padding-left:12px; padding-right:12px; border:none;">Cancel</span>
+                     </center>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>                     
+   
+   <div id="overlaySetNodeShape" class="overlay4Settings" style="display:none">
+      <div class="overlay-content-50percent">
+         <div class="overlayMessage">
+            <table width="100%">
+               <tr>
+                  <td width="80%">   <!-- 不知為什麼，這 td 竟會佔去 colspan="2" 的位置...？ -->
+                     Specify node shape:
+                  <td>
+                  <td align="right" width="22%">
+                     <button id="butSetNodeShapeCancel">X</button>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="3" width="100%" style="padding:2px">
+                     <div id="divNodeShapeOptionsTable">
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="3" align="center" style="padding-top:10px;">
+                     <span id="butSetNodeShapeOK" class="button" style="padding-left:12px; padding-right:12px">OK</span>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>                     
+   
+   <div id="overlaySetNodeColor" class="overlay4Settings" style="display:none">
+      <div class="overlay-content-75percent">
+         <div class="overlayMessage">
+            <table width="100%">
+               <tr>
+                  <td width="80%">   <!-- 不知為什麼，這 td 竟會佔去 colspan="2" 的位置...？ -->
+                     Specify node color:
+                  <td>
+                  <td align="right" width="22%">
+                     <button id="butSetNodeColorCancel">X</button>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="3" width="100%" style="padding:2px">
+                     <div id="divNodeColorOptionsTable">
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="3" align="center" style="padding-top:10px;">
+                     <span id="butSetNodeColorOK" class="button" style="padding-left:12px; padding-right:12px">OK</span>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>                     
+   
+   <div id="overlaySetNodeLabelColor" class="overlay4Settings" style="display:none">
+      <div class="overlay-content-50percent">
+         <div class="overlayMessage">
+            <table width="100%">
+               <tr>
+                  <td width="80%">   <!-- 不知為什麼，這 td 竟會佔去 colspan="2" 的位置...？ -->
+                     Specify node label color:
+                  <td>
+                  <td align="right" width="22%">
+                     <button id="butSetNodeLabelColorCancel">X</button>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="3" width="100%" style="padding:2px">
+                     <div id="divNodeLabelColorOptionsTable">
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="3" align="center" style="padding-top:10px;">
+                     <span id="butSetNodeLabelColorOK" class="button" style="padding-left:12px; padding-right:12px">OK</span>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>                     
+   
+   <div id="divLoadingContainer" style="position:absolute; border:3px grey solid; border-radius:6px; background-color:white; font-size:medium; z-index:100; display:none;">
+      <div id="divLoadingSig">
+         <img src="images/loading-circle.gif" width="200" border="0"/>
+      </div>
+      <div id="divWorkingProgress" style="position:absolute; top:85px; width:100%; text-align:center;"></div>
+   </div>
+   
+   <div id="hiddenObjects" style="display:none">
+      <button id="butStopSimulation">Stop Simulation</button>
+   </div>
+
+   <!-- supporting boxes -->
+   <!--
+   <div id="fileSaveFileBox" class="fileSaveFileBox" style="display:none; z-index:11;">
+      <div>
+         <center>儲存檔案</center>
+      </div>
+      <hr/>
+      <div>
+      資料格式：<input name="fileSaveFormat" type="radio" value="json">.json (table)</input>
+                &#160;
+                <input name="fileSaveFormat" type="radio" value="svg" checked="1">.svg (graph mode)</input>
+                
+      </div>
+      <br/>
+      <center>
+         <span id="butSaveDataFile" class="button">儲存</span>
+         <span id="butCancelSaveFile" class="button">取消</span>
+      </center>
+   </div>
+   -->
+</body>
+
+<script src="js/EventConnectionGraph-main.js" defer="1"></script>
+<script src="js/EventConnectionGraph-graph.js" defer="1"></script>
+<script src="js/EventConnectionGraph-tabulator.js" defer="1"></script>
+</html>

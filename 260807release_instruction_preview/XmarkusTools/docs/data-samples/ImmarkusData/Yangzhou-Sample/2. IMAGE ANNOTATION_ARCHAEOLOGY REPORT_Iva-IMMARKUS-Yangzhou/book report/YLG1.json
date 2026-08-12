@@ -1,0 +1,375 @@
+[
+  {
+    "id": "f3bd8e8a-3430-4232-86a6-dbdb6ef6dd82",
+    "target": {
+      "source": "YLG1.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"305.1633198964575,91.33609710723493 469.85862546749104,79.80736628360134 554.7955607137559,78.98391636267593 696.3147656524112,83.10130418511989 833.0118409417166,96.27690029615012 913.7125938853826,105.3351431391906 981.2376643318828,106.15862761457024 1038.8809901827356,106.98209481272278 1039.7044919353425,358.1424755461713 795.1319351732498,341.67295881084965 745.7234195217387,315.31217261199555 716.0782548437057,304.61648568608103 674.9043420648117,288.1258085988264 609.8497077672234,153.09675894885063 567.0289988098413,148.9793884036338 518.443777584212,152.27329175069812 412.21533417109225,128.39246656864103 412.21533417109225,128.39246656864103 412.21533417109225,128.39246656864103\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "07665f9a-7393-4d25-bdeb-84d5945c3fdf",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_moat",
+        "properties": {
+          "ID": "yangzhou_cheng_hao",
+          "name": "扬州城壕",
+          "materials": "earth",
+          "location": [
+            32.3835367,
+            119.4395483
+          ],
+          "date start": "1368 CE",
+          "date end": "1912 CE",
+          "date dynasty": "明;清",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33309",
+          "inference": "abandonment",
+          "part of main object": {
+            "instance": "yangzhou_cheng",
+            "type": "city_wall"
+          }
+        },
+        "created": "2024-04-30T09:18:11.789Z",
+        "modified": "2025-05-23T13:24:45.154Z"
+      }
+    ],
+    "created": "2024-04-30T09:16:20.351Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rQPFIGUdOFhLSK87eojN"
+    },
+    "modified": "2025-05-23T13:22:07.703Z"
+  },
+  {
+    "id": "400995bf-b7c8-4171-bdba-a492dd51d572",
+    "target": {
+      "source": "YLG1.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"103.41155847788238,101.21773803951963 214.58546397217043,102.04123979212635 247.51995949115027,95.45339854354347 276.9618359776601,95.45339854354347 292.6851999200837,92.15949519647916 349.4404331677451,110.87913402342316 376.73236988547853,122.63284024532422 376.44932449876086,134.7958868958769 374.4087823950737,146.1245789649384 386.55315583013083,161.91438722388986 392.1420721590793,174.21296514291902 342.2198448529074,171.21324463493164 215.40437594143236,176.9776359625891 100.94112232897054,178.62453580443994 100.94112232897054,178.62453580443994 100.94112232897054,178.62453580443994\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "cecdaae8-b117-492e-8332-88ffe955a203",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall",
+        "properties": {
+          "ID": "yangzhou_cheng",
+          "name": "扬州城",
+          "materials": "earth;brick",
+          "location": [
+            32.3835367,
+            119.4395483
+          ],
+          "date start": "1368 CE",
+          "date end": "1644 CE",
+          "date dynasty": "明",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33309"
+        },
+        "created": "2025-05-23T13:24:52.276Z",
+        "modified": "2025-05-23T13:26:23.573Z"
+      }
+    ],
+    "created": "2024-04-30T09:21:21.047Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rQPFIGUdOFhLSK87eojN"
+    },
+    "modified": "2025-05-23T13:37:56.074Z"
+  },
+  {
+    "id": "5f5a8848-bf0e-4e4a-bbad-a38e8da27787",
+    "target": {
+      "source": "YLG1.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"98.47069481867229,209.91668671045954 137.17409370113245,204.9757798581817 175.06579747679422,202.505360986497 198.93485056749716,182.741940904111 398.21619311438747,173.68369806107052 524.0549022175845,185.1357636949837 546.4525580909309,193.45054723734376 613.7715583356642,258.238371390827 633.7949651256772,274.21022210303784 669.9636166234184,287.32346719815274 628.7897038445246,209.91666943323239 525.0316965803166,186.85929417210073 403.980601719272,172.03672911031123 200.57554757156484,179.44798572536536 100.1176896852722,181.09497195335172 100.1176896852722,181.09497195335172 100.1176896852722,181.09497195335172\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "e0a1d1aa-1e4b-4c43-84db-ada9b5a06ce5",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall",
+        "properties": {
+          "ID": "yangzhou_cheng",
+          "name": "扬州城",
+          "materials": "earth",
+          "location": [
+            32.3835367,
+            119.4395483
+          ],
+          "date start": "1271 CE",
+          "date end": "1368 CE",
+          "date dynasty": "元",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33345"
+        },
+        "created": "2025-05-23T13:31:06.888Z",
+        "modified": "2025-05-23T13:32:46.524Z"
+      }
+    ],
+    "created": "2024-04-30T09:22:19.446Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rQPFIGUdOFhLSK87eojN"
+    }
+  },
+  {
+    "id": "2352536c-8759-400d-a135-65e3ddd43003",
+    "target": {
+      "source": "YLG1.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"394.09889167807904,176.97758413090773 411.21792746286684,214.85752445382894 525.2568294187312,218.98456710704605 514.3264156776086,265.9130090560991 423.7440390788852,270.0304487102243 391.6284900836215,258.50180427272613 169.2897377211452,263.44264201609565 105.05856198309583,263.4418585415333 101.76464999741793,211.5635347206291 189.0532096352125,197.5644541342192 201.40533854809024,180.2714183690637 201.40533854809024,180.2714183690637 201.40533854809024,180.2714183690637\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "c8937fe4-90a1-4e3f-a4e6-0036fe2cec37",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall",
+        "properties": {
+          "ID": "yangzhou_cheng",
+          "name": "扬州城",
+          "materials": "earth;brick",
+          "location": [
+            32.3835367,
+            119.4395483
+          ],
+          "date start": "960 CE ",
+          "date end": "1279 CE",
+          "date dynasty": "宋",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_91446"
+        },
+        "created": "2025-05-23T13:40:27.776Z",
+        "modified": "2025-05-23T13:42:10.282Z"
+      }
+    ],
+    "created": "2024-04-30T09:24:36.579Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rQPFIGUdOFhLSK87eojN"
+    }
+  },
+  {
+    "id": "a2202436-21a9-4d41-aba7-053936c558c4",
+    "target": {
+      "source": "YLG1.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"395.2507209757211,171.21322735770457 501.160689427995,183.56533899335517 549.7360580694348,195.91741607455157 616.4375576544197,263.44253835273304 561.2646679524786,238.73828052697763 523.3847621840117,218.15132413753065 412.2083622043128,214.85742079046634\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "1a98ad1b-c749-42c0-af8b-334a9adc025e",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "stratigraphy",
+        "properties": {
+          "location": [
+            32.3835367,
+            119.4395483
+          ],
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_91446",
+          "name of layer": "YLG1层5B",
+          "date start": "960 CE",
+          "date end": "1279 CE",
+          "date dynasty": "宋"
+        },
+        "created": "2025-05-23T13:33:54.273Z",
+        "modified": "2025-05-23T13:35:24.350Z"
+      },
+      {
+        "id": "99eda4a6-34a6-4948-ad06-c934c9829af3",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "Song wall collapse",
+        "created": "2025-05-23T13:35:24.350Z"
+      }
+    ],
+    "created": "2024-04-30T09:25:08.906Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rQPFIGUdOFhLSK87eojN"
+    },
+    "modified": "2025-05-23T13:38:43.319Z"
+  },
+  {
+    "id": "dd41c3e8-6910-46de-8faf-30e47d90f273",
+    "target": {
+      "source": "YLG1.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"96.82377769959437,264.2660055508856 105.58054718816544,327.67370545216886 625.4958523291416,339.20238444412115 689.7269848741232,340.84935339488044 792.6615249401785,344.9667239400973 754.7816191717116,321.08589875804023 691.3739192704282,299.67550972489494 674.0810044458624,289.79383423815614 618.0845438824059,267.55990889794987 567.0289556167734,245.3260526666521 525.8551810556962,223.91569818796103 514.326502063744,274.97125189913953 422.92057188073255,275.7946845428379 403.98061899649906,265.0895073034923 403.98061899649906,265.0895073034923 403.98061899649906,265.0895073034923\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "dae28ca0-1d9a-4451-965d-2bb9834e7373",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall",
+        "properties": {
+          "ID": "yangzhou_cheng",
+          "name": "扬州城",
+          "materials": "earth",
+          "location": [
+            32.3835367,
+            119.4395483
+          ],
+          "date start": "618 CE",
+          "date end": "907 CE",
+          "date dynasty": "唐",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_91396"
+        },
+        "created": "2025-05-23T13:43:18.112Z",
+        "modified": "2025-05-23T13:44:40.401Z"
+      }
+    ],
+    "created": "2024-04-30T09:26:15.260Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rQPFIGUdOFhLSK87eojN"
+    }
+  },
+  {
+    "id": "fa6c7a09-6f0e-4633-bdcf-b74dbaaac075",
+    "target": {
+      "source": "YLG1.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"100.66971257626295,101.95028909167083 100.66971257626295,69.12121678948775 386.1005405143743,59.090063531737044 491.88322857580334,60.00203003888135 564.853916330871,55.44243231520688 614.0803919111266,53.6185601781157 695.2412453073198,61.825841298775195 773.6663122397323,62.73775562546457 836.5887747412276,67.29735334913903 917.7496281374208,70.94502804938159 1042.8279101118444,65.77519386237468 1039.9401770130132,110.24675354799413 989.7912165123251,106.60367374769554 978.1968334606796,103.74267376404673 912.2747319378815,105.59792886154342 889.34456924472,100.1265022935394 828.3815544977655,93.7430340612388 761.8113999025426,88.27153070761743 719.8631147595257,84.62385600737487 694.3293396773729,81.88812172404914 631.4069467498174,78.24041223683665 578.5155853256178,78.24041223683665 473.64483768110557,79.15233526026853 385.1886348844273,86.44771944772361 302.2039702283404,91.91920540785999 265.9147275166753,97.39072615496633 249.72585773977178,95.56691489507251 214.65967306160908,101.95032387864079\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "045dedb8-3c8e-47c5-9a09-749b5eec6534",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "stratigraphy",
+        "properties": {
+          "name original": "",
+          "location": [
+            32.3835367,
+            119.4395483
+          ],
+          "name of layer": "YLG1层1",
+          "date start": "1912 CE",
+          "date description": "contemporary"
+        },
+        "created": "2025-05-23T13:21:01.833Z",
+        "modified": "2025-05-23T13:22:46.906Z"
+      }
+    ],
+    "created": "2025-05-23T13:15:23.323Z",
+    "creator": {
+      "isGuest": true,
+      "id": "x7J2NeIDoH7kjpicUvsx"
+    }
+  },
+  {
+    "id": "40d81d7f-5f55-4b2e-a242-905768a8db5b",
+    "target": {
+      "source": "YLG1.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"378.24146571845114,118.95747366557552 436.0632711893391,137.3708193979933 473.6003729179963,144.27583319367375 512.5056797652738,151.18086162299215 575.4183006813324,148.8791806020067 609.1759607066278,153.35677979874376 638.3339000215743,213.3289123164999 583.0902717360685,192.61092976343673 524.0140409692873,185.7059013341183 446.5243913018982,171.1286467357623 392.8187056831692,171.1286467357623 379.00864882453226,145.81025794038806\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "9e49c8bc-5818-49a4-b12c-73ca41efbcbc",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "stratigraphy",
+        "properties": {
+          "location": [
+            32.3835367,
+            119.4395483
+          ],
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33309",
+          "name of layer": "YLG1层3B",
+          "date start": "1368 CE",
+          "date end": "1644 CE",
+          "date dynasty": "明"
+        },
+        "created": "2025-05-23T13:38:24.728Z",
+        "modified": "2025-05-23T13:40:09.088Z"
+      }
+    ],
+    "created": "2025-05-23T13:38:17.921Z",
+    "creator": {
+      "isGuest": true,
+      "id": "yNXKZ83Wrf42cfxrTnHQ"
+    }
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "63242ade-414e-4393-8f24-3100ae4cea13",
+    "target": {
+      "source": "9e1df90bb38029db"
+    },
+    "body": {
+      "source": "Archaeology Individual image Schema",
+      "properties": {
+        "Image_title_ch": "唐罗城南城墙中段探沟YLG1东壁地层剖面图",
+        "Image_title_py": "Tang Luocheng Nan Chengqiang Zhongduan Tan Gou YLG1 Dongbi Diceng Poumiantu",
+        "Image_title_en ": "Stratigraphic Profile of The East Wall of the YLG1 Trench in the Middle Section of the Southern City Wall of Tang Luo City",
+        "Image_author": "中国社会科学院考古研究所;南京博物院;扬州市文物考古研究所",
+        "Image_no": "52",
+        "Page": "74",
+        "Publication_time ": "2010",
+        "Publication_place ": "北京市",
+        "Image_format": "png",
+        "Genre": "stratigraphy",
+        "Pixel_h": {
+          "value": 573,
+          "unit": "pix"
+        },
+        "Pixel_w": {
+          "value": 1174,
+          "unit": "pix"
+        },
+        "Language ": "Chinese",
+        "date of image ": "2010",
+        "Institution_dg ": "KU Leuven",
+        "Person_dg": "Iva Stojević",
+        "Place_covered": "揚州"
+      },
+      "purpose": "describing"
+    }
+  }
+]

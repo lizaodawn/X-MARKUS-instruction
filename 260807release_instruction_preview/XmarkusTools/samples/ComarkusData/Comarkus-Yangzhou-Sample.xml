@@ -1,0 +1,198 @@
+<?xml version="1.0"?><ThdlPrototypeExport>
+<corpus name="COMARKUS-CORPUS"><metadata_field_settings><compilation_name show_spotlight="Y" display_order="1">Compilation</compilation_name><docclass show_spotlight="Y" display_order="6">Data Title</docclass><author show_spotlight="Y" display_order="4">Author</author><year_for_grouping show_spotlight="Y" display_order="3">Year</year_for_grouping><geo_level1 show_spotlight="Y" display_order="5">Place Covered</geo_level1><topic show_spotlight="Y" display_order="2">Data Source</topic></metadata_field_settings><feature_analysis>
+<tag type="contentTagging" name="Udef_DocMeta_piece_author" default_category="Udef_DocMeta_piece_author" default_sub_category="-"/><tag type="contentTagging" name="Udef_DocMeta_piece_time" default_category="Udef_DocMeta_piece_time" default_sub_category="-"/><tag type="contentTagging" name="Udef_DocMeta_piece_title" default_category="Udef_DocMeta_piece_title" default_sub_category="-"/><tag type="contentTagging" name="Udef_DocMeta_place_covered" default_category="Udef_DocMeta_place_covered" default_sub_category="-"/><tag type="contentTagging" name="Udef_DocMeta_publication_place" default_category="Udef_DocMeta_publication_place" default_sub_category="-"/><tag type="contentTagging" name="Udef_DocMeta_publication_time" default_category="Udef_DocMeta_publication_time" default_sub_category="-"/><tag type="contentTagging" name="Udef_DocMeta_source_author" default_category="Udef_DocMeta_source_author" default_sub_category="-"/><tag type="contentTagging" name="Udef_DocMeta_source_title" default_category="Udef_DocMeta_source_title" default_sub_category="-"/><tag type="contentTagging" name="Udef_Event_Element" default_category="Udef_Event_Element" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_BENEFICIARY" default_category="Udef_Evt_BENEFICIARY" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_BENEFICIARY.GenreL1" default_category="Udef_Evt_BENEFICIARY.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_BENEFICIARY.GenreL2" default_category="Udef_Evt_BENEFICIARY.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_COST" default_category="Udef_Evt_COST" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_COST.GenreL1" default_category="Udef_Evt_COST.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_COST.GenreL2" default_category="Udef_Evt_COST.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_EVENT" default_category="Udef_Evt_EVENT" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_EVENT.GenreL1" default_category="Udef_Evt_EVENT.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_EVENT.GenreL2" default_category="Udef_Evt_EVENT.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_EVENT_CAUSE" default_category="Udef_Evt_EVENT_CAUSE" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_EVENT_CAUSE.GenreL1" default_category="Udef_Evt_EVENT_CAUSE.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_EVENT_CAUSE.GenreL2" default_category="Udef_Evt_EVENT_CAUSE.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_INITIATOR" default_category="Udef_Evt_INITIATOR" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_INITIATOR.GenreL1" default_category="Udef_Evt_INITIATOR.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_INITIATOR.GenreL2" default_category="Udef_Evt_INITIATOR.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_LOCATION" default_category="Place" default_sub_category="Event"/><tag type="contentTagging" name="Udef_Evt_LOCATION.GenreL1" default_category="Udef_Evt_LOCATION.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_LOCATION.GenreL2" default_category="Udef_Evt_LOCATION.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_MATERIAL" default_category="Udef_Evt_MATERIAL" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_MATERIAL.GenreL1" default_category="Udef_Evt_MATERIAL.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_MATERIAL.GenreL2" default_category="Udef_Evt_MATERIAL.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJECT_LENGTH" default_category="Udef_Evt_OBJECT_LENGTH" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJECT_LENGTH.GenreL1" default_category="Udef_Evt_OBJECT_LENGTH.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJECT_LENGTH.GenreL2" default_category="Udef_Evt_OBJECT_LENGTH.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJECT_MAIN" default_category="Udef_Evt_OBJECT_MAIN" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJECT_MAIN.GenreL1" default_category="Udef_Evt_OBJECT_MAIN.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJECT_MAIN.GenreL2" default_category="Udef_Evt_OBJECT_MAIN.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJ_PART" default_category="Udef_Evt_OBJ_PART" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJ_PART.GenreL1" default_category="Udef_Evt_OBJ_PART.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJ_PART.GenreL2" default_category="Udef_Evt_OBJ_PART.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJ_PART_QUANT" default_category="Udef_Evt_OBJ_PART_QUANT" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJ_PART_QUANT.GenreL1" default_category="Udef_Evt_OBJ_PART_QUANT.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_OBJ_PART_QUANT.GenreL2" default_category="Udef_Evt_OBJ_PART_QUANT.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_PLACE_LINKED" default_category="Udef_Evt_PLACE_LINKED" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_PLACE_LINKED.GenreL1" default_category="Udef_Evt_PLACE_LINKED.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_PLACE_LINKED.GenreL2" default_category="Udef_Evt_PLACE_LINKED.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_SPONSOR" default_category="Udef_Evt_SPONSOR" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_SPONSOR.GenreL1" default_category="Udef_Evt_SPONSOR.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_SPONSOR.GenreL2" default_category="Udef_Evt_SPONSOR.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_TIME" default_category="Udef_Evt_TIME" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_TIME.GenreL1" default_category="Udef_Evt_TIME.GenreL1" default_sub_category="-"/><tag type="contentTagging" name="Udef_Evt_TIME.GenreL2" default_category="Udef_Evt_TIME.GenreL2" default_sub_category="-"/><tag type="contentTagging" name="Udef_action" default_category="Udef_action" default_sub_category="-"/><tag type="contentTagging" name="Udef_action_cause" default_category="Udef_action_cause" default_sub_category="-"/><tag type="contentTagging" name="Udef_cost" default_category="Udef_cost" default_sub_category="-"/><tag type="contentTagging" name="Udef_duration" default_category="Udef_duration" default_sub_category="-"/><tag type="contentTagging" name="Udef_labor" default_category="Udef_labor" default_sub_category="-"/><tag type="contentTagging" name="Udef_material" default_category="Udef_material" default_sub_category="-"/><tag type="contentTagging" name="Udef_obj_length" default_category="Udef_obj_length" default_sub_category="-"/><tag type="contentTagging" name="Udef_obj_part" default_category="Udef_obj_part" default_sub_category="-"/><tag type="contentTagging" name="Udef_obj_part_quant" default_category="Udef_obj_part_quant" default_sub_category="-"/><tag type="contentTagging" name="Udef_object" default_category="Udef_object" default_sub_category="-"/><tag type="contentTagging" name="Udef_soccat" default_category="Udef_soccat" default_sub_category="-"/><tag type="contentTagging" name="Udef_work" default_category="Udef_work" default_sub_category="-"/></feature_analysis></corpus>
+<documents>
+<document filename="JiaQiang_YangZhouFuZhi_JuanShiWu_HeChengYangZhouXinChengJi.txt_markus (2)"><title>揚州府志：何城揚州新城記</title>
+<xml_metadata><Udef_DocMeta_piece_title Type="work">何城揚州新城記</Udef_DocMeta_piece_title>
+<Udef_DocMeta_piece_author Type="fullName">何城(202783)</Udef_DocMeta_piece_author>
+<Udef_DocMeta_piece_time Type="timePeriod">丁巳夏(公元1557年:明世宗)</Udef_DocMeta_piece_time>
+<Udef_DocMeta_place_covered Type="placeName">揚州(hvd_33309)</Udef_DocMeta_place_covered>
+<Udef_DocMeta_source_title Type="placeName">揚州府志</Udef_DocMeta_source_title>
+<Udef_DocMeta_source_author Type="fullName">阿克當阿(81032)</Udef_DocMeta_source_author>
+<Udef_DocMeta_publication_place Type="placeName">-</Udef_DocMeta_publication_place>
+<Udef_DocMeta_publication_time Type="timePeriod">1810</Udef_DocMeta_publication_time></xml_metadata>
+<topic>揚州府志</topic><geo_level1>揚州</geo_level1><year_for_grouping>1557</year_for_grouping><author>何城</author><docclass>何城揚州新城記</docclass><compilation_name>Yangzhou-Sample</compilation_name><doc_content><Paragraph>嘉慶_揚州府志_卷十五_何城揚州新城記¬<Udef_object RefId="markus_yangzhou_cheng" TagForConversion="{&quot;markus&quot;:&quot;object&quot;}" Term="markus_yangzhou_cheng">揚州府城</Udef_object><br/><Udef_work TagForConversion="{&quot;markus&quot;:&quot;work&quot;}">何城揚州新城記</Udef_work><br/>揚州<Udef_obj_part RefId="markus_outer_wall" TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}" Term="markus_outer_wall">外城</Udef_obj_part>成言言几屹樓堞蔽虧囊括萬家襟帶漕河以為固甚盛舉也先是<Udef_action_cause TagForConversion="{&quot;markus&quot;:&quot;action_cause&quot;}">倭宼</Udef_action_cause>弗靖騒動東南<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">郡守</Office><PersonName CbdbId="cbdb_125187" Term="cbdb_125187" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">吳公自湖</PersonName>用不敏議謂<LocName>揚</LocName><LocName>介</LocName>兩郡之間四方舟車<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">商賈</Udef_soccat>之所萃生齒聚繁數倍於昔又<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">運司</Office>餘鹽銀獨當天下賦税之半而<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">商人</Udef_soccat>實居<Udef_obj_part RefId="markus_old_wall" TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}" Term="markus_old_wall">舊城</Udef_obj_part>之外無藩籬之限非捍衛計也<Udef_action TagForConversion="{&quot;markus&quot;:&quot;action&quot;}">置</Udef_action><Udef_obj_part RefId="markus_outer_wall" TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}" Term="markus_outer_wall">外城</Udef_obj_part>便時<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">舉人</Office><PersonName CbdbId="cbdb_409577" Term="cbdb_409577" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">楊守誠</PersonName>力贊其說遂請於<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">撫院</Office><PersonName CbdbId="cbdb_131016" Term="cbdb_131016" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">芹山陳公</PersonName><Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">按院</Office><PersonName CbdbId="cbdb_124375" Term="cbdb_124375" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">堯山吳公</PersonName><Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">鹽院</Office><PersonName CbdbId="cbdb_204032" Term="cbdb_204032" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">春洲崔公</PersonName>並下<PersonName CbdbId="cbdb_125187" Term="cbdb_125187" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">自湖</PersonName>計凡城丈合工與財當費<Udef_cost TagForConversion="{&quot;markus&quot;:&quot;cost&quot;}">銀二十九兩有奇</Udef_cost>道計<Udef_cost RefId="markus_46157兩" TagForConversion="{&quot;markus&quot;:&quot;cost&quot;}" Term="markus_46157兩">銀四萬六千一百五十七兩</Udef_cost>括府藏止<Udef_cost TagForConversion="{&quot;markus&quot;:&quot;cost&quot;}">一萬六千兩有奇</Udef_cost><PersonName CbdbId="cbdb_204032" Term="cbdb_204032" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">春洲公</PersonName>許借<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">商鹽</Udef_soccat><Udef_cost TagForConversion="{&quot;markus&quot;:&quot;cost&quot;}">銀三萬</Udef_cost>兩足其費議始定<PersonName CbdbId="cbdb_131016" Term="cbdb_131016" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">芹山</PersonName>諸公並奏下<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">工部</Office>覆奏詔悉如請是為<Date>乙卯之冬</Date>適<PersonName CbdbId="cbdb_125187" Term="cbdb_125187" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">吳公</PersonName>有清源之命<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">廟堂</Office>議以<PersonName CbdbId="cbdb_127006" Term="cbdb_127006" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">毅庵石公</PersonName>代初議城因<Udef_action_cause TagForConversion="{&quot;markus&quot;:&quot;action_cause&quot;}">淤河</Udef_action_cause>而瀕河之地積為<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">居民</Udef_soccat>之所占胥動浮言以感有位議者恒以奪民業難其事公始至即召外城之<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">商</Udef_soccat><Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">民</Udef_soccat>而諭之曰瀕河之地稽往牒則官地也是豈汝右得而廬舍者耶今為城當悉歸於官永建乃家衆咸應曰諾於是瀕河之廬舍一舉而皆撤基遂定又召<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">商</Udef_soccat><Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">民</Udef_soccat>而諭之日城之築也財可取於官顧力安能不借於<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">民</Udef_soccat>耶勞之所以衛汝也衆復應曰諾乃括<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">商</Udef_soccat><Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">民</Udef_soccat>之堪事事者<Udef_labor TagForConversion="{&quot;markus&quot;:&quot;labor&quot;}">百八十人</Udef_labor>俾任其役分地授工多寡惟稱其力先後緩急各臻於理<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">商</Udef_soccat><Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">民</Udef_soccat>亦各視工授之多寡以領財於公以召<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">工</Udef_soccat>市<Udef_material TagForConversion="{&quot;markus&quot;:&quot;material&quot;}">甓</Udef_material>而<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">良工</Udef_soccat><Udef_material TagForConversion="{&quot;markus&quot;:&quot;material&quot;}">堅甓</Udef_material>各自四方至遠或四五百里甫就工<Date>四月</Date><Date RefId="公元1556年6月:明世宗" Term="公元1556年6月:明世宗">五月</Date>遭<Udef_action_cause TagForConversion="{&quot;markus&quot;:&quot;action_cause&quot;}">倭宼</Udef_action_cause>亂<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">民</Udef_soccat>並求生不遑事事<Date RefId="公元1556年7月:明世宗" Term="公元1556年7月:明世宗">六月</Date><Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">宼</Udef_soccat>始退<Udef_obj_part RefId="markus_outer_wall" TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}" Term="markus_outer_wall">外城</Udef_obj_part>蕭條百八十家多遭<Udef_action TagForConversion="{&quot;markus&quot;:&quot;action&quot;}">焚劫</Udef_action>者公又為拊循而佐翼之於是<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">商</Udef_soccat><Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">民</Udef_soccat>奮庸無不奔走而就事以後為羞逮<Date RefId="公元1556年11月:明世宗" Term="公元1556年11月:明世宗">十月</Date>而工成起<Udef_obj_part RefId="markus_old_wall" TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}" Term="markus_old_wall">舊城</Udef_obj_part>東南隅而東而北而西及舊城之東北隅止絇一十里為<Udef_obj_length TagForConversion="{&quot;markus&quot;:&quot;obj_length&quot;}">一千五百四十一丈九尺</Udef_obj_length>中建為<Udef_obj_part TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}">門</Udef_obj_part>者<Udef_obj_part_quant TagForConversion="{&quot;markus&quot;:&quot;obj_part_quant&quot;}">五</Udef_obj_part_quant><Udef_obj_part TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}">便門</Udef_obj_part>者<Udef_obj_part_quant TagForConversion="{&quot;markus&quot;:&quot;obj_part_quant&quot;}">一</Udef_obj_part_quant>樓稱是為<Udef_obj_part TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}">水門</Udef_obj_part>者<Udef_obj_part_quant TagForConversion="{&quot;markus&quot;:&quot;obj_part_quant&quot;}">二</Udef_obj_part_quant><Udef_obj_part TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}">敵臺</Udef_obj_part><Udef_obj_part_quant TagForConversion="{&quot;markus&quot;:&quot;obj_part_quant&quot;}">十有二</Udef_obj_part_quant>是役也經始於<Date RefId="公元1556年3月:明世宗" Term="公元1556年3月:明世宗">丙辰之二月</Date>至<Date RefId="公元1556年11月:明世宗" Term="公元1556年11月:明世宗">十月</Date>而迄工纔<Udef_duration TagForConversion="{&quot;markus&quot;:&quot;duration&quot;}">九閲月</Udef_duration>中經<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">倭寇</Udef_soccat>之變者三月計實止<Udef_duration TagForConversion="{&quot;markus&quot;:&quot;duration&quot;}">六月</Udef_duration>耳且令不煩而<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">民</Udef_soccat>弗擾<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">百姓</Udef_soccat>見城郭之完不知財之所自出見徒役之蟻集不聞徵調之自於何所也濟大事者古及今有如此之神速而鎭静者耶蓋公本以濟世之才達經權之理剛不吐柔不茹勞於求人而逸於治事得百八十人則人各事其事何往而非公之事公特稽其勤惰而已此古聖無為之道也<Date RefId="公元1557年:明世宗" Term="公元1557年:明世宗">丁巳夏</Date><Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">倭</Udef_soccat>復犯揚州遙望<Udef_obj_part RefId="markus_outer_wall" TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}" Term="markus_outer_wall">外城</Udef_obj_part>巍然岸髙池深遂不敢近城下相率而來者無不得所<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">寇</Udef_soccat>退各返其業今居民鱗次在前歲為灰燼者悉煥然為棟宇人物煕煕商賈猶復聚於市少者扶老嬴壯者任戴負與夫姜衣衎食之人猶復溢於途風晨月夕歌鼓管籥之聲猶復盈於耳絃歌誦習在鄉塾者無處不然與未遭<Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">宼</Udef_soccat>亂時無異而余歲時復得從鄉社諸老席於賓筵之末聽鄉樂之歌飮獻酬之酒夜則頽然就寢無復移家之慮顧無城安有此樂耶夫樂其樂而利其利不知其功者匪情也<LocName>揚</LocName><Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">卿大夫</Udef_soccat><Udef_soccat TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}">士</Udef_soccat>咸相與議伐石屬余撰記以詔<LocName>揚</LocName>復之人使凡安於閭里得以樂生而送死者皆知我<PersonName CbdbId="cbdb_127006" Term="cbdb_127006" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">毅庵公</PersonName>之澤不可泯公諱<PersonName CbdbId="cbdb_127006" Term="cbdb_127006" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">茂華</PersonName>字<PersonName CbdbId="cbdb_127006" Term="cbdb_127006" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">君釆</PersonName>號即<PersonName CbdbId="cbdb_127006" Term="cbdb_127006" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">毅庵</PersonName>山蚽<LocName>益都</LocName>縣人嘉靖甲辰科<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">進士</Office>守<LocName>揚</LocName>善政種種當紀此特就築城一事言之云若將<PersonName CbdbId="cbdb_127006" Term="cbdb_127006" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">毅庵公</PersonName>之命以宣布於下則有<LocName RefId="hvd_33309" Term="hvd_33309">揚州</LocName>衛<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">經歷</Office><PersonName CbdbId="cbdb_203204" Term="cbdb_203204" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">張時見</PersonName><LocName>江都</LocName>縣<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">主簿</Office><PersonName TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">楊長春</PersonName><LocName>泰興</LocName>縣<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">主簿</Office><PersonName CbdbId="cbdb_335605" Term="cbdb_335605" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">董邦教</PersonName><LocName>髙郵</LocName>衛<Office Type="officialTitle" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">知事</Office><PersonName TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">王登</PersonName>皆與有勞焉故併紀其姓氏</Paragraph><Events><Event ComarkusId="8e198e5c-6341-455a-96b6-f7d2873d399d" Key="Event:0"><ComarkusBundle Type="EVENT_SOURCE_TEXT"><Udef_Evt_EVENT_SOURCE_TEXT RefId="#doc_title" MarkusId="#xml_metadata">揚州府志：何城揚州新城記</Udef_Evt_EVENT_SOURCE_TEXT></ComarkusBundle><ComarkusBundle Type="TIME"><Udef_Evt_TIME MarkusId="e35d7995-9fa0-4da8-bafb-5e9dfa77551e" RefId="乙卯之冬">BEGIN/乙卯之冬/乙卯之冬</Udef_Evt_TIME>
+<Udef_Evt_TIME MarkusId="ad1cba05-9b1f-4eea-be12-618b3ae1de9f" RefId="1556-11">END/1556-11/十月</Udef_Evt_TIME></ComarkusBundle>
+<ComarkusBundle Type="COST"><Udef_Evt_COST MarkusId="33003d13-5c2f-42b6-baf4-308a19033cd9" RefId="46157兩">cost/46157兩/銀四萬六千一百五十七兩</Udef_Evt_COST></ComarkusBundle>
+<ComarkusBundle Type="LABOR"/>
+<ComarkusBundle Type="INITIATOR"><Udef_Evt_INITIATOR MarkusId="53fb5627-5b6e-4cc5-ae8b-67d3450344e7" RefId="舉人">officialTitle/舉人/舉人</Udef_Evt_INITIATOR>
+<Udef_Evt_INITIATOR MarkusId="d4c405e5-c6ea-4e4b-b3da-4b675d6fa171" RefId="409577">fullName/409577/楊守誠</Udef_Evt_INITIATOR>
+<Udef_Evt_INITIATOR MarkusId="11f4f73e-d67e-4777-931d-cba20cdae811" RefId="郡守">officialTitle/郡守/郡守</Udef_Evt_INITIATOR>
+<Udef_Evt_INITIATOR MarkusId="4280435c-816e-4c80-b93c-0b65287d5ed8" RefId="125187">fullName/125187/吳公自湖</Udef_Evt_INITIATOR></ComarkusBundle>
+<ComarkusBundle Type="SPONSOR"><Udef_Evt_SPONSOR MarkusId="11f4f73e-d67e-4777-931d-cba20cdae811" RefId="郡守">officialTitle/郡守/郡守</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="4280435c-816e-4c80-b93c-0b65287d5ed8" RefId="125187">fullName/125187/吳公自湖</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="476da536-c8f7-4ac9-85b3-8529b2f29047" RefId="鹽院">officialTitle/鹽院/鹽院</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="87325a4b-5091-45ac-bd86-85cdbf83fe24" RefId="204032">fullName/204032/春洲崔公</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="ac193241-111b-4c0e-9834-d8dce14b4241" RefId="127006">fullName/127006/毅庵石公</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="840c7665-1550-4629-b7df-c50818990351" RefId="商鹽">soccat/商鹽/商鹽</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="cf4be1b7-15e4-4ce8-90af-436db5f01593" RefId="撫院" Comarkus_pin="false">officialTitle/撫院/撫院</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="245a740a-5734-4edb-9197-398ab62f7860" RefId="131016" Comarkus_pin="false">fullName/131016/芹山陳公</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="8513a201-b5d3-4d09-9833-925f699c8ff1" RefId="按院" Comarkus_pin="false">officialTitle/按院/按院</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="62810fd8-68be-4719-917c-129dcbe6534d" RefId="124375" Comarkus_pin="false">fullName/124375/堯山吳公</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="a7b2d933-09da-4cae-a02e-62b4b0a4f594" RefId="經歷" Comarkus_pin="false">officialTitle/經歷/經歷</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="92facde8-6166-4c7e-bac8-176eeaabbb17" RefId="203204" Comarkus_pin="false">fullName/203204/張時見</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="8ab9022c-103c-42a0-adef-6222ac108809" RefId="主簿" Comarkus_pin="false">officialTitle/主簿/主簿</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="f108f011-6b18-4a5c-9b39-377609dffbeb" RefId="楊長春" Comarkus_pin="false">fullName/楊長春/楊長春</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="cd98c1e2-9d09-4911-b03f-90ffb6117c05" RefId="主簿" Comarkus_pin="false">officialTitle/主簿/主簿</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="0e55de17-5032-4b64-9750-0ff46c8719eb" RefId="335605" Comarkus_pin="false">fullName/335605/董邦教</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="8da664ef-c9c6-4249-96cc-30a7f5288fc9" RefId="知事" Comarkus_pin="false">officialTitle/知事/知事</Udef_Evt_SPONSOR>
+<Udef_Evt_SPONSOR MarkusId="837353b5-b9b3-4e5d-ad02-b2d846bbcf51" RefId="王登" Comarkus_pin="false">fullName/王登/王登</Udef_Evt_SPONSOR></ComarkusBundle>
+<ComarkusBundle Type="EVENT_CAUSE"><Udef_Evt_EVENT_CAUSE MarkusId="14e60f22-0d67-4dcd-91f4-45c4703fcba7" RefId="倭宼">violence/倭宼/倭宼</Udef_Evt_EVENT_CAUSE>
+<Udef_Evt_EVENT_CAUSE MarkusId="d7cf2726-dbdb-499a-a5d0-2af05b7fa8fe" RefId="淤河">env_water/淤河/淤河</Udef_Evt_EVENT_CAUSE></ComarkusBundle>
+<ComarkusBundle Type="LOCATION"><Udef_Evt_LOCATION MarkusId="1a5f533a-3df3-4859-8e89-2bb555e1fc77" RefId="hvd_33309">placeName/hvd_33309/揚州</Udef_Evt_LOCATION></ComarkusBundle>
+<ComarkusBundle Type="PLACE_LINKED"><Udef_Evt_PLACE_LINKED MarkusId="7095d1bf-ade7-4c6b-80e8-2941a69c8718" RefId="介">placeName/介/介</Udef_Evt_PLACE_LINKED></ComarkusBundle>
+<ComarkusBundle Type="BENEFICIARY"><Udef_Evt_BENEFICIARY MarkusId="82a17060-6214-4b66-9e88-bbad726d77ca" RefId="百姓">soccat/百姓/百姓</Udef_Evt_BENEFICIARY></ComarkusBundle>
+<ComarkusBundle Type="MATERIAL_LINKED"><Udef_Evt_MATERIAL MarkusId="64976caf-ce82-410a-8b27-b98c895817c3" RefId="堅甓">material/堅甓/堅甓</Udef_Evt_MATERIAL></ComarkusBundle>
+<ComarkusBundle Type="EVENT"><Udef_Evt_EVENT MarkusId="df17ef30-53b7-4c23-961b-26ee093fe0c9" RefId="置">EXPANSION/置/置</Udef_Evt_EVENT></ComarkusBundle>
+<ComarkusBundle Type="OBJECT_MAIN"><Udef_Align_OBJECT>OBJECT_MAIN/city_wall</Udef_Align_OBJECT>
+<Udef_Evt_OBJECT_MAIN MarkusId="f531b39e-92fa-47d1-95d1-ff4a01546e6d" RefId="yangzhou_cheng" Comarkus_pin="false">wall/yangzhou_cheng/揚州府城</Udef_Evt_OBJECT_MAIN></ComarkusBundle>
+<ComarkusBundle Type="OBJECT_LENGTH"><Udef_Evt_OBJECT_LENGTH MarkusId="4102f3e3-ae7b-4cd5-9c31-35ee12c84a67" RefId="一千五百四十一丈九尺">obj_length/一千五百四十一丈九尺/一千五百四十一丈九尺</Udef_Evt_OBJECT_LENGTH></ComarkusBundle>
+<ComarkusBundle Type="OBJ_PART_LINKED"><Udef_Align_OBJECT>OBJ_PART/門</Udef_Align_OBJECT>
+<Udef_Evt_OBJ_PART MarkusId="6f375dfd-9d57-41ec-a602-b925921f3791" RefId="門">obj_part/門/門</Udef_Evt_OBJ_PART>
+<Udef_Evt_OBJ_PART_QUANT MarkusId="4db28799-f081-4974-b38d-93090d0cfcf5" RefId="五">obj_part_quant/五/五</Udef_Evt_OBJ_PART_QUANT></ComarkusBundle>
+<ComarkusBundle Type="OBJ_PART_LINKED"><Udef_Align_OBJECT>OBJ_PART/便門</Udef_Align_OBJECT>
+<Udef_Evt_OBJ_PART MarkusId="be6b8fee-fc7a-4e35-a95a-2d4fbac0d337" RefId="便門">obj_part/便門/便門</Udef_Evt_OBJ_PART>
+<Udef_Evt_OBJ_PART_QUANT MarkusId="dd053e2e-2d0e-4964-880b-677540ed3b3e" RefId="一">obj_part_quant/一/一</Udef_Evt_OBJ_PART_QUANT></ComarkusBundle>
+<ComarkusBundle Type="OBJ_PART_LINKED"><Udef_Align_OBJECT>OBJ_PART/水門</Udef_Align_OBJECT>
+<Udef_Evt_OBJ_PART MarkusId="8db88185-5617-4972-b464-275dd3fafb85" RefId="水門">obj_part/水門/水門</Udef_Evt_OBJ_PART>
+<Udef_Evt_OBJ_PART_QUANT MarkusId="144b0f9f-7338-460f-8698-05cb72bb19df" RefId="二">obj_part_quant/二/二</Udef_Evt_OBJ_PART_QUANT></ComarkusBundle>
+<ComarkusBundle Type="OBJ_PART_LINKED"><Udef_Align_OBJECT>OBJ_PART/敵臺</Udef_Align_OBJECT>
+<Udef_Evt_OBJ_PART MarkusId="5ac8e6db-5bed-4118-a4c5-85b95a31f4e8" RefId="敵臺">obj_part/敵臺/敵臺</Udef_Evt_OBJ_PART>
+<Udef_Evt_OBJ_PART_QUANT MarkusId="ca34b04d-9d42-4823-ade2-cb0e4adb5bbe" RefId="十有二">obj_part_quant/十有二/十有二</Udef_Evt_OBJ_PART_QUANT></ComarkusBundle>
+<ComarkusBundle Type="OBJ_PART_LINKED"><Udef_Align_OBJECT>OBJ_PART/city_wall_outer_wall</Udef_Align_OBJECT>
+<Udef_Evt_OBJ_PART MarkusId="98089889-38cf-4989-ae33-3ac7652f453b" RefId="outer_wall">obj_part/outer_wall/外城</Udef_Evt_OBJ_PART></ComarkusBundle>
+<ComarkusBundle Type="OBJ_PART_LINKED"><Udef_Align_OBJECT>OBJ_PART/old_wall</Udef_Align_OBJECT>
+<Udef_Evt_OBJ_PART MarkusId="42cfe301-c3b1-425f-b168-83962f9adee6" RefId="old_wall">obj_part/old_wall/舊城</Udef_Evt_OBJ_PART></ComarkusBundle><Udef_Evt_TIME.GenreL1>BEGIN</Udef_Evt_TIME.GenreL1>
+<Udef_Evt_TIME.GenreL2>BEGIN/乙卯之冬</Udef_Evt_TIME.GenreL2>
+<Udef_Event_Element>TIME/BEGIN/乙卯之冬/乙卯之冬</Udef_Event_Element>
+<Udef_Evt_TIME.GenreL1>END</Udef_Evt_TIME.GenreL1>
+<Udef_Evt_TIME.GenreL2>END/1556-11</Udef_Evt_TIME.GenreL2>
+<Udef_Event_Element>TIME/END/1556-11/十月</Udef_Event_Element>
+<Udef_Evt_COST.GenreL1>cost</Udef_Evt_COST.GenreL1>
+<Udef_Evt_COST.GenreL2>cost/46157兩</Udef_Evt_COST.GenreL2>
+<Udef_Event_Element>COST/cost/46157兩/銀四萬六千一百五十七兩</Udef_Event_Element>
+<Udef_Evt_INITIATOR.GenreL1>officialTitle</Udef_Evt_INITIATOR.GenreL1>
+<Udef_Evt_INITIATOR.GenreL2>officialTitle/舉人</Udef_Evt_INITIATOR.GenreL2>
+<Udef_Event_Element>INITIATOR/officialTitle/舉人/舉人</Udef_Event_Element>
+<Udef_Evt_INITIATOR.GenreL1>fullName</Udef_Evt_INITIATOR.GenreL1>
+<Udef_Evt_INITIATOR.GenreL2>fullName/409577</Udef_Evt_INITIATOR.GenreL2>
+<Udef_Event_Element>INITIATOR/fullName/409577/楊守誠</Udef_Event_Element>
+<Udef_Evt_INITIATOR.GenreL1>officialTitle</Udef_Evt_INITIATOR.GenreL1>
+<Udef_Evt_INITIATOR.GenreL2>officialTitle/郡守</Udef_Evt_INITIATOR.GenreL2>
+<Udef_Event_Element>INITIATOR/officialTitle/郡守/郡守</Udef_Event_Element>
+<Udef_Evt_INITIATOR.GenreL1>fullName</Udef_Evt_INITIATOR.GenreL1>
+<Udef_Evt_INITIATOR.GenreL2>fullName/125187</Udef_Evt_INITIATOR.GenreL2>
+<Udef_Event_Element>INITIATOR/fullName/125187/吳公自湖</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>officialTitle</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>officialTitle/郡守</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/officialTitle/郡守/郡守</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>fullName</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>fullName/125187</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/fullName/125187/吳公自湖</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>officialTitle</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>officialTitle/鹽院</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/officialTitle/鹽院/鹽院</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>fullName</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>fullName/204032</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/fullName/204032/春洲崔公</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>fullName</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>fullName/127006</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/fullName/127006/毅庵石公</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>soccat</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>soccat/商鹽</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/soccat/商鹽/商鹽</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>officialTitle</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>officialTitle/撫院</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/officialTitle/撫院/撫院</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>fullName</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>fullName/131016</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/fullName/131016/芹山陳公</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>officialTitle</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>officialTitle/按院</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/officialTitle/按院/按院</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>fullName</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>fullName/124375</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/fullName/124375/堯山吳公</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>officialTitle</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>officialTitle/經歷</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/officialTitle/經歷/經歷</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>fullName</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>fullName/203204</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/fullName/203204/張時見</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>officialTitle</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>officialTitle/主簿</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/officialTitle/主簿/主簿</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>fullName</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>fullName/楊長春</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/fullName/楊長春/楊長春</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>officialTitle</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>officialTitle/主簿</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/officialTitle/主簿/主簿</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>fullName</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>fullName/335605</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/fullName/335605/董邦教</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>officialTitle</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>officialTitle/知事</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/officialTitle/知事/知事</Udef_Event_Element>
+<Udef_Evt_SPONSOR.GenreL1>fullName</Udef_Evt_SPONSOR.GenreL1>
+<Udef_Evt_SPONSOR.GenreL2>fullName/王登</Udef_Evt_SPONSOR.GenreL2>
+<Udef_Event_Element>SPONSOR/fullName/王登/王登</Udef_Event_Element>
+<Udef_Evt_EVENT_CAUSE.GenreL1>violence</Udef_Evt_EVENT_CAUSE.GenreL1>
+<Udef_Evt_EVENT_CAUSE.GenreL2>violence/倭宼</Udef_Evt_EVENT_CAUSE.GenreL2>
+<Udef_Event_Element>EVENT_CAUSE/violence/倭宼/倭宼</Udef_Event_Element>
+<Udef_Evt_EVENT_CAUSE.GenreL1>env_water</Udef_Evt_EVENT_CAUSE.GenreL1>
+<Udef_Evt_EVENT_CAUSE.GenreL2>env_water/淤河</Udef_Evt_EVENT_CAUSE.GenreL2>
+<Udef_Event_Element>EVENT_CAUSE/env_water/淤河/淤河</Udef_Event_Element>
+<Udef_Evt_LOCATION.GenreL1>placeName</Udef_Evt_LOCATION.GenreL1>
+<Udef_Evt_LOCATION.GenreL2>placeName/hvd_33309</Udef_Evt_LOCATION.GenreL2>
+<Udef_Event_Element>LOCATION/placeName/hvd_33309/揚州</Udef_Event_Element>
+<Udef_Evt_PLACE_LINKED.GenreL1>placeName</Udef_Evt_PLACE_LINKED.GenreL1>
+<Udef_Evt_PLACE_LINKED.GenreL2>placeName/介</Udef_Evt_PLACE_LINKED.GenreL2>
+<Udef_Event_Element>PLACE_LINKED/placeName/介/介</Udef_Event_Element>
+<Udef_Evt_BENEFICIARY.GenreL1>soccat</Udef_Evt_BENEFICIARY.GenreL1>
+<Udef_Evt_BENEFICIARY.GenreL2>soccat/百姓</Udef_Evt_BENEFICIARY.GenreL2>
+<Udef_Event_Element>BENEFICIARY/soccat/百姓/百姓</Udef_Event_Element>
+<Udef_Evt_MATERIAL.GenreL1>material</Udef_Evt_MATERIAL.GenreL1>
+<Udef_Evt_MATERIAL.GenreL2>material/堅甓</Udef_Evt_MATERIAL.GenreL2>
+<Udef_Event_Element>MATERIAL/material/堅甓/堅甓</Udef_Event_Element>
+<Udef_Evt_EVENT.GenreL1>EXPANSION</Udef_Evt_EVENT.GenreL1>
+<Udef_Evt_EVENT.GenreL2>EXPANSION/置</Udef_Evt_EVENT.GenreL2>
+<Udef_Event_Element>EVENT/EXPANSION/置/置</Udef_Event_Element>
+<Udef_Evt_OBJECT_MAIN.GenreL1>wall</Udef_Evt_OBJECT_MAIN.GenreL1>
+<Udef_Evt_OBJECT_MAIN.GenreL2>wall/yangzhou_cheng</Udef_Evt_OBJECT_MAIN.GenreL2>
+<Udef_Event_Element>OBJECT_MAIN/wall/yangzhou_cheng/揚州府城</Udef_Event_Element>
+<Udef_Evt_OBJECT_LENGTH.GenreL1>obj_length</Udef_Evt_OBJECT_LENGTH.GenreL1>
+<Udef_Evt_OBJECT_LENGTH.GenreL2>obj_length/一千五百四十一丈九尺</Udef_Evt_OBJECT_LENGTH.GenreL2>
+<Udef_Event_Element>OBJECT_LENGTH/obj_length/一千五百四十一丈九尺/一千五百四十一丈九尺</Udef_Event_Element>
+<Udef_Evt_OBJ_PART.GenreL1>obj_part</Udef_Evt_OBJ_PART.GenreL1>
+<Udef_Evt_OBJ_PART.GenreL2>obj_part/門</Udef_Evt_OBJ_PART.GenreL2>
+<Udef_Event_Element>OBJ_PART/obj_part/門/門</Udef_Event_Element>
+<Udef_Evt_OBJ_PART_QUANT.GenreL1>obj_part_quant</Udef_Evt_OBJ_PART_QUANT.GenreL1>
+<Udef_Evt_OBJ_PART_QUANT.GenreL2>obj_part_quant/五</Udef_Evt_OBJ_PART_QUANT.GenreL2>
+<Udef_Event_Element>OBJ_PART_QUANT/obj_part_quant/五/五</Udef_Event_Element>
+<Udef_Evt_OBJ_PART.GenreL1>obj_part</Udef_Evt_OBJ_PART.GenreL1>
+<Udef_Evt_OBJ_PART.GenreL2>obj_part/便門</Udef_Evt_OBJ_PART.GenreL2>
+<Udef_Event_Element>OBJ_PART/obj_part/便門/便門</Udef_Event_Element>
+<Udef_Evt_OBJ_PART_QUANT.GenreL1>obj_part_quant</Udef_Evt_OBJ_PART_QUANT.GenreL1>
+<Udef_Evt_OBJ_PART_QUANT.GenreL2>obj_part_quant/一</Udef_Evt_OBJ_PART_QUANT.GenreL2>
+<Udef_Event_Element>OBJ_PART_QUANT/obj_part_quant/一/一</Udef_Event_Element>
+<Udef_Evt_OBJ_PART.GenreL1>obj_part</Udef_Evt_OBJ_PART.GenreL1>
+<Udef_Evt_OBJ_PART.GenreL2>obj_part/水門</Udef_Evt_OBJ_PART.GenreL2>
+<Udef_Event_Element>OBJ_PART/obj_part/水門/水門</Udef_Event_Element>
+<Udef_Evt_OBJ_PART_QUANT.GenreL1>obj_part_quant</Udef_Evt_OBJ_PART_QUANT.GenreL1>
+<Udef_Evt_OBJ_PART_QUANT.GenreL2>obj_part_quant/二</Udef_Evt_OBJ_PART_QUANT.GenreL2>
+<Udef_Event_Element>OBJ_PART_QUANT/obj_part_quant/二/二</Udef_Event_Element>
+<Udef_Evt_OBJ_PART.GenreL1>obj_part</Udef_Evt_OBJ_PART.GenreL1>
+<Udef_Evt_OBJ_PART.GenreL2>obj_part/敵臺</Udef_Evt_OBJ_PART.GenreL2>
+<Udef_Event_Element>OBJ_PART/obj_part/敵臺/敵臺</Udef_Event_Element>
+<Udef_Evt_OBJ_PART_QUANT.GenreL1>obj_part_quant</Udef_Evt_OBJ_PART_QUANT.GenreL1>
+<Udef_Evt_OBJ_PART_QUANT.GenreL2>obj_part_quant/十有二</Udef_Evt_OBJ_PART_QUANT.GenreL2>
+<Udef_Event_Element>OBJ_PART_QUANT/obj_part_quant/十有二/十有二</Udef_Event_Element>
+<Udef_Evt_OBJ_PART.GenreL1>obj_part</Udef_Evt_OBJ_PART.GenreL1>
+<Udef_Evt_OBJ_PART.GenreL2>obj_part/outer_wall</Udef_Evt_OBJ_PART.GenreL2>
+<Udef_Event_Element>OBJ_PART/obj_part/outer_wall/外城</Udef_Event_Element>
+<Udef_Evt_OBJ_PART.GenreL1>obj_part</Udef_Evt_OBJ_PART.GenreL1>
+<Udef_Evt_OBJ_PART.GenreL2>obj_part/old_wall</Udef_Evt_OBJ_PART.GenreL2>
+<Udef_Event_Element>OBJ_PART/obj_part/old_wall/舊城</Udef_Event_Element></Event></Events></doc_content><filename>JiaQiang_YangZhouFuZhi_JuanShiWu_HeChengYangZhouXinChengJi.txt_markus (2)</filename><doc_source>JiaQiang_YangZhouFuZhi_JuanShiWu_HeChengYangZhouXinChengJi.txt_markus (2)</doc_source><corpus>COMARKUS-CORPUS</corpus></document>
+</documents>
+</ThdlPrototypeExport>

@@ -1,0 +1,703 @@
+/* Xmarkus colors
+   For menu bars:
+      - #757575 (grey)
+      - #0f172a (darker-grey-blue)
+   For function tabs:
+      - #3379b5 (light-blue)
+      - #7890ab (even-lighter-blue)
+   For annotation/data model
+      - #ff8800 (light-orange)
+      - #a7bc85 (light-green)
+*/
+      
+body { 
+   margin: 0;
+   /*display: flex;*/
+   height: 100vh;                                /* 頁面高度填滿 viewport */
+   line-height: 1.35em;
+   font-family: Inter, "sans-serif", "微軟正黑體","Helvetica", "Arial","LiHei Pro","黑體-繁";
+}
+
+textarea {
+   font-family: Inter, "sans-serif", "微軟正黑體","Helvetica", "Arial","LiHei Pro","黑體-繁";
+   font-size: 0.85em;
+}
+
+div.leftSidebar {
+   box-sizing: border-box;                       /* 包含內邊距和編框在內的寬度 */
+   position:fixed;
+   top: 40px;
+   width: 50px;
+   height:100%;
+   background-color: #4f4f4f;
+   color: white;
+   line-height:200%;
+   font-size:140%;
+   padding: 2px;
+}
+        
+xdiv.graphAreaContainer {                        /* 用不到？ */
+   box-sizing: border-box;                       /* 包含內邊距和編框在內的寬度 */
+   flex-grow: 1;                                 /* 1: 內容區域佔滿剩餘空間 */
+   padding: 5px;
+   background-color: #f4f4f4;
+}
+     
+div.headerBar { box-sizing:border-box;
+                position:fixed; 
+                width:100%; 
+                height:50px;     /* 預設 box-sizing: content-box; 加上 padding 後，共佔 50px 高度 */
+                /*padding-top:12px;*/
+                background-color:#efefef; 
+                color:#757575; 
+                z-index:10;     /* 必須顯示在 main area 的上方 */
+              }
+
+div.linear-gradient-headerBar {
+   background-color: #757575;
+   background-image: -webkit-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+   background-image: -moz-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+   background-image: -o-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+   background-image: -ms-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+   background-image: linear-gradient(to left, #757575, rgba(15,23,42,0.7));
+}
+      
+span.docuXmlFilename { /*float:right;*/
+                       text-align:right;
+                       display:inline-block; 
+                       margin-left:6px; 
+                       margin-right:16px;
+                       color:#7f7f7f;           /* #ff8800; */
+                       height:20px; 
+                       white-space:nowrap; 
+                       max-width:450px;
+                       max-height:48px;
+                       overflow-x:clip; 
+                       overflow-y:auto;
+                     }
+
+div.subPanel { max-height: 1200px; 
+               overflow-y: auto; 
+             }
+
+label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}             
+             
+/* buttons */
+button {
+   border: 1px outset #9F9F9F;
+   border-radius: 4px;
+   padding:3px 6px;
+   /*cursor:pointer;*/
+}
+
+span.panelTab, span.icon {
+   margin:5px 3px;
+   padding:5px;
+   border-radius:50%;
+   cursor:pointer;
+}
+
+span.panelTab:hover, span.icon:hover {
+   background-color:#789abc;
+   color:#efefef;
+}
+
+span.active {
+   background-color:#123456;
+   color:#ffffff; 
+}
+
+span.inactive {
+   background-color:#FFFFFF; 
+   color:#BFBFBF; 
+   /* cursor 設定無效 */
+}
+
+/* --------------------- */
+
+span.remindToClick, button.remindToClick {
+   background-color:#ff8800 !important;
+   color:#ffffff !important;
+}
+
+span.remindToClick:hover, button.remindToClick:hover {
+   background-color:#3379b5;
+   color:#ffffff;
+}
+
+/* specific buttons */
+span.butOrange { background-color:orange; color:#FFFFFF; 
+                 border-radius:4px; padding:4px 8px;
+                 cursor:pointer; }
+span.butGreen { background-color:green; color:#FFFFFF; 
+                border-radius:4px; padding:4px 8px;
+                cursor:pointer; }
+span.butOrange:hover, span.butGreen:hover { background-color:lightyellow; color:green; }
+                
+span.butLightBlue { background-color:#DEF3FD; color:#0F0F0F;
+                    border:1px solid teal; 
+                    border-radius:5px; padding:4px 8px;
+                    cursor:pointer; }
+span.butLightBlue:hover { background-color:teal; color:white; }
+
+span.butHidden { display:none }
+span.butAddRelation { background-color:blue; }
+span.butShadow { box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); }
+
+span.butActive { background-color:brown; }
+
+/* fontawesome buttons */
+
+span.button { 
+   background-color:#FFFFFF; color:#BFBFBF; 
+   border:1px solid #9f9f9f; border-radius:4px; 
+   padding:4px 8px;
+   cursor:pointer; 
+}
+
+span.button:hover {    
+   background-color:#BFBFBF;
+   color:#FFFFFF;
+   border:2px solid #1f1f1f;
+}
+
+span.topButton {
+   width:30px;
+   height:30px;
+   background-color:#FFFFFF;
+   color:#BFBFBF; 
+   border-radius:4px; 
+   padding:4px 5px;
+   margin-left:2px;
+   margin-right:3px;
+   cursor:pointer;
+   font-size:20px;
+   border:2px solid #c7c7c7;
+}
+
+span.topButton:hover { 
+   /*background-color:#3379b5;
+   color:#ff8800;*/
+   background-color:#3379b5;
+   color:#FFFFFF;
+   /*border:2px solid #0f172a;*/
+}
+
+.funcButton {    
+   width:30px;
+   height:30px;
+   background-color:#FFFFFF;
+   color:#bfbfbf;
+   border-radius:6px; 
+   padding:4px 5px;
+   margin-left:2px;
+   margin-right:3px;
+   cursor:pointer;
+   font-size:20px;
+   /* border:2px solid #c7c7c7; */
+}
+
+.funcButton:hover {
+   /*background-color:#3379b5;
+   color:#ff8800;*/
+   background-color:#3379b5;
+   color:#FFFFFF;
+   /*border:2px solid #0f172a;*/
+}
+
+.funcButtonTerm {
+   font-size:0.9em;
+}
+
+.highlightAtStart {
+   background-color: #ff8800;
+   color:#ffffff;
+}
+   
+/* float left */
+span.floatLeft { 
+   float:left; 
+   margin:0px 2px;
+}
+
+/* float right */
+span.floatRight { 
+   float:right; 
+   margin:0px 2px;
+   padding-right:4px;
+}
+
+span.link { text-decoration:underline; cursor:pointer; }
+span.link:hover { color:blue }
+
+/* tables */
+table.dataView { width:99%; margin:5px; border:1px solid #669966; 
+                 border-collapse:collapse; border-spacing:0px;
+                 font-size:85%; font-weight:600;
+               }
+table.dataView td { padding: 0.2em 0.4em; line-height: 180%; }
+table.dataView tr.selected { background:#DFDFFF; }
+table.dataView th { background-color:#CCCCFF; border:1px solid #669966; line-height:180%; }
+td.number { text-align:right;  border:1px solid #669966; }
+td.checkout { text-align:center; border:1px solid #669966; }
+td.highlight, td.filename, td.sourceType, td.source, td.targetType, 
+td.target, td.relType, td.relMeta, td.rowEdit  { text-align:left; word-break:break-all; border:1px solid #669966; }
+td.alignLeft { text-align:left; border:1px solid #669966; }
+td.alignCenter { text-align:center; border:1px solid #669966; }
+
+span.colorBlock { display:inline-block; vertical-align:middle; margin-left:5px; width:1.2em; height:1.2em; border:1px solid black; }
+
+table.statsView { width:99%; margin:5px;
+                  border-collapse:collapse; border-spacing:0px;
+                  font-size:85%; font-weight:600;
+                }
+table.statsView td { vertical-align:top; text-align:center; }
+
+table.statsTable { width:99%; background:teal; padding-bottom:1px; }
+table.statsTable tr:nth-child(odd)  { background:#CFCFCF; }
+table.statsTable tr:nth-child(even) { background:#FFFFFF; }
+table.statsTable th { line-height:180%; background-color:green; color:white;
+                      border:1px solid #669966; white-space:nowrap; 
+                    }
+table.statsTable td { line-height:180%; }
+
+div.graphOptionsBar, div.graphFilterBar, div.replaceNodeBar 
+   { line-height:100%; padding:2px 10px; margin:3px 0px 12px 0px;}
+
+div.fileSaveFileBox { position:absolute; width:360px; padding:12px; z-index:11;
+                      border:2px solid #7F8F9F; border-radius:5px; 
+                      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                      background-color:#EFEFEF; }
+div.rowEditBox { position:absolute; width:600px; padding:12px; z-index:11;
+                 border:2px solid #7F8F9F; border-radius:5px; 
+                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                 background-color:#EFEFEF; }
+input.editableCell { padding:4px; }
+tr.curEdited { border:2px solid red; }
+
+span.selectAll, span.selectNone, span.inverseSelection { cursor:pointer; }
+span.selectAll:hover, span.selectNone:hover, span.inverseSelection:hover { color:purple; text-decoration:underline; }
+
+span.sortableColumn { cursor:pointer; }
+span.sortableColumn:hover { text-decoration:underline; color:purple; }
+
+table.elementTagVal { width:98%; }
+table.elementTagVal td { word-break: break-all; }
+
+/* 從 overlay 的顏色選單，挑選節點顏色 */
+#divNodeShapeOptionsTable, #divNodeColorOptionsTable, #divNodeLabelColorOptionsTable {
+   background-color:#efefef; 
+   height:240px; 
+   overflow:scroll;
+}
+
+table.panelTable { width:100%; padding:5px; }
+table.panelTable tr:nth-child(odd)  { background:#dfefff; }
+table.panelTable tr.nth-child(even) { background:#ffefdf; }
+table.panelTable td { padding:4px; }
+
+/* for tabulator */
+/*
+.tabulator .tabulator-row {
+   background-color:red;
+}
+.tabulator-cell[tabulator-field="content"] {
+}
+*/
+
+/*
+.searchHighlight {
+   background-color: yellow;
+}
+*/
+
+span.queryTerm {
+   font-size:110%;
+   padding:2px;
+   background-color:red;
+   color:white;
+}
+
+
+/* ----------------  css for graph control panel  ----------------------- */
+
+#divControlPanelContainer, #divNodeContentContainer {    /* 包含 div.graphControlPanel 的容器 */
+   position:fixed; 
+   top:50px; 
+   left:0px;
+   background-color:#ffffff; 
+   z-index:50                  /* 在 svgOverlay (z-index 40) 上方 */
+}
+
+div.graphControlPanel {
+   width:460px; 
+   height:560px;
+   background-color:#f0f0f0;
+   border:1px solid #b7b7b7;
+   border-radius:8px;
+   overflow-y:auto;
+}
+
+div.nodeContentArea {
+   width:460px; 
+   height:560px;
+   background-color:#f0f0f0;
+   border:1px solid #b7b7b7;
+   border-radius:8px;
+   overflow-y:auto;
+   padding: 8px;
+}
+
+div.nodeDisplayList {         /* 套用到 #divNodeDisplayList 和 #divElementTagTypeValue */
+   width: 428px;
+   padding:5px;
+   border: 1px solid #9F9F9F;
+   border-radius:6px;
+   overflow-x:auto;
+   overflow-y:scroll;
+}
+
+#divNodeDisplayList {        /* fine-tune node selection table */ 
+   height:400px;
+   width:428px;
+}
+
+div.cNodeEventBundle {
+   padding:3px;
+   /*
+   border-radius:4px;
+   border: 1px solid #9F9F9F;
+   */
+   margin-top: 3px;
+   margin-bottom: 11px;
+}
+
+div.cxConnectedNode {
+   padding:3px;
+}
+
+div.cNodeEventTitle {
+   background-color:#708090;
+   border-radius:4px;
+   color:#efefef;
+   text-align:center;
+}
+
+div.eventDocFilename {
+   word-break:break-all;
+}
+
+div.filterTagBlock {         /* 包含 #filterElementTagBlock 與 #filterCommonTagBlock -- 後續可藉 div.filterTagBlock 調整高度 */
+   margin:4px; 
+   padding:3px; 
+   border-radius:4px; 
+   border:1px solid #9f9f9f;
+   background-color:#e7e7e7;
+}
+
+div.filterEventsSubBlock {
+   margin:4px; 
+   padding:3px; 
+   border-radius:4px; 
+   border:1px solid #9f9f9f;
+   background-color:#f7f7f7;
+}
+
+textarea.eventFilterByEventTerms {
+   width:98%; 
+   height:60px; 
+   resize:none;
+}
+
+/* overlay 中，feature filter 的 sub-filters */
+#spanSubFilterOptions span.subFilterOption { display: inline-block;
+                                             width:28px;
+                                             height:28px;
+                                             line-height:28px;
+                                             text-align:center;
+                                             border-radius:50%;
+                                             background-color:#bfbfbf;
+                                             color:#3f3f3f;
+                                             cursor:pointer;
+                                           }
+                                           
+#spanSubFilterOptions span.active { background-color:#123456;
+                                    color: #efefef;
+}
+
+#divElementTagTypeValue {
+   height:280px;             /* 顯示於 overlay，應該用較大的高度 */
+}
+
+#elementTagValTreeJs {
+   height:280px; 
+   width:100%; 
+   margin-top:0px; 
+   margin-left:-16px; 
+   word-break:break-all;
+   overflow:auto;
+}
+
+#divCommonNodesToDisplay { width:98%; }
+
+#nodeDisplayTable {
+   width:420px;
+}
+
+th.nodeDisplay { position: sticky;            /* 固定在某處 */
+                 top: 0;                      /* 某處的位置是在頂部 */
+                 z-index: 1;                  /* 確保 th 在其他內容上方 */
+                 background-color: #E7E7E7;
+                 cursor:pointer; 
+               }
+
+span.nodeLabel {
+   width: 400px;
+   word-break:break-all;
+}
+
+/* div.filterTagList tr:nth-child(5n) td { border-bottom: 2px dotted #5F5F5F; } */
+div.filterTagList { 
+   padding:5px;
+   border: 1px solid #9F9F9F;
+   border-radius:6px;
+   overflow-x:auto;
+   overflow-y:scroll;
+}
+
+div.filterTagList tr:nth-child(even) { background-color:#F7F7F7; }
+
+div.filterTagList div.eventElements { font-size:75%; 
+                                      max-height:80px;
+                                      overflow-y:auto;
+                                      border-radius: 4px;
+                                      border:1px solid #CFCFCF;
+                                      padding:5px;
+                                      word-break:break-all;          /* 2024-09-16 */
+                                    }
+
+span.nodeYearRange { font-size:80%; 
+                     white-space: nowrap;
+                   }
+                   
+#divComputeFilteredNodes {
+   position:absolute;
+   top:572px;           /* 動態決定 */
+   width:450px;
+   padding-left:4px; 
+   padding-right:12px; 
+   padding-buttom:6px;
+}
+
+#divRedrawButton {
+   position:absolute; 
+   top:615px; 
+   left:150px; 
+   background-color:#dfdfdf;
+}
+
+#butApplySettingsAndRedraw.disabled {
+   pointer-events: none;
+   opacity: 0.5;
+   cursor: not-allowed;
+}
+
+span.filterStrDisplay {
+   display:inline-block; 
+   max-width:300px; 
+   font-size:smaller; 
+   white-space:nowrap; 
+   overflow-x:auto; 
+   overflow-y:hidden; 
+   scrollbar-width: thin;
+   vertical-align:middle; 
+   border:1ps solid #cfcfcf;
+}
+
+/* node labeling list */
+
+#divNodeLabelList {
+   margin:3px 5px;
+   border: 1px solid #BFBFBF;
+   border-radius:6px;
+   background-color: #DFDFDF;
+   height:420px;          /* 動態調整 */
+   width:96%;
+   overflow-y: hidden;    /* 隱藏捲軸 */
+} 
+
+ul.sortableList {
+   list-style-type: none;
+   padding: 0px 2px 0px 4px;      /* 上，右，下，左 */
+   background-color: #DFDFDF;
+   width: 98%;
+   max-height: 800px;             /* 跟隨 #divNodeLabelList 動態調整 */
+   overflow-x: hidden;
+   overflow-y: auto;              /* 若 li 過多，需要捲軸 */
+}
+
+/*
+ul.sortableList::after {
+  content: '';
+  display: block;
+  height: 30px;             -- 額外加上空間，以讓最後一個 li 可見 
+}
+*/
+
+ul.sortableList li {
+   background-color: #F7F7F7;
+   border: 1px solid #CCC;
+   margin-bottom: 5px;
+   padding: 2px 4px;
+   transition: background-color 0.3s;
+}
+
+ul.sortableList li:first-child {
+   position: sticky;   /* 2025-08-02 */
+   top: 0;
+   background: white;  /* 建議加背景避免文字重疊 */
+   z-index: 1;
+}
+
+/*
+ul.sortableList li.dragging {
+   background-color: #E0E0E0;
+}
+*/
+
+ul.sortableList li div.sampleValues {
+   background-color: #F7F7F7;
+   border: 1px solid #BFBFBF;
+   border-radius:5px;
+   padding: 3px 4px;
+   font-size:85%; 
+   height:90px; 
+   overflow-y:auto
+}
+
+center.controlPanelLabel {
+   background-color:#9f9f9f;
+   color:#ffffff;
+   padding:2px;
+}
+
+span.tagName {
+   color:#123456;
+}
+
+/* tag unification sub-panel */
+
+div.tagUnificationList {
+   margin:5px;
+   border: 1px solid #9F9F9F;
+   border-radius:6px;
+   height:450px;
+   overflow-y:auto;
+}
+
+#tagUnificationMappingTable {}
+tr.tagUnifItem { font-size:75%; }
+tr.tagUnifItem:nth-child(odd) { background-color:#D7D7D7; }
+tr.tagUnifItem:nth-child(even) { background-color:#F7F7F7; }
+
+td.tagUnifItem { vertical-align:top;
+                 text-align:left;
+               }
+
+/* overlay */
+.xoverlay {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   /*background-color: rgba(0, 0, 0, 0.5);             半透明黑色背景 */
+   background-color: rgba(39,62,84,0.82);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 99;
+}
+
+div.svgOverlay {
+   position: fixed;
+   top: 50px;                    /* 上方的 50px */
+   left: 0;
+   width: 100%;
+   height: calc(100% - 50px);    /* 減掉上方 50px */
+   background-color: rgba(39,62,84,0.2);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 40;
+}
+
+div.overlay { 
+   display: none;
+   position: fixed;
+   padding-top: 0px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background-color: rgba(39,62,84,0.82);
+   z-index: 99;
+}
+
+div.overlay4Settings {
+   display: none;
+   position: fixed;
+   padding-top: 0px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   background-color: rgba(39,62,84,0.82);
+   z-index: 99;
+}
+
+div.overlay-content { position: relative;
+                      background-color: #fefefe;
+                      border-radius: 8px;
+                      margin: auto;
+                      top: 180px;
+                      padding: 25px;
+                      width: 75%;
+                      max-width: 2000px;
+                    }
+
+div.overlay-content-50percent { position: relative;
+                                background-color: #fefefe;
+                                border-radius: 8px;
+                                margin: auto;
+                                top: 100px;
+                                padding: 25px;
+                                width: 50%;
+                                max-width: 2000px;
+                                max-height: 750px;
+                                overflow-x: auto;
+                              }
+
+div.overlay-content-75percent { position: relative;
+                                background-color: #fefefe;
+                                border-radius: 8px;
+                                margin: auto;
+                                top: 180px;
+                                padding: 25px;
+                                width: 75%;
+                                max-width: 2000px;
+                              }
+
+/* 鎖住 input 或 select，讓使用者無法更動 */
+input.locked, select.locked {
+  pointer-events: none;
+  background-color: #dfdfdf;
+  color: #9f9f9f;
+}
+                              

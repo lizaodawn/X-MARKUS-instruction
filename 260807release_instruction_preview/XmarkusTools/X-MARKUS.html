@@ -1,0 +1,423 @@
+﻿<!doctype html>   <!-- note: code written with utf8, not ANSI, encoding -->
+<html lang="zh-Hant-TW">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <title>X-MARKUS</title>
+
+   <script src="components/js/jquery.min.js"></script>
+   <script src='components/js/jquery-ui.min.js'></script>      <!-- for draggable (table column resizable in the future...) -->
+
+   <link rel="stylesheet" href="components/css/fontawesome/css/all.min.css">
+   <link rel="stylesheet" href="components/css/jquery-ui.min.css">          <!-- for div/iframe resizable -->
+   
+   <script src="js/DocuSky.connectivity.js"></script>
+   
+   <style>
+   html,body { 
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      height: 100%;
+      margin: 0;      /* Space from this element (entire page) and others */
+      padding: 0;     /* space from content and border */
+      font-family: Inter, "sans-serif", "微軟正黑體","Helvetica", "Arial","LiHei Pro","黑體-繁";
+      overflow:hidden;
+   }
+
+   div.leftSidebar {
+      box-sizing: border-box;
+      position:fixed;
+      top: 0px;
+      width: 72px;
+      height:100%;
+      background-color: #e4e4e4;
+      color: #4f4f4f;
+      line-height:165%;
+      font-size:20px;
+      padding:6px 3px;
+   }
+   
+   div.xmarkusHeader {
+      margin-top:4px; 
+      margin-bottom:12px; 
+      font-size:12px; 
+      color:#000000; 
+      font-weight:900; 
+      white-space:nowrap;
+      cursor:default;
+   }
+   
+   .funcButtonSidebar { 
+      margin-top:18px;
+      margin-left:8px;
+      padding-left:9px;
+      padding-top:5px;
+      padding-bottom:2px;
+      width: 40px;
+      height:40px;
+      background-color:#7a7a7a; 
+      color:#ffffff; 
+      border-radius:50%;
+      cursor:pointer;
+   }
+   
+   .funcButtonSidebar:hover { 
+      background-color:#ffffff; 
+      color:#7a7a7a; 
+   }
+   
+   .funcButtonHighlighted {
+      background-color:#444444; 
+      color:#ffffff; 
+   }
+   </style>
+</head>
+<body>
+   <div id="divLeftSidebar" class="leftSidebar">
+      <div class="xmarkusHeader" title="2026-07-12: Ver 0.2.4">X-MARKUS</div>
+      
+      <input type="button" id="filePickUp" style="display:none;"/>    <!-- for DirHandle, Chrome/Edge only -->
+      
+      <div id="funcConverting" class="funcButtonSidebar" title="Convert Entmarkus/Comarkus/Immarkus exports to a database (DocuXml format)"><span style="font-size:11px; vertical-align:top">&#9654; </span><i class="fa-solid fa-database" style="font-size:18px; vertical-align:0px;"></i></div>
+      <div id="funcDocuMerger" class="funcButtonSidebar funcButtonHighlighted" title="merge multiple DocuXml databases" style="display:none">
+         <i class="fa-solid fa-file-circle-plus" style="font-size:22px; padding-left:6px; padding-top:4px;"></i>
+      </div>
+      <div id="funcXmarkusAnalyzer" class="funcButtonSidebar" title="Searching and filtering on a database"><i class="fas fa-search" style="font-size:22px; margin-left:4px; margin-top:8px;"></i></div>
+      <div id="funcEventConnectionGraph" class="funcButtonSidebar" title="EventConnectionGraph: visualising event relations on a database">
+         <i class="fa-solid fa-code-branch" style="margin-left:4px; margin-top:9px; font-size:22px; transform:rotate(90deg)"></i>
+      </div>
+      <div id="funcMUNDa" class="funcButtonSidebar" title="open the MUNDa spatial analysis platform in a new window">
+         <i class="fa-solid fa-map-location-dot" style="font-size:22px; margin-left:3px"></i>
+         </div>
+
+      <div style="padding-top:0.4em">
+         <hr width="65%" style="border:1px solid #aaaaaa;"/>
+      </div>
+
+      <div id="funcWelcome" class="funcButtonSidebar funcButtonHighlighted" title="welcome to Xmarkus platform" style="display:none">
+         <i class="fa-solid fa-home" style="font-size:22px; padding-left:4px;"></i>
+      </div>
+      <div id="funcIntroduction" class="funcButtonSidebar funcButtonHighlighted" title="introduction to Xmarkus platform">
+         <i class="fa-solid fa-info" style="font-size:22px; padding-left:12px;"></i>
+      </div>
+      <div id="funcHelp" class="funcButtonSidebar" title="open the help documents in a new window">
+         <i class="fa fa-question-circle" style="font-size:24px; margin-left:4px; margin-top:7px;"></i>
+      </div>
+      <div id="funcCodeDocumentation" class="funcButtonSidebar funcButtonHighlighted" title="code documentation" style="display:none">
+         <i class="fa-regular fa-file-code" style="font-size:22px; padding-left:6px; padding-top:4px;"></i>
+      </div>
+      
+   </div>
+   
+   <div id="divRightContent" style="display:none; position:absolute; top:0px; left:72px; right:4px;">  <!-- 用 right:0 或者 width:calc(100% - 72px) -->
+      <div id="iframeArea" style="width:100%;">   <!-- border:2px solid red; -->
+      </div>
+   </div>
+   
+<script>
+   // 設定頁面左方按鈕的網址
+   const EnableMessageViaParent = true;
+   
+   const IframeTools = [ "funcWelcome",           // 2025-10-23
+                         "funcIntroduction",
+                         "funcConverting",
+                         "funcDocuMerger",        // 2025-12-20
+                         "funcXmarkusAnalyzer",
+                         "funcEventConnectionGraph",
+                         "funcHelp",              // 2024-01-15: 或許 funcHelp 開在獨立新視窗會比較好？
+                         "funcCodeDocumentation",
+                         //"funcMUNDa"            // 2024-01-15: MUNDa 獨立於 X-MARKUS 平台，或許開在獨立新視窗應該比較好
+                       ];
+   const NewWindowTools = ["funcMUNDa"];          // 2024-01-15: MUNDa 獨立於 X-MARKUS 平台，或許開在獨立新視窗應該比較好
+
+   const StartToolId = "funcHelp";
+                       
+   // 建立一個在本來源共享的頻道
+   const ChannelName = "x-markus";
+   var XmarkusChannel = new BroadcastChannel(ChannelName);
+
+   var FuncToolsMap = { "funcWelcome": "XmarkusPlatform-Welcome.html",
+                        "funcIntroduction": "XmarkusPlatform-Introduction.html",
+                        "funcConverting": "XmarkusPlatform-Converting.html",
+                        "funcDocuMerger": "DocuMerger.html",
+                        //"funcComarkus2D": "Comarkus2D.html",
+                        //"funcImmarkus2D": "Immarkus2D.html",
+                        "funcXmarkusAnalyzer": "XmarkusAnalyzer.html",
+                        "funcEventConnectionGraph": "EventConnectionGraph.html",
+                        "funcMUNDa": "https://munda.xmarkus.org",           // "../MUNDa/index.html",
+                        "funcHelp": "XmarkusPlatform-Help-Responsive.html",
+                        //"funcHelp": "XmarkusPlatform-Help.html",
+                        "funcCodeDocumentation": "Xmarkus-CodeDocumentation.html",
+                      };
+
+   var CurActiveToolId = StartToolId;           // 2025-02-22: 為了 postMessage() 到當前的工具...
+                      
+   window.onload = (function(e) {
+      // 2026-06-05: 若是在本機測試，就將 MUNDa 網址改為本機網址（但若透過 192.168.*.* 連到 VM，則仍連向 munda.xmarkus.org）
+      if (window.location.protocol === 'file:' || isLocalhost()) {
+         FuncToolsMap['funcMUNDa'] = "../MUNDa/index.html";
+      }
+   
+      window.setTimeout(function() {            // 2025-01-08: 需過一陣子再設定 src，否則可能會停留在舊的 iframe
+         IframeTools.forEach(function(toolId) {
+            let url = (toolId == 'funcMUNDa') ? '' : FuncToolsMap[toolId];        // MUNDa 若放在 iframe，載入時不能是 hidden 狀態...
+            let display = 'display:none';                                         // 一開始都隱藏
+            let html = `<iframe id="xmarkusToolIframe_${toolId}" class="tool" style="${display}" frameBorder="0" src="${url}" width="100%"></iframe>`;
+            $("#iframeArea").append(html);
+         });
+         resizeViewport();
+         $("#" + StartToolId).click();
+      }, 100);
+   });
+   
+   $(window).resize(function() {
+      resizeViewport();                         // 2024-11-20
+   });
+   
+   
+   function isLocalhost() {
+      const hostname = window.location.hostname;
+      return (hostname === "localhost"                 // 本機名稱
+              || hostname === "127.0.0.1"              // IPv4 本機地址
+              // || hostname.startsWith("192.168.")    // 常見的私有 IP 區段 -- 開發環境目前視為遠端 IP
+              // || hostname === "[::1]"               // IPv6 本機地址
+              // ||hostname.startsWith("10.")          // 另一個私有 IP 區段
+              // || hostname.endsWith(".local")        // 某些本地開發環境可能使用 .local
+      );
+   }
+   
+   // ---------------------------------------------------------------
+   
+   $("div.funcButtonSidebar").click(function(evt) {
+      CurActiveToolId = $(this).attr("id");
+      
+      // 2026-01-20, 2026-03-31 加入 shiftKey (Mac 沒有 Ctrl key)
+      if ((evt.ctrlKey || evt.shiftKey) && CurActiveToolId == 'funcIntroduction') {
+         CurActiveToolId = 'funcCodeDocumentation';
+      }
+
+      let srcUrl = FuncToolsMap[CurActiveToolId];
+      
+      if (NewWindowTools.includes(CurActiveToolId)) {
+         // 開新視窗
+         window.open(srcUrl, "Xmarkus." + CurActiveToolId);
+      }
+      else {
+         $("iframe.tool").fadeOut(600);
+         $("#xmarkusToolIframe_" + CurActiveToolId).fadeIn(600);
+         
+         // 處理一開始並未載入，第一次點選才載入（例如若選擇將 MUNDa 放入 iframe）的狀況
+         let src = $("#xmarkusToolIframe_" + CurActiveToolId).attr("src");
+         if (src == '') $("#xmarkusToolIframe_" + CurActiveToolId).attr("src", FuncToolsMap[CurActiveToolId]);
+
+         // 左方 sidebar 設定高亮項目
+         $("div.funcButtonSidebar").removeClass("funcButtonHighlighted");
+         $(this).addClass("funcButtonHighlighted");
+      }
+   });
+
+   // -------------------------------
+   //      PostMessage handler
+   // -------------------------------
+   
+   window.addEventListener("message", messageHandler, false);
+   
+   function messageHandler(evt) {
+      if (!EnableMessageViaParent) return;      // 需打開此參數才能套用以下程式
+      //alert(evt.origin);                      // invoker URL hostname
+      //alert(evt.source);                      // invoker DOM object
+      
+      // 可透過此物件回傳訊息... （但瀏覽器可能會攔住，並加上一些提示訊息）
+      //let eventSource = evt.source;             
+      //eventSource.postMessage('Test message to caller', evt.origin);
+      
+      //const protocol = window.location.protocol;
+      //const host = window.location.hostname;
+      //const port = window.location.port;
+      //let check1 = protocol + "//" + host;
+      //let check2 = protocol + "//" + host + ":" + port;
+      //if (evt.origin == "null") return;         // skip (note: evt.origin is a string)
+      //else if (evt.origin != check1 && evt.origin != check2) {
+      //   alert("origin check failed: " + evt.origin + " has to be the same as URL host " + check2);
+      //   return;
+      //}
+
+      try {
+         //alert(JSON.stringify(evt.data));
+         if (!evt.data) return;                              // to prevent "SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data"
+         if (evt.data == "Ask DirHandle") {
+            button.click();
+            return;
+         }
+
+         let wrapper = evt.data;
+         invokeXmarkusTool(wrapper);
+         //let json = evt.data;                                // evt.data 似乎會直接被剖析成 json 物件...
+      } catch (e) {
+         alert(e.name + ": " + e.message);
+      }
+   }
+
+   function resizeViewport() {
+      let viewportWidth = window.innerWidth - 50 - 4;
+      let viewportHeight = window.innerHeight - 4;
+      //alert(viewportWidth + ':' + viewportHeight);
+
+      //$("#funcMUNDa").css({position:'absolute', top:(viewportHeight-75)+'px'});
+      let css = { width: viewportWidth+'px',
+                  height: viewportHeight+'px',
+                };
+      $("iframe.tool").css(css);
+      $("#divRightContent").show();
+   }
+   
+   // -----------------------------------------------------------------------------------
+   //                               Broadcast Channel
+   // -----------------------------------------------------------------------------------
+
+   // 收到其他分頁的訊息
+   XmarkusChannel.onmessage = (event) => {
+      let message = event.data || {};
+      getBroadcastMessage(message);
+   };
+   
+   function getBroadcastMessage(message) {
+      const { from, type, payload, timestamp } = message;
+      //const timestamp = new Date(Date.now()).toLocaleTimeString();
+      if (type === "linkback") {
+         console.log(`[${timestamp}] 來自 ${from} 廣播: ` + JSON.stringify(payload));
+         //alert(JSON.stringify(message));
+         invokeXmarkusTool(payload);
+      } 
+      else {
+         console.log(`Unknown type ${type} : ${payload}`);
+      } 
+   }
+
+   // 2025-10-10: 將 invokeXmarkusTool(payload) 獨立出來
+   function invokeXmarkusTool(payload) {
+      let {source, target, parameters, type, message} = payload;
+      //alert("I'm XmarkusPlatform:\n" + JSON.stringify(message));
+      
+      // 2026-03-31: 加上 sources 檢查？
+      let sources = ["Comarkus2D", "Immarkus2D", 
+                     "XmarkusAnalyzer", "EventConnectionGraph", "DocuMerger", "Converting", "MUMDa"];
+      if (!sources.includes(source)) {
+         alert("Messge from invalid source: " + source + "\n=>SKIPPED");
+         return;
+      }
+      
+      // 2025-12-20: 加上 DocuMerger, 2026-03-20: 加上 MUNDa（備用）
+      let targets = ["XmarkusAnalyzer", "EventConnectionGraph", "DocuMerger", "Converting", "MUMDa"];
+      if (targets.includes(target)) {
+         // 2025-01-16
+         $("iframe.tool").hide();
+         let iframeId = "xmarkusToolIframe_func" + target;
+         //alert('TARGET: ' + iframeId);
+         $("#func" + target).click();
+         document.getElementById(iframeId).contentWindow.postMessage(payload, '*');
+      }
+      else {
+         console.log(`invokeXmarkusTool: Unknown target ${target}`);
+      }
+   }
+
+   //// X-MARKUS.html 應該只需要接收訊息的相關處理函式，以下是發送訊息的函式
+   //function sendBroadcastMessage(str) {
+   //   // 調整訊息格式，改為 source, target, parameters, type, message 四項參數
+   //   // 注意，檔名查詢語法是 m.filename:f1|f2|...
+   //   let payload = { source: "EventRelLite",
+   //                   target: "XmarkusAnalyzer",
+   //                   parameters: [],
+   //                   type: "json",
+   //                   message: { purpose: "searchingDocuments",
+   //                              query: "m.filename:" + str,    // 注意，這裡假設有 m.filename spotlight
+   //                            },
+   //                 };
+   //   
+   //   const completeMessage = { from: `X-MARKUS.html`, 
+   //                             type: "linkback", 
+   //                             payload, 
+   //                             timestamp: Date.now() };
+   //   XmarkusChannel.postMessage(completeMessage);
+   //}
+
+   // -----------------------------------------------------------------------------------
+
+   // 2025-05-21: DirHandle provided by Brent
+   //             注意，File System Access API (for accessing local files)
+   //             僅能在目前頁面 session 中使用，無法跨頁或跨來源 iframe
+   const button = document.getElementById('filePickUp');
+   button.addEventListener('click', async (event) => {
+      try {
+         // Open file picker（必須在「安全環境」下，才能取得 file picker）
+         const tmpHandle= await window.showDirectoryPicker();
+         window.dirHandleMap = window.dirHandleMap || {};           // 確保不會重複宣告或覆蓋
+         dirHandleMap[tmpHandle.name] = tmpHandle;                  // tmpHandle.name 為資料夾名稱
+         // console.log(window.dirHandle)
+         document.getElementById("xmarkusToolIframe_funcConverting")
+                 .contentWindow.document.getElementById("iframe_Immarkus2D")
+                 .contentWindow
+                 .postMessage("Root Has Got Project DirHandle", '*');
+      } catch (err) {
+         // e.g., "window.showDirectoryPicker is not a function..."
+         console.error(err);
+         document.getElementById("xmarkusToolIframe_funcConverting")
+                 .contentWindow.document.getElementById("iframe_Immarkus2D")
+                 .contentWindow
+                 .postMessage("Fail to Get Project DirHandle", '*');
+      }
+    });
+    
+    async function getFileURLFromHandle(path) {
+       const root = path.split('/')[0];
+       const rootDirHandle = window.dirHandleMap[root];
+       if (!rootDirHandle) {
+          console.error(`Root directory handle not found for path: ${path}`);
+          return null;
+       }
+       const url = await getObjectUrlFromPath(rootDirHandle, path, rootDirHandle.name);
+       return url;
+    }
+
+   async function getObjectUrlFromPath(rootDirHandle, fullPath, rootFolderName) {
+      try {
+         // 移除 root 資料夾名稱前綴
+         const relativePath = fullPath.startsWith(rootFolderName + '/')
+           ? fullPath.slice(rootFolderName.length + 1)
+           : fullPath;
+         
+         const parts = relativePath.split('/');
+         let currentDir = rootDirHandle;
+         
+         // 一層層找資料夾
+         for (let i = 0; i < parts.length - 1; i++) {
+           try {
+             currentDir = await currentDir.getDirectoryHandle(parts[i], { create: false });
+           } catch (err) {
+             console.warn(`找不到資料夾：${parts[i]}`);
+             return null;
+           }
+         }
+         
+         // 嘗試取得檔案 handle
+         let fileHandle;
+         try {
+           fileHandle = await currentDir.getFileHandle(parts[parts.length - 1], { create: false });
+         } catch (err) {
+           console.warn(`找不到檔案：${parts[parts.length - 1]}`);
+           return null;
+         }
+         
+         // 建立 object URL
+         const file = await fileHandle.getFile();
+         const objectURL = URL.createObjectURL(file);
+         return objectURL;
+      } catch (err) {
+         console.error('讀取檔案時發生錯誤：', err);
+         return null;
+      }
+   }
+   
+</script>
+</html>

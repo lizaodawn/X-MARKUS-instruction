@@ -1,0 +1,30 @@
+{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "type": "Annotation",
+  "id": "b7b73f7f-49c9-4a31-8d15-9c62ad9a34c9",
+  "body": {
+    "source": "historical printed text",
+    "properties": {
+      "Source_title_ch": "惟揚志",
+      "Source_title_py": "Weiyang zhi",
+      "Source_title_en": "Gazetteer of Weiyang (Yangzhou)",
+      "Source_author": [
+        "朱懹幹",
+        "盛儀"
+      ],
+      "CBDB": "131359",
+      "Publication_place": "揚州",
+      "TGAZ_cr": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33309",
+      "Publication_time": "1542",
+      "Reprint": "No",
+      "Place_covered": "揚州",
+      "TGAZ_cv": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33309",
+      "Genre": "gazetteer",
+      "Type": "print",
+      "Format": "woodblock print",
+      "Data_source": "中國方志庫二集",
+      "Language": "Chinese"
+    },
+    "purpose": "describing"
+  }
+}

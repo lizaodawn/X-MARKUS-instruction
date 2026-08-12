@@ -1,0 +1,406 @@
+<!doctype html>   <!-- note: code written with utf8 encoding -->
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <script src="components/js/jquery.min.js"></script>
+   <script src="components/js/jquery-ui.min.js"></script>
+   <script src="components/js/FileSaver.min.js"></script>      <!-- 輸出儲存 -->
+
+   <script src="js/DocuSky.connectivity.js"></script>        
+   <script src="components/js/docusky.ui.manageDbListSimpleUI.js"></script>
+   
+   <link href="components/css/jquery-ui.min.css" rel="stylesheet"></link>
+   <link rel="stylesheet" href="components/css/fontawesome/css/all.min.css">
+   <style type="text/css">
+      /* Xmarkus colors
+      For menu bars:
+         - #757575 (grey)
+         - #0f172a (darker-grey-blue)
+      For function tabs:
+         - #3379b5 (light-blue)
+         - #7890ab (even-lighter-blue)
+      For annotation/data model
+         - #ff8800 (light-orange)
+         - #a7bc85 (light-green)
+      */
+      body { margin: 0; 
+             line-height:160%; 
+             font-family: Inter, "sans-serif", "微軟正黑體","Helvetica", "Arial","LiHei Pro","黑體-繁";
+           }
+     .disableDocuSkyConnectivity { display:none; }        /* for DocuSky connectivity UI */
+
+      div.headerBar { box-sizing: border-box;             /* 含 padding 的總寬高 */
+                      background-color:#efefef; 
+                      color:#757575; 
+                      padding-top:12px;
+                      height:50px; 
+                      width:100%;
+                    }
+
+      div.headerBarToolLabel { box-sizing: border-box;    /* 包含 Immarkus2D 字樣，灰底白字 */
+                      background-color:#7f7f7f;
+                      color:white; 
+                      padding-top:12px;
+                      height:50px; 
+                      width:100%;
+                    }
+
+      table.headerBar { color:white;
+                        /*color:#e7e7e7;*/  
+                      }
+
+      .funcButton { 
+         background-color:#dfdfdf; 
+         color:#2f2f2f; 
+         padding:6px;
+         border-radius:6px;
+      }
+      .funcButton:hover { background-color:#7890ab; color:white; }
+      
+      span.button { 
+         background-color:#dfdfdf; 
+         color:#2f2f2f; 
+         padding:6px;
+         border-radius:6px;
+         border:1px solid #5f5f5d;
+      }
+      span.button:hover { background-color:#7890ab; color:white; }
+
+      div.selectExportsBox {
+         background-color:#dfdfdf;
+         border-radius:8px;
+         margin:32px 24px;
+         padding:12px;
+         height:140px;
+         width: 84%;
+      }
+
+      div.selectExportsLabel {  
+         width:96%;      
+         font-size:1.05em; 
+         font-weight:bold;
+         text-align:center;
+         padding:8px;
+      }
+      
+      button.butSelectFiles {
+         width:80%;
+         background-color:#bfbfbf;
+         border: none;
+         padding:10px;
+         border-radius:8px;
+         font-size:1.05em;
+         line-height:150%;
+         cursor:pointer;
+      }
+      
+      button.butNextStep {
+         width:320px;
+         background-color:#c7c7c7;       /* 其實應該也是 #bfbfbf，但因背景白底，相對需要淡一些 */
+         border: none;
+         padding:10px;
+         border-radius:8px;
+         font-size:1.05em;
+         line-height:150%;
+         cursor:pointer;
+      }
+      
+      button.butSelectFiles:hover, button.butNextStep:hover {
+         background-color:#7890ab; 
+         color:white;
+      }
+      
+      #importInfo {
+         width:94%; 
+         /*background-color:#bbddff; */
+         margin-top:15px; 
+         padding:12px; 
+         border-radius:5px; 
+         margin-top:6px;
+         height:160px;
+         overflow:auto;
+      }
+         
+      li.imageAccessPass { font-size:0.85em; color:green; }
+      li.imageAccessFail { font-size:0.85em; color:red; }
+      
+      /* ---------------------------------------------------------------- */      
+      
+      table.selectImmarkusJsons { padding:5px; border:3px solid #0f172a; background-color:#e7e7e7; border-radius:5px; }
+      
+      div.contentArea { padding: 12px; }
+      span.butBuildDb { padding:5px; background-color:#0f172a; color:#efefef; 
+                        border-radius:3px; cursor:pointer; }
+      span.butBuildDb:hover { background-color:teal; }
+      
+      div.sampleFilesArea { padding:6px; border:3px solid rgb(180,123,47); background-color:rgb(205,174,94); border-radius:4px; }
+      a:visited, a:link { color:rgb(122,23,30); }
+      a.topAnchor:visited, a.topAnchor:link { color:rgb(225,225,225); cursor:pointer; }
+      span.topAnchorSeparator { color:rgb(225,225,225); }
+      textarea { resize:none; 
+                 background-color:#efefef; 
+                 border:2px solid #3f3f3f; 
+                 font-family: Inter, "Microsoft JhengHei";
+               }
+      
+      .linear-gradient-headerBar {
+         background-color: #757575;
+         background-image: -webkit-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+         background-image: -moz-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+         background-image: -o-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+         background-image: -ms-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+         background-image: linear-gradient(to left, #757575, rgba(15,23,42,0.7));
+      }
+      
+      span.asLink { text-decoration:underline; color:blue; cursor:pointer; }
+      span.asLink:hover { color:purple; }
+      
+      span.linkToApp {
+         text-decoration: underline;
+         color: purple;
+      }
+
+      span.linkToApp:hover {
+         color:blue;
+         cursor:pointer;
+      }
+
+      div.extraStep {
+         padding: 6px 10px;
+         background-color:#a7bc85;
+         color:#0f0f0f;
+         border-radius:4px;
+      }
+      
+      div.overlay {
+         position:fixed; 
+         top:0; 
+         left:0;
+         z-index:99;
+         background: rgba(255, 255, 255, 0.95);    /* 95% 不透明 */
+      }
+
+      div.sub-window { position:absolute; 
+                       background-color:white; 
+                       border:2px solid #7890ab; 
+                       border-radius:16px; 
+                     }
+
+      tr.sub-window-title-bar-blue { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
+                                     color:white; cursor:grab; }
+      tr.sub-window-title-bar-brown { background: linear-gradient(90deg, rgba(80,16,16,1) 0%, rgba(121,9,29,1) 35%, rgba(218,218,218,1) 100%);
+                                      color:white; cursor:grab; }
+      tr.sub-window-title-bar-green { background: linear-gradient(90deg, rgba(16,80,16,1) 0%, rgba(9,121,30,1) 35%, rgba(218,218,218,1) 100%);
+                                      color:white; cursor:grab; }
+      tr.sub-window-title-bar-purple { background: linear-gradient(90deg, rgba(80,16,80,1) 0%, rgba(80,12,120,1) 35%, rgba(218,218,218,1) 100%);
+                                       color:white; cursor:grab; }
+      
+      td.sub-window-title-bar-xmarkus { background:#7890ab; color:white; cursor:grab; }
+      
+      div.sub-window-div {
+         background-color:#ffffff; 
+         border:1px solid #ffffff; 
+         border-bottom-left-radius:16px; 
+         border-bottom-right-radius:16px;
+         overflow-y:auto;          /* 2025-06-06 */
+      }
+
+     .disabled {
+         pointer-events: none;
+         opacity: 0.5;             /* 增加透明度，提示此元素已被 disabled */
+      }
+   </style>
+</head>
+<body>
+   <input type="button" id="filePickUp" style="display:none;"/>
+   
+   <div id="divHeaderBar" class="headerBarToolLabel" style="display:none">
+      <table class="headerBar" width="100%">
+      <tr>
+         <td align="left">
+            <span id="spanToolLabel" style="padding-left:16px; font-weight:bold; font-size:24px; font-weight:bold;">Immarkus2D</span>
+         </td>
+      </tr>
+      </table>
+   </div>
+   
+   <div class="contentArea">
+      <!--
+      <div style="position:absolute; top:5px">
+         <button>expert mode</button>
+      </div>
+      -->
+      <div>
+         <table border="0" width="100%" cellpadding="0" cellspacing="0">
+         <tr>
+            <td>&#160;</td>
+            <td colspan="2">
+               <div class="selectExportsBox">
+                  <div class="selectExportsLabel">Work with Image Annotations</div>
+                  <center>
+                     <!--
+                     <div class="useFileProtocol" style="display:none; font-size:0.9em; line-height:140%; margin-top:5px; margin-bottom:8px;">
+                        * Note: Please copy the IMMARKUS project folders to <br/>
+                        <i>&lt;X-MARKUS&gt;/XmarkusData/ImmarkusData</i> first
+                     </div>
+                     -->
+                     <button id="butSelectImmarkusFolder" class="button butSelectFiles" key="Immarkus">
+                        Select an IMMARKUS project folder<br/>
+                        <span id="xmarkusFolderNoteUnderSpecificFolder" style="font-size:12px">under &lt;X-MARKUS&gt;/XmarkusData/ImmarkusData</span>
+                        <span id="xmarkusFolderNoteSelectFolderTwice" style="display:none; font-size:12px">Select the same folder <b>twice</b></span>
+                     </button>
+
+                     <!-- 以下還是需要... -->
+                     <div class="useWebProtocol" style="display:none; margin-top:5px;">
+                        Please specify the URL path: 
+                        <button class="useRelativePath" style="margin-left:8px">use relative path</button>
+                        <button class="useLocalWebPath" style="display:none; margin-left:8px">use local Web path</button>
+                        <br/>
+                        <input type="text" id="imageUrlPrefix" size="42" value="https://localhost:8088/XmarkusData/ImmarkusData/" style="font-size:12px" autocomplete="off"></input>
+                        <span style="font-size:12px">&lt;project_folder&gt;</span>
+                     </div>
+                     <!--
+                     <div>
+                        <input id="convertEachPiece2OneDoc" type="checkbox" checked="checked" autocomplete="off" style="font-size:0.9em">
+                           <span id="spanConvertEachPiece2OneDoc">convert each image snippet to a single file</span>
+                        </input>
+                     </div>
+                     -->
+                  </center>
+               </div>
+            </td>
+         </tr>
+
+         <tr id="trImportedInfo" style="display:none">
+            <td>&#160;</td>
+            <td colspan="2">
+               <div id="importInfo">
+                  <div>
+                     <b>Converted:</b><br/>
+                     <span id="spanImportedCorpusFiles">-</span> images
+                  </div>
+                  <div id="imageCheckBlock" style="display:none">
+                     <span id="imageCheckInfoHeading" style="font-weight:bold">-</span>:
+                     <ul id="imageCheckItems" style="margin-top:0px; padding-left:16px;">
+                     </ul>
+                  </div>
+                  <div id="imageCheckSummary"> <!-- Images 可能包含 iiif images -->
+                     Summary: <span id="imageSuccessCount">0</span> successes,
+                              <span id="imageFailCount">0</span> fails
+                  </div>
+               </div>
+            </td>
+         </tr>
+         
+         <tr>
+            <td>&#160;</td>
+         </tr>
+         
+         <!-- after imports: ChildIframe 用於 X-MARKUS 正常運作狀態，Independent 用於獨立呼叫執行 Immarkus2D.html -->
+         <tr id="nextStepInstructionsChildIframe" style="display:none">
+            <td></td>
+            <!--
+            <td colspan="2">
+               <div style="padding-left:24px"> 
+                  - Add more exports? &#160;<button class="continueBuilding">Add folder</button>
+               </div>
+            </td>
+            -->
+            <td colspan="2" align="center">
+               <button id="butNextAddProjectFolder" class="button butNextStep">
+                  Add Project Folder
+               </button>
+               <p/>
+               <button id="butNextGoSearch" class="button butNextStep">
+                  Go to Search and Filter
+               </button>
+               <p/>
+               <button id="butNextDownload" class="button butNextStep">
+                  Download
+               </button>
+               <p/>
+               <button id="butNextMergeDatabases" class="button butNextStep">
+                  Merge Databases
+               </button>
+            </td>
+         </tr>
+         
+         <tr id="nextStepInstructionsIndependent" style="display:none">
+            <td>&#160;</td>
+            <td colspan="2">
+               <div>
+                  <b>&#8680;</b>&#160;
+                  Next you may:
+                  <div style="padding-left:24px"> 
+                     - Add more Immarkus exports: 
+                       <button class="continueBuilding">Add folder</button>
+                       <br/>
+                     - Convert and download the database (DocuXml format) for analysis: 
+                       <button id="genDocuXmlAndDownload">Convert and Download</button>
+                  </div>
+               </div>
+            </td>
+         </tr>
+         
+         </table>
+      </div>
+
+      <!-- 資料轉換（隱藏） -->
+      <table width="100%" class="selectImmarkusJsons" style="display:none">
+      <tr>
+         <td valign="top" style="padding:5px">
+            Import IMMARKUS data:
+            <ol style="line-height:180%;">
+               <li>Specify a corpus name: 
+                   <input type="text" id="inCorpusTitle" size="45" value="IMMARKUS_CORPUS" autocomplete="off"></input>
+               </li>
+               <li style="margin-top:10px">import an IMMARKUS directory: 
+                  <input id="selectInDir" type="file" webkitdirectory="1" autocomplete="off"/>
+               </li>
+            </ol>
+         </td>
+         <td valign="top" width="45%">
+            <div id="divLoadedFiles" style="margin-left:10px">
+               Imported files:
+               <textarea id="loadedFilenameList" style="width:99%; height:220px;" readonly="readonly" autocomplete="off"></textarea>
+            </div>
+         </td>
+         <td valign="top" width="25%">
+            <div id="divLoadedCorpus" style="margin:0px 10px">
+               Statistics:
+               <textarea id="corpusesImported" style="width:99%; height:220px;" readonly="readonly" autocomplete="off"></textarea>
+            </div>
+         </td>
+      </tr>
+      <tr>
+         <td colspan="3">
+            Export filename: 
+            <input type="text" id="outFilename" value="Immarkus-DocuXml.xml" size="45" autocomplete="off"></input>
+         </td>
+      </tr>
+      </table>
+   </div>
+
+   <!-- for showing progress -->
+   <div id="divLoadingContainer" style="position:absolute; border:3px grey solid; border-radius:6px; background-color:white; font-size:medium; z-index:100; display:none;">
+      <div id="divLoadingSig">
+         <img src="images/loading-circle.gif" width="200" border="0"/>
+      </div>
+      <div id="divWorkingProgress" style="position:absolute; top:85px; width:100%; text-align:center;"></div>
+   </div>
+   </body>
+
+   <!-- overlay to show a light box or loading message -->
+   <div id="overlay" class="overlay" style="display:none; z-index:99;">
+   </div>
+
+   <div id="subwinArea" style="position:absolute; top:0; left:0; z-index:100">   <!-- overlay 的 z-index 為 99 -->
+      <!-- 動態加入 <iframe> 或 <div> -->
+   </div>
+
+</body>
+
+<!-- 最好放在 html body 之後 -->
+<script src="js/Immarkus2D-main.js"></script>
+
+</html>

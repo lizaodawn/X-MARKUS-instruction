@@ -1,0 +1,378 @@
+﻿<!doctype html>   <!-- note: code written with utf8, not ANSI, encoding -->
+<html lang="zh-Hant-TW">            <!-- 繁體中文 -->
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <title>Xmarkus Analyzer</title>
+
+   <script src="components/js/jquery.min.js"></script>
+   <script src='components/js/jquery-ui.min.js'></script>       <!-- for draggable (table column resizable in the future...) -->
+   <script src="components/js/FileSaver.min.js"></script>       <!-- 儲存檔案 -->
+   <script src="components/js/pagination.js"></script> 
+   <script src="components/js/xlsx.full.min.js"></script> 
+   <script src="components/js/treejs-customized.js"></script>   <!-- https://github.com/daweilv/treejs -->
+   <!--<script src="components/js/jquery.mark.js"></script>-->         <!-- https://markjs.io/ -->
+   
+   <link rel="stylesheet" href="components/css/fontawesome/css/all.min.css">
+   <link rel="stylesheet" href="components/css/jquery-ui.min.css">          <!-- for div/iframe resizable -->
+   <link rel="stylesheet" href="css/XmarkusAnalyzer.css">
+   
+   <script src="js/DocuSky.connectivity.js"></script>                       <!-- 2024-09-01: 取得 DocuSkyHost 位置 -->
+	<script src="components/js/docusky.ui.getDbCorpusDocumentsSimpleUI.js"></script>   <!-- 可透過 widget 取得 DocuXml -->
+   <style>
+   </style>
+</head>
+<body>
+   <div id="divControl" class="headerBar x-linear-gradient-headerBar">
+      <table class="headerBar" width="100%" height="50" cellpadding="0" cellspacing="0">   <!-- 這個部分，各項工具需一致 -->
+      <tr><td align="left" width="300">
+             <span id="toolTitle" style="padding-left:16px; font-weight:bold; font-size:24px;">
+             Searching and Filtering
+             </span>
+          </td>
+          <td align="left">
+            <span id="butDocuSkyWidget" class="funcButton experimentFeatures" title="DocuSky widget" style="display:none">
+               <i class="fa-solid fa-d" style="padding-top:1px; padding-left:2px; padding-right:5px;"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">DocuSky</span>
+            </span>
+
+            <span id="butLoadDocuXmlFile" class="funcButton highlightAtStart" style="display:none;" title="從本地端匯入 DocuXml 檔">
+               <i class="fa-solid fa-file-import" style="padding-left:2px; padding-right:2px"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">import</span>
+            </span>
+            <label for="loadDocuXmlFile">   <!-- 注意：點選 butLoadDocuXmlFile 後由 js 觸發 loadDocuXmlFile，因此不能放在 butLoadDocuXmlFile 內 -->
+               <input id="loadDocuXmlFile" type="file" style="display:none" autocomplete="off" accept=".xml"></input>
+            <label>
+
+            <!--<span id="butInvokeEventRelLiteAndPostMessage" class="funcButton" title="pass filtered result to visualising event relations">-->
+            <span id="butInvokeEventConnectionGraphAndPostMessage" class="funcButton" title="pass filtered result to visualising event relations">
+               <i class="fa-solid fa-code-branch" style="padding-top:1px; padding-left:2px; padding-right:5px; transform:rotate(90deg);"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">viz relations</span>
+            </span>
+
+            <!-- <span style="margin-left:4px;"></span> -->
+            <span id="butExportDocSpotlightTable" class="funcButton experimentFeatures" style="display:none" title="Export document spotlight (a big table) to a .xslx file">
+               <span style="font-size:12px; vertical-align:top;">&#9654;</span><i class="fa-solid fa-table"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">export xlsx</span>
+            </span>
+
+            <span id="butSaveFile" class="funcButton" title="Export filtered result to a DocuXml for further anallysis">
+               <i class="fa-solid fa-file-export" style="padding-left:2px; padding-right:2px"></i>
+               <span class="funcButtonTerm" style="padding-right:5px;">export xml</span>
+               <!-- &#8594;xml -->
+            </span>
+          </td>
+          <!-- experiment features -->
+          <td align="right" style="padding-right:16px">
+            <span id="butLoadSpotlightCuesUnificationMapFile" class="funcButton experimentFeatures" style="display:none; margin-left:4px; padding-left:4px; padding-right:4px;" title="import tag-cues-unification mapping file (*.txt) before loading DocuXml; m.ADY: 1000..1099 =&gt; 10xx, t.Udef_Evt_EVENT: 建|修|建修|修建 =&gt; construct">  <!-- 新載入會覆蓋舊資料 -->
+               CuesMap
+            </span>
+            <label for="loadSpotlightCuesUnificationMapFile">   <!-- 注意：點選後由 js 觸發 <input> loadTagUnifMapFile，因此不能放在 butLoadTagUnifMapFile 內 -->
+               <input id="loadSpotlightCuesUnificationMapFile" type="file" style="display:none" autocomplete="off" accept=".txt"></input>
+            <label>
+
+            <span class="experimentFeatures" style="display:none">
+               &#160;|&#160;
+            </span>
+            
+            <span id="butAddRemoveXaTagsToFilteredDocs" class="funcButton experimentFeatures" title="add/remove XaTags" style="display:none"><i class="fa-solid fa-tags" style="padding-left:3px; padding-right:3px"></i></span>
+
+            <span class="experimentFeatures" style="display:none">
+               &#160;|&#160;
+            </span>
+            
+            <!--<span id="butTEST" class="funcButton" style="xdisplay:none" title="TEST">TEST</span>-->
+            <span id="butSpotlightSpark" class="funcButton experimentFeatures" style="display:none" title="SpotlightSpark"><i class="fa-solid fa-snowflake" style="padding-left:2px; padding-right:4px; transform:rotate(15deg);""></i></span>
+            <span id="butTwoDimTable" class="funcButton experimentFeatures" style="display:none" title="TwoDimTable">2-dim Table</span>
+            <span id="butInvokeMundaAndPostMessage" class="funcButton experimentFeatures" title="invoke MUNDa" style="display:none"><i class="fa-solid fa-map-location-dot" style="padding-left:2px; padding-right:2px"></i></span>           <!-- class="fas fa-globe" -->
+
+            <!--
+            <span class="experimentFeatures" style="display:none">
+               &#160;|&#160;
+            </span>
+            -->
+            
+            <!-- <span id="butExportPostClassification" class="funcButton experimentFeatures" style="display:none" title="Export post-search classification result to a .xslx file">&#8594;xslx</span> -->
+            &#160;
+          </td>
+      </tr>
+      </table>
+
+   </div>
+
+   <div id="divLeftSidebar" class="leftSidebar" style="display:none">
+      <!--<div class="funcButton"><i class="fa fa-refresh"></i></div>-->
+      <!--<div class="funcButton"><i class="fa-solid fa-gear"></i></div>-->
+      <!--<div class="funcButton"><i class="fa-solid fa-table"></i></div>-->
+      <div id="funcButLoadDocuXmlFile" class="funcButtonSidebar"><i class="fa-solid fa-file-import"></i></div>
+      <div id="funcButInvokeEventConnectionGraphAndPostMessage" class="funcButtonSidebar experimentFeatures"><i class="fas fa-project-diagram"></i></div>
+      <div id="funcButInvokeMundaAndPostMessage" class="funcButtonSidebar experimentFeatures"><i class="fas fa-globe"></i></div>
+      <div id="funcButAddRemoveXaTagsToFilteredDocs" class="funcButtonSidebar experimentFeatures"><i class="fa-solid fa-tags"></i></div>
+      <div id="funcButExportDocSpotlightTable" class="funcButtonSidebar x-experimentFeatures" style="padding-left:5px"><span style="font-size:50%">&#9654;</span><i class="fa-solid fa-table" style="font-size:80%; margin-left:2px;"></i></div>
+      <div id="funcButExportPostClassification" class="funcButtonSidebar x-experimentFeatures" style="padding-left:5px"><span style="font-size:50%">&#9654;</span><span style="font-size:60%">xlsx</span></div>
+      <div id="funcButSaveFile" class="funcButtonSidebar"><i class="fa-solid fa-file-export"></i></div>
+   </div>
+   
+   <div id="divRightContent">
+      <!--
+      <div id="startInstructions" style="position:absolute; top:200px; width:100%">
+         <center><h2 style="color:#7890ab">Click the import button (on the top bar) to select a database for analysis</h2></center>
+      </div>
+      -->
+   
+      <div id="divMainAreaTopBarDocked" style="display:none">
+         <span class="floatLeft">
+            Database: <span id="dbName" class="dbFilename"></span>
+            <span class="dbTotalSize" style="display:none">
+               Total Size: <span id="totalDocuments" class="dbTotalDocuments">0</span>   <!-- 整份 DocuXml，包含多文獻集的大小 -->
+            </span>
+         </span>
+         <span id="spanQueryFilter" style="margin-left:40px">
+            Search: 
+               <!-- 尚待測試
+               <select id="searchRange" name="searchRange">
+                  <option value="all" selected="selected">all</option>
+                  <option value="main">main</option>
+               </select>
+               -->
+               <input id="queryFilter" type="text" size="48" title="'A|B' for 'A or B', e.g., '木|石'; 'A B' for 'A and B', e.g., '木 石'" autocomplete="off" 
+                      style="margin-left:3px; padding:3px 24px 3px 3px; border-radius:5px; border:1px solid #9f9f9f;"></input>
+            <span id="editQuery" title="edit query" style="margin-left:-24px; margin-right:6px; background-color:#ffffff; font-size:smaller;">
+               <i class="fa-solid fa-pen" style="color:#7f8f9f;"></i>
+            </span>
+            <button id="butQueryGo">GO</button>
+            <button id="butQueryReset">Reset</button>
+            
+            <button id="butQueryBack" style="display:none">undo</button> <!-- 若隱藏 History block 且 pagination 不會加入 History，則可應用 Back 回到 Hitory 前一項 -->
+         </span>
+         <span id="historyControl" class="floatRight" style="margin-right:20px">
+            <span>History: <span id="historyCount">---</span></span>
+            <span id="butHistoryBackwardItem" class="button"><i class="fa-solid fa-arrow-left"></i></span>
+            <span id="butHistoryForwardItem" class="button"><i class="fa-solid fa-arrow-right"></i></span>
+            <span>&#160;</span>
+         </span>
+         <!-- 將當前搜尋結果累加到 bag 以供匯出 -->
+         <span id="documentBag" class="floatRight" style="margin-right:20px" title="bag to store a collection of documents">
+            <span style="margin-left:6px"><i class="fa-solid fa-bag-shopping" style="color:#7f8f9f;"></i></span>
+            <sub id="documentBagSize" style="color:#7f8f9f;">0</sub>
+            <span id="butAddSearchResult2Bag" class="button" title="add current search result to bag">+</span>
+            <span id="butRemoveSearchResultFromBag" class="button" title="remove current search result from bag">-</span>
+            <span id="butClearBag" class="button" title="clear bag">C</span>
+            <span id="butFetchDocsFromBag" class="button" title="fetch all douments in the bag">fetch</span>
+            <span>&#160;</span>
+         </span>
+      </div>
+      
+      <div id="divMainArea" class="mainArea" style="display:none;">
+         <table class="spotlightContentTable" width="100%" cellpadding="1" cellspacing="0">  <!-- 2024-11-23 -->
+            <tr>
+            <!-- 左側後分類區塊 -->
+            <td valign="top" width="340">
+               <div id="divSpotlightSelectDocked">
+                  <div style="overflow:clip;">
+                     <span id="spanCorpusSelect">
+                        Corpus: <select id="corpusSelect"></select>
+                     </span>
+                     <span id="spanTagTextFilter" class="experimentFeatures" style="display:none">      <!-- 2025-05-31 -->
+                        <span id="butTagTextFilter" class="button" style="font-size:smaller">TagTextFilter</span>    <!-- open a subwindow for speciying conditions -->
+                     </span>
+                  </div>
+                  <div id="spotlightFilter" style="overflow:clip;">
+                     Filter: 
+                     <select id="spotlightCatSelect" style="width:120px"></select>
+                     <select id="spotlightSelect" style="width:160px"></select>
+                  </div>
+               </div>
+               
+               <!-- 後分類結果列表 -->
+               <div id="spotlightResultDocked">
+                  <div id="spotlightCuesList">
+                     <!-- simple list for metadata -->
+                  </div>
+                  <div id="spotlightCuesTreeJs" style="display:none; margin-top:-16px; margin-left:-8px; word-break:break-all;">
+                     <!-- treejs for annotation: 必須加上 margin-top:-16px 將位置往上移？ 也另加上 word-break -->        
+                  </div>
+               </div>
+               
+               <div id="cuesActionBarDocked">
+                  <span id="butWordCloudLite" class="button docuskyVizTool" title="Visualization of top items"><i class='fa fa-cloud'></i></span>
+                  <button id="butYearStatsLite" class="docuskyVizTool" style="display:none">Time</button>
+                  <button id="butDocuGisLite" class="docuskyVizTool" style="display:none">GIS</button>
+                  
+                  <span id="butSelectAllCues" class="button" title="check all items">All</span>
+                  <span id="butInverseSelected" class="button" title="inverse checked items">Inverse</span>
+                  <span class="floatRight">
+                     <span id="butApplySpotlightCuesFilter" class="button" title="Filter by the checked items">Apply Filter</span>
+                  </span>
+               </div>
+            </td>
+            
+            <!-- 右側內容區塊 -->
+            <td valign="top">
+               <div id="paginationDocked">
+                  <table width="100%">
+                     <tr style="transform:translateY(-3px);">
+                     <td width="350">
+                        <span style="display:none">Filtered size: <span id="filteredSize">-</span></span>   <!-- 滿足當前查詢條件（包含多個文獻集）的文件總數 -->
+                        Size: <span id="corpusSize"></span>
+                        &#160;
+                        SortBy: <select id="sortDocsBy" style="max-width:132px"></select>
+                        <select id="sortDocsOption" style="display:none">
+                           <option value="asc">asc</option>
+                           <option value="desc">desc</option>
+                        </select>
+                     </td>
+                     <td width="450">  <!-- 為了在 paginationContainer 右方擺放其他元素，似乎「只能」設定為大約 40% 寬度... -->
+                        <span id="paginationContainer" style="display:inline-block; transform:translateY(4px);"></span>
+                     </td>
+                     <td align="right">
+                        <div id="buttonsAfterPaginationContainer" xstyle="transform:translateY(2px);">
+                           <span id='butScrollUp' xclass="butCircle experimentFeatures" style="display:none" title="scroll to previous document"><i class='fa-solid fa-arrow-up'></i></span>
+                           <span id='butScrollDown' xclass="butCircle experimentFeatures" style="display:none" title="scroll to next document"><i class='fa-solid fa-arrow-down'></i></span>
+                           
+                           <!--
+                           <button id="butHighlightTags" class="button" style="margin-top:2px; border:1px solid #BFBFBF;">highlight all tags</button>
+                           <button id="butDeHighlightTags" class="button" style="display:none; margin-top:2px;">de-highlight all tags</button>
+                           <span id="butApplyColorScheme" class="button" title="apply color scheme">color scheme</span>
+                           -->
+                           
+                           <select id="selectApplyColorScheme" title="apply color scheme">
+                              <option value="normalText" checked="checked" autocomplete="off">Normal Text</option>
+                              <option value="colorScheme">Color Scheme</option>
+                              <option value="colorSchemeAndRefId">Color + RefId </option>
+                           </select>
+
+                           <span id="butHideMetadata" class="button" title="hide metadata">-metadata</span>
+                           <span id="butShowMetadata" class="button" title="show metadata" style="display:none">+metadata</span>
+
+                           <span id="butHideComments" class="button" title="hide comments">-comments</span>
+                           <span id="butShowComments" class="button" title="show comments" style="display:none">+comments</span>
+                           
+                           <span id="butShowHideEvents" class="funcButton experimentFeatures" style="display:none" title="show/hide event information"><i class="fa-solid fa-mattress-pillow"></i></span>
+                           <span>&#160;</span>
+                        </div>
+                     </td>
+                     <!-- 就算加上 <td>，也沒辦法在 paginationContainer 右方擺放其他物件... -->
+                     </tr>
+                  </table>
+               </div>
+               <div id="divContentArea">
+                  <table id="contentTable" width="100%">
+                  </table>
+               </div>
+            </td></tr>
+         </table>
+      </div>
+   </div>
+   
+   <div id="divXaSpotlightSmallPanel" class="xaSpotlightSmallPanel" style="display:none;">
+      <center>Add/Remove XaSpotlight Cues</center>
+      <div>
+         <input name="radioAddRemoveXaSpotlight" type="radio" value="add" checked="checked" autocomplete="off">Add</input>
+         <div style="padding-left:24px">
+            Please enter the XaSpotlight cue(s) which will be added to filtered documents:<br/>
+            <input id="inputXaSpotlightCues" type="text" size="32" value="" autocomplete="off"></input>
+         </div>
+         <br/>
+
+         <input name="radioAddRemoveXaSpotlight" type="radio" value="remove" autocomplete="off">Remove</input>
+         <div style="padding-left:24px">
+            (TODO) Please select the cues to remove from filtered documents:
+            <table id="tableXaSpotlightCuesToRemove" width="100%">
+            </table>
+         </div>
+      </div>
+      <br/>
+      <center>
+         <span id="doXaSpotlightAddRemove" class="butLightBlue">OK</span>
+         <span id="cancelXaSpotlightAddRemove" class="butLightBlue">Cancel</span>
+      </center>
+   </div>
+
+   <!-- supporting boxes (unused) -->
+   <div id="divConfigBox" class="configBox" style="display:none; z-index:12;">
+      <div>
+         <center>Configuration</center>
+      </div>
+      <hr/>
+
+      <div>
+         Load spotlight cues-map from .txt file:
+      </div>
+      <p/><p/><p/><p/><p/>
+      <br/>
+      <center>
+         <span id="butCloseConfigBox" class="button">CLOSE</span>
+      </center>
+   </div>
+
+   <!-- overlay over the content (to show a light box or loading message) -->
+   <div id="overlay" class="overlay" style="display:none;">
+   </div>
+
+   <div id="overlayTagTextFilter" class="overlay" style="display:none">
+      <div class="overlay-content-half">
+         <div class="overlayMessage">
+            <table width="100%">
+               <tr>
+                  <td width="80%">   <!-- 不知為什麼，這 td 竟會佔去 colspan="2" 的位置...？ -->
+                     Filter by terms occurred in tags:
+                  <td>
+                  <td align="right" width="20%">
+                     <button id="butOverlayTagTextFilterCancel">X</button>
+                  </td>
+               </tr>
+               <tr style="margin-top:6px">
+                  <td colspan="3" width="100%">
+                     <div id="divTagFilterList" class="filterTagList" style="height:200px; overflow:scroll;">
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td colspan="2" style="padding-top:10px">
+                     <button id="butTagSelectAll" title="select all checkboxes" class="button">all</button>
+                     <button id="butTagSelectNone" title="unselect all checkboxes" class="button">clear</button>
+                     &#160;
+                     Filter terms: <input id="filterTagTerms" title="use 'x|y|z' for 'x or y or z'" size="36"></input>
+                  </td>
+                  <td align="right">
+                     <span>
+                        <span id="butOverlayTagTextFilterApply" class="button" style="padding-left:12px; padding-right:12px">Apply</span>
+                     </span>
+                  </td>
+               </tr>
+            </table>
+         </div>
+      </div>
+   </div>                     
+
+
+   <div id="overlayQueryEditor" class="overlay" style="display:none">
+      <div class="overlay-content-half">
+         <div class="overlayMessage">
+            Edit Query:<br/>
+            <textarea id="queryEditorTextArea" class="queryEditor">
+            </textarea>
+            <center style="padding-top:8px">   <!-- position:relative 讓 OK 鍵可貼齊 div 右邊緣 -->
+               <span id="butQueryEditorOK" class="button" style="padding-left:12px; padding-right:12px; border:none;">OK</span>
+               &#160;
+               <span id="butQueryEditorCancel" class="button" style="padding-left:12px; padding-right:12px; border:none;">Cancel</span>
+            </center>
+         </div>
+      </div>
+   </div>                     
+
+   <!-- loading message -->
+   <div id="divLoadingContainer">
+      <div id="divLoadingSig">
+         <img id="loadingCircle" src="images/loading-circle.gif"/>
+      </div>
+      <div id="divWorkingProgress"></div>
+   </div>
+   
+   <div id="subwinArea" style="position:absolute; top:0; left:0; z-index:20">
+      <!-- 動態加入 <iframe> 或 <div> -->
+   </div>
+</body>
+
+<script src="js/XmarkusAnalyzer.js" defer="1"></script>
+</html>
