@@ -136,6 +136,13 @@
    #content-wrapper a:hover {
       text-decoration: underline;
    }
+
+   .notice {
+   background-color: rgba(255, 248, 220, 0.65);
+   padding: 12px 16px;
+   margin: 1em 0;
+   border-radius: 4px;
+}
    
 
    /* Media Queries for Mobile/Tablets */
@@ -198,7 +205,7 @@
 
          <h2 id="requirements">02 Prerequisites and Data Preparation</h2>
          <p>
-           Before you can use X-MARKUS effectively, ensure your annotations are properly created and checked in the MARKUS services you need for your project.
+           Before using X-MARKUS, ensure your annotations have been properly created and checked in the MARKUS services.
          </p>
          <ul>
            <li><strong><a href="https://dh.chinese-empires.eu/markus/" target="_blank">ENTMARKUS</a></strong>: entity annotation in texts (persons, places, organizations, dates, and other semantic categories).</li>
@@ -207,11 +214,11 @@
          </ul>
          <h3>Folder Format</h3>
          <ul>
-            <li><strong>ENTMARKUS</strong>: working folder containing all your <code>.html</code> files</li>
+            <li id="entmarkus-files"><strong>ENTMARKUS</strong>: working folder containing all your <code>.html</code> files</li>
                <img src="images/02_fig1.png" alt="ENTMARKUS working folder" width="800">
-            <li><strong>COMARKUS</strong>: working folder containing your <code>.html</code> files and their matching <code>.json</code> files, alongside <code>xmarkus-metadata.json</code> and <code>rules.json</code></li>
+            <li id="comarkus-files"><strong>COMARKUS</strong>: working folder containing your <code>.html</code> files and their matching <code>.json</code> files, alongside <code>xmarkus-metadata.json</code> and <code>rules.json</code></li>
                <img src="images/02_fig2.png" alt="COMARKUS working folder" width="800">
-            <li><strong>IMMARKUS</strong>: working folder containing all subfolders, IIIF Manifest <code>.json</code> files, alongside <code>_immarkus.settings.json</code>, <code>_immarkus.model.json</code>, <code>_immarkus.relations.json</code> and <code>_immarkus.folder.meta.json</code></li>
+            <li id="immarkus-files"><strong>IMMARKUS</strong>: working folder containing all subfolders, IIIF Manifest <code>.json</code> files, alongside <code>_immarkus.settings.json</code>, <code>_immarkus.model.json</code>, <code>_immarkus.relations.json</code> and <code>_immarkus.folder.meta.json</code></li>
                <img src="images/02_fig3.png" alt="IMMARKUS working folder" width="800">
          </ul>
          <a href="#requirements" class="back-to-top">&#8593; Back to section top</a>
@@ -229,7 +236,23 @@
        </li>
        <li>Follow the instructions to upload your annotation files and convert them into a format suitable for X-MARKUS.</li>
        <p>
-         <h3 id="comarkus-files">Working with Event Annotations (COMARKUS files)</h3>
+         <h3>Working with Entity Annotations (ENTMARKUS files)</h3>
+         <ol>
+          <li>
+            <p>When converting ENTMARKUS files, select the files from your <a href="#entmarkus-files">ENTMARKUS working folder</a>. A dialog will then prompt you to specify a compilation metadata field. You can use the existing local folder name or enter a custom name.</p>
+            <p><img src="images/03_fig4.png" alt="ENTMARKUS Compilation Metadata" width="800"></p>
+          <li>  
+            <p>Once the conversion is complete, a summary displays the number of files processed for your compilation.</p>
+            <p><img src="images/03_fig2+1.png" alt="ENTMARKUS Conversion Summary" width="800"></p>
+            <p>From here, you can: </p>
+            <ul>
+              <li><strong>Add More Files</strong> to the conversion.</li>
+              <li><strong>Go to Search and Filter</strong> to work with the converted annotations.</li>
+              <li><strong>Download</strong> the converted <code>.xml</code>file for later use.</li>
+              <li><strong>Merge Databases</strong> to combine converted files from COMARKUS and IMMARKUS.</li>
+            </ul>
+          </ol>
+         <h3>Working with Event Annotations (COMARKUS files)</h3>
          <ol>
          <li><p>When converting COMARKUS files, a dialog will ask you to choose how annotations are displayed:</p>
             <ul>
@@ -245,18 +268,20 @@
           </li>
           <li>
             <p>Once the conversion is complete, a summary displays the number of files processed for your compilation. There should normally be one metadata file per working folder.</p>
-            <p>The number of <code>entmarkus html</code> and <code>comarkus json</code> files must match; if they do not, your <a href="#comarkus-files">COMARKUS working folder</a> may have mismatched files. Check the folder, delete any unmatched files, and convert again.</p>
+            <p class="notice">The number of <code>entmarkus html</code> and <code>comarkus json</code> files must match; if they do not, your <a href="#comarkus-files">COMARKUS working folder</a> may have mismatched files. Check the folder, delete any unmatched files, and convert again.</p>
             <p><img src="images/03_fig5.png" alt="COMARKUS Conversion Summary" width="800"></p>
             <p>From here, you can choose to <strong>Add More Files</strong>, <strong>Go to Search and Filter</strong>, <strong>Download</strong> the converted <code>.xml</code>file for later use, or <strong>Merge Databases</strong> to combine converted files from COMARKUS and IMMARKUS.</p>
           </li>
           </ol>
-          <h3 id="immarkus-files">Working with Image Annotations (IMMARKUS files)</h3>
+          <h3>Working with Image Annotations (IMMARKUS files)</h3>
           <ol>
           <li><p>When converting <strong>local</strong> IMMARKUS files, due to the explorer restrictions, you will need to select the same folder <strong>twice</strong>. Once the conversion is complete, a summary displays the number of images processed for your compilation. </p>
               <p><img src="images/03_fig6.png" alt="IMMARKUS Conversion Summary" width="600"></p>
                <p>From here, you can choose to <strong>Add More Files</strong>, <strong>Go to Search and Filter</strong>, <strong>Download</strong> the converted <code>.xml</code>file for later use, or <strong>Merge Databases</strong> to combine converted files from COMARKUS and IMMARKUS.</p>
           </li>
-          <li><p>There is an advanced mode for converting IMMARKUS files using <strong>standard URLs</strong>. By hosting your IMMARKUS folder on a web server, you can share your converted <code>.xml</code> with others, who can access the images using the same server settings. This mode also lets you specify direct URLs for files hosted on remote servers.</p>
+          <li><p>There is an advanced mode for converting IMMARKUS files using <strong>standard URLs</strong>. By hosting your IMMARKUS folder on a web server, you give each image a stable, reusable address. This allows X-MARKUS to reload the images reliably after conversion and makes it easier to share the converted <code>.xml</code> file with others who use the same server settings. The advanced mode also supports direct URLs to files hosted on remote servers.</p>
+              <p>Using standard URLs gives each IMMARKUS image a stable, reusable address. This allows X-MARKUS to reload the images reliably after conversion and makes it easier to share the converted database with others.
+</p>
               <p>The default local configuration uses <a href="https://simplewebserver.org/" target="_blank">Simple Web Server</a>. </p>
               <details>
                 <summary style="cursor: pointer; font-weight: bold; color: #7890ab;">Click to read the instructions for setting up a Simple Web Server for your IMMARKUS files.</summary>
@@ -271,10 +296,10 @@
                     <ol>
                       <li>Install Simple Web Server from <a href="https://simplewebserver.org/" target="_blank">https://simplewebserver.org/</a>.</li>
                       <li>Create a main folder, for example: 
-                      <br><code>C:\Users\u0155029\Downloads\simple server test</code></br><em>(* the folder name and location can be of your choice)</em>.</li>
+                      <br><code>C:\Users\xxxxx\Downloads\simple server test</code></br><em>(* the folder name and location can be of your choice)</em>.</li>
                       <li>Inside it create: <code>XmarkusData\ImmarkusData</code>.</li>
                       <li>Copy your IMMARKUS project folders into: <code>[your folder path]\XmarkusData\ImmarkusData</code>.For example: <br>
-                      <em><code>C:\Users\u0155029\Downloads\simple server test\XmarkusData\ImmarkusData\四川_annotation_rev_0608</code></em></li>
+                      <em><code>C:\Users\xxxxx\Downloads\simple server test\XmarkusData\ImmarkusData\四川_annotation_rev_0608</code></em></li>
                     </ol>
 
                     <h4 style="margin-top: 20px;">B. Start Simple Web Server</h4>
@@ -308,13 +333,13 @@
       <div class="clearfix"></div>
 
       <h2 id="merging-converted-annotations">04 Merging Converted Annotations</h2>
-        <p>You can merge multiple converted annotations from COMARKUS and IMMARKUS into a single X-MARKUS database file. This is useful for comparative work across different corpora or projects.</p>
+        <p>You can merge multiple converted annotations from <a href="#comarkus-files">COMARKUS</a> and <a href="#immarkus-files">IMMARKUS</a> into a single X-MARKUS database file. This is useful for working with different source types, such as textual event annotations and image annotations, in one integrated database for comparison and cross-source analysis.</p>
         <p>
           You can initiate a merge in two ways:
           <ul>
-            <li>Click <strong>Merge Databases</strong> immediately after a conversion completes.</li>
+            <li>Click <strong>Merge Databases</strong> immediately  after both the COMARKUS and IMMARKUS conversions are complete.</li>
             <p><img src="images/04_fig1.png" alt="Merge Databases after Conversion" width="1000"></p>
-            <li>Click the <strong>Merge DBs</strong> button on the top menu bar to combine previously converted and downloaded <code>.xml</code> files.</li>
+            <li>Or click the <strong>Merge DBs</strong> button on the top menu bar to combine previously converted and downloaded <code>.xml</code> files.</li>
             <p><img src="images/04_fig2.png" alt="Merge Databases from Menu" width="800"></p>
           </ul>
       <a href="#merging-converted-annotations" class="back-to-top">&#8593; Back to section top</a>
@@ -329,14 +354,16 @@
           <ul>
             <li>Click <strong>Go to Search and Filter</strong> directly from the <strong><a href="#converting-annotations">Converting</a></strong> interface.</li> 
             <p><img src="images/05_fig1.png" alt="Go to Search and Filter" width="1000"></p>
-            <li>Click the <strong>Searching icon</strong> <i class="fas fa-search"></i> on the left menu bar, then click <strong>Import</strong> on the top menu bar to load a previously downloaded <code>.xml</code> file.</li>
+            <li>Or click the <strong>Searching icon</strong> <i class="fas fa-search"></i> on the left menu bar, then click <strong>Import</strong> on the top menu bar to load a previously downloaded <code>.xml</code> file.</li>
             <p><img src="images/05_fig2.png" alt="Searching icon and Import button" width="800"></p>
           </ul>
         <h3 id="navigating-annotations">Navigating Annotations</h3>
           <p>Sources and annotations are displayed in parallel panes:</p>
           <ul>
-            <li><strong>Filter Pane</strong>: Filter your annotations by <strong>metadata</strong>, <strong>annotated event tags and their categories and normalizations</strong>, or <strong>entities</strong>. For image annotations, you can also filter by <strong>annotated properties</strong>.</li>
+            <li><strong>Filter Pane</strong>: Filter your text and image annotations by <strong>metadata</strong>, <strong>annotated event tags and their categories and normalizations</strong>, or <strong>entities</strong>. For image annotations, you can additionally filter by <strong>annotated properties</strong>.</li>
             <p><img src="images/05_fig3.png" alt="Filter Pane" width="1000"></p>
+            <p>After selecting your criteria from the drop-down menu, click <strong>Apply Filter</strong> at the bottom of the pane to apply them. You can also click <strong>Select All</strong> to select all available options, or click <strong>Invert</strong> to invert your selections.</p>
+            <p><img src="images/05_fig3+1.png" alt="Apply Filter, Select All, and Invert options" width="1000"></p>
             <p>This pane uses a hierarchical structure to help you progressively narrow your results. Click <strong>undo</strong> to revert your last selection, or <strong>Reset</strong> to clear all filters.</p>
             <p><img src="images/05_fig4.png" alt="Undo and Reset buttons" width="800"></p>
             <li><strong>Source Pane</strong>: Displays the original text or image containing the annotations, with metadata shown at the top.</li>
@@ -391,7 +418,7 @@
           <p>In addition to using the <strong>filter pane</strong>, you can type directly into the query bar to search for both in-text keywords and annotation tags.</p>
           <ul>
             <li><strong>Search operators:</strong>The query bar supports exact and partial matches. Use a space for AND, and a pipe (<code>|</code>) for OR.</li>
-              <p>For example, in a combined corpus of inscriptions and maps, typing <code>stone|flag_stone_layout</code>searches for sources containing either "stone" in the text annotations or "flag_stone_layout" in the image annotations.</p>
+              <p>For example, in a combined corpus of inscriptions and maps, typing <code>stone|flag_stone_layout</code>searches across both text and image annotations. It returns sources containing either <code>stone</code> or <code>flag_stone_layout</code>.</p>
               <p><img src="images/05_fig13.png" alt="Query Bar with Search Operators" width="1000"></p>
               <p><img src="images/05_fig14.png" alt="Regular Expression Search" width="1000"></p>
               <li><strong>Regular expressions:</strong> For advanced searching, you can use regular expressions by prefixing your query with <code>regexp:</code>.</li>
