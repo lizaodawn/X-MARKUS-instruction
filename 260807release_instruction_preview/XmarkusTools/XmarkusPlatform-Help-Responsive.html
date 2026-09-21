@@ -3,6 +3,9 @@
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
    <script src="components/js/jquery.min.js"></script>
+   <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
    <style>
    html,body { 
@@ -199,6 +202,9 @@
          </p>
          <p>
            It allows users to import and convert existing MARKUS annotations, browse and filter annotations within or across textual or image materials, and export filtered subsets of data for further analysis or reuse.
+         </p>
+         <p>
+            For more information, source code and how to cite us, please visit <a href="XmarkusPlatform-Introduction.html">information page</a>.
          </p>
          <a href="#about-xmarkus" class="back-to-top">&#8593; Back to section top</a>
          <div class="clearfix"></div>
@@ -414,7 +420,7 @@
               </video>
             </p>
           </ul>
-        <h3 id="editing-conditions-in-query-bar">Editing conditions in query bar</h3>
+        <h3 id="editing-conditions-in-query-bar">Editing Conditions in Query Bar</h3>
           <p>In addition to using the <strong>filter pane</strong>, you can type directly into the query bar to search for both in-text keywords and annotation tags.</p>
           <ul>
             <li><strong>Search operators:</strong>The query bar supports exact and partial matches. Use a space for AND, and a pipe (<code>|</code>) for OR.</li>
@@ -426,7 +432,7 @@
               <p><img src="images/05_fig15.png" alt="Regular Expression Search Example" width="1000"></p>
             </ul>  
           
-          <h3 id="grouping-for-subset">Grouping filtered annotations for subset</h3>
+          <h3 id="grouping-for-subset">Grouping Filtered Annotations for Subset</h3>
           <p>With the <strong>Bag</strong> feature, you can group filtered results into a custom subset for further analysis or export.</p>
           <ol>
             <li>Apply your desired filters in the filter pane or search conditions in the query bar.</li>
@@ -441,7 +447,7 @@
             <p><img src="images/05_fig20.png" alt="Fetching Results from the Bag" width="1000"></p>
           </ol>
           
-        <h3 id="visualizing-and-exporting-filtered-annotations">Visualizing and exporting filtered annotations</h3>  
+        <h3 id="visualizing-and-exporting-filtered-annotations">Visualizing and Exporting Filtered Annotations</h3>  
           <p>After filtering annotations, or retrieving a subset from the <strong>Bag</strong>, use the top menu bar to continue working with the current results:</p>
             <ul>
               <li><strong>Fetch to <a href="#visualizing-relations">Visualizing Relations</a>:</strong> Click <strong>viz relations</strong> to visualize the relationships between annotations and perform complex graph queries.</li>
@@ -452,10 +458,74 @@
       <a href="#searching-and-filtering-annotations" class="back-to-top">&#8593; Back to section top</a>
       <div class="clearfix"></div>
 
-       <h2 id="visualizing-relations">Visualizing Relations</h2>
-       <p>
-         Under construction.
-       </p>
+       <h2 id="visualizing-relations">06 Visualizing Relations</h2>
+
+        <p>You can use <strong>Visualizing Relations</strong> to explore connections within a single annotation dataset or across combined text and image annotatioin datasets.</p>
+        <h3 id="importing-annotations-viz">Importing Annotations</h3>
+        <p>You can import your dataset into the <strong>Visualizing Realtions</strong> interface in either of the following ways:</p>
+          <ul>
+            <li>From the <strong><a href="#searching-and-filtering-annotations">Searching and Filtering</a></strong> page, click <strong>viz relations</strong> to fetch the current dataset. If the dataset is large, the interface may initially display a blank graph. The data has still been loaded. You can set filter conditions and click <strong>Redraw</strong> to generate the relation graph.</li>
+            <li>Or click the <strong>Network</strong> <i class="fa-solid fa-code-branch"></i> icon on the left menu bar, then click <strong>Import</strong> on the top menu bar to load a previously downloaded <code>.xml</code> file. </li>
+          </ul>
+
+<h3>Querying across datasets</h3>
+
+<p>
+  The knowledge graph supports queries based on shared entities, entity
+  properties, and metadata fields. This allows you to connect related
+  information across different image projects, textual datasets, or combined
+  text and image corpora.
+</p>
+
+<h3>Combining query conditions</h3>
+
+<p>
+  You can combine several conditions in one query. For example, you can match
+  a piece title in a textual source with a stele title in an image source and
+  require the same author identifier in both sources. The graph then displays
+  the sources that meet the query conditions together with the relevant
+  features extracted from their annotations.
+</p>
+
+<h3>Filtering the graph</h3>
+
+<p>
+  Use the filter panel on the right to refine the graph:
+</p>
+
+<ul>
+  <li>Set a time range for event nodes.</li>
+  <li>Include or exclude events without time information.</li>
+  <li>Add tag-feature filters and select the relevant node type.</li>
+  <li>Combine multiple tag-feature conditions.</li>
+  <li>Remove nodes without connections.</li>
+  <li>Display connected feature-hierarchy nodes.</li>
+  <li>Preserve node positions when redrawing the graph.</li>
+</ul>
+
+<h3>Redrawing and resetting</h3>
+
+<p>
+  After setting the desired conditions, click <strong>Redraw</strong> to update
+  the graph. Click <strong>Clear All Filters</strong> to remove the filter
+  conditions. You can also click <strong>Reset</strong> to restore the initial
+  view.
+</p>
+
+<h3>Exporting the graph</h3>
+
+<p>
+  Use <strong>SVG</strong> to export the graph as an SVG image, or
+  <strong>XML</strong> to download the graph data as an <code>.xml</code> file.
+  You can also follow links in the graph to open the relevant sources or events
+  and inspect their underlying annotations.
+</p>
+
+<a href="#visualizing-relations" class="back-to-top">
+  &#8593; Back to section top
+</a>
+<div class="clearfix"></div>
+</p>
        <a href="#visualizing-relations" class="back-to-top">&#8593; Back to section top</a>
       <div class="clearfix"></div>
 
@@ -486,9 +556,9 @@
                <ul>
                   <li><a href="#importing-annotations">- Importing Annotations</a></li>
                   <li><a href="#navigating-annotations">- Navigating Annotations</a></li>
-                  <li><a href="#editing-conditions-in-query-bar">- Editing conditions in query bar</a></li>
-                  <li><a href="#grouping-for-subset">- Grouping filtered annotations for subset</a></li>
-                  <li><a href="#visualizing-and-exporting-filtered-annotations">- Visualizing and exporting filtered annotations</a></li>
+                  <li><a href="#editing-conditions-in-query-bar">- Editing Conditions in Query Bar</a></li>
+                  <li><a href="#grouping-for-subset">- Grouping Filtered Annotations for Subset</a></li>
+                  <li><a href="#visualizing-and-exporting-filtered-annotations">- Visualizing and Exporting Filtered Annotations</a></li>
                </ul>
             </details></li>
            <li><a href="#visualizing-relations">06 Visualizing Relations</a></li>
