@@ -198,14 +198,29 @@
          <!-- Content Sections -->
          <h2 id="about-xmarkus">01 About X-MARKUS</h2>
          <p>
-           X-MARKUS is a text and image search and information retrieval environment for data annotated in <a href="https://dh.chinese-empires.eu/markus/" target="_blank"><strong>ENTMARKUS</strong></a>, <a href="https://comarkus.xmarkus.org/" target="_blank"><strong>COMARKUS</strong></a>, and <a href="https://immarkus.xmarkus.org/" target="_blank"><strong>IMMARKUS</strong></a>.
+           X-MARKUS is a search and information retrieval environment for text and image data annotated with <a href="https://dh.chinese-empires.eu/markus/" target="_blank"><strong>ENTMARKUS</strong></a>, <a href="https://comarkus.xmarkus.org/" target="_blank"><strong>COMARKUS</strong></a>, and <a href="https://immarkus.xmarkus.org/" target="_blank"><strong>IMMARKUS</strong></a>.
          </p>
          <p>
            It allows users to import and convert existing MARKUS annotations, browse and filter annotations within or across textual or image materials, and export filtered subsets of data for further analysis or reuse.
          </p>
          <p>
-            For more information, source code and how to cite us, please visit <a href="XmarkusPlatform-Introduction.html">information page</a>.
+            For more information, source code, and citation details, visit the <a href="XmarkusPlatform-Introduction.html">information page</a>.
          </p>
+         <h3>The Interface</h3>
+         <p>
+           After launching X-MARKUS in your browser, use the icons on the left menu bar to access its main features: </p>
+          <p><img src="images/01_fig1.png" alt="X-MARKUS Interface" width="800"></p>
+          
+            <p> ▶<i class="fa-solid fa-database"></i>: Opens the <a href="#converting-annotations">Converting interface</a> for importing and converting annotation files.</p>
+            <p> <i class="fas fa-search"></i>: Opens the <a href="#searching-and-filtering-annotations">Searching and Filtering interface</a> for browsing, querying, and filtering annotations.</p>
+            <p> <i class="fa-solid fa-code-branch"></i>: Opens the <a href="#visualizing-relations">Visualizing Relations interface </a>for exploring relationships among annotations, including relationships across combined text and image datasets.</p>
+            <p> <i class="fa-solid fa-map-location-dot"></i>: Opens the <a href="https://munda.xmarkus.org/">MUNDa</a> platform for spatial analysis</p>
+            <p> <i class="fa-solid fa-info"></i>: Opens the <a href="XmarkusPlatform-Introduction.html">information page</a>.</p>
+            <p> <i class="fa-solid fa-question-circle"></i>: Opens the <a href="XmarkusPlatform-Help.html">help page</a>.</p>
+          </ul>
+          </ul>
+            
+         
          <a href="#about-xmarkus" class="back-to-top">&#8593; Back to section top</a>
          <div class="clearfix"></div>
 
@@ -242,7 +257,7 @@
        </li>
        <li>Follow the instructions to upload your annotation files and convert them into a format suitable for X-MARKUS.</li>
        <p>
-         <h3>Working with Entity Annotations (ENTMARKUS files)</h3>
+         <h3 id="converting-entmarkus-files">Working with Entity Annotations (ENTMARKUS files)</h3>
          <ol>
           <li>
             <p>When converting ENTMARKUS files, select the files from your <a href="#entmarkus-files">ENTMARKUS working folder</a>. A dialog will then prompt you to specify a compilation metadata field. You can use the existing local folder name or enter a custom name.</p>
@@ -258,7 +273,7 @@
               <li><strong>Merge Databases</strong> to combine converted files from COMARKUS and IMMARKUS.</li>
             </ul>
           </ol>
-         <h3>Working with Event Annotations (COMARKUS files)</h3>
+         <h3 id="converting-comarkus-files">Working with Event Annotations (COMARKUS files)</h3>
          <ol>
          <li><p>When converting COMARKUS files, a dialog will ask you to choose how annotations are displayed:</p>
             <ul>
@@ -279,7 +294,7 @@
             <p>From here, you can choose to <strong>Add More Files</strong>, <strong>Go to Search and Filter</strong>, <strong>Download</strong> the converted <code>.xml</code>file for later use, or <strong>Merge Databases</strong> to combine converted files from COMARKUS and IMMARKUS.</p>
           </li>
           </ol>
-          <h3>Working with Image Annotations (IMMARKUS files)</h3>
+          <h3 id="converting-imarkus-files">Working with Image Annotations (IMMARKUS files)</h3>
           <ol>
           <li><p>When converting <strong>local</strong> IMMARKUS files, due to the explorer restrictions, you will need to select the same folder <strong>twice</strong>. Once the conversion is complete, a summary displays the number of images processed for your compilation. </p>
               <p><img src="images/03_fig6.png" alt="IMMARKUS Conversion Summary" width="600"></p>
@@ -366,7 +381,7 @@
         <h3 id="navigating-annotations">Navigating Annotations</h3>
           <p>Sources and annotations are displayed in parallel panes:</p>
           <ul>
-            <li><strong>Filter Pane</strong>: Filter your text and image annotations by <strong>metadata</strong>, <strong>annotated event tags and their categories and normalizations</strong>, or <strong>entities</strong>. For image annotations, you can additionally filter by <strong>annotated properties</strong>.</li>
+            <li><strong>Filter Pane</strong>: Filter your text and image annotations by <strong>metadata</strong>, <strong>annotated event tags and their categories and normalizations</strong>, or <strong>entities</strong>. For image annotations, you can additionally filter by <strong>annotated properties</strong>. For more details, see <a href="#filter-options">Filter Options</a>.</li>
             <p><img src="images/05_fig3.png" alt="Filter Pane" width="1000"></p>
             <p>After selecting your criteria from the drop-down menu, click <strong>Apply Filter</strong> at the bottom of the pane to apply them. You can also click <strong>Select All</strong> to select all available options, or click <strong>Invert</strong> to invert your selections.</p>
             <p><img src="images/05_fig3+1.png" alt="Apply Filter, Select All, and Invert options" width="1000"></p>
@@ -420,7 +435,42 @@
               </video>
             </p>
           </ul>
-        <h3 id="editing-conditions-in-query-bar">Editing Conditions in Query Bar</h3>
+        <h3 id="filter-options">Filter Options</h3>
+          <p>The <strong>filter pane</strong> provides different filtering criteria for text and image annotations. The available options depend on the annotation type and are organized hierarchically, allowing you to refine your selections from broad categories to more specific values.</p>
+          
+          <h4>Filter Options for Text Annotations</h4>
+          For <strong>ENTMARKUS</strong> annotations, you can filter by <strong>Entity Tags(<code>text_tags</code>):</strong> defined in ENTMARKUS, such as "action" and "soccat".
+          <p><img src="images/05_filter-option_fig3.png" alt="Filter Options - Entity Tags" width="400"></p>
+          For COMARKUS annotations, except for the <strong>Entity Tags (<code>text_tags</code>)</strong>, you can also filter by:
+          <ul>
+            <li><strong>Metadata (<code>metadata</code>): </strong> Default parsed metadatafields from the converted dataset, including "author", "data source" (gazetteer title), "data title" (inscription title), "place covered", and "publication year".</li>
+            <p><img src="images/05_filter-option_fig1.png" alt="Filter Options - Metadata" width="400"></p>
+            <li><strong>User defined metadata (<code>udef_docmeta</code>):</strong> Custom metadata fields defined in COMARKUS, such as "piece_time", "source_time" etc.</li>
+            <p><img src="images/05_filter-option_fig2.png" alt="Filter Options - User Defined Metadata" width="400"></p>
+            <li><strong>Event tags (<code>txt_event_tree</code>)</strong>:  Event tags defined in COMARKUS, such as "EVENT" and "INITIATOR".</li>
+            <p><img src="images/05_filter-option_fig4.png" alt="Filter Options - Event Tags" width="400"></p>
+          </ul>
+           
+          <h4>Filter Options for Image Annotations</h4>
+          For IMMARKUS annotations, you can filter by:
+          <ul>
+            <li><strong>Metadata (<code>metadata</code>): </strong> Default parsed metadata fields from the converted dataset, including "author", "compilation" (image folder name), "piece title" (image title), "place covered", and "publication year".</li>
+            <p><img src="images/05_filter-option_fig5.png" alt="Filter Options - ImageMetadata" width="400"></p>
+            <li><strong>User defined metadata (<code>udef_docmeta</code>):</strong> Custom metadata fields defined in IMMARKUS, such as "Genre" and "Medium" etc.</li>
+            <p><img src="images/05_filter-option_fig6.png" alt="Filter Options - User Defined ImageMetadata" width="400"></p>
+            <li><strong>Image Entity Classes(<code>img_entity_tree</code> / <code>Udef_Img_EntityClass</code>):</strong> Entity classes defined in IMMARKUS, such as "object" and "temple".</li>
+            <p><img src="images/05_filter-option_fig7.png" alt="Filter Options - Image Tags" width="400"></p>
+            <li><strong>Relationships between Image Entities(<code>img_entity_tree</code> / <code>Udef_Img_EntityRelation</code>):</strong> Relationships between image entities defined in IMMARKUS, such as "crossing".</li>
+            <p><img src="images/05_filter-option_fig8.png" alt="Filter Options - Image Relationships" width="400"></p>
+            <li><strong>Image Properties(<code>img_properties</code>):</strong> Properties associated with entities annotated in IMMARKUS, such as "relation_to_wall", "texture" and "direction".</li>
+            <p><img src="images/05_filter-option_fig9.png" alt="Filter Options - Image Properties" width="400"></p>
+          </ul>
+
+          <h4>Entities in Both Text and Image Annotations</h4>
+          <p>For the RegInfra project, X-MARKUS also supports filtering infrastructure entities that occur in both text and image annotations. Use the <strong>Event-Image Alignment (<code>align_evt_img</code></strong>) filter to identify corresponding entities in bridges or city walls.</p>
+          <p>The filter displays the IDs of entities that occur in both annotation types in a drop-down menu. Select one or more IDs to retrieve the corresponding text and image annotations.</p>
+          <p><img src="images/05_filter-option_fig10.png" alt="Filter Options - Cross-modal Entities" width="400"></p>
+          <h3 id="editing-conditions-in-query-bar">Editing Conditions in Query Bar</h3>
           <p>In addition to using the <strong>filter pane</strong>, you can type directly into the query bar to search for both in-text keywords and annotation tags.</p>
           <ul>
             <li><strong>Search operators:</strong>The query bar supports exact and partial matches. Use a space for AND, and a pipe (<code>|</code>) for OR.</li>
@@ -544,8 +594,9 @@
             <details>
                <summary><a href="#converting-annotations">03 Converting Annotations</a></summary>
                <ul>
-                  <li><a href="#comarkus-files">- Working with Event Annotations (COMARKUS files)</a></li>
-                  <li><a href="#immarkus-files">- Working with Image Annotations (IMMARKUS files)</a></li>
+                  <li><a href="#converting-entmarkus-files">- Working with Entity Annotations (ENTMARKUS files)</a></li>
+                  <li><a href="#converting-comarkus-files">- Working with Event Annotations (COMARKUS files)</a></li>
+                  <li><a href="#converting-imarkus-files">- Working with Image Annotations (IMMARKUS files)</a></li>
                </ul>
             </details>
             </li>
@@ -556,6 +607,7 @@
                <ul>
                   <li><a href="#importing-annotations">- Importing Annotations</a></li>
                   <li><a href="#navigating-annotations">- Navigating Annotations</a></li>
+                  <li><a href="#filter-options">- Filter Options</a></li>
                   <li><a href="#editing-conditions-in-query-bar">- Editing Conditions in Query Bar</a></li>
                   <li><a href="#grouping-for-subset">- Grouping Filtered Annotations for Subset</a></li>
                   <li><a href="#visualizing-and-exporting-filtered-annotations">- Visualizing and Exporting Filtered Annotations</a></li>
