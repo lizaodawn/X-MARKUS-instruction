@@ -510,70 +510,105 @@
 
        <h2 id="visualizing-relations">06 Visualizing Relations</h2>
 
-        <p>You can use <strong>Visualizing Relations</strong> to explore connections within a single annotation dataset or across combined text and image annotatioin datasets.</p>
+        <p>You can use <strong>Visualizing Relations</strong> to explore connections within a single annotation dataset or across combined text and image annotation datasets. The interface represents annotations as a graph containing event nodes, image nodes, feature nodes—representing annotated entities and properties—and source-subfolder nodes. You can query, filter, label, and export the resulting network.</p>
         <h3 id="importing-annotations-viz">Importing Annotations</h3>
-        <p>You can import your dataset into the <strong>Visualizing Realtions</strong> interface in either of the following ways:</p>
+        <p>You can import annotations into the <strong>Visualizing Realtions</strong> interface in either of the following ways:</p>
           <ul>
-            <li>From the <strong><a href="#searching-and-filtering-annotations">Searching and Filtering</a></strong> page, click <strong>viz relations</strong> to fetch the current dataset. If the dataset is large, the interface may initially display a blank graph. The data has still been loaded. You can set filter conditions and click <strong>Redraw</strong> to generate the relation graph.</li>
+            <li>From the <strong><a href="#searching-and-filtering-annotations">Searching and Filtering</a></strong> page, click <strong>viz relations</strong> to load the current dataset.</li>
+            <p><img src="images/05_fig21.png" alt="Visualizing Relations from Search and Filter" width="1000"></p>
+            <p>If the dataset is large, the graph may initially appear blank while the data is being loaded. Set the desired conditions in the <strong>filter tab</strong> and click <strong>Redraw</strong> to generate the relation graph.</p>
+            <p><img src="images/06_fig3.png" alt="Redrawing the Graph" width="1000"></p>
             <li>Or click the <strong>Network</strong> <i class="fa-solid fa-code-branch"></i> icon on the left menu bar, then click <strong>Import</strong> on the top menu bar to load a previously downloaded <code>.xml</code> file. </li>
+            <p><img src="images/06_fig2.png" alt="Importing XML File" width="1000"></p>
           </ul>
 
-<h3>Querying across datasets</h3>
+<h3>Querying Annotations in Network Graph</h3>
 
 <p>
-  The knowledge graph supports queries based on shared entities, entity
-  properties, and metadata fields. This allows you to connect related
-  information across different image projects, textual datasets, or combined
-  text and image corpora.
+  The network graph supports queries based on annotated tags and their instances in event and image annotations. You can combine multiple conditions in a single query.
 </p>
 
-<h3>Combining query conditions</h3>
+<h4>Graph Control Panel</h4>
 
+<p>Open the <strong>Graph Control Panel</strong> from the the top menu bar.</p>
 <p>
-  You can combine several conditions in one query. For example, you can match
-  a piece title in a textual source with a stele title in an image source and
-  require the same author identifier in both sources. The graph then displays
-  the sources that meet the query conditions together with the relevant
-  features extracted from their annotations.
+   <video
+      autoplay
+      muted
+      playsinline
+      loop
+      width="1000"
+      style="max-width: 100%; height: auto;"
+              >
+     <source src="images/06_fig3.mp4" type="video/mp4">
+    </video>
 </p>
 
-<h3>Filtering the graph</h3>
+<p>The <strong>Graph Control Panel</strong> contains three tabs:
+  <ol>
+    <li><strong><i class="fa-solid fa-filter"></i> Filter</strong>: Set the conditions for filtering the graph.</li>
+    <li><strong><i class="fa-solid fa-desktop"></i> Annotation Tag Display</strong>: Select or deselect the annotation tags shown on the graph and determine whether they are displayed by tag name or tag category.</li>
+    <li><strong><i class="fa-solid fa-tags"></i> Node Label</strong>: For event or image nodes, select the type of label to be displayed. For event nodes, the label is blank by default. (For image nodes, the image filename is displayed by default. You can change either label by assigning a tag name, tag category, normalization, or exact text to the node. This allows an event or image node to represent the specific annotation information most relevant to your analysis.)</li>
+  </ol>
 
-<p>
-  Use the filter panel on the right to refine the graph:
-</p>
-
+<h4>Building Filter Conditions</h4>
+<p>In the <strong>Filter <i class="fa-solid fa-filter"></i></strong> tab, you can define the following conditions:</p>
 <ul>
-  <li>Set a time range for event nodes.</li>
-  <li>Include or exclude events without time information.</li>
-  <li>Add tag-feature filters and select the relevant node type.</li>
-  <li>Combine multiple tag-feature conditions.</li>
-  <li>Remove nodes without connections.</li>
-  <li>Display connected feature-hierarchy nodes.</li>
-  <li>Preserve node positions when redrawing the graph.</li>
+  <li><strong>Time Filter</strong>: For COMARKUS event annotations, set a time range based on the annotated event dates. You can also choose whether to include event nodes with no time information.</li>
+  <li>Filter nodes across event and image dataset with AND and OR operators</li>
+  <ul>
+    <li>Event annotation tag filter</li>
+    <li>Image annotation tag filter</li>
+    <li>Combined conditions</li>
+  </ul>
+  <li>After defining the filters, you can further adjust the graph display with the following options:</li>
+  <ul>
+    <li><strong>Show or hide unconnected event nodes:</strong>Displays or removes event nodes without connections.</li>
+    <li><strong>Show or hide feature-hierarchy nodes:</strong>Displays or removes hierarchical feature nodes, such as <code>OBJECT_MAIN</code>, which may serve as the parent node for <code>bridge</code> and <code>city_wall</code>.</li>
+    <li><strong>Preserve node positions:</strong>Keeps the current node positions when the graph is redrawn.</li>
+  </ul>
+</ul>
+<p>The bottom of the panel displays the number of nodes calculated from the current filter settings.</p>
+
+
+
+<h4>Selecting Features to Display</h4>
+
+<p>
+  under construction
+</p>
+
+<h4>Assigning Tag Label to Event and Image Nodes</h4>
+
+<p>
+  under construction
+</p>
+
+<h4>Adjusting the Graph Display</h4>
+<p>You can adjust the graph view in the following ways:</p>
+<ul>
+  <li>Zoom in or out of the graph.</li>
+  <li>Drag nodes directly within the graph to reposition them.</li>
 </ul>
 
-<h3>Redrawing and resetting</h3>
+<h3>Navigating Annotations in the Graph</h3>
+<p>The graph uses different node styles to represent sources, events, images, features, and feature-hierarchy nodes.</p>
+<ul>
+  <li><strong>Hover over a node:</strong> to highlight its connected nodes and edges.</li>
+  <li><strong>Hover over an edge:</strong> to display a summary of the associated annotation.</li>
+  <li><strong>Click an event node:</strong> to inspect the associated event annotation.</li>
+  <li><strong>Click an image node:</strong> to inspect the associated image annotation.</li>
+  <li><strong>Click a source node:</strong> to inspect the related inscription or image source.</li>
+  <li><strong>Click a feature node:</strong> to inspect the inscription or image associated with it.</li>
+  <li><strong>Click a hierarchical feature node:</strong> to inspect its parent category and related child features.</li>
+</ul>
 
-<p>
-  After setting the desired conditions, click <strong>Redraw</strong> to update
-  the graph. Click <strong>Clear All Filters</strong> to remove the filter
-  conditions. You can also click <strong>Reset</strong> to restore the initial
-  view.
-</p>
+<h3>Resetting the Graph View</h3>
+<p>Click <strong>reset</strong> on the top menu bar to clear the current graph view and reset the filter conditions, or re-import the annotation file.</p>
 
-<h3>Exporting the graph</h3>
+<h3>Exporting the Graph</h3>
+<p>under construction</p>
 
-<p>
-  Use <strong>SVG</strong> to export the graph as an SVG image, or
-  <strong>XML</strong> to download the graph data as an <code>.xml</code> file.
-  You can also follow links in the graph to open the relevant sources or events
-  and inspect their underlying annotations.
-</p>
-
-<a href="#visualizing-relations" class="back-to-top">
-  &#8593; Back to section top
-</a>
 <div class="clearfix"></div>
 </p>
        <a href="#visualizing-relations" class="back-to-top">&#8593; Back to section top</a>
