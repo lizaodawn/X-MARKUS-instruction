@@ -548,18 +548,68 @@
   <ol>
     <li><strong><i class="fa-solid fa-filter"></i> Filter</strong>: Set the conditions for filtering the graph.</li>
     <li><strong><i class="fa-solid fa-desktop"></i> Annotation Tag Display</strong>: Select or deselect the annotation tags shown on the graph and determine whether they are displayed by tag name or tag category.</li>
-    <li><strong><i class="fa-solid fa-tags"></i> Node Label</strong>: For event or image nodes, select the type of label to be displayed. For event nodes, the label is blank by default. (For image nodes, the image filename is displayed by default. You can change either label by assigning a tag name, tag category, normalization, or exact text to the node. This allows an event or image node to represent the specific annotation information most relevant to your analysis.)</li>
+    <li><strong><i class="fa-solid fa-tags"></i> Node Label</strong>: For event or image nodes, select the type of label to be displayed. <p class="notice">For event nodes, the label is blank by default. For image nodes, the image filename is displayed by default. You can change either label by assigning a tag name, tag category, normalization, or exact text to the node. This allows an event or image node to represent the specific annotation information most relevant to your analysis.</p> </li>
   </ol>
 
 <h4>Building Filter Conditions</h4>
-<p>In the <strong>Filter <i class="fa-solid fa-filter"></i></strong> tab, you can define the following conditions:</p>
+<p>In the <strong>Filter <i class="fa-solid fa-filter"></i></strong> tab, you can define conditions for filtering the graph.</p>
 <ul>
-  <li><strong>Time Filter</strong>: For COMARKUS event annotations, set a time range based on the annotated event dates. You can also choose whether to include event nodes with no time information.</li>
-  <li>Filter nodes across event and image dataset with AND and OR operators</li>
+  <li><strong>Time Filter</strong>
+  <p>For COMARKUS event annotations, use the <strong>Time Filter</strong> to specify a time range based on the annotated event time. You can also choose whether to include event nodes without time information.</p></li>
+  <p><img src="images/06_fig4.png" alt="Time Filter" width="1000"></p>
+  <li><strong>Tag-feature Filter</strong>
+    <p>Use the <strong>Tag-feature Filter</strong> to filter event and image nodes by their annotated tags and features. You can combine multiple conditions within a dataset or across event and image datasets using the <strong>AND</strong> and <strong>OR</strong> operators.</p></li>
   <ul>
-    <li>Event annotation tag filter</li>
-    <li>Image annotation tag filter</li>
-    <li>Combined conditions</li>
+    <li><strong>Filtering Event Annotations</strong>
+      To filter event annotations:
+    <ol>
+      <li>Select <strong>Event</strong> as the node type in the <strong>Tag-feature Filter</strong> section.</li>
+      <P><img src="images/06_fig5.png" alt="Event Annotation Tag Filter" width="1000"></P>
+      <li>Click <strong>set</strong> to open the tag selection dialog.</li>
+      <p>
+        <video
+          autoplay
+          muted
+          playsinline
+          loop
+          width="1000"
+          style="max-width: 100%; height: auto;"
+              >
+          <source src="images/06_fig6.mp4" type="video/mp4">
+        </video>
+      </p>
+      <li>Select one or more event annotation tags from the drop-down menu, such as <code>OBJECT_MAIN</code>, <code>EVENT</code>, or <code>LOCATION</code>.</li>
+      <p><img src="images/06_fig7.png" alt="Event Annotation Tag Selection" width="1000"></p>
+      <li>In the <strong>type of feature</strong> pane, choose the feature level to use for filtering. Each tag can be filtered at four levels: 
+        <ul>
+          <li><code>all</code>: The complete annotation tag string, such as <code>bridge/zitong_chongxi_qiao/重熙</code>.</li>
+          <li><code>type</code>: The category of the anntoation tag, such as <code>bridge</code>, <code>road</code>, or <code>wall</code>.</li>
+          <li><code>id</code>: The normalized indentifier of the annotation tag, such as <code>changle_cheng</code> or <code>jinning_yunlu_lu</code>.</li>
+          <li><code>text</code>: The original text that was annotated, such as <code>新開街</code> or <code>金鄉縣城</code>.</li>
+        </ul>
+      <p><img src="images/06_fig8.png" alt="Type of Feature Panel" width="1000"></p>
+        
+      <li>To combine conditions, click <strong>add condition</strong> and select either <strong>AND</strong> or <strong>OR</strong> operator. You can add multiple conditions to refine or broaden the filter.</li>
+      <p>
+        <video
+          autoplay
+          muted
+          playsinline
+          loop
+          width="1000"
+          style="max-width: 100%; height: auto;"
+              >
+          <source src="images/06_fig9.mp4" type="video/mp4">
+        </video>
+      </p>
+      <li>When you have finished defining the conditions, click <strong>OK</strong> to confirm them.</li>
+      <p><img src="images/06_fig10.png" alt="Filter Confirmation" width="1000"></p>
+      <li>Then click <strong>Redraw</strong> in the <strong>Tag-feature Filter</strong> section to apply the filter and update the graph.</li>
+      <p><img src="images/06_fig11.png" alt="Redraw Graph" width="1000"></p>
+    </ol>
+    </li>
+    <li><strong>Image annotation tag filter</strong></li>
+    <li><strong>Combined conditions</strong></li>
   </ul>
   <li>After defining the filters, you can further adjust the graph display with the following options:</li>
   <ul>
