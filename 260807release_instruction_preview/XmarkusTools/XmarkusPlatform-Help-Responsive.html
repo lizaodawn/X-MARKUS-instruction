@@ -560,7 +560,7 @@
   <li><strong>Tag-feature Filter</strong>
     <p>Use the <strong>Tag-feature Filter</strong> to filter event and image nodes by their annotated tags and features. You can combine multiple conditions within a dataset or across event and image datasets using the <strong>AND</strong> and <strong>OR</strong> operators.</p></li>
   <ul>
-    <li><strong>Filtering Event Annotations</strong>
+    <li id="filtering-event-annotations"><strong>Filtering Event Annotations</strong>
       <p>To filter event annotations:</p>
     <ol>
       <li>Select <strong>Event</strong> as the node type in the <strong>Tag-feature Filter</strong> section.</li>
@@ -626,6 +626,25 @@
           <source src="images/06_fig13.mp4" type="video/mp4">
         </video>
       </p>
+      <li>Select one or more image annotation tags from the drop-down menu. You can select tags from:
+        <ul>
+          <li><strong>Image entity classes</strong>, such as <code>Udef_Img_EnttyClass</code>.</li>
+          <li><strong>Image properties</strong>, such as <code>texture</code>, <code>direction</code>, or <code>bridge_cover</code>.</li>
+        </ul>
+      </li>
+      <p><img src="images/06_fig14.png" alt="Image Annotation Tag Selection" width="1000"></p>
+      <li>In the <strong>type of feature</strong> pane, select the feature level to use for filtering. Image entity classes are organized in a parent–child hierarchy, so the available levels depend on the structure of the selected annotation. As a result, some entities have several levels, whereas others have only one or two. Where available, the levels are:</li>
+      <ul>
+        <li><code>all</code>: The complete annotation tag string, such as <code>object/bridge/luojiang_qili_qiao</code> or <code>obj_part/city_wall_moat</code>.</li>
+        <li><code>type</code>: The highest-level parent category, such as <code>object</code>, <code>obj_part</code>, <code>landform</code>, or <code>water</code>.</li>
+        <li><code>id</code>: The child class category (if any), such as <code>bridge</code> or <code>city_wall</code>.</li>
+        <li><code>text</code>: The normalized identifier associated with the entity, such as <code>luojiang_qili_qiao</code> or <code>city_wall_moat</code>.</li>
+      </ul>
+      <p class="notice">Some annotations may not contain all four levels. If an entity has no more specific child level, its highest available category may also appear in the list for a lower level. For example, <code>landform</code> and <code>water</code> are categorized to the <code>text</code> (parent class) level, but they will also appear in the <code>id</code> (child class) list  because no more specific child class is available.</p>
+      <p><img src="images/06_fig15.png" alt="Image Annotation Layer Filtering" width="1000"></p>
+      <p class="notice">Image properties are not hierarchical, so they do not have multiple feature levels in the <strong>type of feature</strong> pane. Instead, select one or more property values directly from the available entries.</p>
+      <p><img src="images/06_fig16.png" alt="Image Property Filtering" width="1000"></p>
+      <li>The steps for combining, confirming, and applying filter conditions are the same as those described in <a href="#filtering-event-annotations">filtering event annotations</a>. After defining the conditions, click <strong>OK</strong>, then click <strong>Redraw</strong> to apply the filter and update the graph.</li>
     </ol>
       <li><strong>Combined conditions</strong></li>
   </ul>
