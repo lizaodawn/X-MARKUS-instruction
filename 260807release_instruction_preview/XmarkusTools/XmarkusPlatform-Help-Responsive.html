@@ -101,6 +101,20 @@
       color: #7890ab;
    }
 
+   #toc details ul {
+    margin-left: 10px;
+    padding-left: 10px;
+   }
+
+   #toc details ul ul {
+    margin-left: 10px;
+    padding-left: 10px;
+   }
+
+   
+
+
+
    /* Back to top links */
    .back-to-top {
       display: inline-block;
@@ -511,7 +525,7 @@
        <h2 id="visualizing-relations">06 Visualizing Relations</h2>
 
         <p>You can use <strong>Visualizing Relations</strong> to explore connections within a single annotation dataset or across combined text and image annotation datasets. The interface represents annotations as a graph containing event nodes, image nodes, feature nodes—representing annotated entities and properties—and source-subfolder nodes. You can query, filter, label, and export the resulting network.</p>
-        <h3 id="importing-annotations-viz">Importing Annotations</h3>
+        <h3 id="importing-annotations-KG">Importing Annotations</h3>
         <p>You can import annotations into the <strong>Visualizing Realtions</strong> interface in either of the following ways:</p>
           <ul>
             <li>From the <strong><a href="#searching-and-filtering-annotations">Searching and Filtering</a></strong> page, click <strong>viz relations</strong> to load the current dataset.</li>
@@ -522,13 +536,13 @@
             <p><img src="images/06_fig2.png" alt="Importing XML File" width="1000"></p>
           </ul>
 
-<h3>Querying Annotations in Network Graph</h3>
+<h3 id="querying-annotations-KG">Querying Annotations in Network Graph</h3>
 
 <p>
   The network graph supports queries based on annotated tags and their instances in event and image annotations. You can combine multiple conditions in a single query.
 </p>
 
-<h4>Graph Control Panel</h4>
+<h4 id="graph-control-panel">Graph Control Panel</h4>
 
 <p>Open the <strong>Graph Control Panel</strong> from the the top menu bar.</p>
 <p>
@@ -551,7 +565,7 @@
     <li><strong><i class="fa-solid fa-tags"></i> Node Label</strong>: For event or image nodes, select the type of label to be displayed. <p class="notice">For event nodes, the label is blank by default. For image nodes, the image filename is displayed by default. You can change either label by assigning a tag name, tag category, normalization, or exact text to the node. This allows an event or image node to represent the specific annotation information most relevant to your analysis.</p> </li>
   </ol>
 
-<h4>Building Filter Conditions</h4>
+<h4 id="building-filter-conditions">Building Filter Conditions</h4>
 <p>In the <strong>Filter <i class="fa-solid fa-filter"></i></strong> tab, you can define conditions for filtering the graph.</p>
 <ul>
   <li><strong>Time Filter</strong>
@@ -646,39 +660,42 @@
       <p><img src="images/06_fig16.png" alt="Image Property Filtering" width="1000"></p>
       <li>The steps for combining, confirming, and applying filter conditions are the same as those described in <a href="#filtering-event-annotations">filtering event annotations</a>. After defining the conditions, click <strong>OK</strong>, then click <strong>Redraw</strong> to apply the filter and update the graph.</li>
     </ol>
-      <li><strong>Combined conditions</strong></li>
-  </ul>
-  <li>After defining the filters, you can further adjust the graph display with the following options:</li>
+    <p></p>
+      
+    <li><strong>Combining conditions</strong></li>
+      <p>The <strong>Tag-feature Filter</strong> contains separate condition blocks for event and image annotations. You can add multiple conditions and apply each one to the relevant node type. All conditions defined in the filter are combined using the <strong>AND</strong> operator, so only nodes that satisfy every selected condition are included in the results.</p>
+      <p><img src="images/06_fig17.png" alt="Combined Filter Conditions" width="1000"></p>
+    </ul>
+    <li><strong>Graph Display Options</strong></li>
+    <p>After defining the filters, you can further adjust the graph display with the following options:</p>
   <ul>
-    <li><strong>Show or hide unconnected event nodes:</strong>Displays or removes event nodes without connections.</li>
+    <li><strong>Show or hide unconnected event nodes:</strong>Displays or removes nodes without connections.</li>
     <li><strong>Show or hide feature-hierarchy nodes:</strong>Displays or removes hierarchical feature nodes, such as <code>OBJECT_MAIN</code>, which may serve as the parent node for <code>bridge</code> and <code>city_wall</code>.</li>
     <li><strong>Preserve node positions:</strong>Keeps the current node positions when the graph is redrawn.</li>
   </ul>
+  <p><img src="images/06_fig18.png" alt="Graph Display Options" width="1000"></p>
 </ul>
-<p>The bottom of the panel displays the number of nodes calculated from the current filter settings.</p>
+<p>The bottom of the panel displays the number of nodes included under the current filter settings.</p>
+<p><img src="images/06_fig19.png" alt="Graph Control Panel with Node Count" width="1000"></p>
+<p>You can click <strong>CLEAR ALL FILTERS</strong> to reset all filter conditions.</p>
+<p><img src="images/06_fig20.png" alt="Clear All Filters" width="1000"></p>
 
 
-
-<h4>Selecting Features to Display</h4>
+<h4 id="selecting-features-to-display">Selecting Features to Display</h4>
 
 <p>
   under construction
 </p>
 
-<h4>Assigning Tag Label to Event and Image Nodes</h4>
+<h4 id="assigning-tag-label-to-event-and-image-nodes">Assigning Tag Label to Event and Image Nodes</h4>
 
 <p>
   under construction
 </p>
 
-<h4>Adjusting the Graph Display</h4>
-<p>You can adjust the graph view in the following ways:</p>
-<ul>
-  <li>Zoom in or out of the graph.</li>
-  <li>Drag nodes directly within the graph to reposition them.</li>
-</ul>
 
-<h3>Navigating Annotations in the Graph</h3>
+<h3 id="navigating-annotations-in-the-graph">Navigating Annotations in the Graph</h3>
+<h4 id="nodes-and-edges">Nodes and Edges</h4>
 <p>The graph uses different node styles to represent sources, events, images, features, and feature-hierarchy nodes.</p>
 <ul>
   <li><strong>Hover over a node:</strong> to highlight its connected nodes and edges.</li>
@@ -690,7 +707,14 @@
   <li><strong>Click a hierarchical feature node:</strong> to inspect its parent category and related child features.</li>
 </ul>
 
-<h3>Resetting the Graph View</h3>
+<h4 id="adjusting-the-graph-view">Adjusting the Graph View</h4>
+<p>You can adjust the graph view in the following ways:</p>
+<ul>
+  <li>Zoom in or out of the graph.</li>
+  <li>Drag nodes directly within the graph to reposition them.</li>
+</ul>
+
+<h3 id="resetting-the-graph-view">Resetting the Graph View</h3>
 <p>Click <strong>reset</strong> on the top menu bar to clear the current graph view and reset the filter conditions, or re-import the annotation file.</p>
 
 <h3>Exporting the Graph</h3>
@@ -735,7 +759,28 @@
                   <li><a href="#visualizing-and-exporting-filtered-annotations">- Visualizing and Exporting Filtered Annotations</a></li>
                </ul>
             </details></li>
-           <li><a href="#visualizing-relations">06 Visualizing Relations</a></li>
+           <li>
+            <details>
+               <summary><a href="#visualizing-relations">06 Visualizing Relations</a></summary>
+               <ul>
+                  <li><a href="#importing-annotations-KG">- Importing Annotations</a></li>
+                  <li><a href="#querying-annotations-KG">- Querying Annotations in the Network Graph</a>
+                    <ul>
+                      <li><a href="#graph-control-panel">- Graph Control Panel</a></li>
+                      <li><a href="#building-filter-conditions">- Building Filter Conditions</a></li>
+                      <li><a href="#selecting-features-to-display">- Selecting Features to Display</a></li>
+                      <li><a href="#assigning-tag-label-to-event-and-image-nodes">- Assigning Tag Label to Event and Image Nodes</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#navigating-annotations-in-the-network-graph">- Navigating Annotations in the Network Graph</a></li>
+                  <ul>
+                    <li><a href="#nodes-and-edges">- Nodes and Edges</a></li>
+                    <li><a href="#adjusting-the-graph-view">- Adjusting the Graph
+                  </ul>
+                  <li><a href="#resetting-the-graph-view">- Resetting the Graph View</a></li>
+                  <li><a href="#exporting-the-graph">- Exporting the Graph</a></li>
+               </ul>
+            </details></li>
          </ul>
        </div>
      </div> <!-- End of sidebar -->
