@@ -530,7 +530,7 @@
           <ul>
             <li>From the <strong><a href="#searching-and-filtering-annotations">Searching and Filtering</a></strong> page, click <strong>viz relations</strong> to load the current dataset.</li>
             <p><img src="images/05_fig21.png" alt="Visualizing Relations from Search and Filter" width="1000"></p>
-            <p>If the dataset is large, the graph may initially appear blank while the data is being loaded. Set the desired conditions in the <strong>filter tab</strong> and click <strong>Redraw</strong> to generate the relation graph.</p>
+            <p>If the dataset is large, the graph may initially appear blank while the data is being loaded. Set the desired conditions in the <strong>filter tab</strong> and click <strong>REDRAW</strong> to generate the relation graph.</p>
             <p><img src="images/06_fig3.png" alt="Redrawing the Graph" width="1000"></p>
             <li>Or click the <strong>Network</strong> <i class="fa-solid fa-code-branch"></i> icon on the left menu bar, then click <strong>Import</strong> on the top menu bar to load a previously downloaded <code>.xml</code> file. </li>
             <p><img src="images/06_fig2.png" alt="Importing XML File" width="1000"></p>
@@ -618,7 +618,7 @@
       </p>
       <li>When you have finished defining the conditions, click <strong>OK</strong> to confirm them.</li>
       <p><img src="images/06_fig10.png" alt="Filter Confirmation" width="1000"></p>
-      <li>Then click <strong>Redraw</strong> in the <strong>Tag-feature Filter</strong> section to apply the filter and update the graph.</li>
+      <li>Then click <strong>REDRAW</strong> in the <strong>Tag-feature Filter</strong> section to apply the filter and update the graph.</li>
       <p><img src="images/06_fig11.png" alt="Redraw Graph" width="1000"></p>
     </ol>
     </li>
@@ -658,7 +658,7 @@
       <p><img src="images/06_fig15.png" alt="Image Annotation Layer Filtering" width="1000"></p>
       <p class="notice">Image properties are not hierarchical, so they do not have multiple feature levels in the <strong>type of feature</strong> pane. Instead, select one or more property values directly from the available entries.</p>
       <p><img src="images/06_fig16.png" alt="Image Property Filtering" width="1000"></p>
-      <li>The steps for combining, confirming, and applying filter conditions are the same as those described in <a href="#filtering-event-annotations">filtering event annotations</a>. After defining the conditions, click <strong>OK</strong>, then click <strong>Redraw</strong> to apply the filter and update the graph.</li>
+      <li>The steps for combining, confirming, and applying filter conditions are the same as those described in <a href="#filtering-event-annotations">filtering event annotations</a>. After defining the conditions, click <strong>OK</strong>, then click <strong>REDRAW</strong> to apply the filter and update the graph.</li>
     </ol>
     <p></p>
       
@@ -683,9 +683,35 @@
 
 <h4 id="selecting-features-to-display">Selecting Features to Display</h4>
 
-<p>
-  under construction
-</p>
+<p> In the <strong><i class="fa-solid fa-desktop"></i> Annotation Tag Display</strong> tab, you can select which annotation tags are displayed as feature nodes in the graph by tag name or tag category.</p>
+<p>To select the features to display:</p>
+<ol>
+  <li>Select the feature group:</li>
+    <ul>
+      <li><strong>ALL</strong>: Select from all available annotation tags.</li>
+      <li><strong>Event</strong>: Select from event annotation tags.</li>
+      <li><strong>Image</strong>: Select from image annotation tags.</li>
+      <li><strong>Special Tags</strong>: 
+        <ul>
+          <li><strong>Udef_Align_OBJECT</strong>: Displays hierarchical feature nodes. This option currently applies to <code>OBJECT_MAIN</code> and <code>OBJ_PART</code> classes across event and image annotations.</li>
+          <li><strong>EVENT_SOURCE_TEXT</strong>: Displays nodes representing event sources (gazetteer and inscription titles).</li>
+          <li><strong>Udef_Genre_Subfolder</strong>: Displays nodes representing image subfolder names.</li>
+        </ul>
+      </ul>
+      <P>You can click <strong>all</strong> to select all available features or <strong>clear</strong> to remove the current selections.</P>
+      <p><img src="images/06_fig21.png" alt="Selecting Features to Display" width="1000"></p>
+  <li>Select the label of the node to be displayed:
+    <ul>
+      <li><strong>Tag Name</strong>: Displays the name of the tag itself, such as <code>COST_ORIGIN</code>, <code>Udef_Img_EntityClass</code>, <code>bridge_type</code></li>
+      <p><img src="images/06_fig22.png" alt="Selecting Tag Name for Node Label" width="1000"></p>
+      <li><strong>Tag Category</strong>: Displays the category of the annotation tag, such as <code>public</code>, <code>landform</code>, or <code>arch.bridge</code>.</li>
+      <p><img src="images/06_fig23.png" alt="Selecting Tag Category for Node Label" width="1000"></p>
+    </ul>
+    <p>You can toggle on <strong>always include Tag in the label of feature nodes</strong>, then the label will show as <code>bridge_type:basic.bridge</code> in cases of labels selected to show the type.</p>
+    <p><img src="images/06_fig24.png" alt="Always Include Tag in Node Label" width="1000"></p>
+  </li>
+  <li>Click <strong>REDRAW</strong> to update the graph with the selected features. You will see a node count summary at the bottom of the tab pane.</li>
+</ol>
 
 <h4 id="assigning-tag-label-to-event-and-image-nodes">Assigning Tag Label to Event and Image Nodes</h4>
 
