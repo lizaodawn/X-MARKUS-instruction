@@ -715,9 +715,39 @@
 
 <h4 id="assigning-tag-label-to-event-and-image-nodes">Assigning Tag Label to Event and Image Nodes</h4>
 
-<p>
-  under construction
-</p>
+<p>In the <strong><i class="fa-solid fa-tag"></i>Node Label</strong> tab, you can change the labels displayed on <strong>event</strong> and <strong>image</strong> nodes. By default, event nodes have no label, and image nodes display the image filename. </p>
+<p>You can assign a tag name, category, normalization, or original text as the label to make the event or image node represent the specific annotation information relevant to your analysis.</p>
+<p>To assign a tag label to an event or image node:</p>
+<ol>
+  <li>Select the node type: Choose <strong>Event</strong> or <strong>Image</strong>.</li>
+  <li>Select a tag: Choose one tag from the available tag list. Only one tag can be used as the node label at a time.</li>
+  <li>Select the level of detail: Choose which part of the selected tag should appear in the label.</li>
+    <ul>
+      <p>For <strong>event</strong> nodes, the available levels are:</p>
+        <ul>
+          <li><strong>all</strong>: The complete annotation tag string, such as <code>wall/changle_cheng/長樂縣城</code> or <code>CONSTRUCTION/create/始</code>.</li>
+          <li><strong>type</strong>: The highest-level parent category, such as <code>wall</code> or <code>CONSTRUCTION</code>.</li>
+          <li><strong>norm</strong>: The normalized identifier of the annotation tag, such as <code>changle_cheng</code> or <code>create</code>.</li>
+          <li><strong>value</strong>: The original text that was annotated, such as <code>長樂縣城</code> or <code>始</code>.</li>
+        </ul>
+      <p>For <strong>image</strong> nodes, the available label levels depend on the selected tag type.</p>
+      For <strong>image entity classes</strong>, a single image may contain multiple annotated entities. The label therefore includes all entries associated with the selected tag, separated by semicolons:
+      <ul>
+          <li><strong>all</strong>: The complete annotation path for each entity, such as <code>object/city_wall/gong_cheng;obj_part/city_wall_gate;obj_part/city_wall_gate_tower;landform;obj_part/stele;water</code></li>
+          <li><strong>type</strong>: The the highest-level parent category of each entity, such as <code>object;obj_part;landform;water</code></li>
+          <li><strong>norm</strong>: The lower-level category of each entity. If an entity has no lower-level category, its highest available category is shown, such as <code>city_wall;city_wall_gate;city_wall_gate_tower;landform;stele;water</code></li>
+          <li><strong>value</strong>: The normalized identifier of each entity, if available. If an entity has no normalized identifier, its highest available category is shown, such as <code>gong_cheng;city_wall_gate;city_wall_gate_tower;landform;stele;water</code></li>
+      </ul>
+      For <strong>image properties</strong>, which do not have multiple category levels, the label is based on the property value:
+      <ul>
+          <li><strong>all</strong>: The property value atogether with the system-generated shape number, such as <code>south/piece:001;west/piece:003;north/piece:005;east/piece:006</code> for <strong>road_presence</strong></li>
+          <li><strong>type</strong>, <strong>norm</strong>, and <strong>value</strong>: The property value, such as <code>both.inside.and.outside.the.city</code> or <code>none</code> for <strong>road_presence</strong></li>
+    </ul>
+  </ol>  
+  <p>You can click the <i class="fa-solid fa-eye"></i> <strong>eye icon</strong> next to a tag to preview its complete label.</p>
+  <p>You can click the <strong>Use</strong> button to to preview the selected label in the label-preview area.</p>
+  </li>
+
 
 
 <h3 id="navigating-annotations-in-the-graph">Navigating Annotations in the Graph</h3>
