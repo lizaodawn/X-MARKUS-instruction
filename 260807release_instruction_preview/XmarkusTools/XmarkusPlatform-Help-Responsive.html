@@ -2,6 +2,7 @@
 <html lang="zh-Hant-TW">
 <head>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <title>X-MARKUS Instructions</title>
    <script src="components/js/jquery.min.js"></script>
    <link
       rel="stylesheet"
@@ -191,7 +192,7 @@
      <table width="100%">
        <tr>
          <td width="200">
-           <span style="font-size:24px; font-weight:bold; padding-left:16px;">Instruction</span>
+           <span style="font-size:24px; font-weight:bold; padding-left:16px;">Instructions</span>
          </td>
          <td align="center">
          </td>
@@ -240,7 +241,7 @@
 
          <h2 id="requirements">02 Prerequisites and Data Preparation</h2>
          <p>
-           Before using X-MARKUS, ensure your annotations have been properly created and checked in the MARKUS services.
+           Before using X-MARKUS, ensure your annotations have been properly created in the MARKUS services.
          </p>
          <ul>
            <li><strong><a href="https://dh.chinese-empires.eu/markus/" target="_blank">ENTMARKUS</a></strong>: entity annotation in texts (persons, places, organizations, dates, and other semantic categories).</li>
@@ -253,7 +254,7 @@
                <img src="images/02_fig1.png" alt="ENTMARKUS working folder" width="800">
             <li id="comarkus-files"><strong>COMARKUS</strong>: working folder containing your <code>.html</code> files and their matching <code>.json</code> files, alongside <code>xmarkus-metadata.json</code> and <code>rules.json</code></li>
                <img src="images/02_fig2.png" alt="COMARKUS working folder" width="800">
-            <li id="immarkus-files"><strong>IMMARKUS</strong>: working folder containing all subfolders, IIIF Manifest <code>.json</code> files, alongside <code>_immarkus.settings.json</code>, <code>_immarkus.model.json</code>, <code>_immarkus.relations.json</code> and <code>_immarkus.folder.meta.json</code></li>
+            <li id="immarkus-files"><strong>IMMARKUS</strong>: working folder containing all subfolders, local image files (in <code>.jpg</code> or <code>.png</code>), IIIF Manifest <code>.json</code> files, alongside <code>_immarkus.settings.json</code>, <code>_immarkus.model.json</code>, <code>_immarkus.relations.json</code> and <code>_immarkus.folder.meta.json</code></li>
                <img src="images/02_fig3.png" alt="IMMARKUS working folder" width="800">
          </ul>
          <a href="#requirements" class="back-to-top">&#8593; Back to section top</a>
@@ -284,22 +285,25 @@
               <li><strong>Add More Files</strong> to the conversion.</li>
               <li><strong>Go to Search and Filter</strong> to work with the converted annotations.</li>
               <li><strong>Download</strong> the converted <code>.xml</code>file for later use.</li>
-              <li><strong>Merge Databases</strong> to combine converted files from COMARKUS and IMMARKUS.</li>
+              <li><strong>Merge Databases</strong> to combine converted files from ENTMARKUS and IMMARKUS.</li>
+              <p class="notice">Merged ENTMARKUS and IMMARKUS databases can only be viewed in the <a href="#searching-and-filtering-annotations">Searching and Filtering Annotations</a> interface.</p>
+              <p class="notice"><strong>Additional features</strong>, including the <a href="#entities-in-both-text-and-image-annotations">Event-Image Alignment</a>filter and the <a href="#visualizing-relations">Visualizing Relations</a> feature, are supported only for <a href="#converting-comarkus-files">COMARKUS</a>, <a href="#converting-imarkus-files">IMMARKUS</a>, or a combined COMARKUS and IMMARKUS dataset.</p>
             </ul>
           </ol>
          <h3 id="converting-comarkus-files">Working with Event Annotations (COMARKUS files)</h3>
          <ol>
          <li><p>When converting COMARKUS files, a dialog will ask you to choose how annotations are displayed:</p>
             <ul>
-              <li><strong>By event:</strong> Displays each event separately. A source text containing multiple events will be repeated for each event.</li>
-              <li><strong>By source text:</strong> Displays each source text only once, grouping all associated events together in a side panel.</li>
+              <li><strong>By event:</strong> Displays the source text on the left and a single event’s details on the right, repeating the source text for each associated event.</li>
+              <li><strong>By source text:</strong> Displays the source text once on the left and a list of all associated events on the right.</li>
               <p><img src="images/03_fig3.png" alt="COMARKUS Conversion Modes" width="1000"></p>
             </ul>
           </li>
           <li>
-            <p>After selecting a display mode and uploading all files from your <a href="#comarkus-files">COMARKUS working folder</a>, you can add a "compilation" metadata field to specify the folder name. You can either use the existing local folder name or type a custom name.</p>
-            <p><img src="images/03_fig4.png" alt="COMARKUS Compilation Metadata" width="800"></p>
+            <p>After selecting a display mode and uploading all files from your <a href="#comarkus-files">COMARKUS working folder</a>, you can assign a <strong>compilation</strong> name to the converted batch. You can either use the existing local folder name or type a custom name.</p>
+            <P>This name is stored in the "compilation" metadata field and identifies the files as a group within X-MARKUS.</P>
             <p>This is useful for distinguishing between multiple COMARKUS folders when converting and navigating them together in X-MARKUS.</p>
+            <p><img src="images/03_fig4.png" alt="COMARKUS Compilation Metadata" width="800"></p>
           </li>
           <li>
             <p>Once the conversion is complete, a summary displays the number of files processed for your compilation. There should normally be one metadata file per working folder.</p>
@@ -315,8 +319,6 @@
                <p>From here, you can choose to <strong>Add More Files</strong>, <strong>Go to Search and Filter</strong>, <strong>Download</strong> the converted <code>.xml</code>file for later use, or <strong>Merge Databases</strong> to combine converted files from COMARKUS and IMMARKUS.</p>
           </li>
           <li><p>There is an advanced mode for converting IMMARKUS files using <strong>standard URLs</strong>. By hosting your IMMARKUS folder on a web server, you give each image a stable, reusable address. This allows X-MARKUS to reload the images reliably after conversion and makes it easier to share the converted <code>.xml</code> file with others who use the same server settings. The advanced mode also supports direct URLs to files hosted on remote servers.</p>
-              <p>Using standard URLs gives each IMMARKUS image a stable, reusable address. This allows X-MARKUS to reload the images reliably after conversion and makes it easier to share the converted database with others.
-</p>
               <p>The default local configuration uses <a href="https://simplewebserver.org/" target="_blank">Simple Web Server</a>. </p>
               <details>
                 <summary style="cursor: pointer; font-weight: bold; color: #7890ab;">Click to read the instructions for setting up a Simple Web Server for your IMMARKUS files.</summary>
@@ -372,7 +374,7 @@
         <p>
           You can initiate a merge in two ways:
           <ul>
-            <li>Click <strong>Merge Databases</strong> immediately  after both the COMARKUS and IMMARKUS conversions are complete.</li>
+            <li>Click <strong>Merge Databases</strong> immediately after converting COMARKUS or IMMARKUS files, with any additional sets already converted and ready.</li>
             <p><img src="images/04_fig1.png" alt="Merge Databases after Conversion" width="1000"></p>
             <li>Or click the <strong>Merge DBs</strong> button on the top menu bar to combine previously converted and downloaded <code>.xml</code> files.</li>
             <p><img src="images/04_fig2.png" alt="Merge Databases from Menu" width="800"></p>
@@ -385,7 +387,7 @@
         After converting and merging your annotations, you can use X-MARKUS to search and filter across text entities, contextual clusters, and image annotations.
        </p>
         <h3 id="importing-annotations">Importing Annotations</h3>
-        <p>Import your converted annotations into Searching and Filtering interface in one of the two ways:</p>
+        <p>Import your converted annotations into the <a href="#searching-and-filtering-annotations">Searching and Filtering</a> interface in one of two ways:</p>
           <ul>
             <li>Click <strong>Go to Search and Filter</strong> directly from the <strong><a href="#converting-annotations">Converting</a></strong> interface.</li> 
             <p><img src="images/05_fig1.png" alt="Go to Search and Filter" width="1000"></p>
@@ -406,17 +408,17 @@
             <p><img src="images/05_fig6.png" alt="Source Pane of Image" width="1000"></p>
             <p>You can sort the displayed sources by:
               <ul> 
-                <li>File name (Document ID)</li>
+                <li>Document ID (File name)</li>
                 <li>Author name</li>
-                <li>Compilation name defined during conversion (Compilation)</li>
-                <li>Gazetteer name (Data Source)</li>
-                <li>Inscription title (Piece Title)</li>
-                <li>Covering place (Place Covered)</li>
-                <li>Publication year in ascending or descending order</li>
+                <li>Compilation (Compilation name defined during conversion)</li>
+                <li>Data Source (Gazetteer name)</li>
+                <li>Piece Title (Inscription title)</li>
+                <li>Place Covered</li>
+                <li>Year (Publication year in ascending or descending order)</li>
               </ul>
             </p>
             <p><img src="images/05_fig6_add.png" alt="Source Pane with Sorting Options" width="800"></p>
-            <p>For event annotations, the <a href="https://comarkus.xmarkus.org/" target="_blank">COMARKUS</a> color scheme and <a href="https://entmarkus.xmarkus.org/" target="_blank">ENTMARKUS</a> IDs are integrated directly into the text. You can activate this display via the drop-down menu in the top right corner.</p>
+            <p>For event annotations, the <a href="https://comarkus.xmarkus.org/" target="_blank">COMARKUS</a> color scheme set by the user and <a href="https://entmarkus.xmarkus.org/" target="_blank">ENTMARKUS</a> IDs are integrated directly into the text. You can activate this display via the drop-down menu in the top right corner.</p>
             <p><img src="images/05_fig7.png" alt="COMARKUS Event Color Scheme" width="1000"></p>
             <p><img src="images/05_fig8.png" alt="ENTMARKUS Annotated Entity IDs" width="1000"></p>
             <li><strong>Annotation List Pane</strong>: Displays the tags associated with each piece of text or image.</li>
@@ -453,15 +455,15 @@
           <p>The <strong>filter pane</strong> provides different filtering criteria for text and image annotations. The available options depend on the annotation type and are organized hierarchically, allowing you to refine your selections from broad categories to more specific values.</p>
           
           <h4>Filter Options for Text Annotations</h4>
-          For <strong>ENTMARKUS</strong> annotations, you can filter by <strong>Entity Tags(<code>text_tags</code>):</strong> defined in ENTMARKUS, such as "action" and "soccat".
+          For <strong>ENTMARKUS</strong> annotations, you can filter by <strong>Entity Tags(<code>text_tags</code>):</strong> set by user in ENTMARKUS, such as "action" and "cost".
           <p><img src="images/05_filter-option_fig3.png" alt="Filter Options - Entity Tags" width="400"></p>
           For COMARKUS annotations, except for the <strong>Entity Tags (<code>text_tags</code>)</strong>, you can also filter by:
           <ul>
             <li><strong>Metadata (<code>metadata</code>): </strong> Default parsed metadatafields from the converted dataset, including "author", "data source" (gazetteer title), "data title" (inscription title), "place covered", and "publication year".</li>
             <p><img src="images/05_filter-option_fig1.png" alt="Filter Options - Metadata" width="400"></p>
-            <li><strong>User defined metadata (<code>udef_docmeta</code>):</strong> Custom metadata fields defined in COMARKUS, such as "piece_time", "source_time" etc.</li>
+            <li><strong>User defined metadata (<code>udef_docmeta</code>):</strong> Custom metadata fields set by user in COMARKUS, such as "piece_time", "source_time" etc.</li>
             <p><img src="images/05_filter-option_fig2.png" alt="Filter Options - User Defined Metadata" width="400"></p>
-            <li><strong>Event tags (<code>txt_event_tree</code>)</strong>:  Event tags defined in COMARKUS, such as "EVENT" and "INITIATOR".</li>
+            <li><strong>Event tags (<code>txt_event_tree</code>)</strong>:  Event tags set by user in COMARKUS, such as "EVENT" and "INITIATOR".</li>
             <p><img src="images/05_filter-option_fig4.png" alt="Filter Options - Event Tags" width="400"></p>
           </ul>
            
@@ -470,17 +472,17 @@
           <ul>
             <li><strong>Metadata (<code>metadata</code>): </strong> Default parsed metadata fields from the converted dataset, including "author", "compilation" (image folder name), "piece title" (image title), "place covered", and "publication year".</li>
             <p><img src="images/05_filter-option_fig5.png" alt="Filter Options - ImageMetadata" width="400"></p>
-            <li><strong>User defined metadata (<code>udef_docmeta</code>):</strong> Custom metadata fields defined in IMMARKUS, such as "Genre" and "Medium" etc.</li>
+            <li><strong>User defined metadata (<code>udef_docmeta</code>):</strong> Custom metadata fields set by user in IMMARKUS, such as "Genre" and "Medium" etc.</li>
             <p><img src="images/05_filter-option_fig6.png" alt="Filter Options - User Defined ImageMetadata" width="400"></p>
-            <li><strong>Image Entity Classes(<code>img_entity_tree</code> / <code>Udef_Img_EntityClass</code>):</strong> Entity classes defined in IMMARKUS, such as "object" and "temple".</li>
+            <li><strong>Image Entity Classes(<code>img_entity_tree</code> / <code>Udef_Img_EntityClass</code>):</strong> Entity classes set by user in IMMARKUS, such as "object" and "temple".</li>
             <p><img src="images/05_filter-option_fig7.png" alt="Filter Options - Image Tags" width="400"></p>
-            <li><strong>Relationships between Image Entities(<code>img_entity_tree</code> / <code>Udef_Img_EntityRelation</code>):</strong> Relationships between image entities defined in IMMARKUS, such as "crossing".</li>
+            <li><strong>Relationships between Image Entities(<code>img_entity_tree</code> / <code>Udef_Img_EntityRelation</code>):</strong> Relationships between image entities set by user in IMMARKUS, such as "crossing".</li>
             <p><img src="images/05_filter-option_fig8.png" alt="Filter Options - Image Relationships" width="400"></p>
-            <li><strong>Image Properties(<code>img_properties</code>):</strong> Properties associated with entities annotated in IMMARKUS, such as "relation_to_wall", "texture" and "direction".</li>
+            <li><strong>Image Properties(<code>img_properties</code>):</strong> Properties associated with entities annotated by user in IMMARKUS, such as "relation_to_wall", "texture" and "direction".</li>
             <p><img src="images/05_filter-option_fig9.png" alt="Filter Options - Image Properties" width="400"></p>
           </ul>
 
-          <h4>Entities in Both Text and Image Annotations</h4>
+          <h4 id="entities-in-both-text-and-image-annotations">Entities in Both Text and Image Annotations</h4>
           <p>For the RegInfra project, X-MARKUS also supports filtering infrastructure entities that occur in both text and image annotations. Use the <strong>Event-Image Alignment (<code>align_evt_img</code></strong>) filter to identify corresponding entities in bridges or city walls.</p>
           <p>The filter displays the IDs of entities that occur in both annotation types in a drop-down menu. Select one or more IDs to retrieve the corresponding text and image annotations.</p>
           <p><img src="images/05_filter-option_fig10.png" alt="Filter Options - Cross-modal Entities" width="400"></p>
@@ -524,9 +526,9 @@
 
        <h2 id="visualizing-relations">06 Visualizing Relations</h2>
 
-        <p>You can use <strong>Visualizing Relations</strong> to explore connections within a single annotation dataset or across combined text and image annotation datasets. The interface represents annotations as a graph containing event nodes, image nodes, feature nodes—representing annotated entities and properties—and source-subfolder nodes. You can query, filter, label, and export the resulting network.</p>
+        <p>You can use <strong>Visualizing Relations</strong> to explore connections within a single annotation dataset or across combined text and image annotation datasets. The interface represents annotations as a graph containing event nodes, image nodes, feature nodes—representing annotated entities and properties—and source-subfolder nodes. You can query, filter, label, and export the resulting network graph.</p>
         <h3 id="importing-annotations-KG">Importing Annotations</h3>
-        <p>You can import annotations into the <strong>Visualizing Realtions</strong> interface in either of the following ways:</p>
+        <p>You can import annotations into the <strong>Visualizing Relations</strong> interface in either of the following ways:</p>
           <ul>
             <li>From the <strong><a href="#searching-and-filtering-annotations">Searching and Filtering</a></strong> page, click <strong>viz relations</strong> to load the current dataset.</li>
             <p><img src="images/05_fig21.png" alt="Visualizing Relations from Search and Filter" width="1000"></p>
@@ -642,7 +644,7 @@
       </p>
       <li>Select one or more image annotation tags from the drop-down menu. You can select tags from:
         <ul>
-          <li><strong>Image entity classes</strong>, such as <code>Udef_Img_EnttyClass</code>.</li>
+          <li><strong>Image entity classes</strong>, such as <code>Udef_Img_EntityClass</code>.</li>
           <li><strong>Image properties</strong>, such as <code>texture</code>, <code>direction</code>, or <code>bridge_cover</code>.</li>
         </ul>
       </li>
@@ -654,7 +656,7 @@
         <li><code>id</code>: The child class category (if any), such as <code>bridge</code> or <code>city_wall</code>.</li>
         <li><code>text</code>: The normalized identifier associated with the entity, such as <code>luojiang_qili_qiao</code> or <code>city_wall_moat</code>.</li>
       </ul>
-      <p class="notice">Some annotations may not contain all four levels. If an entity has no more specific child level, its highest available category may also appear in the list for a lower level. For example, <code>landform</code> and <code>water</code> are categorized to the <code>text</code> (parent class) level, but they will also appear in the <code>id</code> (child class) list  because no more specific child class is available.</p>
+      <p class="notice">Some annotations may not contain all four levels. If an entity has no child classes, its highest available category may also appear in the list for a lower level. For example, <code>landform</code> and <code>water</code> are categorized to the <code>text</code> (parent class) level, but they will also appear in the <code>id</code> (child class) list because no child class is available.</p>
       <p><img src="images/06_fig15.png" alt="Image Annotation Layer Filtering" width="1000"></p>
       <p class="notice">Image properties are not hierarchical, so they do not have multiple feature levels in the <strong>type of feature</strong> pane. Instead, select one or more property values directly from the available entries.</p>
       <p><img src="images/06_fig16.png" alt="Image Property Filtering" width="1000"></p>
@@ -669,9 +671,9 @@
     <li><strong>Graph Display Options</strong></li>
     <p>After defining the filters, you can further adjust the graph display with the following options:</p>
   <ul>
-    <li><strong>Show or hide unconnected event nodes:</strong>Displays or removes nodes without connections.</li>
-    <li><strong>Show or hide feature-hierarchy nodes:</strong>Displays or removes hierarchical feature nodes, such as <code>OBJECT_MAIN</code>, which may serve as the parent node for <code>bridge</code> and <code>city_wall</code>.</li>
-    <li><strong>Preserve node positions:</strong>Keeps the current node positions when the graph is redrawn.</li>
+    <li><strong>Show or hide unconnected event nodes: </strong>Displays or removes nodes without connections.</li>
+    <li><strong>Show or hide feature-hierarchy nodes: </strong>Displays or removes hierarchical feature nodes, such as <code>OBJECT_MAIN</code>, which may serve as the parent node for <code>bridge</code> and <code>city_wall</code>.</li>
+    <li><strong>Preserve node positions: </strong>Keeps the current node positions when the graph is redrawn.</li>
   </ul>
   <p><img src="images/06_fig18.png" alt="Graph Display Options" width="1000"></p>
 </ul>
