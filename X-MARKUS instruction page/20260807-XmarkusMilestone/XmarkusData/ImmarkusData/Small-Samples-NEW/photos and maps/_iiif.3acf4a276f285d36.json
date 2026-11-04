@@ -1,0 +1,16 @@
+{
+  "id": "3acf4a276f285d36",
+  "name": "(Map 1) Tokyo mei hitori annai (Tokyo Guide Book)",
+  "uri": "https://www.davidrumsey.com/luna/servlet/iiif/m/RUMSEY~8~1~364271~90131788/manifest",
+  "importedAt": "2025-03-25T10:38:12.722Z",
+  "type": "PRESENTATION_MANIFEST",
+  "majorVersion": 2,
+  "canvases": [
+    {
+      "id": "3245143969",
+      "uri": "https://www.davidrumsey.com/luna/servlet/iiif/m/RUMSEY~8~1~364271~90131788/canvas/c1",
+      "name": "(Map 1) Tokyo mei hitori annai (Tokyo Guide Book)",
+      "manifestId": "3acf4a276f285d36"
+    }
+  ]
+}

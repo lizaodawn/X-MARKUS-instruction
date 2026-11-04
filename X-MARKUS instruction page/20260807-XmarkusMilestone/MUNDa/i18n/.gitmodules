@@ -1,0 +1,3 @@
+[submodule "libs/CLDRPluralRuleParser"]
+	path = libs/CLDRPluralRuleParser
+	url = https://github.com/santhoshtr/CLDRPluralRuleParser.git

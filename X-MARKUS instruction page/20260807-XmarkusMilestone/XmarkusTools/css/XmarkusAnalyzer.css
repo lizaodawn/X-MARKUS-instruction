@@ -1,0 +1,1219 @@
+/* Xmarkus colors
+   For menu bars:
+      - #757575 (grey)
+      - #0f172a (darker-grey-blue)
+   For function tabs:
+      - #3379b5 (light-blue)
+      - #7890ab (even-lighter-blue)
+   For annotation/data model
+      - #ff8800 (light-orange)
+      - #a7bc85 (light-green)
+*/
+
+/*
+entity tag	HEX code	
+work	#993300	
+object	#333399	
+obj_height	#3366ff	
+obj_length	#00ccff	
+obj_width	#99ccff	
+material	#008080	
+material_quant	#339966	
+obj_meaning	#ffcc99	
+cost	#ffcc00	
+labor	#c0c0c0	
+deity	#808000	
+obj_part	#800080	
+obj_part_quant	#800000	
+obj_part_height	#ff99cc	
+obj_part_length	#993366	
+obj_part_width	#ff00ff	
+action	#ff6600	
+action_cause	#ff9900	
+placeName	#428bca	default
+fullName	#d9534f	default
+partialName	#f0ad4e	default
+officialTitle	#5bc0de	default
+soccat	#666699	
+*/
+
+/* main structure */
+html,body { display: flex;
+            height: 100vh;
+            /*width: calc(100% - 72px);*/
+            width: 100%;
+            margin: 0;      /* Space from this element (entire page) and others */
+            padding: 0;     /* space from content and border */
+            line-height: 1.35em;
+            font-family: Inter, "sans-serif", "微軟正黑體","Helvetica", "Arial","LiHei Pro","黑體-繁";
+            overflow:hidden;
+          }
+          
+div.headerBar { box-sizing:border-box;
+                position:fixed; 
+                width:100%; 
+                height:50px;     /* 預設 box-sizing: content-box; 加上 padding 後，共佔 50px 高度 */
+                /*padding-top:12px; */
+                background-color:#efefef; 
+                color:#757575; 
+                z-index:10;     /* 必須顯示在 main area 的上方 */
+              }
+
+#divMainArea {                  /* 以 spotlightContentTable 包含 divSpotlightSelectDocked 和 paginationDocked + divContentArea */
+   position:absolute;
+   width:100%;
+   top:100px; 
+   left:72px;
+   padding:0; 
+}
+ 
+div.linear-gradient-headerBar {
+   background-color: #757575;
+   background-image: -webkit-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+   background-image: -moz-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+   background-image: -o-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+   background-image: -ms-linear-gradient(left, #757575, rgba(15,23,42,0.7));
+   background-image: linear-gradient(to left, #757575, rgba(15,23,42,0.7));
+}
+      
+div.leftSidebar {
+   box-sizing: border-box;                       /* 包含內邊距和編框在內的寬度 */
+   position:fixed;
+   top: 40px;
+   width: 50px;
+   height:100%;
+   background-color: #4f4f4f;
+   color: white;
+   line-height:200%;
+   font-size:140%;
+   padding: 2px;
+}
+          
+Paragraph { display:block; 
+            margin:3px; padding:8px; 
+            border:2px solid #9FBFDF; 
+            border-radius:5px; 
+            font-size:1em; 
+            background-color:#FFFFFF;
+            cursor:default; 
+          }
+
+/* --------------------------------------------- */
+
+td { line-height:1.6em }           /* 內文高度 */
+
+select { scrollbar-width:thin; }
+option { background-color: #F7F7F7; }
+
+/* For highlighting a tag, e.g.,
+   <LocName RefId="xyz">地名</LocName>
+   => <LocName RefId="xyz"><span class="udef"><span class="udefOn">...</span>地名</span></LocName> 
+*/
+
+.udef {}
+
+span.udefOn { padding:1px 3px;
+              margin:1px 3px;
+              background-color:#6f6f6f;
+              color:#e7e7e7;
+              border-radius:4px;
+              line-height:140%;
+            }
+
+span.udefInfo { font-size:70%;
+                background-color:#f7f7f7;
+                color:#2f2f2f;
+                border-radius:3px;
+                margin:1px 2px;
+                padding:1px;
+              }
+
+span.hideUdefInfo { display:none; }
+              
+span.udefRefId { color:#008080;    /* #a7bc85; */
+               }
+               
+span.udefMatchOn { padding:1px 3px;
+                   margin:1px 3px;
+                   background-color:#6497b1;
+                   color:#E7E7E7;
+                   border-radius:4px;
+                   line-height:140%;
+                 }
+
+span.tagSpotted {                  /* 點擊 event element 後，動態從文本找出的符合標籤（matchKey 匹配後，比對 RefId 和標記詞都通過） */
+   background-color:#ff8800;
+   color:white;
+   padding:1px 3px;                /* same as that in span.udefMatchOn */
+   border-radius:4px;
+}
+
+span.tagSpottedByText {            /* matchKey 有匹配（比對到 RefId 或文本標記詞），且標記詞被標上 udefMatchByText */
+   background-color: #0088ff;      /* 青色 */
+}
+
+span.tagSpottedRoughMatch {        /* matchKey 有匹配（比對到 RefId 或文本標記詞），但標記詞比對不到 （防呆用？）*/
+   background-color: #821dcf;      /* 紫色 */
+}
+
+span.eventElementMatch { text-decoration: underline dotted;     /* 事件區塊 */
+                         text-decoration-color: #ff8800;
+                         text-decoration-thickness: 2px;
+                       }
+                       
+span.eventElementMatchByText { text-decoration-color: #0088ff; }
+                       
+span.eventElementMatch:hover { background-color:#d0f0c0; color:navy; }
+                       
+span.curElementMatch { background-color:#ff8800;               /* 事件區塊 */
+                       color:#ffffff;
+                       border-radius:4px;
+                     }
+
+span.curElementMatchByText { background-color:#0088ff;
+                             color:#ffffff;
+                             border-radius:4px;
+                           }
+                     
+td.udefMetadataTag { width:160px;                  /* 包含 iiif manifest 的特定 metadata 欄位 */
+                     vertical-align: top; }
+                     
+td.udefMetadataVal { vertical-align: top; }
+
+
+/* docking areas */
+#divSpotlightSelectDocked { position:fixed;
+                            top:90px;
+                            verflow:auto;
+                            background-color:#ffffff; 
+                            color:#3f3f3f;
+                            width:330px;            /* spotlight column 固定寬度 320px，扣除 padding */
+                            /*border:1px solid #d7d7d7;*/
+                            border-radius:3px;
+                            padding:5px;
+                            line-height:1.8em;
+                            z-index:5;
+                          }
+
+#spotlightResultDocked { position:fixed;                /* 高度（和位置）需 js 動態計算 */
+                         scrollbar-width: thin;
+                         background-color:#f7f7f7;
+                         color:white;
+                         border-radius:3px;
+                         width:340px;
+                         overflow-y:auto; 
+                         overflow-x:hidden; 
+                         z-index:5;
+                       }
+                       
+#spotlightCuesTreeJs {
+   /*background-color:#5f6f7f;*/      /* for debugging */
+   color:#1f1f1f;
+}
+                       
+#cuesActionBarDocked { position:fixed;              /* 高度（和位置）跟著 #spotlightResultDocked 動態計算 */
+                       background-color:#dfdfdf; 
+                       border-bottom-left-radius:4px;
+                       border-bottom-right-radius:4px;
+                       width:330px;
+                       padding:5px;
+                       z-index:5;
+                     }
+
+#divMainAreaTopBarDocked { position:fixed; 
+                           top:50px;
+                           padding-top:4px;        
+                           background-color:white; 
+                           left:50px;
+                           padding:8px 6px 8px 6px;
+                           width:calc(100% - 72px);
+                           height:65px;
+                           /*border:1px solid red;*/
+                           z-index:5;            /* 透過 z-index 和 padding-top 蓋掉 main area 捲上來的內容 */
+                         }
+
+#paginationDocked { position:fixed;
+                    background-color:white;
+                    top:88px;
+                    padding-top:4px;       
+                    width: calc(100% - 32px - 340px);   /* 左方後分類 340px，leftsidebar 72px，但不知為什麼框住的區塊還是不太對勁 */
+                    /*border:1px solid blue;*/
+                    z-index:5;
+                  }
+
+#divContentArea {              /* 接在 #paginationDocked 下方，因此寬度應相同，但因為是 relative，計算方式就不同... */
+   position:absolute; 
+   top:40px; 
+   width: calc(100% - 32px - 340px);
+   height:500px;
+   background-color:white;
+   /*border:3px solid red;*/
+   overflow-y:auto;
+   scrollbar-width:thin;
+}
+
+/* tooltip (by ChatGPT) -- 如果需要的話 */
+.tooltip {                    /* tooltip 容器 */
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.tooltip .tooltiptext {       /* tooltip 文字 <div class="tooltip">文字<div class="tooltiptext">tooltip text</div></div> */
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    top: 125%;                /* 預設位置在元素下方 */
+    left: 50%;
+    margin-left: -100px;      /* 使 tooltip 居中 */
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: normal;      /* 允許換行 */
+}
+
+.tooltip:hover .tooltiptext {    /* 顯示tooltip */
+    visibility: visible;
+    opacity: 1;
+}
+
+/* database info and spotlight area */
+span.dbFilename { 
+   display: inline-block;
+   color:#5F5F5F; 
+   vertical-align:-4px;
+   margin-right:6px; 
+   max-width: 420px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   word-break: break-all;
+   xtext-decoration:underline;
+}
+            
+table.spotlightContentTable { width: 100%; }
+
+table.spotlightTable { border-collapse:collapse;               /* to enable tr border-bottom */
+                       background-color:#f7f7f7; 
+                       color:#3f3f3f;
+                       width:340px;
+                       border-radius:6px;
+                     }
+                     
+table.spotlightTable th { 
+   position: sticky;             /* 使表頭固定 */
+   top: 0;                       /* 當滾動時，固定在頂部 */
+   background-color:#bfbfbf;     /* 需加上背景顏色 */
+   z-index: 5;                   /* 使表頭在其他內容上層 */
+}
+
+table.spotlightTable th i { 
+   cursor:pointer; padding:2px 4px; color:#ffffff; 
+}
+table.spotlightTable th i:hover { 
+   background-color:#DFDFDF; color:#1F1F1F; 
+   border-radius:4px;
+}
+
+table.spotlightTable tr.bottomLine { border-bottom:2px dotted #DFDFDF; }
+table.spotlightTable tr.cueRow:hover { background-color:#DFDFDF; color:#1F1F1F; cursor:pointer; }
+
+table.spotlightTable tr.cueRow td.cue:hover { text-decoration:underline; }
+
+td.chk { vertical-align:top; }
+
+td.cue { width:265px;
+         vertical-align:top;
+         text-align:left;
+         word-break:break-all;
+         padding: 3px 2px;
+       }
+
+td.val { vertical-align:top; 
+         text-align:right; 
+         padding-left:4px;
+         padding-right:16px;
+       }
+
+
+/* within #divContentArea */
+
+#contentTable { }
+
+tr.docTitle td { color:white;
+                 background-color:#bfbfbf;
+                 border-radius:3px;
+                 padding:6px 12px;
+               }
+
+td.docContent { width:50%;
+                vertical-align:top;
+                padding-bottom:10px;
+                word-break:break-all;
+              }
+
+td.docEvents { width:50%; 
+               vertical-align:top;
+               background-color:#F7F7F7;
+               padding-bottom:10px;
+               font-size:0.9em;            /* 較小字型 */
+               word-break:break-all;
+             }
+
+div.docMetadata { font-size:0.8em;        /* 比 docEvents 更小的字 */
+                  border: 2px solid #AFAFAF;
+                  border-radius: 6px;
+                  padding: 6px;
+                  margin: 2px 4px;
+                  line-height: 160%;
+                }
+                
+div.imageMetadata { font-size:0.8em;        /* 2025-11-19 補 */
+                    border: 2px solid #AFAFAF;
+                    border-radius: 6px;
+                    padding: 6px;
+                    margin: 2px 4px;
+                    line-height: 160%;
+                  }
+
+div.immarkusPieceElements { }
+
+div.immarkusPiece { padding: 2px 3px; }
+                  
+div.docText { font-size:1.15em;            /* 較大字型 */
+              line-height: 160%;
+            }
+
+div.docFilename { width:98%; 
+                  font-size:75%; 
+                  line-height:120%;
+                  text-align:right; 
+                }
+                
+span.docSortedByField {
+   margin: 0px 4px;
+   padding: 2px 4px;
+   background-color: #234567;
+   border-radius: 4px;
+   color: #efefef;
+}
+
+textarea.queryEditor {
+   width:100%; 
+   height:300px; 
+   max-height:420px; 
+   resize:vertical; 
+   overflow-x:hidden;
+   font-family: "Inter", "sans-serif", "Microsoft JhengHei", "微軟正黑體", "Helvetica", "Arial","LiHei Pro","黑體-繁";
+}
+
+mark.highlight { padding:2px 3px 1px 3px;
+                 border-radius:5px;
+                 background-color:#654321;
+                 color:#EFEFEF;
+               }
+
+mark.ftHighlight { padding:2px 3px 1px 3px;
+                 border-radius:5px;
+                 background-color:#123456;
+                 color:#EFEFEF;
+               }
+
+/* hilight 本身標記 */
+mark.markColor0 { background-color:#A9DFBF; color:#1B4F2E; border-radius:3px; }      /* 綠 */
+mark.markColor1 { background-color:#AED6F1; color:#154360; border-radius:3px; }      /* 藍 */
+mark.markColor2 { background-color:#8E44AD; color:#FFFFFF; border-radius:3px; }      /* 紫 */
+mark.markColor3 { background-color:darkred; color:#FFFFFF; border-radius:3px; }      /* 暗紅 */
+mark.markColor4 { background-color:#E67E22; color:#2C0A00; border-radius:3px; }      /* 橙 */
+mark.markColor5 { background-color:yellow; color:navy; border-radius:3px; }          /* 黃底藍字 */
+mark.markColor6 { background-color:#2471A3; color:#FFFFFF; border-radius:3px; }      /* 靛 */
+mark.markColor7 { background-color:cyan; color:#004D40; border-radius:3px; }         /* 青 */
+mark.markColor8 { background-color:#C39BD3; color:#4A235A; border-radius:3px; }      /* 淡紫 */
+mark.markColor9 { background-color:#117A65; color:#EAF2F8; border-radius:3px;}       /* 墨綠 */
+
+/* 若 hilight 文字在內層，則外層以 span.markColorX 標記 */
+span.markColor0 { border:3px solid #58D68D; border-radius:3px; }              /* 綠 */
+span.markColor1 { border:3px solid #5DADE2; border-radius:3px; }              /* 藍 */
+span.markColor2 { border:3px solid #8E44AD; border-radius:3px; }              /* 紫 */
+span.markColor3 { border:3px solid darkred; border-radius:3px; }              /* 暗紅 */
+span.markColor4 { border:3px solid #E67E22; border-radius:3px; }              /* 橙 */
+span.markColor5 { border:3px solid yellow;  border-radius:3px; }              /* 黃底藍字 */
+span.markColor6 { border:3px solid #2471A3; border-radius:3px; }              /* 靛 */
+span.markColor7 { border:3px solid cyan;    border-radius:3px; }              /* 青 */
+span.markColor8 { border:3px solid #C39BD3; border-radius:3px; }              /* 淡紫 */
+span.markColor9 { border:3px solid #117A65; border-radius:3px;}               /* 墨綠 */
+                  
+/* 2025-01-21: color scheme for entities -- 由於 M2D 沒有保留 tag color，目前採 hard-code 方式處理 */
+/* 為了方便辨識出「沒有加入顏色」的 Markus tags，利用 * 將所有 Markus tags 標成海軍藍，但這樣一來其他標籤也需加上 [TagForConverion] 才不會被海軍藍蓋掉 */
+
+PersonName { color:#d9534f; cursor: pointer; }          /* Markus fullName (M2D 似乎沒處理 partialName，因此暫時略去 partialName #f0ad4e) */
+PersonName:hover { color:purple; text-decoration: underline; }
+           
+LocName { color:#428bca; cursor: pointer; }             /* Markus placeName */
+LocName:hover { color:purple; text-decoration: underline; }
+
+/* .applyColor { color:navy; } */                       /* 預設的顏色... 主要是方便辨識出可能漏掉的 Udef 標籤 */
+
+Date.applyColor {color:#449d44;}                        /* 2025-07-14: ENTMARKUS timePeriod */           
+Office.applyColor { color:#5bc0de; }                    /* Markus officialTitle */
+
+Udef_work.applyColor { color:#993300; }
+Udef_object.applyColor { color:#333399; }
+Udef_object_height.applyColor { color:#3366ff; }
+Udef_object_length.applyColor { color:#00ccff; }
+Udef_object_width.applyColor { color:#99ccff; }
+Udef_material.applyColor { color:#008080; }
+Udef_material_quant.applyColor { color:#339966; }
+Udef_obj_meaning.applyColor { color:#ffcc99; }
+Udef_cost.applyColor { color:#ffcc00; }
+Udef_labor.applyColor { color:#c0c0c0; }
+Udef_deity.applyColor { color:#808000; }
+Udef_obj_part.applyColor { color:#800080; }
+Udef_obj_part_quant.applyColor { color:#800000; }
+Udef_obj_part_height.applyColor { color:#ff99cc; }
+Udef_obj_part_length.applyColor { color:#993366; }
+Udef_obj_part_width.applyColor { color:#ff00ff; }
+Udef_action.applyColor { color:#ff6600; }
+Udef_action_cause.applyColor { color:#ff9900; }
+Udef_soccat.applyColor { color:#666699; }
+Udef_duration.applyColor { color:#99cc00; }
+Udef_timePeriod.applyColor { color:#449d44; }        /* should not occur (converted to Date) */
+
+Udef_obj_height.applyColor { color:#3366ff; }        /* 2025-07-10 */
+Udef_obj_length.applyColor { color:#00ccff; }        /* 2025-07-12 */
+Udef_obj_width.applyColor { color:#99ccff; }         /* 2025-07-12 */
+Udef_obj_depth.applyColor { color:#33cccc; }         /* 2025-07-12 */
+Udef_obj_part_depth.applyColor { color:#ff0000; }    /* 2025-07-10 */
+
+/* 2026-05-02: Udef_properties_Location 僅當有 RefId 屬性時，才顯示不同色 */
+/*
+Udef_properties_Location[RefId] { color:#123456;
+                                  cursor:pointer;
+                                }
+Udef_properties_Location[RefId]:hover { background-color:#123456; 
+                                        color:#efefef;
+                                        border-radius:3px;
+                                      }
+*/
+
+/* document events */
+div.comment { border:1px solid #7F7F7F;
+              border-radius:5px;
+              padding:4px;
+              margin:3px;
+            }
+            
+span.commentItemCategory { background-color:#CFCFCF;
+                           color:#2F2F2F;
+                           border:1px solid #9F9F9F;
+                           border-radius:3px;
+                           padding:1px 4px;
+                           margin-right:4px;
+                         }
+                         
+div.comarkusEvent { border:1px solid #9FBFDF;
+                    border-radius:5px;
+                    padding:4px;
+                    margin:3px;
+                    cursor:pointer;
+                  }
+
+span.comarkusEventLabel { background-color:#9f9f9f;
+                          color:#ffffff;
+                          border-radius:5px;
+                          padding:3px 6px;
+                          margin-right:4px;
+                        }
+
+span.comarkusEventLabel:hover { background-color:#3379b5; }
+
+/* immarkus images */
+ImmarkusImage { width:100%;
+                padding:4px;
+                margin:4px;
+                background-color:#6F6F6F; 
+                border-radius:3px;
+                color:#FFFFFF;
+              }
+              
+ImmarkusImage::before { content: "immarkus image: ";
+                        font-size: 0.8em;
+                      }
+
+div.imageFailed {                      
+   color:red;
+   padding:4px;  
+   font-size:12px; 
+   line-height:135%; 
+   word-wrap:break-word;
+}
+
+span.iiifImageFailed {
+   display: inline-block;
+   overflow-wrap: anywhere;
+   word-break: break-word;
+   color:#123456;
+}
+
+span.butToggleAllImmarkusPieces { 
+   background-color:#bfbfbf;
+   color: #3379b5;
+   padding: 3px 5px;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+span.butToggleAllImmarkusPieces:hover { 
+   background-color:#5f5f5f;
+   color: #dfdfdf;
+}
+
+span.butHighlightImmarkusPiece {
+   background-color:#efefef;
+   color: #a7bc85;
+   padding: 3px 5px;
+   border: 1px solid #7f7f7f;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+span.butHighlightImmarkusPiece:hover {
+   background-color:#efefef;
+   color: #ff8800;
+}
+
+span.butViewImmarkusRelation {
+   background-color:#efefef;
+   color: #89abcd;
+   padding: 3px 5px;
+   border: 1px solid #7f7f7f;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+span.butViewImmarkusRelation:hover {
+   background-color:#efefef;
+   color: #ff8800;
+}
+
+span.relationDocLink {
+   text-decoration: underline;
+   color: blue;
+}
+
+span.relationDocLink:hover {
+   cursor: pointer;
+   color: purple;
+}
+
+
+div.imageEntityBlock {
+   padding-top: 4px;
+}
+
+div.imageEntityBlock:not(:first-child) {    /* 2025-12-25 */
+   margin-top: 8px;
+   border-top: 1px dotted #7890ab;
+}
+
+span.immarkusRelationSourcePiece {
+   /*
+   background-color:#ff8800;
+   color: #f7f7f7;
+   */
+}
+
+span.immarkusRelationSourcePiece:hover {
+   background-color:#ff8800;
+   color: #f7f7f7;
+}
+
+span.immarkusRelationTargetPiece {
+   /*
+   background-color:#123456;
+   color: #f7f7f7;
+   */
+}
+
+span.immarkusRelationTargetPiece:hover {
+   background-color:#123456;
+   color: #f7f7f7;
+}
+
+/* 用 class 讓 piece 底色與 button 底色一致，會比較好維護 */
+
+/*
+.immarkus-image-container polygon,
+.immarkus-image-container path {
+  pointer-events: auto;
+  cursor: pointer;
+  transition: fill 0.15s ease, stroke 0.15s ease, opacity 0.15s ease;
+}
+
+.immarkus-image-container [pieceimmarkusid] polygon,
+.immarkus-image-container [pieceimmarkusid] path {
+  cursor: pointer;
+  transition: fill 0.15s ease, stroke 0.15s ease, opacity 0.15s ease;
+}
+
+.immarkus-image-container [pieceimmarkusid]:hover polygon,
+.immarkus-image-container [pieceimmarkusid]:hover path {
+  fill: rgba(255, 255, 0, 0.5);
+  stroke: #222;
+}
+
+.immarkus-image-container [pieceimmarkusid].selected polygon,
+.immarkus-image-container [pieceimmarkusid].selected path {
+  fill: rgba(255, 255, 0, 0.75) !important;
+  stroke: #000 !important;
+  stroke-width: 3;
+}
+*/
+
+.pieceHighlightColor0 {
+  stroke-width: 2;
+  fill: rgba(255, 0, 0, 0.4);      
+  background-color: rgba(255, 0, 0, 0.4) !important;
+  color: #012345 !important;      /* html 文字是用 color，但 svg 是用 fill */
+}
+
+.pieceHighlightColor1 {
+  stroke-width: 2;
+  fill: rgba(0, 255, 0, 0.4);
+  background-color: rgba(0, 255, 0, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor2 {
+  stroke-width: 2;
+  fill: rgba(0, 0, 255, 0.4);
+  background-color: rgba(0, 0, 255, 0.4) !important;
+  color: #1C2833 !important;
+}
+
+.pieceHighlightColor3 {
+  stroke-width: 2;
+  fill: rgba(255, 255, 0, 0.4);
+  background-color: rgba(255, 255, 0, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor4 {
+  stroke-width: 2;
+  fill: rgba(255, 0, 255, 0.4);
+  background-color: rgba(255, 0, 255, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor5 {
+  stroke-width: 2;
+  fill: rgba(0, 255, 255, 0.4);
+  background-color: rgba(0, 255, 255, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor6 {
+  stroke-width: 2;
+  fill: rgba(128, 0, 0, 0.4);
+  background-color: rgba(128, 0, 0, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor7 {
+  stroke-width: 2;
+  fill: rgba(0, 128, 0, 0.4);
+  background-color: rgba(0, 128, 0, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor8 {
+  stroke-width: 2;
+  fill: rgba(0, 0, 128, 0.4);
+  background-color: rgba(0, 0, 128, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor9 {
+  stroke-width: 2;
+  fill: rgba(128, 128, 0, 0.4);
+  background-color: rgba(128, 128, 0, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor10 {
+  stroke-width: 2;
+  fill: rgba(128, 0, 128, 0.4);
+  background-color: rgba(128, 0, 128, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor11 {
+  stroke-width: 2;
+  fill: rgba(0, 128, 128, 0.4);
+  background-color: rgba(0, 128, 128, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor12 {
+  stroke-width: 2;
+  fill: rgba(255, 128, 0, 0.4);
+  background-color: rgba(255, 128, 0, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor13 {
+  stroke-width: 2;
+  fill: rgba(128, 255, 0, 0.4);
+  background-color: rgba(128, 255, 0, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor14 {
+  stroke-width: 2;
+  fill: rgba(0, 255, 128, 0.4);
+  background-color: rgba(0, 255, 128, 0.4) !important;
+  color: #012345 !important;
+}
+
+.pieceHighlightColor15 {
+  stroke-width: 2;
+  fill: rgba(128, 0, 255, 0.4);
+  background-color: rgba(128, 0, 255, 0.4) !important;
+  color: #012345 !important;
+}
+
+
+/* ------------------------------------------- */
+
+div.immarkus-image-container {
+   /*float: right;*/
+   /*width: 98%;*/
+   margin: 0 auto;
+   margin: 4px;
+   border: 2px solid #9F9F9F;
+   border-radius: 5px;
+   background-color: white;
+}
+
+/* 2025-04-07 */
+div.image-container-x-scroll {
+   max-width: 800px;           /* 容器寬度不超過 800px */
+   max-height: 600px;          /* 容器固定高度 600px */
+   overflow-x:auto;
+   overflow-y:hidden;
+}
+
+/* 設定圖片在 SVG 裡的寬度和高度 */
+svg.full-height-auto-width {
+    width: auto;   /* 使 SVG 的寬度自動適應容器 */
+    height: 100%;  /* 高度填滿容器 */
+}
+
+hr.hrImmarkusPiece {
+   border:1px dashed #7890ab;
+}
+
+div.extra {
+   /*color: #a7bc85;*/
+   color:#89abcd;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba(0, 0, 0, 0.5);             半透明黑色背景 */
+    background-color: rgba(39,62,84,0.82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+}
+
+div.overlay { display: none;
+              position: fixed;
+              z-index: 1000;
+              padding-top: 0px;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+              background-color: rgba(39,62,84,0.82);
+            }
+
+div.overlay-content { position: relative;
+                      background-color: #fefefe;
+                      border-radius: 8px;
+                      margin: auto;
+                      top: 180px;
+                      padding: 25px;
+                      width: 75%;
+                      max-width: 2000px;
+                    }
+
+div.overlay-content-half { position: relative;
+                           background-color: #fefefe;
+                           border-radius: 8px;
+                           margin: auto;
+                           top: 180px;
+                           padding: 25px;
+                           width: 50%;
+                           max-width: 2000px;
+                         }
+
+div.overlay-content-60percent { position: relative;
+                                background-color: #fefefe;
+                                border-radius: 8px;
+                                margin: auto;
+                                top: 180px;
+                                padding: 25px;
+                                width: 60%;
+                                max-width: 2000px;
+                              }
+
+div.overlayMessage {
+   background-color: #ffffff;
+}
+
+div.filterTagList { 
+   padding:5px;
+   border: 1px solid #9F9F9F;
+   border-radius:6px;
+   overflow-x:auto;
+   overflow-y:scroll;
+}
+
+div.filterTagList tr:nth-child(even) { background-color:#F7F7F7; }
+
+                              
+/* ------------------------------------------------------------------ */
+
+div.xaSpotlightSmallPanel { position:fixed; 
+                            top:80px; 
+                            left:100px; 
+                            z-index:101;                /* on top of overlay, z-index 99 */
+                            background-color:#dfdfdf;
+                            color:#1f1f1f;
+                            border-radius:4px;
+                            padding:10px 20px;
+                            line-height:150%;
+                          }
+
+/* supporting boxes */
+div.configBox {
+   position:fixed;
+   top:50px;
+   left:200px;
+   width:600px;
+   height:400px;
+   padding:8px 12px;
+   border:1px solid #3379b5;
+   border-radius:4px;
+   background-color:lightblue;   /* #7890ab;*/
+}
+
+
+/* div sub-window */
+div.sub-window { position:absolute; 
+                 background-color:white; 
+                 border:2px solid #7890ab; 
+                 border-radius:16px; 
+                 /*padding:1px 1px; */
+               }
+                      
+tr.sub-window-title-bar-blue { background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
+                               color:white; cursor:grab; }
+tr.sub-window-title-bar-brown { background: linear-gradient(90deg, rgba(80,16,16,1) 0%, rgba(121,9,29,1) 35%, rgba(218,218,218,1) 100%);
+                                color:white; cursor:grab; }
+tr.sub-window-title-bar-green { background: linear-gradient(90deg, rgba(16,80,16,1) 0%, rgba(9,121,30,1) 35%, rgba(218,218,218,1) 100%);
+                                color:white; cursor:grab; }
+tr.sub-window-title-bar-purple { background: linear-gradient(90deg, rgba(80,16,80,1) 0%, rgba(80,12,120,1) 35%, rgba(218,218,218,1) 100%);
+                                 color:white; cursor:grab; }
+
+td.sub-window-title-bar-xmarkus { background:#7890ab; color:white; cursor:grab; }
+
+div.sub-window-div {
+   background-color:#ffffff; 
+   border:1px solid #ffffff; 
+   border-bottom-left-radius:16px; 
+   border-bottom-right-radius:16px;
+   overflow-y:scroll; 
+}
+
+/* buttons */
+.button { background-color:#FFFFFF; 
+          color:#BFBFBF; 
+          border:1px solid #9f9f9f; 
+          border-radius: 9999px; /* 這是關鍵，讓左右變成半圓形 */  /* border-radius:6px; */
+          padding:2px 8px;
+          cursor:pointer; 
+          font-size:smaller;
+        }
+
+.button:hover {    
+   background-color:#3379b5;
+   color:#FFFFFF;
+   border:1px solid #5f7f9f;
+}
+
+.buttonStateChanged { background-color: #a7bc85; }
+
+span.butAddDoc2Bag, span.butAddDoc2Bag i { color:#466d1d;}                 /* green */
+span.butAddDoc2Bag:hover i { color:#efefef; }                              /* span.butAddDoc2Bag 被 hover 時，更改其下 i 的顏色 */
+span.butRemoveDocFromBag, span.butRemoveDocFromBag i { color:#a91b0d;}     /* red */
+span.butRemoveDocFromBag:hover i { color:#efefef; }
+
+.funcButton {    
+   width:30px;
+   height:30px;
+   background-color:#FFFFFF;
+   color:#BFBFBF; 
+   border-radius:6px; 
+   padding:4px 5px;
+   margin-left:2px;
+   margin-right:3px;
+   cursor:pointer;
+   font-size:20px;
+   /*border:2px solid #c7c7c7;*/
+}
+
+.funcButton:hover {
+   /*background-color:#3379b5;
+   color:#ff8800;*/
+   background-color:#3379b5;
+   color:#FFFFFF;
+   /*border:2px solid #0f172a;*/
+}
+
+.funcButtonTerm {
+   font-size:0.9em;
+}
+
+.highlightAtStart {
+   background-color: #ff8800;
+   color:#ffffff;
+}
+   
+.funcButtonSidebar { padding-left:12px; margin-top:10px; }
+.funcButtonSidebar:hover { background-color:#bfbfbf; color:#2f2f2f; }
+
+.buttonSimple { cursor:pointer; }
+.buttonSimple:hover { background-color:teal }
+
+span.butCircle { background-color:#BFBFBF; color:#FFFFFF; 
+                    border-radius:50%; padding:4px 8px;
+                    cursor:pointer; z-index:2;  }
+
+span.butCircle:hover { background-color:teal }
+
+span.butOrange { background-color:orange; color:#FFFFFF; 
+                 border-radius:4px; padding:4px 8px;
+                 cursor:pointer; z-index:2; }
+span.butGreen { background-color:green; color:#FFFFFF; 
+                 border-radius:4px; padding:4px 8px;
+                 cursor:pointer; z-index:2; }
+span.butHidden { display:none }
+span.butAddRelation { background-color:blue; }
+span.butShadow { box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); }
+
+span.butActive { background-color:brown; }
+
+span.butLightBlue { background-color:#DEF3FD; color:#0F0F0F;
+                    border:1px solid teal; 
+                    border-radius:5px; padding:4px 8px;
+                    cursor:pointer; }
+span.butLightBlue:hover { background-color:teal; color:white; }
+
+
+/* function buttons in left sidebar */
+div.funcButton { padding-left:12px; margin-top:10px; }
+div.funcButton:hover { background-color:#bfbfbf; color:#2f2f2f; }
+
+
+/* miscellaneous */
+span.floatRight, input.floatRight { float:right; margin:0px 2px;}
+
+span.link { text-decoration:underline; cursor:pointer; }
+span.link:hover { color:blue }
+
+button.hideButton { display:none; }
+
+/* loading messages */
+#divLoadingContainer { position:absolute; 
+                       border:2px grey solid; 
+                       border-radius:5px; 
+                       background-color:white; 
+                       z-index:5; 
+                       display:none;
+                     }
+                     
+#divWorkingProgress { position:absolute; 
+                      top:105px; 
+                      width:100%; 
+                      text-align:center; 
+                      font-size:1.2em;
+                    }
+
+#loadingCircle { width:240px;
+                 border:0;
+               }
+
+/* overlay */
+div.overlay-content { position: relative;
+                      background-color: #fefefe;
+                      border-radius: 4px;
+                      margin: auto;
+                      top: 15px;
+                      padding: 25px;
+                      width: 88%;
+                      max-width: 2000px;
+                    }
+
+/* select menu for multi-color blocks (ChatGPT) 
+.color-select {
+  position: relative;
+  width: 160px;
+  font-family: sans-serif;
+  user-select: none;
+}
+
+.selected-option {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  border: 1px solid #aaa;
+  flex-shrink: 0;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  z-index: 100;
+  display: none;
+}
+
+.dropdown.open {
+  display: block;
+}
+
+.dropdown-option {
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-option:hover {
+  background-color: #eee;
+}
+*/
+                    
+/* others */                    
+.searchHighlight {
+   background-color: yellow;
+}
+
+/* pagination */
+   .paginationjs { line-height:1.6;
+                   font-family:Inter,Marmelad,"Lucida Grande",Arial,"Hiragino Sans GB",Georgia,sans-serif;
+                   font-size:14px; box-sizing:initial }
+   .paginationjs::after { display:table; content:" "; clear:both}
+   .paginationjs .paginationjs-pages { float:left }
+   .paginationjs .paginationjs-pages ul { float:left;margin:0;padding:0 }
+   .paginationjs .paginationjs-go-button,.paginationjs .paginationjs-go-input,.paginationjs 
+                 .paginationjs-nav { float:left; margin-left:10px; font-size:14px}
+   .paginationjs .paginationjs-pages li { float:left; border:1px solid #aaa; border-right:none; list-style:none}
+   .paginationjs .paginationjs-pages li>a { min-width:30px; height:28px; line-height:28px; 
+                                            display:block; background:#fff; font-size:14px; color:#333; text-decoration:none; text-align:center}
+   .paginationjs .paginationjs-pages li>a:hover { background:#eee }
+   .paginationjs .paginationjs-pages li.active { border:none }
+   .paginationjs .paginationjs-pages li.active>a { height:30px; line-height:30px; background:#aaa; color:#fff }
+   .paginationjs .paginationjs-pages li.disabled>a { opacity:.3 }
+   .paginationjs .paginationjs-pages li.disabled>a:hover { background:0 0 }
+   .paginationjs .paginationjs-pages li:first-child,.paginationjs 
+                 .paginationjs-pages li:first-child>a { border-radius:3px 0 0 3px}
+   .paginationjs .paginationjs-pages li:last-child { border-right:1px solid #aaa; border-radius:0 3px 3px 0}
+   .paginationjs .paginationjs-pages li:last-child>a { border-radius:0 3px 3px 0}
+   .paginationjs .paginationjs-go-input>input[type=text] { width:30px; height:28px; background:#fff; border-radius:3px; 
+                                                           border:1px solid #aaa; padding:0; font-size:14px; text-align:center; 
+                                                           vertical-align:baseline; outline:0; box-shadow:none; box-sizing:initial}
+   .paginationjs .paginationjs-go-button>input[type=button] { min-width:40px; height:30px; line-height:28px; background:#cfcfcf; 
+                                                              border-radius:6px; text-align:center; padding:0 8px; border:1px solid #cfcfcf;   /* 2025-01-08: border-radius from 3px to 6px */
+                                                              font-size:1em; vertical-align:baseline; outline:0; box-shadow:none;
+                                                              color:#fff; cursor:pointer; vertical-align:middle;}
+   .paginationjs.paginationjs-theme-blue .paginationjs-go-input>input[type=text],
+   .paginationjs.paginationjs-theme-blue .paginationjs-pages li { border-color:#289de9 }
+   .paginationjs .paginationjs-go-button>input[type=button]:hover{ background-color:teal; color:white }
+   .paginationjs .paginationjs-nav { height:30px; line-height:30px }
+   .paginationjs .paginationjs-go-button,.paginationjs .paginationjs-go-input { margin-left:5px; }
+   .paginationjs.paginationjs-small { font-size:12px }
+   .paginationjs.paginationjs-small .paginationjs-pages li>a { min-width:26px; height:24px; line-height:24px; font-size:12px}
+   .paginationjs.paginationjs-small .paginationjs-pages li.active>a { height:26px; line-height:26px }
+   .paginationjs.paginationjs-small .paginationjs-go-input { font-size:12px }
+   .paginationjs.paginationjs-small .paginationjs-go-input>input[type=text]{ width:26px; height:24px; font-size:12px}
+   .paginationjs.paginationjs-small .paginationjs-go-button{ font-size:12px }
+   .paginationjs.paginationjs-small .paginationjs-go-button>input[type=button]{ min-width:30px; height:26px; line-height:24px; padding:0 6px; font-size:12px}
+   .paginationjs.paginationjs-small .paginationjs-nav { height:26px; line-height:26px; font-size:12px }
+   .paginationjs.paginationjs-big{font-size:16px}
+   .paginationjs.paginationjs-big .paginationjs-pages li>a{min-width:36px;height:34px;line-height:34px;font-size:16px}
+   .paginationjs.paginationjs-big .paginationjs-pages li.active>a{height:36px;line-height:36px}
+   .paginationjs.paginationjs-big .paginationjs-go-input{font-size:16px}
+   .paginationjs.paginationjs-big .paginationjs-go-input>input[type=text]{width:36px;height:34px;font-size:16px}
+   .paginationjs.paginationjs-big .paginationjs-go-button{font-size:16px}
+   .paginationjs.paginationjs-big .paginationjs-go-button>input[type=button]{min-width:50px;height:36px;line-height:34px;padding:0 12px;font-size:16px}
+   .paginationjs.paginationjs-big .paginationjs-nav{height:36px;line-height:36px;font-size:16px}
+   .paginationjs.paginationjs-theme-blue .paginationjs-pages li>a{color:#289de9}
+   .paginationjs.paginationjs-theme-blue .paginationjs-pages li>a:hover{background:#e9f4fc}
+   .paginationjs.paginationjs-theme-blue .paginationjs-pages li.active>a{background:#289de9;color:#fff}
+   .paginationjs.paginationjs-theme-blue .paginationjs-pages li.disabled>a:hover{background:0 0}
+   .paginationjs.paginationjs-theme-blue .paginationjs-go-button>input[type=button]{background:#289de9;border-color:#289de9;color:#fff}
+   .paginationjs.paginationjs-theme-green .paginationjs-go-input>input[type=text],.paginationjs.paginationjs-theme-green .paginationjs-pages li{border-color:#449d44}
+   .paginationjs.paginationjs-theme-blue .paginationjs-go-button>input[type=button]:hover{background-color:#3ca5ea}
+   .paginationjs.paginationjs-theme-green .paginationjs-pages li>a{color:#449d44}
+   .paginationjs.paginationjs-theme-green .paginationjs-pages li>a:hover{background:#ebf4eb}
+   .paginationjs.paginationjs-theme-green .paginationjs-pages li.active>a{background:#449d44;color:#fff}
+   .paginationjs.paginationjs-theme-green .paginationjs-pages li.disabled>a:hover{background:0 0}
+   .paginationjs.paginationjs-theme-green .paginationjs-go-button>input[type=button]{background:#449d44;border-color:#449d44;color:#fff}
+   .paginationjs.paginationjs-theme-yellow .paginationjs-go-input>input[type=text],.paginationjs.paginationjs-theme-yellow .paginationjs-pages li{border-color:#ec971f}
+   .paginationjs.paginationjs-theme-green .paginationjs-go-button>input[type=button]:hover{background-color:#55a555}
+   .paginationjs.paginationjs-theme-yellow .paginationjs-pages li>a{color:#ec971f}
+   .paginationjs.paginationjs-theme-yellow .paginationjs-pages li>a:hover{background:#fdf5e9}
+   .paginationjs.paginationjs-theme-yellow .paginationjs-pages li.active>a{background:#ec971f;color:#fff}
+   .paginationjs.paginationjs-theme-yellow .paginationjs-pages li.disabled>a:hover{background:0 0}
+   .paginationjs.paginationjs-theme-yellow .paginationjs-go-button>input[type=button]{background:#ec971f;border-color:#ec971f;color:#fff}
+   .paginationjs.paginationjs-theme-red .paginationjs-go-input>input[type=text],.paginationjs.paginationjs-theme-red .paginationjs-pages li{border-color:#c9302c}
+   .paginationjs.paginationjs-theme-yellow .paginationjs-go-button>input[type=button]:hover{background-color:#eea135}
+   .paginationjs.paginationjs-theme-red .paginationjs-pages li>a{color:#c9302c}
+   .paginationjs.paginationjs-theme-red .paginationjs-pages li>a:hover{background:#faeaea}
+   .paginationjs.paginationjs-theme-red .paginationjs-pages li.active>a{background:#c9302c;color:#fff}
+   .paginationjs.paginationjs-theme-red .paginationjs-pages li.disabled>a:hover{background:0 0}
+   .paginationjs.paginationjs-theme-red .paginationjs-go-button>input[type=button]{background:#c9302c;border-color:#c9302c;color:#fff}
+   .paginationjs.paginationjs-theme-red .paginationjs-go-button>input[type=button]:hover{background-color:#ce4541}
+   .paginationjs .paginationjs-pages li.paginationjs-next{border-right:1px solid #aaa;}
+   .paginationjs .paginationjs-go-input>input[type=text]{line-height:28px;vertical-align:middle;}
+   .paginationjs.paginationjs-big .paginationjs-pages li>a{line-height:36px;}
+   .paginationjs.paginationjs-big .paginationjs-go-input>input[type=text]{height:36px;line-height:36px;}

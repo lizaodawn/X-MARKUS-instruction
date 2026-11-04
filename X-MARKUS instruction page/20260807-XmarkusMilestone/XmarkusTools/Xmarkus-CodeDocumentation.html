@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>工具說明 — Tabs 範例</title>
+  <style>
+    :root{ --bg:#fafafa; --card:#ffffff; --muted:#6b7280; --accent:#2563eb }
+    html,body{height:100%; margin:0; font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,'Noto Sans TC',"PingFang TC",sans-serif; background:var(--bg); color:#111; line-height:160%;}
+    .container{max-width:1600px; margin:0px 10px; padding:24px}
+    .header{display:flex; align-items:center; justify-content:space-between}
+    .brand{font-weight:700; font-size:20px}
+    .tabs{display:flex; gap:8px;}
+    .tab{background:transparent; border:1px solid transparent; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:500; font-size:18px; color:#123456;}
+    .tab[aria-selected="true"]{background:var(--card); border-color:#e5e7eb; box-shadow:0 2px 8px rgba(16,24,40,0.04)}
+    .tab:focus{outline:3px solid rgba(37,99,235,0.12)}
+    .card{margin-top:20px; background:var(--card); border-radius:12px; padding:24px; box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    #content{min-height:320px}
+    @media (max-width:1000px){
+      .header{flex-direction:column; align-items:flex-start; gap:12px}
+      .tabs{width:100%; overflow:auto}
+    }
+    
+    /* for Markdown */
+    
+    code {
+       font-family: Inter, "sans-serif", "微軟正黑體","Helvetica", "Arial","LiHei Pro","黑體-繁";
+       font-size: 0.9em;
+       border: 1px solid #bfbfbf;
+       padding: 1px 3px;
+       border-radius: 4px;
+       color: darkgreen;
+       background-color:#efefef;
+    }
+    
+    code.language-JavaScript {
+       display: inline-block;        /* 不要強制佔滿整行 */
+       max-width: 1200px;
+       white-space: pre-wrap;        /* 保留換行與縮排，但可自動換行 */
+       border: 1px solid #bfbfbf;
+       border-radius: 4px;           /* 美觀可選 */
+       padding: 2px 8px;             /* 適度留內距 */
+       background-color:#f9f9f9;
+       color: darkgreen;
+    }
+
+    code.language-XML {
+       display: inline-block;        /* 不要強制佔滿整行 */
+       max-width: 1200px;
+       white-space: pre-wrap;        /* 保留換行與縮排，但可自動換行 */
+       border: 1px solid #bfbfbf;
+       border-radius: 4px;           /* 美觀可選 */
+       padding: 2px 8px;             /* 適度留內距 */
+       background-color:#f9f9f9;
+       color: darkblue;
+    }
+
+    code.language-XHTML {
+       display: inline-block;        /* 不要強制佔滿整行 */
+       max-width: 1200px;
+       white-space: pre-wrap;        /* 保留換行與縮排，但可自動換行 */
+       border: 1px solid #bfbfbf;
+       border-radius: 4px;           /* 美觀可選 */
+       padding: 2px 8px;             /* 適度留內距 */
+       background-color:#f9f9f9;
+       color: purple;
+    }
+
+   code.language-JSON {
+       display: inline-block;        /* 不要強制佔滿整行 */
+       max-width: 1200px;
+       white-space: pre-wrap;        /* 保留換行與縮排，但可自動換行 */
+       border: 1px solid #bfbfbf;
+       border-radius: 4px;           /* 美觀可選 */
+       padding: 2px 8px;             /* 適度留內距 */
+       background-color:#f9f9f9;
+       color: darkred;
+   }
+   
+   blockquote {
+   }
+   
+   /*img[alt=Event-Text-Mapping]] { width: 800px; }*/
+   
+   table { border-collapse: collapse; }
+   tr { border-bottom: solid 1px black; }
+   tr:nth-child(even) {background-color: #f2f2f2;}
+   th { text-align:center; padding:1px 4px; }
+   td { padding:1px 4px; }
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">程式碼概說</div>
+      <div class="tabs" role="tablist" aria-label="子項目 Tabs">
+        <button class="tab" role="tab" data-file="docs/XMARKUS-CodeOverview.md" id="tab-code-doc" aria-selected="true">Code Doc</button>
+        <button class="tab" role="tab" data-file="docs/COMARKUS-DataConversion.md" id="tab-c2d" aria-selected="false">C2D Data Conversion</button>
+        <button class="tab" role="tab" data-file="docs/IMMARKUS-DataConversion.md" id="tab-c2d" aria-selected="false">I2D Data Conversion</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div id="content" aria-live="polite">
+        <p>載入中…</p>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  -->
+  <script src="components/js/jquery-3.6.0.min.js"></script>
+  <script src="components/js/marked.min.js"></script>
+
+  <script>
+    $(function(){
+      var $tabs = $('.tab');
+      var $content = $('#content');
+
+      function selectTab($tab){
+        $tabs.attr('aria-selected','false');
+        $tab.attr('aria-selected','true');
+      }
+
+      // 載入對應的 .md 檔案並將 Markdown 轉成 HTML 顯示
+      function loadTab($tab){
+        var file = $tab.data('file');
+        $content.html('<p>載入中…</p>');
+        $.ajax({
+          url: file,
+          cache: false,
+          success: function(text){
+            var md = text;
+            // 如果檔案意外包含 HTML 結構，嘗試擷取 body 內的純文字作為 markdown
+            try {
+              var isHtml = /<\/?html|<!doctype/i.test(text);
+              if(isHtml){
+                var tmp = $('<div>').html(text);
+                var $body = tmp.find('body');
+                if(!$body.length) $body = tmp;
+                var bodyText = $body.text().trim();
+                if(bodyText) md = bodyText;
+              }
+            } catch(e){}
+
+            var html = marked.parse(md);
+            $content.html(html);
+          },
+          error: function(xhr){
+            $content.html('<p style="color:#b91c1c">載入檔案失敗：'+ file +'</p>');
+          }
+        });
+      }
+
+      $tabs.on('click', function(){
+        var $this = $(this);
+        selectTab($this);
+        loadTab($this);
+      });
+
+      $tabs.on('keydown', function(e){
+        if(e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+          e.preventDefault();
+          var idx = $tabs.index(this);
+          var dir = e.key==='ArrowRight' ? 1 : -1;
+          var next = $tabs.eq((idx+dir+$tabs.length)%$tabs.length);
+          next.focus();
+          selectTab(next);
+          loadTab(next);
+        }
+      });
+
+      // 初始載入第一個 tab
+      var $initial = $tabs.filter('[aria-selected="true"]').first();
+      if($initial.length) loadTab($initial);
+
+      // 可透過 URL query 指定 tab，例如 ?tab=search
+      var params = new URLSearchParams(location.search);
+      var t = params.get('tab');
+      if(t){
+        var match = $tabs.filter(function(){
+          return this.id.endsWith(t) || $(this).text().toLowerCase().includes(t.toLowerCase());
+        }).first();
+        if(match.length){
+          selectTab(match);
+          loadTab(match);
+          match.focus();
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>

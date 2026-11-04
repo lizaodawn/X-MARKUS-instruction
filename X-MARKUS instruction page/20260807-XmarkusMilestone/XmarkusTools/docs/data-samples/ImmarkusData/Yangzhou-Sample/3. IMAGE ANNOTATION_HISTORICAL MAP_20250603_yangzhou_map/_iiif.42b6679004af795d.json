@@ -1,0 +1,166 @@
+{
+  "id": "42b6679004af795d",
+  "name": "Yangzhou Fu tu shuo",
+  "uri": "https://www.loc.gov/item/2001708631/manifest.json",
+  "importedAt": "2025-05-23T08:44:54.627Z",
+  "type": "PRESENTATION_MANIFEST",
+  "majorVersion": 2,
+  "canvases": [
+    {
+      "id": "3790360200",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00001a",
+      "name": "Page 1",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "3651510521",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00002a",
+      "name": "Page 2",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "2002351055",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00003a",
+      "name": "Page 3",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1562217993",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00004a",
+      "name": "Page 4",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1835013668",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00005a",
+      "name": "Page 5",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1738312128",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00006a",
+      "name": "Page 6",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "163728073",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00007a",
+      "name": "Page 7",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "824407494",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00008a",
+      "name": "Page 8",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1266312329",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00009a",
+      "name": "Page 9",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "3566772827",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00010a",
+      "name": "Page 10",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1894932049",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00011a",
+      "name": "Page 11",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1775776810",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00012a",
+      "name": "Page 12",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1810088665",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00013a",
+      "name": "Page 13",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "4198401106",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00014a",
+      "name": "Page 14",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1678286124",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00015a",
+      "name": "Page 15",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "361654664",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00016a",
+      "name": "Page 16",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "3059232636",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00017a",
+      "name": "Page 17",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "3863781793",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00018a",
+      "name": "Page 18",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "4063622607",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00019a",
+      "name": "Page 19",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1418442034",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00020a",
+      "name": "Page 20",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "1895505446",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00021a",
+      "name": "Page 21",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "3478136418",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00022a",
+      "name": "Page 22",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "3655254082",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00023a",
+      "name": "Page 23",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "3179378379",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:00024a",
+      "name": "Page 24",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "952259000",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:box",
+      "name": "Page 25",
+      "manifestId": "42b6679004af795d"
+    },
+    {
+      "id": "3836350406",
+      "uri": "https://tile.loc.gov/image-services/iiif/service:asian:lcnclscd:2001708631:1A001:cover",
+      "name": "Page 26",
+      "manifestId": "42b6679004af795d"
+    }
+  ]
+}

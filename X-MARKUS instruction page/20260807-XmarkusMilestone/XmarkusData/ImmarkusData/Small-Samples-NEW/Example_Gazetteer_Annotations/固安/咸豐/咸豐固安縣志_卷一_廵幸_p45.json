@@ -1,0 +1,940 @@
+[
+  {
+    "id": "e8a3ae93-b73a-43e9-b07b-1b0e89b96486",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"482.6622685628381,433.55356607469804 482.68108367322577,433.5322075957656 482.8883205456077,486.69540095674853 476.726774692127,755.7413655286762 530.125459871022,852.269285964641 591.7389879673829,899.5063563458251 669.7828913409775,907.7214750402119 741.665386749552,907.7214750402119 790.9562368043327,913.8828140610018 823.8167115818795,942.6358673798157 840.2470868591136,959.0661737128194 864.8923050538132,991.9267174345966 891.5916476432608,1037.110008142184 918.2909902327082,1069.9706208081911 959.3665837046418,1111.0462832243552 988.1196370234558,1133.6379285781488 1006.6037230300561,1162.3909818969626 1016.8726903422697,1184.9826272507564 1020.9802496894629,1230.1659179583437 1039.4643356960632,1041.2175674893774 1020.9802496894629,1047.3789754543975 994.2810449884759,1039.1637878157806 965.5279916696619,1026.8411097742005 949.0977542808885,1008.3570237676001 934.7212276214816,991.9267174345966 920.3447009620747,969.3350720808029 905.9680364142073,944.6896470534124 883.3763910604134,913.8828140610018 858.7311728657139,885.1298296864181 838.193100352826,872.8071516448381 807.3864741931061,862.5381843326245 753.9880647911319,852.269285964641 723.1813007429516,848.1617266174476 684.1592801119241,848.1617266174476 636.9222786749704,846.5891483331603 616.3843440505431,844.0541672702542 595.8465473145762,833.7851999580406 577.3624613079759,811.1935546042469 550.6632566069889,774.2253825910462 536.2867299475819,745.4723982164626 528.0716112531951,708.5042951474921 528.0716112531951,681.8050215022747 523.9640519060017,626.352832426704 528.0716112531951,585.2771010663099 528.0716112531951,529.8249119907393 521.9100653997144,488.7491806303452 515.748933211615,466.1575352765515\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "126d4bee-8ec3-41b2-be40-0a599ff89ebf",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "properties": {
+          "id": "hun_he",
+          "name": "渾河",
+          "descriptor": "",
+          "type": "river"
+        },
+        "created": "2024-01-15T08:25:10.387Z"
+      },
+      {
+        "id": "22c00901-5599-4ac4-926c-deae6065fd9c",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "Yongdinghe?",
+        "created": "2024-07-30T15:15:02.350Z"
+      }
+    ],
+    "created": "2024-01-15T08:24:59.452Z",
+    "creator": {
+      "isGuest": true,
+      "id": "ypQq2XMIuY7RX6GAezJj"
+    }
+  },
+  {
+    "id": "fbcb9ad9-364b-4452-a9a6-4068797914a1",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"531.0153115595814,857.5134625596837 594.3404720964382,903.7236775761845 585.7829993362601,984.1636112728219 587.4943100370152,1054.334646601476 594.3404720964382,1115.9482091699517 604.6093704644215,1165.5813903091137 631.993214352761,1192.965176743928 674.7803483395504,1203.2340751119114 726.125069993568,1198.099683381445 768.9122039803574,1198.099683381445 828.8142834875027,1201.522649504106 861.3326340133591,1204.945615626767 892.139214210259,1216.9260545096063 938.3495441338101,1240.8868173682342 965.7333880221496,1249.4442901284121 991.4056913956332,1252.8672562510733 1005.0974409792275,1247.7327496135565 986.2710698510659,1307.6349440277522 953.7529491393103,1312.7693357582186 934.926578011149,1300.7888968753796 905.8313085150043,1281.9625257472183 866.4670257438257,1271.6936273792348 823.6798917570363,1270.1162175350617 774.0467106178743,1264.8476951339123 683.3378210997283,1264.8476951339123 640.5505722058886,1264.8476951339123 620.0127754699217,1259.713303403446 597.7634382190993,1247.7328645206069 578.9370670909378,1234.0410000299623 572.0910199385653,1220.3490206322674 563.5336620854375,1203.2341900189617 554.9761893252596,1162.1584816399777 548.1302570799373,1102.2564021328324 546.4187165650816,1049.2002548710093 544.7072909572762,934.5305450407102\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "2687c6fe-fbc8-493e-8e8e-57340c3d58d8",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "properties": {
+          "descriptor": "渾河故道",
+          "type": "river"
+        },
+        "created": "2024-01-15T08:29:57.638Z"
+      }
+    ],
+    "created": "2024-01-15T08:29:53.285Z",
+    "creator": {
+      "isGuest": true,
+      "id": "ypQq2XMIuY7RX6GAezJj"
+    }
+  },
+  {
+    "id": "f2146f77-1a2d-4b09-a446-10ceaf850710",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"945.1954763791323,455.1630354736573 938.3495441338101,489.5435989369211 972.5792053604216,510.0814531264131 989.6941508807774,537.4652682879899 999.9630492487609,588.8099324884826 999.9630492487609,652.134978118289 989.6941508807774,689.7877203746118 982.8482186354554,739.4208440602486 977.7137119979385,801.0344640822498 982.8482186354554,871.2054419573785 989.6941508807774,919.1271400352099 1013.6550286464559,977.3177364810247 1042.7502981426005,1044.0658056870175 1085.53743212939,1014.9704787373475 1073.5571081536011,1001.2785567931778 1056.4421626332453,970.4718042357025 1047.8846898730671,946.5109264700243 1039.3273320199394,910.5696672750319 1032.481399774617,859.2250605280645 1032.481399774617,746.2668337590962 1035.9043658972782,665.8269000624587 1041.0387576277449,599.0788595832286 1034.1928253824226,542.5997461987442 1017.077994769117,504.8624463784263 993.1171170034386,480.98615490350574\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "bbe3c3ba-2732-4e0f-9af0-3a498e706c65",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "properties": {
+          "id": "yun_he",
+          "name": "運河",
+          "descriptor": "",
+          "type": "river"
+        },
+        "created": "2024-01-15T08:33:25.260Z"
+      },
+      {
+        "id": "b1040153-3df1-4d57-ad0f-748b27932e26",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "check database\nGrand Canal?",
+        "created": "2024-07-30T15:15:48.893Z"
+      }
+    ],
+    "created": "2024-01-15T08:33:17.588Z",
+    "creator": {
+      "isGuest": true,
+      "id": "ypQq2XMIuY7RX6GAezJj"
+    }
+  },
+  {
+    "id": "1a825980-c26f-4053-9360-fd28fe69dd1c",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1097.5562982102679,466.1734881455142 1102.652377649746,504.9470039424214 1126.6131405083738,523.7733750705828 1140.305119906069,559.7146342655751 1147.151052151391,595.6558647338047 1148.8624777591963,633.3086069901276 1145.4395116365354,688.0762373132812 1147.151052151391,741.1323845751043 1153.9969843967133,802.7459471435802 1152.285328974807,838.6872063385727 1152.285328974807,874.6284655335648 1147.151052151391,936.2420281020408 1152.285328974807,994.4326245478557 1157.4199505193744,1038.9312990495007 1222.4565366640368,1028.6624006815173 1207.0531316585364,989.298175363864 1196.7841183835026,927.6845553418628 1195.0726927756973,848.9561047065561 1195.0726927756973,787.3425421380801 1186.5152200155194,718.8829898707565 1179.6692877701971,653.8464611796196 1177.9577472553415,592.2328986111437 1174.53466622563,539.1767513493206 1147.151052151391,496.38953118224345\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "aa097c4d-a4b8-493a-832c-492fdbd32f28",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "properties": {
+          "id": "luan_he",
+          "name": "灤河",
+          "DILA_PL": "PL000000001232",
+          "descriptor": "",
+          "type": "river"
+        },
+        "created": "2024-01-15T08:35:24.839Z"
+      }
+    ],
+    "created": "2024-01-15T08:34:52.523Z",
+    "creator": {
+      "isGuest": true,
+      "id": "ypQq2XMIuY7RX6GAezJj"
+    }
+  },
+  {
+    "id": "f9b893c7-717d-4fc4-b8b0-a20faeeabd0c",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:634.8071735388597,967.3016805029403,80.09771751930646,175.5986791742431"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "156035b4-e0b4-4fda-8378-240eaef4ad17",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "settlement",
+        "properties": {
+          "id": "gu'an_xian",
+          "name": "固安縣",
+          "location": "固安縣",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_88207",
+          "enclosed": "walled"
+        },
+        "created": "2024-07-30T11:03:43.412Z"
+      }
+    ],
+    "created": "2024-01-15T09:30:37.046Z",
+    "creator": {
+      "isGuest": true,
+      "id": "NF07IiZANiM5XQTDbZAE"
+    }
+  },
+  {
+    "id": "78601df4-3e5f-4f12-bcbd-ac9da20db431",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1262.949054532649,1083.328427522079 1216.3691081561703,1027.8761529556627 1163.1349900970072,1043.4028017478222 1152.044356480279,1056.7113684924973 1123.2092154032132,1050.0570478902753 1092.1562156579685,1019.003824765725 1050.0122844569216,1043.4028017478222 1025.6133074748243,1229.722289414662 1014.5231206167081,1245.2488637470528 992.3421512223267,1305.137302408438 947.9803613531013,1314.0096305983757 974.5974948424513,1347.2809357704105 985.6879795396421,1391.6427256396362 994.5603077295797,1453.749171888737 1005.6506435072332,1506.9832899479004 1032.2677769965835,1544.6909081344409 1036.7039410915522,1586.8345414964133 1043.358261693774,1611.2335184785106 1063.3210745809024,1640.0686595555767 1061.1029180736496,1688.8666135197714 1063.3210745809024,1722.137918691806 1081.065730960778,1768.7178650682845 1101.0285438479063,1815.297662525226 1134.299849019941,1857.4412958871985 1147.6081923853105,1879.6222652815798 1329.4916648767185,1877.4041087743267 1320.619336686781,1418.2598591289861 1262.949054532649,1420.4778667167025\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "71138c88-608d-4b27-b73b-aae296b20d7f",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "properties": {
+          "id": "bo_hai",
+          "name": "渤海",
+          "type": "sea"
+        },
+        "created": "2024-01-16T08:12:49.187Z"
+      },
+      {
+        "id": "b74cf9ca-b0d9-4a54-9271-52d9e9e92744",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "Bohai？",
+        "created": "2024-07-09T12:24:14.206Z"
+      }
+    ],
+    "created": "2024-01-16T08:12:44.686Z",
+    "creator": {
+      "isGuest": true,
+      "id": "xs5chty2rLnKMa82NVI_"
+    }
+  },
+  {
+    "id": "96e12a9a-5184-43fa-802d-0fd721ddd615",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"63.49006483718707,1515.8557670573748 100.66202869340533,1489.2386335680246 127.28754661150306,1493.6747976629938 138.37803130869375,1531.3822669299977 178.31204151169783,1569.0898851165382 187.17598527288814,1606.7973543835421 193.8302314153414,1750.9729108493345 193.8302314153414,1779.808200845938 62.963018314917704,1779.808200845938\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "96af0b8f-04d3-4d46-8ab0-24ef815bbf9b",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "terrain",
+        "properties": {
+          "name": "太行山",
+          "DILA_PL": "PL000000000194",
+          "type": "mountain"
+        },
+        "created": "2024-01-16T08:13:52.828Z"
+      }
+    ],
+    "created": "2024-01-16T08:13:48.987Z",
+    "creator": {
+      "isGuest": true,
+      "id": "xs5chty2rLnKMa82NVI_"
+    }
+  },
+  {
+    "id": "ab8486a6-3ee9-49eb-b395-d7681a012f6e",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:570.9129127669142,269.32139018308635,73.18924010382989,204.032612786563"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "0667a1bc-edf4-4903-84a0-652881f663da",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "fortress",
+        "properties": {
+          "id": "juyong_guan",
+          "name": "居庸關",
+          "location": "昌平镇",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_135627"
+        },
+        "created": "2024-07-22T14:24:12.192Z"
+      }
+    ],
+    "created": "2024-01-16T08:37:27.994Z",
+    "creator": {
+      "isGuest": true,
+      "id": "PocTiphCd8ewTtvcbKLY"
+    }
+  },
+  {
+    "id": "ac248994-4d73-4723-8ab1-e2c4dd873554",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:617.5474038058867,610.6776114040345,156.73254272298652,162.01446248564196"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "85a2decb-e727-4ac5-906b-a8fd69055158",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "settlement",
+        "properties": {
+          "id": "beijing_shi",
+          "name": "京師",
+          "location": "順天府",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_112064",
+          "enclosed": "walled"
+        },
+        "created": "2024-01-16T08:45:50.103Z"
+      }
+    ],
+    "created": "2024-01-16T08:45:45.760Z",
+    "creator": {
+      "isGuest": true,
+      "id": "8lkfCo1ku5l5ljcInAJy"
+    }
+  },
+  {
+    "id": "64603525-75d9-4e9a-b6c3-ef2294d3f682",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:364.62307029002176,577.6041570404911,77.63309504126022,237.3355236785187"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "cc04f612-9600-49d0-b7ab-20d5e9666d38",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "bridge",
+        "properties": {
+          "id": "lugou_qiao",
+          "name": "盧溝橋",
+          "location": "豐臺",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_15925",
+          "DILA_PL": "PL000000000381"
+        },
+        "created": "2024-07-22T14:54:58.835Z"
+      }
+    ],
+    "created": "2024-02-06T15:54:58.608Z",
+    "creator": {
+      "isGuest": true,
+      "id": "tQ3LwTyptx6Z4GqurYej"
+    }
+  },
+  {
+    "id": "87e06a2a-ad85-49da-9f7c-3b9039a0c736",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:178.30358262318177,204.96527478152206,64.32460275635401,230.681221691239"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "a8f17448-6b4b-4261-bb2d-a9a9c7b33cc2",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "properties": {
+          "descriptor": "桑乾河源",
+          "type": "source"
+        },
+        "created": "2024-07-22T14:13:14.192Z"
+      }
+    ],
+    "created": "2024-03-19T16:42:15.401Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rIqPrDWTvbbTUOkDRlWM"
+    }
+  },
+  {
+    "id": "3bad6883-ab9b-48cf-a82e-eb56a89e1e7e",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"408.9925153659822,118.53886635293487 406.7668525715311,211.61950230903352 919.145369195572,211.61950230903352 919.145369195572,122.89595980046678\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "ba47e5ce-9ef7-4dbe-8b8c-5a625a1ab2d0",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "boundary",
+        "properties": {
+          "descriptor": "北抵沙漠"
+        },
+        "created": "2024-03-19T16:46:09.239Z"
+      }
+    ],
+    "created": "2024-03-19T16:46:00.047Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rIqPrDWTvbbTUOkDRlWM"
+    }
+  },
+  {
+    "id": "997bfdaf-6a7b-4e15-a2b2-7de516202a07",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:1257.198526601965,764.4000245181318,71.88249540857419,655.157715260017"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "abca1bf1-d0bd-43ca-9b66-388070ff4c2f",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "boundary",
+        "properties": {
+          "descriptor": "山海關東抵遼東界"
+        },
+        "created": "2024-03-19T16:46:52.778Z"
+      }
+    ],
+    "created": "2024-03-19T16:46:48.708Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rIqPrDWTvbbTUOkDRlWM"
+    }
+  },
+  {
+    "id": "60a9d762-40be-416d-8987-f9bbccbf92c6",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:205.66002439741445,1801.561931119046,839.9984374375599,61.613528096360824"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "d36d2144-8fbf-44ee-b0ab-ea1eeeb2a7fd",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "boundary",
+        "properties": {
+          "descriptor": "南抵河南界"
+        },
+        "created": "2024-03-19T16:47:45.139Z"
+      }
+    ],
+    "created": "2024-03-19T16:47:42.003Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rIqPrDWTvbbTUOkDRlWM"
+    }
+  },
+  {
+    "id": "fcfa7471-0c5e-4645-8134-2d227df44c27",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:63.94895114232268,1125.866350178832,78.04383442936447,217.70126589931988"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "5274e04f-aee1-49de-a9d2-3f7e955726a3",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "boundary",
+        "properties": {
+          "descriptor": "西抵山西界"
+        },
+        "created": "2024-03-19T16:48:18.915Z"
+      }
+    ],
+    "created": "2024-03-19T16:48:15.642Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rIqPrDWTvbbTUOkDRlWM"
+    }
+  },
+  {
+    "id": "aa53ae87-075e-4594-9b30-5d62d242e0ae",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:74.21784951030601,546.6987241466977,65.72115638778438,244.40053954453708"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "39f5fa41-cc8a-4fee-bf8b-4305dfaa86e6",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "garrison",
+        "properties": {
+          "id": "yijing_guan",
+          "name": "紫荊關",
+          "location": "易縣",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_16049",
+          "DILA_PL": "PL000000002338"
+        },
+        "created": "2024-07-22T14:37:14.021Z"
+      }
+    ],
+    "created": "2024-03-19T16:48:25.809Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rIqPrDWTvbbTUOkDRlWM"
+    }
+  },
+  {
+    "id": "d18173d5-55cb-483f-8427-4a7b19ff3f95",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:68.05644154528574,29.144695155154324,106.79688774817842,392.2731241809946"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "bbe27c16-aa5b-46bc-b3aa-e64c570e24ea",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "boundary",
+        "properties": {
+          "descriptor": "大同府馬邑縣"
+        },
+        "created": "2024-07-09T12:35:23.495Z"
+      }
+    ],
+    "created": "2024-03-19T16:48:46.512Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rIqPrDWTvbbTUOkDRlWM"
+    }
+  },
+  {
+    "id": "a319b40b-394d-46b0-a7b5-7177880e53be",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:1032.4393687623785,36.56279791511478,246.7395261775548,98.41056329413337"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "e76a302f-469d-4367-ac41-0b9885a9529c",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "descriptor": "星野圖"
+        },
+        "created": "2024-07-23T08:11:26.681Z"
+      }
+    ],
+    "created": "2024-03-19T16:49:03.774Z",
+    "creator": {
+      "isGuest": true,
+      "id": "rIqPrDWTvbbTUOkDRlWM"
+    }
+  },
+  {
+    "id": "6a0b36f5-a7a3-4a90-b66d-aafd0f75e5cf",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1041.1401051865212,524.370038981328 1114.337036132813,526.5881210288125 1136.5180055271942,1007.9133400685344 1083.2837385484936,1001.2590939260812 1065.5390821686185,981.2962810389528\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "da555603-25fb-4fa3-ae0d-0ed8cf89b278",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "descriptor": "薊州州縣古漁陽郡"
+        },
+        "created": "2024-09-30T07:24:07.466Z"
+      },
+      {
+        "id": "158d0401-0676-418c-8194-9b3997d454f3",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "no boundary",
+        "created": "2024-09-30T07:32:45.031Z"
+      }
+    ],
+    "created": "2024-09-30T07:23:56.756Z",
+    "creator": {
+      "isGuest": true,
+      "id": "koWVa1aQT91a0uCvuX_X"
+    }
+  },
+  {
+    "id": "354c5a1a-9f9b-47ea-895b-78b53ffde747",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"783.8418430806427,455.60927213000525 868.129258724125,453.39119008252084 868.129258724125,504.4072260941996 965.7251666525137,517.7157928388748 981.2516665251362,537.6785684961188 983.4698230323892,653.0191700342672 990.1241436346111,928.0621629797896 868.129258724125,921.4079168373363 859.2567816146501,859.3013961284668 799.3684918728021,859.3013961284668 799.3684918728021,859.3013961284668 799.3684918728021,859.3013961284668\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "15203657-346b-4ac6-b8d1-ece29c2746c5",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "descriptor": "順天府州縣古廣陽郡府治在都城内東北隅"
+        },
+        "created": "2024-09-30T07:33:16.486Z"
+      },
+      {
+        "id": "6895603a-e786-4bf0-9b7f-e5dd407c093d",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "no boundary",
+        "created": "2024-09-30T07:37:09.612Z"
+      }
+    ],
+    "created": "2024-09-30T07:33:11.920Z",
+    "creator": {
+      "isGuest": true,
+      "id": "koWVa1aQT91a0uCvuX_X"
+    }
+  },
+  {
+    "id": "5c462b53-3480-4a25-9daf-c2021150524a",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:873.7471279197965,1520.2918566925755,129.68550799972093,261.7344262008471"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "4171015e-de3c-49f2-ae9f-c9f82990b4a2",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "descriptor": "滄州州縣古海郡"
+        },
+        "created": "2024-09-30T07:37:39.195Z"
+      },
+      {
+        "id": "93d51e00-4841-4689-814c-bbb3ea5d00c6",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "boundary",
+        "created": "2024-09-30T07:38:58.198Z"
+      }
+    ],
+    "created": "2024-09-30T07:37:34.468Z",
+    "creator": {
+      "isGuest": true,
+      "id": "koWVa1aQT91a0uCvuX_X"
+    }
+  },
+  {
+    "id": "660e164d-570c-43d5-974e-7b74fae9f4aa",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:679.591465630495,1307.3553844559224,164.13881611153295,383.72931111133335"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "9bfcdef1-edb1-46c2-a8fd-9ff69ee50707",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "descriptor": "河間府州縣古瀛海郡"
+        },
+        "created": "2024-09-30T07:39:10.491Z"
+      },
+      {
+        "id": "ea7e66ea-ddbc-489d-87b3-16b8b2790faa",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "boundary",
+        "created": "2024-09-30T07:46:12.478Z"
+      }
+    ],
+    "created": "2024-09-30T07:39:05.790Z",
+    "creator": {
+      "isGuest": true,
+      "id": "koWVa1aQT91a0uCvuX_X"
+    }
+  },
+  {
+    "id": "93a53dfe-ed3a-4793-b18c-01c70e426741",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:555.3787220518306,1289.6105791565099,99.813766596567,377.07513942864875"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "72085098-b553-431c-83e9-8574b9c473aa",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "descriptor": "九河故道"
+        },
+        "created": "2024-09-30T07:47:09.894Z"
+      },
+      {
+        "id": "21c65d72-99fb-408f-a7f2-dca8707cbfd4",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "boundary",
+        "created": "2024-09-30T07:47:43.316Z"
+      }
+    ],
+    "created": "2024-09-30T07:46:23.599Z",
+    "creator": {
+      "isGuest": true,
+      "id": "koWVa1aQT91a0uCvuX_X"
+    }
+  },
+  {
+    "id": "4e0cd28e-2665-43a7-813c-e2e497cbc586",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:344.66025740289336,945.8068938194335,155.26619008252084,184.10140561935532"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "faf96c74-6ad3-47f0-acb4-0ff20e07ae4b",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "descriptor": "涿州古涿郡"
+        },
+        "created": "2024-09-30T07:48:03.956Z"
+      },
+      {
+        "id": "7f651434-0cd4-492d-8538-7eeb722a7505",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "boundary",
+        "created": "2024-09-30T07:49:42.575Z"
+      }
+    ],
+    "created": "2024-09-30T07:47:59.145Z",
+    "creator": {
+      "isGuest": true,
+      "id": "koWVa1aQT91a0uCvuX_X"
+    }
+  },
+  {
+    "id": "d05a326b-60ab-4317-acdd-14e22242d7d6",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:262.59099826666403,1178.7062534029833,164.13851827245844,292.78764932539775"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "158dc3e3-c8fc-40da-a0d7-9573177bb5ba",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "descriptor": "易州古燕都遺址"
+        },
+        "created": "2024-09-30T07:50:00.888Z"
+      },
+      {
+        "id": "419894f5-af21-474f-90a9-71dcaada0f8b",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "boundary",
+        "created": "2024-09-30T07:52:34.954Z"
+      }
+    ],
+    "created": "2024-09-30T07:49:52.251Z",
+    "creator": {
+      "isGuest": true,
+      "id": "koWVa1aQT91a0uCvuX_X"
+    }
+  },
+  {
+    "id": "24d33571-6ab3-4853-8414-a761955f9ee9",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:313.1338420963115,1580.7685884959487,224.8894947569084,209.48614720493356"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "d2c5604b-2282-4923-b0b2-b01574dc37f6",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "descriptor": "保定府州縣古上穀郡"
+        },
+        "created": "2024-09-30T07:52:50.671Z"
+      },
+      {
+        "id": "4ba74ee4-abb4-4285-9d81-527db317c360",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "boundary",
+        "created": "2024-09-30T07:56:11.082Z"
+      }
+    ],
+    "created": "2024-09-30T07:52:44.898Z",
+    "creator": {
+      "isGuest": true,
+      "id": "koWVa1aQT91a0uCvuX_X"
+    }
+  },
+  {
+    "id": "09d689f9-75ce-4962-91df-0eaf48584ec2",
+    "target": {
+      "source": "咸豐固安縣志_卷一_廵幸_p45.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:299.3019040300296,244.31544316159503,70.8556055717761,140.17085053426834"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "e1f58de7-7024-4b5c-9a51-45fce12ce75b",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "garrison",
+        "properties": {
+          "id": "xuanfu_zhen",
+          "name": "宣府",
+          "location": "宣化府",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_88266"
+        },
+        "created": "2024-09-30T08:15:11.508Z"
+      }
+    ],
+    "created": "2024-09-30T07:56:37.358Z",
+    "creator": {
+      "isGuest": true,
+      "id": "koWVa1aQT91a0uCvuX_X"
+    }
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "a1613648-a446-41e9-b7f2-6ca8557e405a",
+    "target": {
+      "source": "f33339015b988ebb"
+    },
+    "body": {
+      "source": "Gazetteer",
+      "properties": {
+        "image_title_ch": "星野圖",
+        "image_title_py": "Xingye Tu",
+        "image_title_en": "Starfield Map",
+        "volume": "图",
+        "page": "1b",
+        "image_format": ".png",
+        "pixel_h": "1908",
+        "pixel_w": "1398"
+      },
+      "purpose": "describing"
+    }
+  }
+]

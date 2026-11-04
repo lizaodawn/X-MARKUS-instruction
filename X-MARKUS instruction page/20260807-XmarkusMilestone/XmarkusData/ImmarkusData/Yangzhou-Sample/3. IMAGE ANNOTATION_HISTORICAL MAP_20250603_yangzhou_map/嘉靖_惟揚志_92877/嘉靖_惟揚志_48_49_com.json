@@ -1,0 +1,937 @@
+[
+  {
+    "id": "5b9896cd-9b51-4b04-a3c5-5103f8746a89",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><g><path fill-rule=\"evenodd\" d=\"M 124.08218720938048,378.62939389806223 L 178.56735648330869,378.84961485170425 L 193.29892702404243,332.185370014728 L 203.76711805240726,302.0634040893135 L 203.87365754809488,125.56666200312318 L 804.4657839201517,132.47350390361143 L 814.735309361353,99.42062210885815 L 845.3922436113131,86.11336412538898 L 842.9579161556147,32.19981306727802 L 934.7002215583946,32.19981306727802 L 933.748008601981,104.61983153724773 L 1013.6625210502613,134.1736816810164 L 1319.2038374425783,139.72691633485596 L 1317.3019069159075,297.9937346446577 L 1338.6399553949868,286.88727235957293 L 1348.2248008621705,314.2730310500082 L 1393.4112889115668,318.3808810637517 L 1393.4112889115668,400.52516757437536 L 1343.439100600115,401.8207875357746 L 1335.7110227829846,446.5994510495991 L 1322.8932710654205,463.4112356777047 L 1318.1387831101115,571.2426700975586 L 1337.9794334005185,577.190565072195 L 1343.6683201725486,590.8690007658988 L 1394.7808940119899,603.1925967732019 L 1390.6729980321738,677.1340808848753 L 1344.8778578929087,681.6604149617935 L 1314.753532526644,757.9601411874256 L 1313.619362297394,890.941435679148 L 987.3797821146236,892.5686643321508 L 918.1700295401641,931.7835773085098 L 942.916105450172,960.5766051885563 L 882.6674547176436,957.8380385127272 L 871.7892210058179,934.6567493124817 L 777.0812746561992,932.2588496985636 L 626.31062138399,898.1219919609506 L 217.6121259455375,895.7635668551393 L 206.20139954203296,489.38958344980495 L 192.39441325198916,469.9913249423931 L 165.1608252450333,469.00236999685484 L 125.45147054729493,464.89451998311137 Z M 295.2429915368202,412.8647349356114 L 303.45871817083327,796.2622828763083 L 873.0823334540243,797.6315202481502 L 893.2833268140201,751.0757948269119 L 927.2895420462814,756.5529281785699 L 944.3171614530282,794.892953572321 L 1212.6655205782722,800.3700869239792 L 1216.7734165580885,692.1963814662254 L 1186.6490911918243,677.1342187830932 L 1189.3877497997985,637.424864085355 L 1226.3584458895627,611.408434698907 L 1220.881312537905,397.7995904592284 L 1183.91043258385,382.7374277760963 L 1183.91043258385,347.13596905817417 L 1230.4663418693785,317.01164369190997 L 1216.7734165580885,229.3772342689463 L 953.8701882891974,221.16151125842302 L 937.4387882342235,262.2401263110395 L 888.144312272866,256.7629929593815 L 870.3436748460502,219.7922279205085 L 299.3508221910171,232.11580094477532 L 300.720059562859,325.0999489733038 L 333.600929238385,344.41357862057583 L 329.47735845562545,387.18580445275757 Z\" /></g></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "a65f4698-fd86-446a-9cd4-b327aeed2f8b",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall",
+        "properties": {
+          "id": "yangzhou_cheng",
+          "name": "揚州城",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33309",
+          "texture": "bond_pattern",
+          "road_presence": "intramural"
+        },
+        "created": "2025-05-23T10:42:11.045Z",
+        "modified": "2025-05-28T09:25:08.534Z"
+      }
+    ],
+    "created": "2025-05-23T10:42:07.021Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    },
+    "modified": "2025-05-23T13:21:03.325Z"
+  },
+  {
+    "id": "bf6b8f72-5181-4482-bd85-d8496e221f2f",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><g><path fill-rule=\"evenodd\" d=\"M 782.9569528018101,837.9189141229704 L 784.7148453807357,826.272875787587 L 788.2306305385874,820.1202517613467 L 792.8450985582678,817.0439397482265 L 798.5582494397764,817.0439397482265 L 802.7332443147252,818.8018323271523 L 805.3700831831139,822.317617485004 L 817.0161215184971,823.4163003468325 L 835.8640441945092,822.213241452619 L 818.4399676160041,826.711747772522 L 857.674169567118,852.204647664662 L 932.0360257594823,847.4696635350093 L 970.3322721040142,825.8384454255222 L 971.5461241149917,819.7693687319661 L 973.0290878981609,819.9005151889811 L 978.7422387796698,825.6136660704898 L 982.9172336546187,832.4254998138273 L 985.5540725230072,840.3360164189934 L 986.8724919572016,856.1570496293253 L 986.8724919572016,879.8885994448235 L 980.5001313585956,897.2477886617156 L 967.7554101613837,908.234617280002 L 958.5264741220233,913.9477681615107 L 952.8133232405145,914.3872413062421 L 945.3422797800799,918.1227630364593 L 936.1133437407194,925.1543333521626 L 914.5791596488785,929.9885379442086 L 880.7397275045571,932.6253768125972 L 862.0621188534707,932.6253768125972 L 858.5463336956191,929.9885379442086 L 852.173973097013,928.6701185100143 L 842.9450370576527,928.6701185100143 L 834.3753107353895,927.1319625034541 L 826.4647941302233,924.0556504903341 L 822.2897992552746,916.145133885168 L 821.8503261105432,903.400412687956 L 822.729272400006,895.4898960827898 L 824.9266381236633,892.4135840696698 L 820.7516432487146,884.7228040368694 L 810.2042877751599,872.417555984389 L 799.4371957292393,865.6057222410515 L 788.4503671109532,864.2873028068572 L 782.9569528018101,855.0583667674969 Z\" /><path fill-rule=\"evenodd\" d=\"M 850.7979142232597,818.6397351943456 L 881.8384103663857,817.0439397482265 L 940.7278117603997,817.0439397482265 L 951.3417579603698,817.9825880516253 Z\" /></g></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "83cde81d-4a1d-4f19-a92e-785074df6e40",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_barbican",
+        "properties": {
+          "name": "揚州城南門甕城",
+          "direction": "south",
+          "texture": "bond_pattern"
+        },
+        "created": "2025-05-23T10:22:12.819Z",
+        "modified": "2025-05-28T09:25:01.118Z"
+      }
+    ],
+    "created": "2025-05-23T10:22:01.426Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "6a4f096d-4f35-4d0a-b3e5-1b2a219e8a76",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"772.6703657278196,875.7394027998726 791.3985383681427,867.3670889412552 808.0559861911291,871.3506400069903 819.761129858405,888.6345937781686 823.8311318185793,928.3630675763558 772.2164365104692,930.2361949157923\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "2d6b5127-f2c7-4b7c-ad16-710ad43e0d98",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate",
+        "properties": {
+          "name": "揚州城南門",
+          "direction": "south",
+          "texture": "bond_pattern"
+        },
+        "created": "2025-05-23T13:18:54.107Z",
+        "modified": "2025-05-28T09:25:13.878Z"
+      }
+    ],
+    "created": "2025-05-23T13:18:51.451Z",
+    "creator": {
+      "isGuest": true,
+      "id": "VSP_br7Sz25igkLwuk4h"
+    }
+  },
+  {
+    "id": "e7a2d95f-d208-45c3-8dfb-f7ee2f023d62",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"942.765357484998,797.4624793624326 927.583577447593,763.1036942500758 887.6315416586195,759.1084692125288 872.4496543279664,795.8644000767385\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "7ea5462a-320b-4375-87ba-7943d95cf4dd",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate_tower",
+        "properties": {
+          "name": "揚州城南門樓"
+        },
+        "created": "2025-05-23T10:26:10.120Z",
+        "modified": "2025-05-23T13:23:17.179Z"
+      }
+    ],
+    "created": "2025-05-23T10:26:07.793Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "2d79b2ab-dc55-4187-b641-e829ff5af9fd",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"866.7073796169306,933.4326739435597 876.2791910278349,909.4614041882139 911.756768653339,910.4192138996195 915.6215356275003,933.4562202703521\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "042f35cd-f7e9-48d7-98d1-a50ee8db33aa",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_watergate",
+        "properties": {
+          "name": "揚州城南水門"
+        },
+        "created": "2025-05-23T10:26:34.737Z",
+        "modified": "2025-05-23T13:22:24.411Z"
+      }
+    ],
+    "created": "2025-05-23T10:26:31.041Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "2580a213-f6b1-4d59-b743-960510f66379",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:848.0788312220571,35.58577090513974,83.89945755536655,76.70803371146361"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "1834bb88-bad3-4d0a-a7d5-ea06da38adb7",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_suspension_bridge",
+        "properties": {
+          "name": "揚州城北門吊橋",
+          "texture": "striped"
+        },
+        "created": "2025-05-23T10:21:05.898Z",
+        "modified": "2025-05-28T09:27:27.122Z"
+      }
+    ],
+    "created": "2025-05-23T10:20:27.075Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "c2f5e32e-d7ec-40a0-b962-b64bc0cc00c6",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"838.4045592697909,360.5314214221994 840.3223187885725,379.70843722647606 827.2427410707705,384.58239587003663 810.5914426177718,375.8537817975534 778.955816714128,393.13236760225453 770.2870576912682,372.03765665514493 768.3710830505222,353.8321408993978 811.6733115133086,338.3602678710032\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "10915e11-93f2-4b46-b216-4f843e4a849e",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "bridge",
+        "properties": {
+          "id": "yangzhou_kaiming_qiao",
+          "name": "開明橋",
+          "TGAZ": "hvd_33309",
+          "texture": "striped",
+          "bridge_type": "arch bridge",
+          "relation to wall": "intramural",
+          "bridge_cover": "no"
+        },
+        "created": "2025-05-23T10:27:11.586Z",
+        "modified": "2025-05-23T13:31:32.057Z"
+      }
+    ],
+    "created": "2025-05-23T10:27:14.434Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "ed0461e2-c00e-4f1d-974a-e931a99869b9",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:124.81482960583293,382.0600701489878,64.05436498898928,85.80746187866436"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "2b5ac23c-a2e9-4e6f-bc75-066d988e5b22",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_suspension_bridge",
+        "created": "2025-05-23T10:21:21.883Z"
+      }
+    ],
+    "created": "2025-05-23T10:21:17.179Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "f06f3a15-6d31-4231-a2ed-214de1936e6e",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:1341.0877929641242,322.4418677390229,55.93288229253744,75.90900077444456"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "56c1cc2f-0b23-41ed-9135-2c390c02b457",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_suspension_bridge",
+        "created": "2025-05-23T10:21:36.755Z"
+      }
+    ],
+    "created": "2025-05-23T10:21:31.915Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "53d6adc8-ab50-4fe5-9a95-ad8197692dd4",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:1336.219158286329,600.5828289451355,53.61018700802197,75.03562715891132"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "9b8d2ad2-984b-44ca-8059-9cc24b110095",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_suspension_bridge",
+        "created": "2025-05-23T10:21:47.291Z"
+      }
+    ],
+    "created": "2025-05-23T10:21:43.866Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "027c5e51-fa5f-4abf-8d23-bbee52f9d785",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><g><path fill-rule=\"evenodd\" d=\"M 1232.423088910715,738.33842763455 L 1234.0176574729717,590.5156913581759 L 1313.9253470676044,568.941540531371 L 1336.2953909709463,577.7241393904563 L 1342.7573937318612,700.783430304181 L 1316.3224928194575,750.3241563938151 Z M 1235.6191938354789,593.6882787864242 L 1235.6191938354789,707.2501442676703 L 1247.6048153014958,655.4543759642232 L 1246.0067360158016,599.6690005247567 Z\" /></g></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "7729f132-0cb0-4b43-8e6c-77052f4266f9",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_barbican",
+        "properties": {
+          "name": "揚州城小東門甕城",
+          "direction": "southeast",
+          "texture": "brick_arrangement"
+        },
+        "created": "2025-05-23T10:24:12.397Z",
+        "modified": "2025-05-23T13:17:52.948Z"
+      }
+    ],
+    "created": "2025-05-23T10:24:02.738Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "eace89e8-b666-4808-980a-7a4fc74df40d",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1238.8153524068669,442.69279414192965 1323.5138227817683,464.2669449687344 1341.8917882138728,425.9129348188309 1341.092748571026,290.87483282800866 1236.4182334783256,311.64991718865457 1246.0067360158016,319.64036726374854 1245.2076963729546,405.1378504581849\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "754d72ab-914d-424a-a34d-3a164b8baf14",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_barbican",
+        "properties": {
+          "name": "揚州城大東門甕城",
+          "direction": "northeast",
+          "texture": "brick_arrangement"
+        },
+        "created": "2025-05-23T10:24:12.397Z",
+        "modified": "2025-05-23T13:16:26.523Z"
+      }
+    ],
+    "created": "2025-05-23T10:23:49.807Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "9c8b4467-0de6-403e-84ab-46fc06032307",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"996.301120848994,210.96558435083432 1008.2867423150109,132.65945794202077 948.3585813383022,111.88437358137489 828.5023130315093,110.28629429568099 830.1003923172029,137.4537226224148 821.3109294225741,140.64988119380277 837.2917759261381,213.41815236785888 862.062085324331,204.57326720805833 929.1815762633505,202.9751879223644 972.3298779169603,210.16654470798727\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "dcc7424d-df91-43da-bb04-4f859cead055",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_barbican",
+        "properties": {
+          "name": "揚州城北門甕城",
+          "direction": "north",
+          "texture": "brick_arrangement"
+        },
+        "created": "2025-05-23T10:24:38.958Z",
+        "modified": "2025-05-23T13:21:27.459Z"
+      }
+    ],
+    "created": "2025-05-23T10:24:36.150Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "1c68a3d7-4b88-4193-bea8-a3f13fc0d427",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"284.3496908946308,316.0445681660325 205.24449801965818,299.26460154968544 182.07229473047138,361.58996192487115 190.8617576251004,468.6615959461125 206.84260412866425,489.4366803067584 292.34008732310076,483.0375120803873 277.9573469285429,472.6568209836596 274.7611615338428,435.90089011944974 273.16308224814884,396.7477598567628\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "a9786896-1458-43d0-b9cd-dd4d40b2077c",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_barbican",
+        "properties": {
+          "name": "揚州城西門甕城",
+          "direction": "west",
+          "texture": "brick_arrangement"
+        },
+        "created": "2025-05-23T10:25:00.598Z",
+        "modified": "2025-05-23T13:22:39.100Z"
+      }
+    ],
+    "created": "2025-05-23T10:24:56.879Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "7e4d9c8e-56ba-41a9-a49c-0840cbc90d4c",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"333.09132369479374,349.6043404588542 298.7324849358129,335.22162688760847 297.13440565011894,405.53733004464004 332.2922572286347,387.15933778922306\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "f3b8fb4e-5f69-457d-b3e8-beea4a4108ea",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate_tower",
+        "properties": {
+          "name": "揚州城西門樓"
+        },
+        "created": "2025-05-23T10:25:16.855Z",
+        "modified": "2025-05-23T13:22:49.364Z"
+      }
+    ],
+    "created": "2025-05-23T10:25:13.047Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "61b67d47-d958-4bfc-90a4-a0b7294be5ea",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"927.5835238009689,261.30526961337904 943.5643703045328,242.92727735796203 941.9662910188388,219.75504724546315 877.2370846106444,222.14538542291214 882.0381836887541,260.50620314721994\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "42a7a6cf-94ad-41e8-a884-f917bfd2f274",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate_tower",
+        "properties": {
+          "name": "揚州城北門樓"
+        },
+        "created": "2025-05-23T10:25:38.136Z",
+        "modified": "2025-05-23T13:21:45.075Z"
+      }
+    ],
+    "created": "2025-05-23T10:25:33.856Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "101ed41e-f729-47da-b783-e7c3ff1a11a6",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1233.616645827288,407.529953427371 1232.8176330077529,327.62574773286354 1183.2770142113673,353.88633723713167 1181.6789349256733,383.55873731864926\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "356e0716-669a-4883-bad4-a9bb2ad9523c",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate_tower",
+        "properties": {
+          "name": "揚州城大東門樓"
+        },
+        "created": "2025-05-23T10:25:51.168Z",
+        "modified": "2025-05-23T13:23:09.876Z"
+      }
+    ],
+    "created": "2025-05-23T10:25:46.568Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "a41aee47-7c18-46dc-94dc-6f0d0cef4011",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1224.8271829326588,689.5918056983442 1223.2291036469649,694.3860703787382 1226.4252622183528,624.0457338644403 1184.0760806775263,648.8406497965874 1184.0760806775263,674.4099988376272 1202.454019286319,689.5918056983442\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "ad5f0c48-5ea8-493b-9741-6b157bb36053",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate_tower",
+        "properties": {
+          "name": "揚州城小東門樓"
+        },
+        "created": "2025-05-23T10:26:00.519Z",
+        "modified": "2025-05-23T13:23:03.884Z"
+      }
+    ],
+    "created": "2025-05-23T10:25:58.191Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "edfb3767-24cf-4224-ad72-0370631a2917",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"805.3242697739644,166.35228318230037 822.2019942170017,134.71021676163613 762.0902714826402,136.62791190446896 778.4764733983566,168.26997832513308\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "3268ef94-e62b-4271-aaf9-fab80a84e611",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_watergate",
+        "properties": {
+          "name": "揚州城北水門"
+        },
+        "created": "2025-05-23T10:26:47.923Z",
+        "modified": "2025-05-23T13:22:17.771Z"
+      }
+    ],
+    "created": "2025-05-23T10:26:44.377Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "7173dbd1-110d-4ae6-8d76-677ce680f0ca",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"793.3385624733482,452.5810779699432 772.2438515262388,479.42890653352543 790.4619231951758,485.1819919620238 805.803613089736,472.7169413456363 824.0216847586727,472.7169413456363 835.5279843675672,486.1408395334402 834.5690402322275,453.53992554135954\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "4c460633-c6a3-4dac-92a3-87a76bc06fb9",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "bridge",
+        "properties": {
+          "id": "yangzhou_wenjin_qiao",
+          "name": "文津橋",
+          "TGAZ": "hvd_33309",
+          "texture": "striped",
+          "bridge_type": "arch bridge",
+          "relation to wall": "intramural",
+          "bridge_cover": "no"
+        },
+        "created": "2025-05-23T10:28:06.906Z",
+        "modified": "2025-05-23T13:31:40.776Z"
+      }
+    ],
+    "created": "2025-05-23T10:27:24.170Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "fd6f5684-0285-4f63-a6a4-50e0b15f8d69",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"774.1615466690715,551.3426997055759 802.9271025634612,535.0422266155482 828.0830977867765,537.918801517772 847.0423765248783,561.8900551791306 840.3222544126237,577.2316485097672 823.938830596216,568.6019881790453 809.1922738376812,560.9312076077142 786.3343245628574,573.3962582241016\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "fbf2bb2f-ad77-48e1-a653-fd40cd8a2921",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "bridge",
+        "properties": {
+          "id": "yangzhou_tongsi_qiao",
+          "name": "通泗橋",
+          "TGAZ": "hvd_33309",
+          "texture": "striped",
+          "bridge_type": "arch bridge",
+          "relation to wall": "intramural",
+          "bridge_cover": "no"
+        },
+        "created": "2025-05-23T10:28:14.402Z",
+        "modified": "2025-05-23T13:31:45.768Z"
+      }
+    ],
+    "created": "2025-05-23T10:27:38.385Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "f40efc83-17a7-495c-92ae-682ebc173153",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"772.2438515262388,656.8162544411232 775.8471261159659,685.5817459595637 789.7514952435314,680.7874759145074 807.7255101522163,658.733949583956 825.9394442774544,672.1578155837854 846.0752110892241,671.2559255981553 844.1575803223403,647.2277787269594 810.5978187588432,629.9684580655154\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "3cae60a3-894e-4235-90fb-2289c01b7368",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "bridge",
+        "properties": {
+          "id": "yangzhou_taiping_qiao",
+          "name": "太平橋",
+          "TGAZ": "hvd_33309",
+          "texture": "striped",
+          "bridge_type": "arch bridge",
+          "relation to wall": "intramural",
+          "bridge_cover": "no"
+        },
+        "created": "2025-05-23T10:28:14.402Z",
+        "modified": "2025-05-23T13:31:54.016Z"
+      }
+    ],
+    "created": "2025-05-23T10:27:46.122Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "6c268afe-59c2-4c01-af40-b9c45c63cdd9",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"777.0380571953464,731.6066225153971 774.1614822931227,759.4132986503959 786.6265972854592,761.3309937932287 805.803548713787,738.3185877032864 832.6514094653437,750.783638319674 849.0205835536707,750.783638319674 851.8500293833375,726.8123524703408 808.6802438427973,712.4214376218358\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "14c7e021-9ba8-4303-bdc8-c94d82260029",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "bridge",
+        "properties": {
+          "id": "yangzhou_xin_qiao",
+          "name": "新橋",
+          "TGAZ": "hvd_33309",
+          "texture": "striped",
+          "bridge_type": "arch bridge",
+          "relation to wall": "intramural",
+          "bridge_cover": "no"
+        },
+        "created": "2025-05-23T10:28:06.906Z",
+        "modified": "2025-05-23T13:31:59.632Z"
+      }
+    ],
+    "created": "2025-05-23T10:27:56.226Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    }
+  },
+  {
+    "id": "181c134f-6456-4434-8f78-68688855a17f",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><g><path fill-rule=\"evenodd\" d=\"M 35.122339240216945,20.687777242371908 L 1492.9586287621696,20.687777242371908 L 1492.9586287621696,1005.6189381445569 L 35.122339240216945,1005.6189381445569 L 35.122339240216945,467.3398241034402 L 128.75043216473725,469.56905750682904 L 170.17276312663336,468.4184404211294 L 169.0221460409336,481.075266989395 L 186.28146026478262,508.6901542973257 L 181.67897260919932,910.2566373480203 L 626.9691366698975,922.9135411674247 L 620.0654341556994,1001.1557347484181 L 742.0310769932801,1003.4569689198177 L 744.3323884158182,935.5703677356905 L 806.4659427970163,933.269133564291 L 862.8463731241467,957.4322082406923 L 884.7081363780096,959.7334424120914 L 873.2018882698743,927.5160095102233 L 908.8710565521333,929.8173209327616 L 931.883552768404,957.4322082406923 L 967.5528755529407,951.6790069354857 L 1011.2763248095278,916.009761402088 L 1329.9983776898466,913.7085272306888 L 1343.8057827182424,898.750389239885 L 1336.9020029529056,766.429154005438 L 1350.7095624835792,735.3623768148389 L 1364.516967511975,677.8313680275782 L 1394.4330889913053,674.3794781449099 L 1397.884978873974,689.3375388845748 L 1491.085233194632,689.3375388845748 L 1491.085233194632,589.2335820497184 L 1397.884978873974,585.7816921670501 L 1385.2281523057081,603.0410257036838 L 1349.5588295211714,597.2879016496161 L 1358.906928614248,585.4956667549344 L 1339.2033143754438,553.5643365163207 L 1335.7514244927756,470.7196359669593 L 1358.7639207090465,439.66075974920614 L 1359.914421918038,399.38114490016375 L 1489.9345002322243,397.0799107287645 L 1491.085233194632,306.18089057950533 L 1392.1317775687671,309.63274183660434 L 1390.9811991086372,323.44018549056966 L 1353.01071940384,319.98833423347077 L 1350.6188114362758,295.9158977690426 L 1335.7513472416372,283.16847161437335 L 1338.0525814130365,119.78038193818846 L 1023.933074126655,115.17787496982054 L 976.7577349873994,92.16547531747314 L 934.1847869398038,87.56299731828214 L 936.4860211112031,34.63445687382008 L 849.0388908446122,38.0862984745267 L 846.7375794220742,86.41238023258246 L 807.6165212571468,102.52106771433951 L 741.4277144148267,112.25654677569038 L 183.98020678059865,109.42483782328397 L 188.58269443618195,305.0303314321598 L 173.62463369651698,313.0846703448422 L 165.57025615826524,333.79585513857484 L 165.57025615826524,370.6156791321029 L 127.59977645346825,378.67003735756987 L 124.14794450915393,361.4107424465056 L 35.122339240216945,358.0299958446627 Z\" /><path fill-rule=\"evenodd\" d=\"M 294.4397173867523,402.8330347828321 L 296.6125772776966,401.6048952047449 L 296.6125772776966,460.83185350205844 Z\" /><path fill-rule=\"evenodd\" d=\"M 297.8915686438513,223.33622865571323 L 369.19546114845167,223.89989406996136 L 297.9086495529837,223.89989406996136 Z\" /><path fill-rule=\"evenodd\" d=\"M 943.389723625401,221.0349751715292 L 1059.8964522098233,223.89989406996136 L 943.5488693122693,223.89989406996136 Z\" /></g></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "9ce9a171-2dce-480f-98ef-4a47248a0ccb",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_moat",
+        "properties": {
+          "name": "揚州城池"
+        },
+        "created": "2025-05-23T10:41:17.269Z",
+        "modified": "2025-05-23T13:23:41.207Z"
+      }
+    ],
+    "created": "2025-05-23T10:30:24.595Z",
+    "creator": {
+      "isGuest": true,
+      "id": "cBW5ypsHGXAYgfC_vHj4"
+    },
+    "modified": "2025-05-23T10:40:35.539Z"
+  },
+  {
+    "id": "0c688304-eee1-4686-a1aa-46e0fbfbab93",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1337.8833705122922,399.3474794614742 1337.5012414911048,325.9760391097214 1316.483375628556,329.41530292670717 1291.6440656146847,349.6688850903065 1291.6440656146847,374.5081951041776 1306.1655072078754,390.1760494175051 1307.6940746057744,390.9403331164547 1307.6940746057744,390.9403331164547\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "ec1e4485-60a2-4587-9a3e-7b0d6d40544e",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate",
+        "properties": {
+          "name": "揚州城大東門",
+          "direction": "northeast",
+          "texture": "bond_pattern"
+        },
+        "created": "2025-05-23T13:16:38.723Z",
+        "modified": "2025-05-28T09:25:58.655Z"
+      }
+    ],
+    "created": "2025-05-23T13:16:35.707Z",
+    "creator": {
+      "isGuest": true,
+      "id": "VSP_br7Sz25igkLwuk4h"
+    }
+  },
+  {
+    "id": "80b2594d-8ea2-4fbd-94a1-6ddb34e666a3",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1335.2083647376812,673.692494389882 1314.1448702270864,667.6326952395181 1291.256364829309,642.7679438372663 1292.408096918163,622.5031631680979 1304.2547501604633,610.7206137545921 1324.508341031494,597.6330342337317 1337.5011901573248,598.4424637227517\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "e320e1db-044e-4e51-9f60-a7fba2a7a2c3",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate",
+        "properties": {
+          "name": "揚州城小東門",
+          "direction": "southeast",
+          "texture": "bond_pattern"
+        },
+        "created": "2025-05-23T13:17:21.595Z",
+        "modified": "2025-05-28T09:26:09.815Z"
+      }
+    ],
+    "created": "2025-05-23T13:17:17.691Z",
+    "creator": {
+      "isGuest": true,
+      "id": "VSP_br7Sz25igkLwuk4h"
+    }
+  },
+  {
+    "id": "af177690-aa0b-4559-9d7c-71054f19a180",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"852.903852558648,109.35825697416035 863.876762425701,140.73408257109662 888.5313053069304,154.19992972948688 918.0615511798882,137.11688889797585 922.6686611834103,108.48851001006739\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "8deb4aab-21c8-43a6-ab6e-6e80d07ee91e",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate",
+        "properties": {
+          "name": "揚州城北門",
+          "direction": "north",
+          "texture": "bond_pattern"
+        },
+        "created": "2025-05-28T09:12:50.561Z",
+        "modified": "2025-05-28T09:26:02.959Z"
+      }
+    ],
+    "created": "2025-05-28T09:12:45.121Z",
+    "creator": {
+      "isGuest": true,
+      "id": "X1Cbkl3ofNiBO1rucMO8"
+    }
+  },
+  {
+    "id": "4bd47ace-6819-40c9-a2d5-38bf3fece4b7",
+    "target": {
+      "source": "嘉靖_惟揚志_48_49_com.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"188.1489636016038,388.8274173256204 184.90446572874035,458.58412159218494 223.7655569856804,448.8506279735945 240.74195265619264,423.8202210324133 230.32784015761183,388.8270038281818\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "c3a62373-9fe6-4f05-a032-32435651f5c2",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate",
+        "properties": {
+          "name": "揚州城西門",
+          "direction": "west",
+          "texture": "bond_pattern"
+        },
+        "created": "2025-05-28T09:13:52.441Z",
+        "modified": "2025-05-28T09:26:27.704Z"
+      }
+    ],
+    "created": "2025-05-28T09:13:49.177Z",
+    "creator": {
+      "isGuest": true,
+      "id": "X1Cbkl3ofNiBO1rucMO8"
+    }
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "176b99c0-8903-4244-ad0a-310f05c4cdeb",
+    "target": {
+      "source": "874972ec9055ddbb"
+    },
+    "body": {
+      "source": "historical printed illustration",
+      "properties": {
+        "Volume": "1",
+        "Page": "10b-11a",
+        "Image_title": "今揚州府城隍圖",
+        "Image_format": "png"
+      },
+      "purpose": "describing"
+    }
+  }
+]

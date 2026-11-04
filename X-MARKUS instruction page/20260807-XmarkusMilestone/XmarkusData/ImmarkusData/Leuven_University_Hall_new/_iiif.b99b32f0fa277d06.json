@@ -1,0 +1,16 @@
+{
+  "id": "b99b32f0fa277d06",
+  "name": "La Halle aux Draps",
+  "uri": "https://lib.is/IE978510/manifest?manifest=https://lib.is/IE978510/manifest",
+  "importedAt": "2025-11-19T12:57:37.662Z",
+  "type": "PRESENTATION_MANIFEST",
+  "majorVersion": 3,
+  "canvases": [
+    {
+      "id": "2689871607",
+      "uri": "https://lib.is/IE978510/canvas/canvas-FL978514.json",
+      "name": "LM00025",
+      "manifestId": "b99b32f0fa277d06"
+    }
+  ]
+}

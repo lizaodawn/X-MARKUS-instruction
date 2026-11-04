@@ -1,0 +1,24 @@
+{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "type": "Annotation",
+  "id": "fc4848a5-41ed-4c1e-8569-dffdd9d204b3",
+  "body": {
+    "source": "journal article schema",
+    "properties": {
+      "Source_title_ch ": "江苏扬州宋大城北门水门遗址发掘简报",
+      "Source_title_py ": "Jiang Su Yang Zhou Song Da Cheng Bei Men Shui Men Yi Zhi Fa Jue Jian Bao",
+      "Source_title_en ": "Excavation on the Water Valve Site at the Northern Gate of the Great Song City in Yangzhou,Jiangsu",
+      "Source_author ": "汪勃;刘涛;印志华;池军",
+      "Publication_title": "考古",
+      "Publication_time": "2005",
+      "Publication_place": "北京市",
+      "issue": "12",
+      "Page": "24-40+97+100-101+103+2",
+      "DOI": "doi:CNKI:SUN:KAGU.0.2005-12-002.",
+      "Language": "Chinese",
+      "link to archive": "https://kuleuven.sharepoint.com/:b:/r/sites/T0003567/Shared%20Documents/RegInfra%20Archive/REGINFRA%20research%20files/CORPORA/___Archaeology/Iva/combined%20data%20from%202%20tiers/%E6%B1%9F%E8%8B%8F%E6%89%AC%E5%B7%9E%E5%AE%8B%E5%A4%A7%E5%9F%8E%E5%8C%97%E9%97%A8%E6%B0%B4%E9%97%A8%E9%81%97%E5%9D%80%E5%8F%91%E6%8E%98%E7%AE%80%E6%8A%A5.pdf?csf=1&web=1&e=FlHTtv",
+      "Place_covered": "揚州"
+    },
+    "purpose": "describing"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "type": "Annotation",
+  "id": "d31e0921-4718-4e17-bd2e-9993e47224c2",
+  "body": {
+    "source": "Gazetteer",
+    "properties": {
+      "source_title_ch": "固安縣志",
+      "source_title_py": "Gu’an Xian Zhi",
+      "source_title_en": "County Gazetteer of Gu'an",
+      "source_author": "秦士奇",
+      "CBDB": "367037",
+      "publication_place": "廊坊市",
+      "publication_time": "1632",
+      "reprint": "no",
+      "place_covered": "固安縣",
+      "TGAZ_cv": "https://maps.cga.harvard.edu/tgaz/placename/hvd_88207",
+      "genre": "gazetteer",
+      "type": "print",
+      "format": "woodblock print",
+      "language": "chinese",
+      "institution_dg": "北京愛如生數字化技術研究中心",
+      "data_source_url": "http://server.wenzibase.com/spring/front/read"
+    },
+    "purpose": "describing"
+  }
+}

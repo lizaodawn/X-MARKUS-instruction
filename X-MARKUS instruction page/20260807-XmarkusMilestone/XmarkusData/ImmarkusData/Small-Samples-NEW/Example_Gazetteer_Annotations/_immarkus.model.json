@@ -1,0 +1,1052 @@
+{
+  "entityTypes": [
+    {
+      "color": "#af222b",
+      "id": "object",
+      "properties": [
+        {
+          "name": "id",
+          "type": "text",
+          "description": "Unique identifier\nMandatory for named entities, particularly bridge and city_wall. \nCreate id if object is not named but the annotator knows which object is depicted through context."
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "description": "Name of the entity in Chinese characters"
+        },
+        {
+          "name": "descriptor",
+          "type": "text",
+          "description": "Any text annotations associated with the entity, other than the name."
+        },
+        {
+          "name": "location",
+          "type": "text",
+          "description": "Fill in the county or garrison name, if available."
+        },
+        {
+          "name": "TGAZ",
+          "type": "external_authority",
+          "authorities": [
+            "TGAZ"
+          ],
+          "description": "The CHGIS id of the county or other administrative units. "
+        },
+        {
+          "name": "DILA_PL",
+          "type": "external_authority",
+          "authorities": [
+            "DILA (Place)"
+          ],
+          "description": "The DILA (place) id for the place name that is not available in TGAZ but available in DILA  (place)."
+        }
+      ]
+    },
+    {
+      "color": "#2074f3",
+      "id": "obj_main",
+      "parentId": "object",
+      "properties": [
+        {
+          "name": "color",
+          "type": "text",
+          "description": "Color used to depict the object  \nHEX code (e.g. #ff4000) retrieved from image with color picker"
+        },
+        {
+          "name": "pattern",
+          "type": "enum",
+          "values": [
+            "brick_pattern",
+            "flagstone_pattern",
+            "plain",
+            "stripe"
+          ],
+          "description": "Pattern used to depict the materials used for the object.\n"
+        }
+      ],
+      "description": "Three large-scale infrastructures analyzed by the RegInfra and InfraLives projects, including a city wall, a road, and a bridge"
+    },
+    {
+      "color": "#f63db1",
+      "id": "city_wall",
+      "parentId": "obj_main"
+    },
+    {
+      "color": "#744439",
+      "id": "bridge",
+      "parentId": "obj_main"
+    },
+    {
+      "color": "#34cad9",
+      "id": "road",
+      "parentId": "obj_main"
+    },
+    {
+      "color": "#c96b6c",
+      "id": "obj_military",
+      "parentId": "object",
+      "description": "Military infrastructures not included in obj_main, such as a garrison, fortress, a beacon tower, a police station, and an extensive wall.",
+      "properties": [
+        {
+          "name": "color",
+          "type": "text",
+          "description": "Color used to depict the object\nHEX code (e.g. #ff4000) retrieved from image with color picker"
+        },
+        {
+          "name": "pattern",
+          "type": "enum",
+          "values": [
+            "brick_pattern",
+            "flagstone_pattern",
+            "plain",
+            "stripe"
+          ],
+          "description": "Pattern used to depict the materials used for the object."
+        }
+      ]
+    },
+    {
+      "color": "#d9bac1",
+      "id": "garrison",
+      "parentId": "obj_military"
+    },
+    {
+      "color": "#912fde",
+      "id": "fortress",
+      "parentId": "obj_military"
+    },
+    {
+      "color": "#8c8092",
+      "id": "beacon_tower",
+      "parentId": "obj_military"
+    },
+    {
+      "color": "#204232",
+      "id": "police_station",
+      "parentId": "obj_military"
+    },
+    {
+      "color": "#7ae43d",
+      "id": "extensive_wall",
+      "parentId": "obj_military"
+    },
+    {
+      "color": "#ac76ec",
+      "id": "obj_transport",
+      "parentId": "object",
+      "description": "Infrastructures for transportation purposes that are not included in obj_main, such as a courier station and a harbor"
+    },
+    {
+      "color": "#4e930e",
+      "id": "courier_station",
+      "parentId": "obj_transport"
+    },
+    {
+      "color": "#c86d83",
+      "id": "harbor",
+      "parentId": "obj_transport"
+    },
+    {
+      "color": "#a415e1",
+      "id": "obj_other",
+      "parentId": "object"
+    },
+    {
+      "color": "#9d15e6",
+      "id": "school",
+      "parentId": "obj_other"
+    },
+    {
+      "color": "#988d4a",
+      "id": "temple",
+      "parentId": "obj_other"
+    },
+    {
+      "color": "#13b698",
+      "id": "palace",
+      "parentId": "obj_other"
+    },
+    {
+      "color": "#73f24c",
+      "id": "office",
+      "parentId": "obj_other"
+    },
+    {
+      "color": "#e37c8a",
+      "id": "grave",
+      "parentId": "obj_other",
+      "properties": [
+        {
+          "name": "CBDB",
+          "type": "external_authority",
+          "authorities": [
+            "CBDB"
+          ],
+          "description": "The CBDB id of the owner of the tomb."
+        },
+        {
+          "name": "DILA_PS",
+          "type": "external_authority",
+          "authorities": [
+            "DILA (Person)"
+          ],
+          "description": "The DILA (person) id for the grave/tomb owner's name that is not available in CBDB but available in DILA (person)"
+        }
+      ]
+    },
+    {
+      "color": "#2bff9a",
+      "id": "obj_part",
+      "description": "Distinguishable components of obj_main",
+      "properties": [
+        {
+          "name": "name",
+          "type": "text",
+          "description": "Use the name in Chinese characters, if not named, leave it."
+        },
+        {
+          "name": "descriptor",
+          "type": "text",
+          "description": "Transcribe any annotations related to the obj_part."
+        },
+        {
+          "name": "color",
+          "type": "text",
+          "description": "Color used to depict obj_part \nHEX code (e.g. #ff4000) retrieved from image with color picker  "
+        },
+        {
+          "name": "pattern",
+          "type": "enum",
+          "values": [
+            "brick_pattern",
+            "flagstone_pattern",
+            "plain",
+            "stripe"
+          ],
+          "description": "Pattern used to depict the materials used for the obj_part."
+        }
+      ]
+    },
+    {
+      "color": "#3c1e7e",
+      "id": "accommodation",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#188778",
+      "id": "barbican",
+      "parentId": "obj_part",
+      "properties": [
+        {
+          "name": "direction",
+          "type": "enum",
+          "values": [
+            "east",
+            "north",
+            "northeast",
+            "northwest",
+            "south",
+            "southeast",
+            "southwest",
+            "west"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#d999dd",
+      "id": "gate",
+      "parentId": "obj_part",
+      "properties": [
+        {
+          "name": "direction",
+          "type": "enum",
+          "values": [
+            "east",
+            "north",
+            "northeast",
+            "northwest",
+            "south",
+            "southeast",
+            "southwest",
+            "west"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#4e0001",
+      "id": "pass",
+      "parentId": "obj_part",
+      "properties": [
+        {
+          "name": "direction",
+          "type": "enum",
+          "values": [
+            "east",
+            "north",
+            "northeast",
+            "northwest",
+            "south",
+            "southeast",
+            "southwest",
+            "west"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#4ca72b",
+      "id": "tower",
+      "parentId": "obj_part",
+      "properties": [
+        {
+          "name": "direction",
+          "type": "enum",
+          "values": [
+            "east",
+            "north",
+            "northeast",
+            "northwest",
+            "south",
+            "southeast",
+            "southwest",
+            "west"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#0eabe6",
+      "id": "moat",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#a7f649",
+      "id": "arch",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#1a3938",
+      "id": "bridgehead",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#6b2abd",
+      "id": "crossbeam",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#7a20ba",
+      "id": "dike",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#9d6c2e",
+      "id": "drum",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#16c6d5",
+      "id": "embarkment",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#a2c047",
+      "id": "foundation",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#3bcd1f",
+      "id": "parapet",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#7e116a",
+      "id": "pavilion",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#a77614",
+      "id": "pier",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#87d4c4",
+      "id": "pillar",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#78a771",
+      "id": "railing",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#3e7a72",
+      "id": "ridgepole",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#12a319",
+      "id": "roof",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#858af3",
+      "id": "screen",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#12242c",
+      "id": "shrine",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#97e3d6",
+      "id": "step",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#4c9548",
+      "id": "stele",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#f2fea6",
+      "id": "sunshade",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#45e662",
+      "id": "weapon",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#247bb4",
+      "id": "geo_feature",
+      "description": "Additional geographic information",
+      "properties": [
+        {
+          "name": "id",
+          "type": "text",
+          "description": "Unique identifier used for identifiable named entities"
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "description": "Name in Chinese characters\nIf not named, leave blank"
+        },
+        {
+          "name": "DILA_PL",
+          "type": "external_authority",
+          "authorities": [
+            "DILA (Place)"
+          ]
+        },
+        {
+          "name": "descriptor",
+          "type": "text",
+          "description": "Transcribe any annotations (except name) related to the geo_feature."
+        }
+      ]
+    },
+    {
+      "color": "#a9f650",
+      "id": "water",
+      "parentId": "geo_feature",
+      "properties": [
+        {
+          "name": "type",
+          "type": "enum",
+          "values": [
+            "lake",
+            "river",
+            "sea",
+            "shore",
+            "source",
+            "waterfall",
+            "watermouth"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#d11bae",
+      "id": "terrain",
+      "parentId": "geo_feature",
+      "properties": [
+        {
+          "name": "type",
+          "type": "enum",
+          "values": [
+            "cliff",
+            "hill",
+            "mountain",
+            "valley"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#780547",
+      "id": "settlement",
+      "description": "A named human settlement below the county level",
+      "properties": [
+        {
+          "name": "id",
+          "type": "text",
+          "description": "Mandatory for every named entity."
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "description": "Name in Chinese characters if known"
+        },
+        {
+          "name": "descriptor",
+          "type": "text",
+          "description": "Transcribe any text annotations (other than the name) associated with the annotated feature."
+        },
+        {
+          "name": "type",
+          "type": "enum",
+          "values": [
+            "community",
+            "market town",
+            "sector",
+            "tribal community",
+            "village",
+            "ward"
+          ]
+        },
+        {
+          "name": "location",
+          "type": "text",
+          "description": "Use prefecture or county names if available."
+        },
+        {
+          "name": "TGAZ",
+          "type": "external_authority",
+          "authorities": [
+            "TGAZ"
+          ],
+          "description": "The CHGIS id of the prefecture or county or other administrative units."
+        },
+        {
+          "name": "DILA_PL",
+          "type": "external_authority",
+          "authorities": [
+            "DILA (Place)"
+          ],
+          "description": "The DILA place id for the place names that are not available in TGAZ but available in DILA place"
+        },
+        {
+          "name": "enclosed",
+          "type": "enum",
+          "values": [
+            "non_wall",
+            "not_enclosed",
+            "walled"
+          ]
+        },
+        {
+          "name": "color",
+          "type": "text",
+          "description": "Color used to depict obj_part \nHEX code (e.g. #ff4000) retrieved from image with color picker "
+        }
+      ]
+    },
+    {
+      "color": "#bdf75a",
+      "id": "figure",
+      "description": "Human or animal figures depicted using or interacting with infrastructural objects.",
+      "properties": [
+        {
+          "name": "descriptor",
+          "type": "text",
+          "description": "Transcriptions of any text annotations related to the figure"
+        }
+      ]
+    },
+    {
+      "color": "#c190fc",
+      "id": "agricultural_field",
+      "parentId": "vegetation"
+    },
+    {
+      "color": "#adf11f",
+      "id": "forest",
+      "parentId": "vegetation"
+    },
+    {
+      "color": "#95e147",
+      "id": "tree",
+      "parentId": "vegetation"
+    },
+    {
+      "color": "#d24f98",
+      "id": "vegetation",
+      "description": "Depiction of plant life, including agricultural and other types of developed vegetation.",
+      "properties": [
+        {
+          "name": "id",
+          "type": "text",
+          "description": "Mandatory in case of named entity"
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "description": "Name in Chinese characters"
+        },
+        {
+          "name": "DILA_PL",
+          "type": "external_authority",
+          "authorities": [
+            "DILA (Place)"
+          ],
+          "description": "Add DILA place id if available"
+        },
+        {
+          "name": "descriptor",
+          "type": "text",
+          "description": "Transcribe any annotations (except name) related to vegetation"
+        },
+        {
+          "name": "color",
+          "type": "text",
+          "description": "HEX code (e.g. #ff4000) retrieved from image with color picker"
+        }
+      ]
+    },
+    {
+      "color": "#366fad",
+      "id": "human",
+      "parentId": "figure",
+      "properties": [
+        {
+          "name": "type",
+          "type": "enum",
+          "values": [
+            "child",
+            "farmer",
+            "herder",
+            "hunter",
+            "merchant",
+            "musician",
+            "official",
+            "porter",
+            "sailor",
+            "traveler",
+            "woman"
+          ]
+        },
+        {
+          "name": "id",
+          "type": "text",
+          "description": "Mandatory for an identifiable person, use full name"
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "description": "Name in Chinese characters"
+        },
+        {
+          "name": "CBDB",
+          "type": "external_authority",
+          "authorities": [
+            "CBDB"
+          ],
+          "description": "The CBDB id for an identifiable person"
+        },
+        {
+          "name": "DILA_PS",
+          "type": "external_authority",
+          "authorities": [
+            "DILA (Person)"
+          ],
+          "description": "The DILA (person) id for the person’s name that is not available in CBDB but available in DILA (person) "
+        },
+        {
+          "name": "garment",
+          "type": "enum",
+          "values": [
+            "commoner_clothes",
+            "confucian_robe",
+            "half_naked",
+            "naked",
+            "official_robe"
+          ]
+        },
+        {
+          "name": "garment_color",
+          "type": "text",
+          "description": "HEX code (e.g. #ff4000) retrieved from image with color picker"
+        },
+        {
+          "name": "shoes",
+          "type": "enum",
+          "values": [
+            "no",
+            "yes"
+          ]
+        },
+        {
+          "name": "hat",
+          "type": "enum",
+          "values": [
+            "commoner",
+            "confucian",
+            "no_hat",
+            "official"
+          ]
+        },
+        {
+          "name": "carrying_object",
+          "type": "enum",
+          "values": [
+            "bag",
+            "book",
+            "bucket",
+            "flag",
+            "musical_instrument",
+            "no_object",
+            "umbrella",
+            "weapon",
+            "yoke"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#faf2db",
+      "id": "animal",
+      "parentId": "figure",
+      "properties": [
+        {
+          "name": "type",
+          "type": "enum",
+          "values": [
+            "camel",
+            "cattle",
+            "dog",
+            "falcon",
+            "horse",
+            "sheep"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#8fb9b5",
+      "id": "vehicle",
+      "properties": [
+        {
+          "name": "descriptor",
+          "type": "text",
+          "description": "Transcriptions of any text annotations related to the vehicle"
+        },
+        {
+          "name": "type",
+          "type": "enum",
+          "values": [
+            "watercraft",
+            "wheeled_vehicle"
+          ]
+        }
+      ],
+      "description": "A machine driven by animals, humans, or natural forces and designed to transport people or cargo "
+    },
+    {
+      "color": "#80fb72",
+      "id": "text",
+      "properties": [
+        {
+          "name": "descriptor",
+          "type": "text",
+          "description": "Transcriptions of any text annotations UNRELATED to other tagged entities"
+        }
+      ],
+      "description": "Textual information that is not part of metadata and is not directly related to other entities (such as object, obj_part, geo_feature, or settlement)"
+    },
+    {
+      "color": "#96bf3c",
+      "id": "boundary",
+      "parentId": "text"
+    },
+    {
+      "color": "#0c9c22",
+      "id": "direction",
+      "parentId": "text"
+    },
+    {
+      "color": "#c5bd8a",
+      "id": "stamp",
+      "parentId": "text",
+      "description": "Stamp on the artwork, often to represent ownership or appreciation"
+    }
+  ],
+  "folderSchemas": [
+    {
+      "name": "Gazetteer",
+      "properties": [
+        {
+          "name": "source_title_ch",
+          "type": "text",
+          "description": "Book title in Chinese characters"
+        },
+        {
+          "name": "source_title_py",
+          "type": "text",
+          "description": "Pinyin transcription of the book title"
+        },
+        {
+          "name": "source_title_en",
+          "type": "text",
+          "description": "Translated book title in English"
+        },
+        {
+          "name": "source_author",
+          "type": "text",
+          "multiple": true,
+          "description": "Author or editor of the book. Put “unknown” if not known. Use Chinese."
+        },
+        {
+          "name": "CBDB",
+          "type": "external_authority",
+          "authorities": [
+            "CBDB"
+          ],
+          "description": "CBDB id for the author."
+        },
+        {
+          "name": "DILA_ps",
+          "type": "external_authority",
+          "authorities": [
+            "DILA (Person)"
+          ],
+          "description": "DILA person id for the author if CBDB id is not available."
+        },
+        {
+          "name": "publication_place",
+          "type": "text",
+          "description": "Place where the book was published."
+        },
+        {
+          "name": "TGAZ_cr",
+          "type": "external_authority",
+          "authorities": [
+            "TGAZ"
+          ],
+          "description": "CHGIS id for the place of publication."
+        },
+        {
+          "name": "publication_time",
+          "type": "text",
+          "description": "The time when the original copy was published. Use year if available; otherwise use the reign title, the century, or the dynasty. "
+        },
+        {
+          "name": "reprint",
+          "type": "enum",
+          "values": [
+            "no",
+            "yes"
+          ],
+          "description": "Choose yes if it was a reprint of the original edition; otherwise choose no."
+        },
+        {
+          "name": "reprint_time",
+          "type": "text",
+          "description": "The time when the book was reprinted. Use year if available; otherwise use the reign title, the century, or the dynasty."
+        },
+        {
+          "name": "place_covered",
+          "type": "text",
+          "description": "The main location(s) covered in the image. Use Chinese."
+        },
+        {
+          "name": "TGAZ_cv",
+          "type": "external_authority",
+          "authorities": [
+            "TGAZ"
+          ],
+          "description": "CHGIS id for the place covered in the image."
+        },
+        {
+          "name": "genre",
+          "type": "enum",
+          "values": [
+            "atlas",
+            "commercial encyclopedia",
+            "gazetteer",
+            "single sheet map"
+          ],
+          "description": "Choose among gazetteer, atlas, single sheet map, and commercial encyclopedia."
+        },
+        {
+          "name": "type",
+          "type": "enum",
+          "values": [
+            "manuscript",
+            "print"
+          ],
+          "description": "Choose between manuscript and print. "
+        },
+        {
+          "name": "format",
+          "type": "enum",
+          "values": [
+            "copper plate",
+            "movable type",
+            "woodblock print"
+          ],
+          "description": "Choose among woodblock print, copper plate, and movable type."
+        },
+        {
+          "name": "size_h",
+          "type": "measurement",
+          "description": "Size of the height in centimeters or inches."
+        },
+        {
+          "name": "size_w",
+          "type": "measurement",
+          "description": "Size of the width in centimeters or inches."
+        },
+        {
+          "name": "location_held",
+          "type": "text",
+          "description": "Location where the book is currently held."
+        },
+        {
+          "name": "data_source",
+          "type": "text",
+          "description": "Data source"
+        },
+        {
+          "name": "data_source_url",
+          "type": "uri",
+          "description": "Book website"
+        },
+        {
+          "name": "language",
+          "type": "enum",
+          "values": [
+            "chinese",
+            "english",
+            "manchu"
+          ],
+          "description": "Choose among Chinese, Manchu, and English (add others if needed)."
+        },
+        {
+          "name": "date_dg",
+          "type": "text",
+          "description": "Date when the artwork was digitized."
+        },
+        {
+          "name": "institution_dg",
+          "type": "text",
+          "description": "Institution that digitized the source."
+        },
+        {
+          "description": "Person who digitized the book.",
+          "name": "person_dg",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "imageSchemas": [
+    {
+      "name": "Gazetteer",
+      "properties": [
+        {
+          "name": "image_title_ch",
+          "type": "text",
+          "description": "Image title in Chinese characters."
+        },
+        {
+          "name": "image_title_py",
+          "type": "text",
+          "description": "Pinyin transcription of the image title."
+        },
+        {
+          "name": "image_title_en",
+          "type": "text",
+          "description": "Translated image title in English."
+        },
+        {
+          "name": "volume",
+          "type": "text",
+          "description": "Use number \nIf the volume is untitled for maps in gazetteers, use tu."
+        },
+        {
+          "name": "page",
+          "type": "text",
+          "description": "If page is not written on the images, count the pages in the following way i.e. 1a (the first page of the first sheet), 1b (the second page of the first sheet; the sheet is different from a spread—two facing pages) "
+        },
+        {
+          "name": "image_format",
+          "type": "text",
+          "description": ".jpg, .tiff, .png..."
+        },
+        {
+          "name": "pixel_h",
+          "type": "text",
+          "description": "Height in pixels."
+        },
+        {
+          "name": "pixel_w",
+          "type": "text",
+          "description": "Width in pixels."
+        },
+        {
+          "name": "image_no",
+          "type": "number",
+          "description": "If the institution of digitization provides a new number (different from page number)."
+        },
+        {
+          "name": "image_id",
+          "type": "number",
+          "description": "If the institution of digitization provides a unique id (different from page number)."
+        },
+        {
+          "name": "image_url",
+          "type": "uri",
+          "description": "If the individual image file has its own url."
+        }
+      ]
+    }
+  ],
+  "relationshipTypes": [
+    {
+      "name": "adjacent to",
+      "description": "Features next to each other "
+    },
+    {
+      "name": "north of",
+      "targetTypeId": "obj_main",
+      "sourceTypeId": "geo_feature"
+    },
+    {
+      "name": "south of",
+      "targetTypeId": "obj_main",
+      "sourceTypeId": "geo_feature"
+    },
+    {
+      "name": "west of",
+      "targetTypeId": "obj_main",
+      "sourceTypeId": "geo_feature"
+    },
+    {
+      "name": "east of",
+      "targetTypeId": "obj_main",
+      "sourceTypeId": "geo_feature"
+    },
+    {
+      "name": "same as",
+      "description": "The same feature found on different images"
+    },
+    {
+      "name": "within"
+    }
+  ]
+}

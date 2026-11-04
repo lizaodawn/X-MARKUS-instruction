@@ -1,0 +1,210 @@
+[
+  {
+    "id": "cc97b336-7241-40ca-8484-96e29ae8cc0c",
+    "target": {
+      "source": "图七北门水门遗址平面.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"12.744414522162671,374.2321004133505 18.468997155994657,752.7473632800925 296.9658056640625,755.8299844125601 360.8050450721154,741.4436157226562 342.82218299278856,220.8384792856069 343.8501250728053,192.28610870791758 394.1288571209313,10.658776086866133 323.16981897827765,0.6213101516063659 283.38717283159605,143.65884297277648 213.28844847316185,147.54908564488997 11.96579082189254,147.54922477260084\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "2c89b85e-266b-432d-8008-98c6481b3ea6",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_watergate",
+        "properties": {
+          "ID": "yangzhou_cheng_shuimen",
+          "name": "扬州城北门水门",
+          "materials": "earth;brick;stone",
+          "location": [
+            32.407351932418,
+            119.43450203979052
+          ],
+          "date start": "907 CE",
+          "date end": "1279 CE",
+          "date dynasty": "五代;宋",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33345",
+          "length": {
+            "value": 16,
+            "unit": "m"
+          },
+          "thickness": {
+            "value": 2.4,
+            "unit": "m"
+          },
+          "height": {
+            "value": 3.6,
+            "unit": "m"
+          },
+          "width": {
+            "value": 7.1,
+            "unit": "m"
+          },
+          "inference": "abandonment"
+        },
+        "created": "2024-01-30T12:40:21.727Z"
+      }
+    ],
+    "created": "2024-01-30T12:41:00.177Z",
+    "creator": {
+      "isGuest": true,
+      "id": "FBlYGcVboMXAs6UAvf58"
+    },
+    "modified": "2025-05-23T13:51:40.348Z"
+  },
+  {
+    "id": "a32fd86b-0192-44a6-87e9-3906db07e6ca",
+    "target": {
+      "source": "图七北门水门遗址平面.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:351.81351524939913,538.2368494591346,71.03252253605757,196.91285344050482"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "65932a5d-543c-4041-978f-3f449b05cbb9",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall",
+        "properties": {
+          "ID": "yangzhou_cheng",
+          "name": "扬州城",
+          "materials": "earth;brick;stone",
+          "location": [
+            32.407351932418,
+            119.43450203979052
+          ],
+          "date start": "907 CE",
+          "date end": "1279 CE",
+          "date dynasty": "五代;宋",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_33345",
+          "obj_height": {
+            "value": 5,
+            "unit": "m"
+          }
+        },
+        "created": "2025-05-23T13:48:16.924Z",
+        "modified": "2025-05-23T13:50:49.734Z"
+      }
+    ],
+    "created": "2024-01-30T12:44:44.692Z",
+    "creator": {
+      "isGuest": true,
+      "id": "FBlYGcVboMXAs6UAvf58"
+    }
+  },
+  {
+    "id": "4330fa3e-8f35-4c03-b5c3-bde7229953f2",
+    "target": {
+      "source": "图七北门水门遗址平面.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"66.1907769411296,172.4183652280343 86.79616718009525,188.0285271479134 117.39209123149419,291.6799981799501 121.13854141115665,488.3680495178198 132.3778576504729,644.4696944413643 97.41109220597,643.2208777148101 89.91819184664507,301.04610647927063\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "b04eed2e-3b34-4e13-96e5-bf5be7366743",
+        "created": "2024-01-31T10:02:32.257Z",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "stake",
+        "properties": {
+          "name": "木桩13根",
+          "material 1": "wood"
+        }
+      },
+      {
+        "id": "d09b7305-46d1-44db-a27e-18f3eca554bb",
+        "created": "2024-01-31T10:04:26.672Z",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "They are uneven in size, with a diameter of 15-20 centimeters, a maximum diameter of 25 centimeters, and a minimum diameter of 12 centimeters. The center spacing is about 40 centimeters"
+      }
+    ],
+    "created": "2024-01-31T10:02:27.011Z",
+    "creator": {
+      "isGuest": true,
+      "id": "4NC_EkUerSi05wGQHix4"
+    }
+  },
+  {
+    "id": "e7a5cd14-766b-4d15-8725-cad324944024",
+    "target": {
+      "source": "图七北门水门遗址平面.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"294.32927228812866,164.98794720257632 241.27971061445083,313.3469297934717 239.48141452821278,399.66489497526254 235.88482235573684,462.605060427486 237.68311844197478,612.7623638003827 262.85916486625365,726.0546221011639 297.0266917217224,743.1384102246615 279.94295298975123,299.85975853821327 310.513887672744,173.08025489488398 310.513887672744,173.08025489488398 310.513887672744,173.08025489488398\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "7d820618-d1ac-4da3-b27c-2cd468ed25d0",
+        "created": "2024-01-31T10:05:09.636Z",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "stake",
+        "properties": {
+          "material 1": "wood"
+        }
+      }
+    ],
+    "created": "2024-01-31T10:05:04.521Z",
+    "creator": {
+      "isGuest": true,
+      "id": "4NC_EkUerSi05wGQHix4"
+    }
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "da5428fe-0511-4370-9166-2173d9e7ed07",
+    "body": {
+      "value": "changes in water levels damaged the infratsructure, only the bricks on the entrance remain",
+      "source": "Archaeology Individual image Schema",
+      "properties": {
+        "Image_title_ch": "北门水门遗址平面图",
+        "Image_title_py": "Beimen Shuimen Yizhi Pingmiantu",
+        "Image_title_en ": "Site Plan of the North Gate Water Gate",
+        "Image_author": "unknown",
+        "Image_no": "7",
+        "Page": "28",
+        "Publication_time ": "2005",
+        "Publication_place ": "北京市",
+        "Place_covered": "揚州",
+        "Image_format": "png",
+        "Genre": "map",
+        "Pixel_h": {
+          "value": 448,
+          "unit": "px"
+        },
+        "Pixel_w": {
+          "value": 789,
+          "unit": "px"
+        },
+        "Language ": "Chinese",
+        "date of image ": "2005",
+        "Institution_dg ": "CNKI",
+        "Person_dg": "Iva Stojević"
+      },
+      "purpose": "describing"
+    },
+    "target": {
+      "source": "1d0940eeb346abcf"
+    }
+  }
+]

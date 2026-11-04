@@ -1,0 +1,21 @@
+{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "type": "Annotation",
+  "id": "10bf8ef4-600c-438e-8d18-717a6cd308e1",
+  "body": {
+    "source": "book schema",
+    "properties": {
+      "Source_title_ch ": "扬州城 : 1987-1998年考古发掘报告 ",
+      "Source_title_py ": " Yangzhou Cheng : 1987-1998 Nian Kao Gu Fa Jue Bao Gao",
+      "Source_author ": "中国社会科学院考古研究所;南京博物院;扬州市文物考古研究所",
+      "Publication_time ": "2010",
+      "Publication_place": "北京市",
+      "Publisher_ch": "文物出版社",
+      "Publisher_py ": "Wen Wu Chu Ban Shi",
+      "ISBN": " 9787501029884, 7501029881",
+      "Language": "Chinese",
+      "Place_covered": "揚州"
+    },
+    "purpose": "describing"
+  }
+}

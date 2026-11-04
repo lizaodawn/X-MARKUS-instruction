@@ -1,0 +1,16 @@
+{
+  "id": "139044f48f92b8c3",
+  "name": "Plattegrond van Leuven",
+  "uri": "https://lib.is/IE980267/manifest?manifest=https://lib.is/IE980267/manifest",
+  "importedAt": "2025-04-01T08:19:45.798Z",
+  "type": "PRESENTATION_MANIFEST",
+  "majorVersion": 2,
+  "canvases": [
+    {
+      "id": "1304788724",
+      "uri": "https://lib.is/IE980267/canvas/canvas-FL980271.json",
+      "name": "TB00001",
+      "manifestId": "139044f48f92b8c3"
+    }
+  ]
+}

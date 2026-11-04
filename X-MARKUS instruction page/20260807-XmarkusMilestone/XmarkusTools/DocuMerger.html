@@ -1,0 +1,1094 @@
+<!doctype html>   <!-- DocuMerger.html -->
+<!-- 拷貝 DocuSky RecomposeXml/PickCorpusContentsTool.html 程式碼，然後加上一些修改 -->
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+   <script src="components/js/jquery.min.js"></script>
+   <script src="components/js/FileSaver.min.js"></script>      <!-- 儲存檔案 -->
+   <link rel="stylesheet" href="components/css/fontawesome/css/all.min.css">
+
+   <style type="text/css">
+      body { margin: 0; 
+             height: 100vh;
+             line-height:160%;
+             font-family: Inter, sans-serif, "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體";
+           }
+
+      div.headerBar { box-sizing: border-box;          /* 含 padding 的總寬高 */
+                      background-color:#efefef; 
+                      color:#757575; 
+                      padding-top:12px;
+                      height:50px; 
+                      width:100%;
+                    }
+
+      #content {
+         box-sizing:border-box;
+         width: 100%;
+         height:88%;
+         line-height: 185%;
+         margin: 10px auto;
+         border-right: 1px dashed #3379b5;
+      }
+      
+      div.batchList {
+         background-color:#ffffff;     /* #bbddff; */
+         margin-top:15px; 
+         padding:12px; 
+         border-radius:5px; 
+         margin-top:6px; 
+         margin-right:12px;
+      }
+
+      .disableDocuSkyConnectivity { display:none; }        /* for DocuSky connectivity UI */
+
+      .funcButton {    
+         width:30px;
+         height:30px;
+         background-color:#FFFFFF;
+         color:#BFBFBF; 
+         border-radius:6px; 
+         padding:4px 5px;
+         margin-left:2px;
+         margin-right:3px;
+         cursor:pointer;
+         font-size:20px;
+         /* border:2px solid #c7c7c7; */
+      }
+      
+      .funcButton:hover {
+         /*background-color:#3379b5;
+         color:#ff8800;*/
+         background-color:#3379b5;
+         color:#FFFFFF;
+         /*border:2px solid #0f172a;*/
+      }
+   
+      
+      .hidden { display:none; }
+      
+      #loadingCircle { width:200px;
+                       border:0;
+                     }
+
+      div.overlay {
+         position:fixed; 
+         top: 0;
+         left: 0;
+         width: 100vw;
+         height: 100vh;
+         z-index:99;
+         background: rgba(255, 255, 255, 0.85);    /* 85% 不透明 */
+      }
+
+      div.sub-window { position:absolute; 
+                       z-index: 100;
+                     }
+
+      div.contentArea { 
+         position: fixed;        /* 相對於整個螢幕 */
+         top: 180px;             /* 距離螢幕上方 180px */
+         left: 50%;
+         transform: translateX(-50%);
+         border-radius:16px; 
+         background-color:#e7e7e7; 
+         padding:24px;
+         max-width: 960px;
+         width: 100%;      
+      }
+      
+      button.butNextStep {
+         width:320px;
+         background-color:#c7c7c7;       /* 其實應該也是 #bfbfbf，但因背景白底，相對需要淡一些 */
+         border: none;
+         padding:10px;
+         border-radius:8px;
+         font-size:1.05em;
+         line-height:150%;
+         cursor:pointer;
+      }
+</style>
+</head>
+<body>
+   <div id="headerBar" class="headerBar">
+      <table class="headerBar" width="100%">
+      <tr>
+         <td align="left" width="180">
+             <span style="padding-left:16px; font-weight:bold; font-size:24px; font-weight:bold;">DocuMerger</span>
+         </td>
+         <td>
+            <span id="backToConvertingPage" class="funcButton" title="Back to Converting Page" style="display:none">
+               <span style="font-size:11px; vertical-align:top">&#9654;</span>
+               <i class="fa-solid fa-database" style="font-size:18px; vertical-align:0px;"></i>
+               back to Converting
+            </span>
+         </td>
+      </tr>
+      </table>
+   </div>
+
+   <div style="display:none">
+      <span id="refreshDocuMerger" class="funcButton" title="Refresh DocuMerger"><i class="fa fa-refresh"></i></span>
+   </div>
+   
+   <!-- ----------------------------------------------------------------------- -->
+   <div id="subwinArea" class="sub-window" xstyle="z-index:100">   <!-- overlay 的 z-index 為 99 -->
+      <div class="contentArea">
+         <table id="instructionStepsTable" border="0" width="98%" cellpadding="0" cellspacing="0">
+            <tr>
+               <td align="center">
+                  <h2>
+                     Merging multiple databases (DocuXml files) to a single database
+                  </h2>
+               </td>
+            </tr>
+            
+            <tr>
+               <td>
+                  <span style="font-size:1.2em">- Import the DocuXml files to merge: </span>
+                  <button id="butSelectDocuXmlFiles" class="button" style="margin-left:6px">SELECT</button>
+                  <input id="selectInFile" type="file" style="display:none" multiple="multiple" autocomplete="off" accept=".xml"/>
+               </td>
+            </tr>
+      
+            <tr>
+               <td><span style="height:30px"></span></td>
+            </tr>
+            
+            <tr id="filesImported">
+               <td>
+                  <div id="batchList" class="batchList" style="display:none; max-height:360px; overflow-y:auto;">
+                     <span style="padding-left:16px; font-weight:bold;">Files imported: </span>
+                     <table id="inFilenames" class="fileInfo" style="width:100%">
+                        <!--
+                        <tr class="fileInfo">
+                           <th class="fileInfo" align="left" width="40%">filename</th>
+                           <th class="fileInfo" align="right" width="40%">#documents</th>
+                           <th class="fileInfo hidden" align="center">檔案中所包含的參考資料或文獻集</th>
+                           <th class="fileInfo"></th>
+                        </tr>
+                        -->
+                     </table>
+                  <div>
+               </td>
+            </tr>
+            
+            <tr>
+               <td><span style="height:30px"></span></td>
+            </tr>
+            
+            <tr>
+               <td></td>
+            </tr>
+      
+            <tr id="stepMergeAndSave" style="display:none">
+               <td>
+                  <div id="optionMerge2SingleCorpus">
+                     <span>- <b>Option</b>: use original corpora or merge to a single corpus:</span>
+                     <input id="inputSpecifyNewCorpus" type="checkbox" checked="1" xdisabled="disabled" autocomplete="off">a single corpus</input>
+                     <div id="divSpecifyNewCorpusName" style="padding-left:15px; padding-top:8px; xdisplay:none">
+                        <b>Name of the new corpus:</b>
+                        <input id="inputSpecifyNewCorpusName" value="Xmarkus-Corpus" autocomplete="off"></input>
+                     </div>
+                  </div>
+                  
+                  <br/>
+      
+                  <div>- <b>Download</b>: merge and save to file:
+                     <input type="text" id="outFilename" value="DefaultExport.xml" size="45" autocomplete="off"></input>
+                     <button id="generateDocuXmlAndSaveFile">Merge and Save</button>
+                  </div>
+                  <div id="divOutputProgress" style="margin-left:15px"></div>
+               </td>
+            </tr>
+      
+            <!-- 隱藏不顯示，但 js 會用到標籤的內容 -->
+            <tr style="display:none">
+               <td>
+                  <b>2. 若想對步驟 1 所勾選文獻集文件進行篩選，請勾此選項：</b> <input id="inputSpecifyFilenames" type="checkbox" disabled="disabled" autocomplete="off">利用檔名過濾輸出文件</nput>
+                  <br/>
+                  <div id="divSpecifyFilenames" style="padding-left:15px; padding-top:8px; display:none">
+                     <b>請指定欲篩選出來的檔名列表（檔名間以 '|' 或換行字元隔開）</b><font size="smaller"> -- 注意：若沒有指定檔名，仍將輸出完整的文獻集</font><br/>
+                     <b>移除文件指令: </b>!RemoveDocs:f1|f2|... （檔名間以 '|' 或換行字元隔開）</b><br/>
+                     <b>特殊指令（在一行指定）:</b> !Random:100 可亂數取 100 篇文件，!FileRange:101-1100 可取得第 101 到第 1100 篇文件<br/>
+                     <textarea id="specifiedFilenames" style="width:98%; height:80px" autocomplete="off"></textarea>
+                     <input id="inputFilterFileExt" type="checkbox" checked="checked">若檔名尾端為 .txt, .html, .htm, .xml，先移除這些 file extension 後再進行比對（預設模式）</input>
+                  </div>
+               </td>
+            </tr>
+         </table>
+         <br/>
+         
+         <table id="nextStepButtons" width="100%" style="display:none">
+            <tr>
+            <td width=40%" align="center">
+               <button id="butNextGoSearch" class="button butNextStep">
+                  Go Search and Filter
+               </button>
+            </td>
+            <td width=40%" align="center">
+               <button id="butNextDownload" class="button butNextStep">
+                  Download Merged Database
+               </button>
+            </td>
+            <td>
+            </td>
+         </table>
+      </div>
+      
+      <br/>
+      <br/>
+   </div>
+         
+   <!-- for showing progress -->
+   <div id="divLoadingContainer" style="position:absolute; border:3px grey solid; border-radius:6px; background-color:white; font-size:medium; z-index:101; display:none;">
+      <div id="divLoadingSig">
+         <img id="loadingCircle" src="./images/loading-circle.gif"/>
+      </div>
+      <div id="divWorkingProgress" style="position:absolute; top:87px; width:100%; text-align:center;"></div>
+   </div>
+   
+   <!-- overlay to show a light box or loading message -->
+   <div id="overlay" class="overlay" xstyle="display:none;">
+
+   </div>
+
+</body>
+<script type="text/javascript">   
+   const EnableMessageViaParent = true;   // 2025-12-30: 是否透過 parent 傳遞訊息
+   const InXmarkusLocalMode = true;
+
+   var docuSkyObj = null;
+   var MyXmlList = {};                    // MyXmlList[filename] = { xml(string), docsInfo(object) }
+   var CorpusRegistered = {};             // 2024-02-02: 讀入多份相同文獻集名稱的檔案，設定檔的部分只有第一份預設是 checked -- 利用全域變數 CorpusRegistered 登記經手過的該文獻集名稱
+   var DocsFound = 0;                     // global variable
+   var GvarAutoAdjustOutFilename = true;  // 2025-11-30
+   var GvarFinalDocuXml = '';             // 2025-12-30
+
+   // Kuan-Lin Chen 20200824
+   //use FileName to find CorpusName 
+   var FileName2CorpusName = {}
+
+   // valid XML 1.0 characters: #x9 | #xA | #xD | [#x20-#xD7FF] | [#xE000-#xFFFD] | [#x10000-#x10FFFF]
+   // XML 1.1: Char ::= [#x1-#xD7FF] | [#xE000-#xFFFD] | [#x10000-#x10FFFF] /* any Unicode character, excluding the surrogate blocks, FFFE, and FFFF. */
+   //          RestrictedChar ::= [#x1-#x8] | [#xB-#xC] | [#xE-#x1F] | [#x7F-#x84] | [#x86-#x9F]
+   // Characters need to be escaped: <&>'"
+   // var object = $.extend({}, object1, object2);
+   // $('<div>').append(xmlObj).html()
+
+   $(document).ready(function() { 
+   });
+   
+   function init() {
+      // 重設 global variables
+      MyXmlList = {};                    // MyXmlList[filename] = { xml(string), docsInfo(object) }
+      CorpusRegistered = {};             // 2024-02-02: 讀入多份相同文獻集名稱的檔案，設定檔的部分只有第一份預設是 checked -- 利用全域變數 CorpusRegistered 登記經手過的該文獻集名稱
+      DocsFound = 0;                     // global variable
+      GvarFinalDocuXml = '';             // 2025-12-30
+      
+      // 清除當前的 filename list
+      $("#inFilenameList").html('');
+   }
+   
+   function htmlAttrEscapeJsonStr(s) {
+      return s.replace(/\"/g, "&#x22;").replace(/\'/g, "&#x27;");
+   }
+   
+   function htmlAttrUnescapeJsonStr(s) {
+      return s.replace(/&#x22;/g, '"').replace(/&#x27;/g, "'");
+   }
+   
+   function htmlEncode(value){
+     // create a in-memory div, set it's inner text, and then grab the encoded contents back out.  
+     // this div never exists on the page.
+     return $('<div/>').text(value).html();
+   }
+   
+   function htmlDecode(value){
+     return $('<div/>').html(value).text();
+   }   
+   
+   function readAndParseXmlFile(file, evt) {
+      var filename = file.name;
+      var fr = new FileReader();
+      //$("#divLoadingContainer").css({top:'40%', left:'40%'}).show();
+      
+      fr.addEventListener('load', function(evt) { 
+         if (typeof MyXmlList[filename] !== "undefined") {
+            alert("File '" + filename + "' has been loaded");
+            return;
+         }
+         var s = evt.target.result;
+         s = s.replace(/[^\u0009\u000A\u000D\u0020-\uD7FF\uE000-\uFFFD]/g, '');      // 2016-05-09
+         
+         parseFilenameDocuXml(filename, s);
+         //$("#stepMergeAndSave").show();
+         $("#nextStepButtons").show();
+      });
+      fr.readAsText(file, 'utf-8');
+   }
+   
+   function getXmlDocsInfo(filename, xml) {
+      // parse XML file and traverse it to get corpus names
+      var jqXmlDoc = $.parseXML(xml);            // returns XMLDocument
+      var jqXml = $(jqXmlDoc);                   // returns jQuery object
+      
+      // 檔案中的文獻集（統計出現的文獻集名稱與數量）
+      var myDictionary = {};
+      var jqDocumentNodes = jqXml.find("ThdlPrototypeExport > documents > document");
+      var fileDocuments = jqDocumentNodes.length;      // 重覆的 filename 不會被剔除...
+      //alert(fileDocuments);
+      
+      // 2025-12-01: 早期轉出的 "20250716-c2d-四川bridges-Evt2Doc.xml" 會顯示成 245 篇，但只有 222 未重覆檔名...
+      let filenameHash = {};
+      jqDocumentNodes.each(function() {
+         let filename = $(this).attr("filename");
+         filenameHash[filename] = 1;
+      });
+      fileDocuments = Object.keys(filenameHash).length;    // 每篇文件的 filename 都唯一
+      
+      var corpusInfo = "";
+      var jqDocCorpusNodes = jqXml.find("document > corpus");
+      var docCorpusList = jqDocCorpusNodes.map(function(i) { return jqDocCorpusNodes[i].innerHTML; });
+      for (var i=0; i<docCorpusList.length; i++) {
+         var key = docCorpusList[i];
+         if (typeof myDictionary[key] === "undefined") myDictionary[key] = 1;
+         else myDictionary[key]++;
+      }
+
+      // 資料庫參考資料
+      var myDbRefdataList = {};
+      var jqDbRefdataNodes = jqXml.find("ThdlPrototypeExport > database > refdata");
+      for (var i=0; i<jqDbRefdataNodes.length; i++) {
+         var refdataName = $(jqDbRefdataNodes[i]).attr("name");
+         myDbRefdataList[refdataName] = 1;
+      }
+
+      // 文獻集參數設定 (e.g., xml_tag_title)
+      var myCorpusSettingList = {};
+      var jqCorpusSettingNodes = jqXml.find("ThdlPrototypeExport > corpus");
+      for (var i=0; i<jqCorpusSettingNodes.length; i++) {
+         var corpusName = $(jqCorpusSettingNodes[i]).attr("name");
+         myCorpusSettingList[corpusName] = 1;
+      }
+
+      return { documentCount: fileDocuments,
+               dbRefdataList: myDbRefdataList,
+               corpusSettingList: myCorpusSettingList,
+               corpusDictionary: myDictionary };
+   }
+   
+   function parseFilenameDocuXml(filename, xmlStr) {
+      // 2025-12-17: 獨立出來
+      var docsInfo = getXmlDocsInfo(filename, xmlStr);
+      MyXmlList[filename] = { xml: xmlStr, docsInfo: docsInfo };         // reset each time loading an xml file
+      
+      var selectItemList = [];
+
+      for (var refdataName in docsInfo.dbRefdataList) {
+         var jsonRefdataInfo = {filename:filename, dataType:'dbRefdata', dataValue:refdataName};
+         var escapedStr = htmlAttrEscapeJsonStr(JSON.stringify(jsonRefdataInfo));
+         var t = "<input class='fileDataItem' type='checkbox' data-itemInfo='" + escapedStr + "'>" +
+                 "<span class='fileDataItemTitle'>資料庫參考資料: " + refdataName + "</span></input>";
+         selectItemList.push(t);
+      }
+
+      // Kuan-Lin Chen 20200824
+      //Change order
+      //second (original)
+      for (var key in docsInfo.corpusDictionary) {
+         // $('#myElement').data('key',jsonObject);
+         // var getBackMyJSON = $('#myElement').data('key').key;
+         var count = docsInfo.corpusDictionary[key];
+         var jsonCorpusInfo = {filename:filename, dataType:'documentsCorpusTitleAndFilenames', dataValue:key};
+         var escapedStr = htmlAttrEscapeJsonStr(JSON.stringify(jsonCorpusInfo));
+         var t = "<input class='fileDataItem' type='checkbox' data-itemInfo='" + escapedStr + "' checked='checked'>" +    // 2017-08-22: add checked option
+                 "<span class='fileDataItemTitle'>&lt;" + key + '&gt;</span>: 共 ' + count + " 篇</input>";
+         selectItemList.push(t);
+      }
+      
+      //first (original)
+      let corpusChecked = {};
+      for (var corpusName in docsInfo.corpusSettingList) {
+         var jsonCorpusInfo = {filename:filename, dataType:'corpusSetting', dataValue:corpusName};
+         var escapedStr = htmlAttrEscapeJsonStr(JSON.stringify(jsonCorpusInfo));
+         var t = "<input class='fileDataItem' type='checkbox' data-itemInfo='" + escapedStr 
+               + ((CorpusRegistered[corpusName] == undefined) ? "' checked='checked'>" : "'>")       // Kuan-Lin Chen 20200824: 將合併設定資料設為預設; 2024-02-02: 相同文獻集名稱，只有第一份是 checked，其他則不加上 checked
+               + "<span class='fileDataItemTitle'>&lt;" + corpusName + "&gt; 參數設定</span></input>";
+         CorpusRegistered[corpusName] = true;            // 2024-02-02
+         selectItemList.push(t);
+      }
+
+      var t = "<tr class='fileInfo'>"
+            + "<td class='fileInfo' valign='top'>" + filename + "</td>"
+            + "<td class='fileInfo' valign='top' align='right'>" + docsInfo.documentCount + "</td>"
+            + "<td class='fileInfo hidden' valign='top'>" + selectItemList.join("<br/>") + "</td>"       // 2024-12-28: 隱藏這部分（注意：需要有這些元素來進行後續處理）
+            + "</tr>";
+      $("#inFilenames").append(t);
+
+      //$("#divLoadingContainer").hide();
+
+      // 載入完畢，顯示載入資訊以及下一步（應檢查是否所有檔案都已載入，但這邊偷懶，載入一份文件就直接顯示）
+      $("#batchList").show();
+      
+      // 2025-11-30: 調整輸出的檔名
+      if (GvarAutoAdjustOutFilename) {
+         let outFilename = (new Date()).yyyymmdd() + "-Xmarkus-Merged.xml";
+         $("#outFilename").val(outFilename);
+         GvarAutoAdjustOutFilename = false;       // 避免使用者載入新的 corpus 後，程式又調整 outFilename
+      }
+   }
+
+   Date.prototype.yyyymmdd = function() {       // Tu: copied from Web
+     var mm = this.getMonth() + 1;              // getMonth() is zero-based
+     var dd = this.getDate();
+     return this.getFullYear() + ('0'+mm).substr(-2) + ('0'+dd).substr(-2);    // padding
+   }
+
+   function showDocsFound(n) {
+      $("#divOutputProgress").html("<b>Total</b>: " + n + " documents in the merged DocuXml");
+   }
+
+   function interruptForAnimation() {
+      //$.ajax({ url: "http://www.google.com", async: false});   // for animation
+   }
+
+   // Kuan-Lin Chen 20200729
+   //從document中取得corpus名稱資料
+   function getCorpusSettingXmlList(jqXml, corpusName){
+
+      var jqCorpusNodes = jqXml.find("ThdlPrototypeExport > corpus")                          
+
+      // 是否要輸出成單一文獻集
+      var outputSingleNewCorpus = ($("#inputSpecifyNewCorpus:checked").length > 0 && (temp = $("#inputSpecifyNewCorpusName").val().trim()) != '')
+                                ? temp.replace(/[~!@#$%^&*,;|]/g, '_') : false;
+
+      var corpusXmlList = jqCorpusNodes.map(function(idx) { 
+         // Kuan-Lin Chen 20200824
+         //set <Corpus name=''> with the data saved while recording document
+         
+         if (outputSingleNewCorpus) {
+            jqCorpusNodes[idx].setAttribute('name', outputSingleNewCorpus);
+         }
+         else jqCorpusNodes[idx].setAttribute('name', corpusName);
+         return this.outerHTML;
+      });
+      return corpusXmlList;
+   }
+
+   function shuffle(arr) {
+      arr.sort(() => Math.random() - 0.5);           // note: may not uniformly distributed
+   }
+
+   function getDocumentXmlList(jqXml, corpusName) {
+      // 以下的功能越來越複雜（當初沒設想到），應找時間重構一下...
+      var specifiedFilenames = $("#specifiedFilenames").val().trim();
+      var specifiedFilenameList = [];
+
+      var jqDocumentNodes = jqXml.find("ThdlPrototypeExport > documents > document > corpus")
+                                 .filter(function(){ return ($(this).text() === corpusName); })
+                                 .parent();
+      var docFilenames = Array.from(jqDocumentNodes.map(function() { 
+         return this.getAttribute("filename"); 
+      }));
+      var rndSelectedFilenames = [];
+      for (var i=0; i<n; i++) {
+         var j = Math.floor(Math.random() * docFilenames.length);
+         temp = docFilenames[i];
+         docFilenames[i] = docFilenames[j];
+         docFilenames[j] = temp;
+      }
+      
+      // 2017-03-17: 加上「讓電腦自動在每個勾選的 corpus 各挑選 n 筆資料」的功能...
+      // filenames in windows cannot contain \/:*?"<>| characters
+      if ($("#inputSpecifyFilenames:checked").length > 0) {
+         var regexp = /^\!Random:(\d+)$/;                        // 2019-01-28: 輸入的字串是 !Random:nnn 的形式
+         var regexp2 = /^\!FileRange:(\d+)\-(\d+)$/;             // 2019-01-28: 輸入的字串是 !FileRange:nnn-nnn 的形式
+         var regexp3 = /^\!RemoveDocs:(.+)$/;                    // 2024-01-27: 移除所列出的檔名後，將結果輸出
+         var result, n, n2, temp;
+
+         if ((result = regexp.exec(specifiedFilenames)) !== null && (n = parseInt(result[1])) > 0) {
+            // 2022-01-06: bug fix
+            specifiedFilenameList = docFilenames.slice();        // 先拷貝一份
+            shuffle(specifiedFilenameList);                      // 洗牌
+            //alert(JSON.stringify(specifiedFilenameList));
+            specifiedFilenameList = specifiedFilenameList.slice(0, n).sort();    
+         }
+         else if ((result = regexp2.exec(specifiedFilenames)) !== null && (n = parseInt(result[1])) > 0 && (n2 = parseInt(result[2])) > 0) {
+            // 2019-01-28
+            var jqDocumentNodes = jqXml.find("ThdlPrototypeExport > documents > document");
+            var documentFilenames = jqDocumentNodes.map(function(idx) { 
+               return $(this).attr("filename");
+            });
+            specifiedFilenameList = documentFilenames.slice(n-1, n2);
+         }
+         else if ((result = regexp3.exec(specifiedFilenames)) != null) {     // 2024-01-27
+            let excludeFilenames = result[1].trim().split('|');
+            docFilenames.forEach(function(filename) {
+               if ($("#inputFilterFileExt:checked").length > 0) {
+                  filename = filename.replace(/\.(txt|htm|html|xml)$/, '');
+               }
+               if (excludeFilenames.includes(filename)) ;
+               else specifiedFilenameList.push(filename);
+               //alert(filename + "\n" + JSON.stringify(specifiedFilenameList));
+            });
+         }
+         else {
+            specifiedFilenameList = specifiedFilenames.replace(/[\r]*\n/g,'|').split('|');
+            // 2017-03-25: 移除 filename 中的 extension (.txt, .htm, .html, .txt)
+            if ($("#inputFilterFileExt:checked").length > 0) {
+               specifiedFilenameList = specifiedFilenameList.map(function(e) {
+                  return e.replace(/\.(txt|htm|html|xml)$/, '');
+               });
+            }
+         }
+      }
+      else {
+         // 2019-01-31
+         specifiedFilenameList = docFilenames.splice(0, n);
+      }
+      
+      //alert(JSON.stringify(specifiedFilenameList));
+      
+      var specifiedFilenameHash = {};
+      for (var i=0; i<specifiedFilenameList.length; i++) {
+         specifiedFilenameHash[specifiedFilenameList[i]] = 1; 
+      };
+      //console.log(JSON.stringify(specifiedFilenameHash));
+      
+      // 是否要輸出成單一文獻集
+      var outputSingleNewCorpus = ($("#inputSpecifyNewCorpus:checked").length > 0 && (temp = $("#inputSpecifyNewCorpusName").val().trim()) != '')
+                                ? temp.replace(/[~!@#$%^&*,;|]/g, '_') : false;
+ 
+      var moveParagraphToDoc = ($("#inputParagraphAsDoc:checked").length > 0);
+
+      var jqDocumentNodes = jqXml.find("ThdlPrototypeExport > documents > document > corpus")
+                                 .filter(function(){ return ($(this).text() === corpusName); })
+                                 .parent();
+
+      var documentXmlList = jqDocumentNodes.map(function(idx) {
+         //interruptForAnimation();
+         var docNode = this;
+         var docCorpusNode = $(this).find("corpus").get(0);
+         var oldCorpusName = docCorpusNode.textContent;    // 2023-12-23
+         
+         if (specifiedFilenameList.length == 0) {          // 沒有指定檔名，整份文獻集的文件都輸出
+            showDocsFound(++DocsFound);
+            if (outputSingleNewCorpus) docCorpusNode.textContent = outputSingleNewCorpus;
+         }
+         else {                                            // 2017-03-10: 僅輸出 specifiedFilenameList 中的檔案
+            var docFilename = this.getAttribute("filename");
+            if ($("#inputFilterFileExt:checked").length > 0) docFilename = docFilename.replace(/\.(txt|htm|html|xml)$/, '');
+
+            if (typeof(specifiedFilenameHash[docFilename]) !== 'undefined') {
+               showDocsFound(++DocsFound);
+               if (outputSingleNewCorpus) docCorpusNode.textContent = outputSingleNewCorpus;
+               
+            }
+            else return null;             // return null => the result will not be included into the jQuery object
+         }
+         
+         // 至此，表示要輸出該文件的內容
+         // 2023-12-23
+         let corpusToNewField = $("input[name='radioCopyCorpusToSpecificField']:checked").val();
+         if (corpusToNewField != "none") $(docNode).find("doc_content").before(`<${corpusToNewField}>${oldCorpusName}</${corpusToNewField}>\r\n   `);
+         
+         // 2025-12-28: 若 <corpus> 內容修改，至此已經產生 <undefined> 標籤...
+         //console.log(this.outerHTML);
+         $(this).find("undefined").remove();       // 2025-12-28 (Tu): 移除 <undefined> 標籤！
+
+         if (!moveParagraphToDoc) return [this.outerHTML];     // purpose of bracket: to make the return of map() forms an array
+         else {      // 將 <Paragraph> 拉到外頭成為獨立文件... （原先的 <Paragraph> 也仍會輸出）
+            var radioVal = $("input[name=radioParagraphToDoc]:checked").val();
+            var paragraphs = $(this).find("doc_content > Paragraph");
+            if (paragraphs.length <= 1) return [this.outerHTML];    // 若只有一個 Paragraph，就直接輸出（不更改文件檔名）
+            else {
+               var cloneDoc = $(docNode).clone();
+               cloneDoc.find("doc_content").html('');
+               var newDocList = paragraphs.map(function(idx) {
+                  var newDoc = cloneDoc.clone();
+                  var paragraphId = $(this).attr("RefId");
+                  var newFilename = newDoc.attr("filename") + "_p" + ("0000" + (idx + 1)).substr(-4,4);
+                  if (radioVal == 2 && paragraphId) newFilename = paragraphId;
+                  newDoc.attr("filename", newFilename);
+                  newDoc.find("filename").text(newFilename);
+                  newDoc.find("doc_content").html(this.outerHTML);
+                  //interruptForAnimation();
+                  return newDoc.get(0).outerHTML;
+               });
+               //alert(JSON.stringify(newDocList.toArray()));
+               
+               // Kuan-Lin Chen 20200804
+               //修正回傳資料
+               return (newDocList.toArray().join(''))
+
+            }
+         }
+      });
+      return documentXmlList;            // .filter(function(v){return v!==''});   // remove empty elements from array
+   }
+   
+
+   function extractXmlData(corpusInfo) {
+      var filename = corpusInfo.filename;
+      var dataType = corpusInfo.dataType;
+      var dataValue = corpusInfo.dataValue;
+      //alert(filename + ' -- ' + dataType + ' -- ' + dataValue);
+
+      var xml = MyXmlList[filename].xml;
+      var jqXmlDoc = $.parseXML(xml);            // returns XMLDocument
+      var jqXml = $(jqXmlDoc);                   // returns jQuery object
+      var ret = {};
+
+      // Kuan-Lin Chen 20200824
+      //save CorpusName which is under <document> 
+      if( dataType == 'documentsCorpusTitleAndFilenames' ){
+         FileName2CorpusName[filename] = dataValue
+      }
+
+
+      switch (dataType) {
+         case "documentsCorpusTitleAndFilenames":  
+            var corpusName = dataValue;          // 當前處理（勾選過）的 corpus
+            var jqDocumentXmlList = getDocumentXmlList(jqXml, corpusName);
+            ret = { dataType: 'documentXmlList',
+                    dataValue: jqDocumentXmlList.get() };
+            break;
+         case "corpusSetting":
+
+            // Kuan-Lin Chen 20200729
+            //取得filename轉成corpus的資料
+            corpusName = FileName2CorpusName[filename]
+            var jqCorpusSettingXmlList = getCorpusSettingXmlList(jqXml, corpusName);
+            ret = { dataType: 'corpusSettingXmlList',
+                    dataValue: jqCorpusSettingXmlList.get() };
+            break;
+         case "dbRefdata":
+            var refdataName = dataValue;
+            var jqRefdataNodes = jqXml.find("ThdlPrototypeExport > database > refdata[name='" + refdataName + "']");
+            var jqDatabaseRefdataXmlList = jqRefdataNodes.map(function(idx) { 
+               return this.outerHTML; 
+            });
+            ret = { dataType: 'databaseRefdataXmlList',
+                    dataValue: jqDatabaseRefdataXmlList.get() };
+            break;
+         default:
+            alert("Unknown data type: " + dataType);
+      }
+      return ret;
+   }
+   
+   function handleSelectInFile(evt) {        
+      var outFilename = $("#outFilename").val().replace(/^(.+)\.xml$/, "$1" + ".xml");
+      $("#outFilename").val(outFilename)
+
+      try {
+         // 先簡單剖析檔案中有哪些資料（輸出時，需再剖析一次，取出欲輸出的資訊）
+         // 2018-01-05: 注意，檔案讀入的順序不是固定的... 
+         var files = evt.target.files;           // FileList object
+         for (var i=0; i<files.length; i++) {    // read selected files
+            readAndParseXmlFile(files[i], evt);  // store result to global variable MyXmlList     
+         }
+      } catch(err) {
+         alert(err.message);
+      }
+   }
+   
+   // ------------------------------------------------------------------------------
+   
+   function generateDocuXml(e) {
+      // 將結果儲存於全域變數 GvarfinalDocuXml（注意，此函式不該加上 setTimeout）
+      // 注意：Chromium 在此（應該是在字串操作與排序上）的執行效率相當差！
+      
+      // await new Promise(r => requestAnimationFrame(r));      // r = resolve
+      
+      DocsFound = 0;    // reset
+      
+      // 2018-01-05: 依照 filename 排序再輸出...
+      var dataList = $("input.fileDataItem:checked").map(function(idx) {
+         //$("#divLoadingContainer").css({top:e.pageY-120, left:e.pageX}).show();
+         var s = $(this).attr("data-itemInfo");
+         var jsonItemInfo = JSON.parse(htmlAttrUnescapeJsonStr(s));
+         return jsonItemInfo;
+      }).sort(function(a,b) { 
+         if (a.filename < b.filename) return -1;
+         if (a.filename > b.filename) return 1;
+         return 0;
+      }).map(function(idx) {
+         return extractXmlData(this);
+      }).get();
+      
+      if (dataList.length == 0) {
+         alert("請至少輸入一份 DocuXml");
+         return;
+      }
+      
+      var corpusSettingsXml = dbRefdataXml = documentsXml = '';
+      for (key in dataList) {
+         //alert(key + "\n" + JSON.stringify(dataList[key]));
+         switch (dataList[key].dataType) {
+            case "databaseRefdataXmlList":
+               dbRefdataXml += dataList[key].dataValue.join("\r\n");
+               break;
+            case "corpusSettingXmlList":
+               // 2018-03-05：多份 <corpus> 設定，可能會導致 server 建庫時混淆，而不知該如何設定...
+               //             但... 目前沒空去處理（想找個簡單的 merge 方法）
+               //corpusSettingsXml += dataList[key].dataValue.join("\r\n");
+               // 暫時的鴕鳥解法：先僅留第一份參數設定...
+               
+               // Kuan-Lin Chen 20200824
+               //處理合併多corpus為一
+               let outputSingleNewCorpus = ($("#inputSpecifyNewCorpus:checked").length > 0 && (temp = $("#inputSpecifyNewCorpusName").val().trim()) != '')
+                                         ? temp.replace(/[~!@#$%^&*,;|]/g, '_') : false;
+               if(outputSingleNewCorpus){
+                  if(corpusSettingsXml === '') 
+                  {
+                     corpusSettingsXml = "<corpus>"+"\r\n"+
+                     "<feature_analysis>"+"\r\n"+
+                     "</feature_analysis>"+"\r\n"+
+                     "<metadata_field_settings>"+"\r\n"+
+                     "</metadata_field_settings>"+"\r\n"+
+                     //"<TagRelations>"+"\r\n"+                    // 2025-07-24
+                     //"</TagRelations>"+"\r\n"+
+                     "</corpus>"+"\r\n"
+                     ;
+                  }
+                  
+                  // 2024-12-27: (bug fix) 移除原先的 else {...}
+                  //             注意：corpusSettingsXml 儲存「每次迭代加上新 corpus settings」的最後 settings
+                  let xml_jqXmlDoc = $.parseXML(String(corpusSettingsXml));  // returns XMLDocument
+                  let xml_jqXml = $(xml_jqXmlDoc);                           // returns jQuery object
+                  let xml_jqNodes;
+                  
+                  let data_jqXmlDoc = $.parseXML(String(dataList[key].dataValue));  // returns XMLDocument
+                  let data_jqXml = $(data_jqXmlDoc);                                // returns jQuery object
+                  let data_jqNodes;
+                  
+                  data_jqNodes = data_jqXml.find("corpus > metadata_field_settings > *");
+                  data_jqNodes.map(function(idx) {
+                     xml_jqNodes = xml_jqXml.find("corpus > metadata_field_settings > "+data_jqNodes[idx].nodeName)
+                     if(xml_jqNodes.length == 0){
+                        xml_jqNodes = xml_jqXml.find("corpus > metadata_field_settings")
+                        data_jqNodes[idx].setAttribute('display_order', xml_jqXml.find("corpus > metadata_field_settings > *").length + 1)
+                        xml_jqNodes.append(this.outerHTML+"\r\n")
+                        //corpusSettingsXml = "<corpus name = '"+outputSingleNewCorpus+"'>"+xml_jqXml.find("*").html()+"</corpus>"
+                        //corpusSettingsXml += ("\r\n")
+                        //console.log(xml_jqXml[0].outerHTML)
+                        //console.log(corpusSettingsXml)
+                     }
+                  });
+                  
+                  // 2022-07-26: (Tu) 加上 feature_analysis 的設定 (bug fix)
+                  data_jqNodes = data_jqXml.find("corpus > feature_analysis > tag");
+                  data_jqNodes.map(function(idx) {
+                     let tag_name = data_jqNodes[idx].getAttribute('name')
+                     xml_jqNodes = xml_jqXml.find("corpus > feature_analysis > tag[name='"+tag_name+"']")
+                     if(xml_jqNodes.length == 0){     // 將 data_jqNodes 有，但 xml_jqXml 所沒有的 tag 和 spotlight 補到 xml_jqXml 上
+                        xml_jqNodes = xml_jqXml.find("corpus > feature_analysis")
+                        xml_jqNodes.append(this.outerHTML+"\r\n")
+                        let spot_jqNodes = data_jqXml.find("corpus > feature_analysis > spotlight[category='"+tag_name+"']")
+                        if (spot_jqNodes.length != 0) xml_jqNodes.append(spot_jqNodes[0].outerHTML + "\r\n");
+                        //alert(xml_jqNodes.html());
+                     }
+                  });
+                  
+                  // 2022-07-26: (TODO) 需加上 PageParameters (CatTree 等設定)
+                  //              -- (buggy) 目前貪方便，原 xml 若有則直接用原來的內容...
+                  xml_jqNodes = xml_jqXml.find("corpus > PageParameters");
+                  data_jqNodes = data_jqXml.find("corpus > PageParameters");
+                  if (xml_jqNodes.length == 0 && data_jqNodes.length > 0) {
+                     xml_jqXml.find("corpus").append(data_jqNodes[0].outerHTML + "\r\n");
+                  }
+                  
+                  // 2025-07-24: 加上 ExtraRelations (2025-12-23: Immarkus2D 轉換後的結果有用到，但後續的應用程式未必會使用)
+                  xml_jqNodes = xml_jqXml.find("corpus > ExtraRelations");
+                  data_jqNodes = data_jqXml.find("corpus > ExtraRelations");
+                  if (xml_jqNodes.length == 0 && data_jqNodes.length > 0) {
+                     xml_jqXml.find("corpus").append(data_jqNodes[0].outerHTML + "\r\n");
+                  }
+                  
+                  // 彙整
+                  let s = xml_jqXml.find("*").html();
+                  corpusSettingsXml = "<corpus name = '"+outputSingleNewCorpus+"'>" + s + "</corpus>\r\n";
+                  //alert("!!" + corpusSettingsXml);
+               }
+               else{
+                  corpusSettingsXml += dataList[key].dataValue.join("\r\n")
+               }
+               
+               break;
+            case "documentXmlList":
+               // 2024-12-27: 注意：若合併為新的文獻集名稱，舊的 <corpus>Old_Corpus</corpus> 
+               //             會變成 <undefined>Old_Corpus</undefined>
+               //             基本上應該是無害，因此暫時也就懶得去清理乾淨了... （2025-12-28 修正後，已移除此多餘的標籤）
+               documentsXml += dataList[key].dataValue.join("\r\n")
+               break;
+            default:
+               alert("Unrecognized data type: " + dataList[key].dataType + " (" + key + ")");
+         }
+      }
+      //$("#divLoadingContainer").hide();
+      
+      var out = '<?xml version="1.0"?>\r\n' +
+                '<ThdlPrototypeExport>\r\n' +
+                (dbRefdataXml ? '<database>' + dbRefdataXml + '</database>\r\n' : '') +
+                corpusSettingsXml + '\r\n' +
+                '<documents>\r\n' +
+                documentsXml + '\r\n' +
+                '</documents>\r\n' +
+                '</ThdlPrototypeExport>';
+                
+      GvarFinalDocuXml = out;             // 2025-12-30
+   }
+   
+   function saveDocuXml() {
+      showProgressMsg("saving...");
+      window.setTimeout(function() {
+         // 將全域變數的 DocuXml 儲存到檔案
+         let filename = $("#outFilename").val();
+         var blob = new Blob([GvarFinalDocuXml], {type: "text/plain;charset=utf-8"});
+         saveAs(blob, filename);             // requires FileSaver.js
+         hideProgressMsg();
+      }, 100);
+   }
+   
+   // ------------------------------------------------------------------------------
+
+   function generateTsvFile(e) {          // 只輸出 content 的內容
+      DocsFound = 0;    // reset
+
+      // should move the following computation to Worker...
+      var filename = $("#outFilename").val();
+      
+      var dataList = $("input.fileDataItem:checked").map(function(idx) {
+         //$("#divLoadingContainer").css({top:e.pageY-120, left:e.pageX}).show();
+         var s = $(this).attr("data-itemInfo");
+         var jsonItemInfo = JSON.parse(htmlAttrUnescapeJsonStr(s));
+         return extractXmlData(jsonItemInfo);
+      }).get();
+      
+      if (dataList.length == 0) {
+         alert("請勾選至少一份輸出資料或文獻集");
+         return;
+      }
+
+      var docObjArray = [];
+      var docObjTagNames = {};
+      for (key in dataList) {
+         switch (dataList[key].dataType) {
+            case "databaseRefdataXmlList": break;          // skip (tsv only output content part)
+            case "corpusSettingXmlList":   break;          // skip
+            case "documentXmlList":
+               var docTsvArray = [];
+               var docXmlList = dataList[key].dataValue;
+               // 為了方便處理，假設第每一篇文件的 metadata tags 都是齊全的（因此只需取出第一篇文件的 tagNames），
+               // 也假設所有的 tags 出現的順序都相同
+               var jqXmlDoc = $.parseXML(docXmlList[0]);  // returns XMLDocument
+               var jqXml = $(jqXmlDoc);                   // returns jQuery object
+               var jqNodes = jqXml.find("document > *");
+               var rowCells = [];
+               rowCells.push('filename');
+               jqNodes.each(function(e) { 
+                  if (this.tagName == 'xml_metadata' || this.tagName == 'xmlMetadata') {
+                     $(this).children().each(function(e) {
+                        rowCells.push("metadata/" + this.tagName);
+                     });
+                  }
+                  else if (this.tagName == 'doc_content' || this.tagName == 'docContent') ;     // skip doc_content
+                  else rowCells.push(this.tagName); 
+               });
+               docTsvArray.push(rowCells.join("\t"));
+            
+               docXmlList.forEach(function(e, i, a) {
+                  var jqXmlDoc = $.parseXML(e);              // returns XMLDocument
+                  var jqXml = $(jqXmlDoc);                   // returns jQuery object
+                  var jqNodes = jqXml.find("document > *");
+                  rowCells = [];
+                  rowCells.push(jqXml.find("document").first().attr("filename"));    // should be only one document
+                  jqNodes.each(function(e) {        
+                     if (this.tagName == 'xml_metadata' || this.tagName == 'xmlMetadata') {
+                        $(this).children().each(function(e) {
+                           rowCells.push($(this).html().replace(/\t/g, ' '));
+                        });
+                     }
+                     else if (this.tagName == 'doc_content' || this.tagName == 'docContent') ;   // skip -- or rowCells.push('') 輸出欄位名稱，但值 leave blank
+                     else rowCells.push($(this).html().replace(/\t/g, ' '));
+                  });
+                  docTsvArray.push(rowCells.join("\t"));
+               });
+               break;
+            default:
+               alert("Unrecognized data type: " + dataList[key].dataType + " (" + key + ")");
+         }
+      }
+      //$("#divLoadingContainer").hide();
+      
+      var out = docTsvArray.join("\r\n");
+      var blob = new Blob([out], {type: "text/plain;charset=utf-8"});
+      saveAs(blob, filename);             // requires FileSaver.js
+   }
+   
+   // ----------------------------------------------
+   //          loading progress message
+   // ----------------------------------------------
+
+   function showProgressMsg(msg) {
+      if (msg) {
+         $("#divLoadingContainer").css({top:'25%', left:'35%'}).show();
+         $("#divWorkingProgress").text(msg.substring(0,10));    // max 10 characters
+      }
+   }
+   
+   function hideProgressMsg() {
+      $("#divLoadingContainer").hide();
+   }
+   
+   // ---------------------------------------------------------------------------------
+   
+   $("#refreshDocuMerger").click(function() {
+      // 2024-12-29
+      window.location.reload();
+   });
+   
+   $("#butSelectDocuXmlFiles").click(function() {
+      $("#selectInFile").click();
+   });
+   
+   $("#selectInFile").bind('change', function(evt) {
+      handleSelectInFile(evt);
+   });
+   
+   $("#inputSpecifyFilenames").prop("disabled", false).on("click", function() {
+      if ($('#inputSpecifyFilenames:checked').length > 0) $("#divSpecifyFilenames").show();
+      else $("#divSpecifyFilenames").hide();
+   });
+
+   $("#inputSpecifyNewCorpus").prop("disabled", false).on("click", function() {
+      if ($('#inputSpecifyNewCorpus:checked').length > 0) $("#divSpecifyNewCorpusName").show();
+      else $("#divSpecifyNewCorpusName").hide();
+   });
+         
+   $("#inputParagraphAsDoc").prop("disabled", false).on("click", function() {
+      $("#divParagraphToDocOption").show();
+   });
+   
+   // 2017-11-09
+   $("input.outFileFormat").on("click", function() {
+      var formatVal = $(this).val();
+      var ext = (formatVal == 'DocuXml') ? '.xml' : '.tsv';
+      var outFilename = $("#outFilename").val();
+      $("#outFilename").val(outFilename.replace(/\.(xml|tsv)$/, ext));
+   });
+
+   $("#generateDocuXmlAndSaveFile").click(function(e) {
+      // 注意：相較於 Firefox，Chromium 瀏覽器需花上「明顯」的時間 database merging 上
+      showProgressMsg("Merging...");
+      
+      window.setTimeout(function() {
+         // 2025-12-30: 拆解原先的程式，分為 generateDocuXml() 和 saveDocuXml() 兩段
+         generateDocuXml(e);
+         if (GvarFinalDocuXml !== '') saveDocuXml();
+         hideProgressMsg();
+      }, 200);
+   });
+   
+   $("div.contentArea").click(function(evt) {
+      if (evt.ctrlKey && evt.altKey) {        // 用兩鍵來避免誤按
+         $("#stepMergeAndSave").show();
+      }
+   });
+   
+   
+   // -----------------------------------------------------------------------
+   //     DocuSky database-merging 原本函式外，額外加上的整合性 UI 函式
+   // -----------------------------------------------------------------------
+   
+   $("#backToConvertingPage").click(function() {
+      // 因為 doPostMessage() 只處理 type 為 "DocuXml"，因此獨立在此 postMessage()
+      let wrapper = { source: "DocuMerger",
+                      target: "ConvertingPage",        // 2026-07-28: from 'Converting' to 'ConvertingPage'
+                      parameters: [],
+                      type: "json",
+                      message: "Back to Converting page",
+                    };
+      window.parent.postMessage(wrapper, '*');
+   });
+
+   $("#butNextGoSearch").click(function(e) {
+      showProgressMsg('Preparing...');
+      window.setTimeout(function() {
+         generateDocuXml(e);
+         if (GvarFinalDocuXml !== '') {
+            doPostMessage("ConvertingPage", "XmarkusAnalyzer", GvarFinalDocuXml);     // 2026-07-28: 'ConvertingPage'
+         }
+         hideProgressMsg();
+      }, 150);
+   });
+   
+   $("#butNextDownload").click(function() {         // 2025-12-30
+      $("#generateDocuXmlAndSaveFile").click();
+   });
+   
+   // ---------------------------------------------
+   //       functions for message handlers
+   // ---------------------------------------------
+
+   window.addEventListener("message", messageHandler, false);
+   
+   function messageHandler(evt) {
+      if (!EnableMessageViaParent) return;      // 需打開此參數才能套用以下程式
+      try {
+         //alert(JSON.stringify(evt.data));
+         if (!evt.data) return;                                           // to prevent "SyntaxError: JSON.parse: unexpected end of data at line 1 column 1 of the JSON data"
+         let {source, target, parameters, type, message} = evt.data;      // 2025-02-20
+         
+         // 2025-02-20: 如果 source 是自己，表示先前 postMessage 是由自己接收... 意思是沒有 parent（沒能 post 到 parent）
+         if (source === 'DocuMerger') {
+            console.log("Unknown target: " + target);
+         }
+         
+         if (type === 'DocuXml') {
+            //alert("I'm DocuMerger:\n" + JSON.stringify(message));
+            // 重設全域變數後，將 message（DocuXml 字串）視為基本（第一份）待合併的 DocuXml
+            init();
+            let filename = `(Data from ${source})`;
+            parseFilenameDocuXml(filename, message);
+         }
+         else if (type === 'json') {                           
+            //alert(JSON.stringify(message));
+            if (message === 'Invoke DocuMerger') {
+               // 2025-12-30: 重設
+               $("#refreshDocuMerger").click();
+            }
+            else console.log("Unknown message: " + message);
+         }
+         else alert("Unknown type: " + type);
+         
+         //let json = evt.data;                                // evt.data 似乎會直接被剖析成 json 物件...
+      } catch (e) {
+         alert(e.name + ": " + e.message);
+      }
+   }
+
+   function doPostMessage(sourceTool, targetTool, xmlStr) {   
+      // 注意：新版的介面不再需透過 converting page -> root page -> C2D page，可直接傳訊給 root page 說要接 XA
+      if (InXmarkusLocalMode) {
+         // 傳遞到最 top 的 XmarkusPlatform.html
+         // (1). XmarkusPlatform.html 引入 iframe XmarkusPlatform-Converting.html
+         // (2). XmarkusPlatform-Converting.html 引入 iframe Comarkus2D.html
+         // 注意：即使沒有父視窗，parent 依然有值，但在 file: 協定下無法透過 parent.parent.location.href!=location.href 進行比對
+         //       會跑出 Uncaught DOMException: Permission denied to get property "href" on cross-origin object
+
+         // 2025-02-20: 調整訊息格式，改為 source, target, parameters, type, message 五項參數
+         let wrapper = { source: sourceTool,
+                         target: targetTool,
+                         type: "DocuXml",
+                         message: xmlStr }
+         parent.parent.postMessage(wrapper, '*');    // 第二個參數是目標源，可以根據需要設置（若以 json object 送出，接收端似可直接取用 json 物件，不需經過 JSON.parse 處理）
+      }
+      else alert("EnableMessageViaParent disabled");
+   }
+   
+   
+</script>
+</html>

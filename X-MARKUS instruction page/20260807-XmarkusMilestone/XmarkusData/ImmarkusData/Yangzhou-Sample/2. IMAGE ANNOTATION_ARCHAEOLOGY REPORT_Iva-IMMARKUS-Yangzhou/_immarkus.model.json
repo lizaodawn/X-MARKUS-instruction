@@ -1,0 +1,903 @@
+{
+  "entityTypes": [
+    {
+      "color": "#175ebb",
+      "id": "object",
+      "label": "object",
+      "description": "parent class of three main object types",
+      "properties": [
+        {
+          "name": "ID",
+          "type": "text",
+          "description": "MARKUS based: county name + object "
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "description": "name as in text"
+        },
+        {
+          "name": "materials",
+          "type": "text",
+          "values": [
+            "brick",
+            "earth/dirt",
+            "lime",
+            "other organic material (rice,...)",
+            "sand",
+            "stone",
+            "wood"
+          ],
+          "description": "list of materials separated by a \";\""
+        },
+        {
+          "name": "location",
+          "type": "geocoordinate"
+        },
+        {
+          "name": "date start",
+          "type": "text",
+          "description": "first part of span"
+        },
+        {
+          "name": "date end",
+          "type": "text",
+          "description": "second part of span"
+        },
+        {
+          "name": "date dynasty",
+          "type": "text",
+          "values": [
+            "元",
+            "北宋",
+            "南宋",
+            "唐",
+            "宋",
+            "明",
+            "汉",
+            "清",
+            "辽",
+            "金"
+          ]
+        },
+        {
+          "name": "date description",
+          "type": "text",
+          "description": " specific phrase used in the text (明代早期，宋代第一期, etc.)"
+        },
+        {
+          "name": "date context",
+          "type": "text",
+          "description": "what gave the object part the date: carbon date, pottery, historical source etc. The specific source or find should be mentioned, if it is C14 it is enough to just put C14  "
+        },
+        {
+          "type": "external_authority",
+          "authorities": [
+            "TGAZ"
+          ],
+          "description": "location according to TGAZ",
+          "name": "TGAZ"
+        },
+        {
+          "name": "WIKIPEDIA",
+          "description": "Wikipedia page of site",
+          "type": "external_authority",
+          "authorities": [
+            "Wikipedia"
+          ]
+        },
+        {
+          "name": "Baidu",
+          "description": "Baidu Baike page",
+          "type": "external_authority",
+          "authorities": [
+            "Baidu"
+          ]
+        },
+        {
+          "name": "obj_height",
+          "type": "measurement",
+          "description": "preserved"
+        },
+        {
+          "name": "obj_length",
+          "type": "measurement",
+          "description": "preserved"
+        },
+        {
+          "name": "obj_width",
+          "type": "measurement",
+          "description": "preserved"
+        },
+        {
+          "name": "obj_thickness",
+          "type": "measurement",
+          "description": "preserved"
+        },
+        {
+          "type": "relation",
+          "name": "object to site",
+          "targetType": "location_site",
+          "labelProperty": "name original"
+        }
+      ]
+    },
+    {
+      "color": "#e13a51",
+      "id": "city_wall",
+      "label": "city wall",
+      "parentId": "obj_main",
+      "properties": [
+        {
+          "name": "circumference",
+          "type": "measurement"
+        }
+      ]
+    },
+    {
+      "color": "#e3f2e3",
+      "id": "obj_part",
+      "label": "object part",
+      "properties": [
+        {
+          "name": "ID",
+          "type": "text",
+          "description": "MARKUS based: county name + object part"
+        },
+        {
+          "name": "name",
+          "type": "text",
+          "description": "given in the text (in Chinese)"
+        },
+        {
+          "name": "materials",
+          "type": "text",
+          "values": [
+            "brick",
+            "earth/dirt",
+            "lime",
+            "other organic material (rice,...)",
+            "rubble",
+            "sand",
+            "stone",
+            "tile",
+            "wood"
+          ],
+          "description": "list of materials separated by a \";\""
+        },
+        {
+          "name": "location",
+          "type": "geocoordinate",
+          "description": "specific location of the object part"
+        },
+        {
+          "name": "date start",
+          "type": "text",
+          "description": "first part of span"
+        },
+        {
+          "name": "date end",
+          "type": "text",
+          "description": "second part of span"
+        },
+        {
+          "name": "date dynasty",
+          "type": "text",
+          "values": [
+            "五代",
+            "元",
+            "六朝",
+            "北宋",
+            "南宋",
+            "唐",
+            "宋",
+            "明",
+            "汉",
+            "清",
+            "辽",
+            "金"
+          ]
+        },
+        {
+          "name": "date description",
+          "type": "text",
+          "description": "pecific phrase used in the text (明代早期，宋代第一期, etc.)"
+        },
+        {
+          "name": "date context",
+          "type": "text",
+          "description": "What gave the object part the date: carbon date, pottery, historical source etc. The specific source or find should be mentioned, if it is C14 it is enough to just put C14  "
+        },
+        {
+          "name": "WIKIPEDIA",
+          "type": "external_authority",
+          "authorities": [
+            "Wikipedia"
+          ]
+        },
+        {
+          "name": "BAIKE",
+          "type": "external_authority",
+          "authorities": [
+            "Baidu"
+          ]
+        },
+        {
+          "name": "TGAZ",
+          "type": "external_authority",
+          "authorities": [
+            "TGAZ"
+          ]
+        },
+        {
+          "name": "length",
+          "type": "measurement",
+          "description": "preserved"
+        },
+        {
+          "name": "thickness",
+          "type": "measurement",
+          "description": "preserved"
+        },
+        {
+          "name": "height",
+          "type": "measurement"
+        },
+        {
+          "name": "width",
+          "type": "measurement",
+          "description": "preserved"
+        },
+        {
+          "name": "inference",
+          "type": "enum",
+          "values": [
+            "abandonment",
+            "brakedown"
+          ],
+          "description": "Breakdown describes every object part that experienced repairs or was built on top of. This is seen in stratigraphic diagrams. This is for multilayered (usually big) sites (Yangzhou, Chengdu, Chongqing...) \nAbandonment describes an object part that was not built on top of but was abandoned or no longer serves its intended use (e.g. walls that now serve as tourist attractions have lost their initial purpose at some point, therefore that is abandonment). This is seen on all types of images that contain obj_part on for both bigger and smaller sites \nConnected properties: Date End represents the point in time connected to the eventlet. Location represents the physical location of the eventlet and is also mandatory. "
+        },
+        {
+          "name": "same object part",
+          "type": "relation",
+          "targetType": "obj_part",
+          "labelProperty": "name",
+          "description": "Same object part connects different annotations of the same part object in different images (e.g. on a stratigraphical diagram and a site plan). Type: same as "
+        },
+        {
+          "name": "part of main object",
+          "type": "relation",
+          "targetType": "object",
+          "labelProperty": "ID"
+        }
+      ]
+    },
+    {
+      "color": "#dad707",
+      "id": "wall",
+      "label": "wall",
+      "parentId": "obj_part",
+      "properties": []
+    },
+    {
+      "color": "#cb2d45",
+      "id": "bridge",
+      "label": "bridge",
+      "parentId": "obj_main"
+    },
+    {
+      "color": "#4af1db",
+      "id": "road",
+      "label": "road",
+      "parentId": "obj_main"
+    },
+    {
+      "color": "#7e1845",
+      "id": "city_gate",
+      "label": "city gate",
+      "parentId": "obj_part",
+      "properties": []
+    },
+    {
+      "color": "#367a91",
+      "id": "tower",
+      "label": "tower",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#399cf3",
+      "id": "city_wall_moat",
+      "label": "moat",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#ca05b3",
+      "id": "location_site",
+      "label": "site",
+      "properties": [
+        {
+          "name": "name original",
+          "type": "text"
+        },
+        {
+          "name": "year",
+          "type": "text",
+          "description": "Year of excavation- if the image taken from the report refers to multiple excavation campaigns. Year only (e.g. 1978) "
+        },
+        {
+          "name": "name Chinese",
+          "type": "text",
+          "description": "name of the location where the site is (e.g. 成都)"
+        },
+        {
+          "name": "name pinyin",
+          "type": "text",
+          "description": "he name of the location where the site is (e.g. Chengdu)"
+        },
+        {
+          "name": "location",
+          "type": "geocoordinate"
+        },
+        {
+          "name": "TGAZ",
+          "type": "external_authority",
+          "authorities": [
+            "TGAZ"
+          ]
+        },
+        {
+          "name": "sources",
+          "type": "text",
+          "description": "list of hhistorical sources on the site separated by a \";\"",
+          "size": "L"
+        },
+        {
+          "name": "link to archive",
+          "type": "uri",
+          "description": "Link to source in RegInfra Archive "
+        }
+      ]
+    },
+    {
+      "color": "#3745b0",
+      "id": "excavation",
+      "label": "excavation",
+      "parentId": "location_site",
+      "properties": [
+        {
+          "name": "object to site",
+          "type": "relation",
+          "targetType": "object",
+          "labelProperty": "name"
+        }
+      ]
+    },
+    {
+      "color": "#ff5387",
+      "id": "survey area",
+      "label": "survey",
+      "parentId": "location_site",
+      "properties": [
+        {
+          "name": "object to survey",
+          "type": "relation",
+          "targetType": "object",
+          "labelProperty": "name"
+        }
+      ]
+    },
+    {
+      "color": "#0ae92a",
+      "id": "city_wall_watergate",
+      "label": "water gate",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#9df96f",
+      "id": "stratigraphy",
+      "label": "layer",
+      "properties": [
+        {
+          "name": "name of layer",
+          "type": "text",
+          "description": "The Name is the name of the image (same as in metadata) all the numbers, Latin letters or symbols + the Chinese character 层"
+        },
+        {
+          "name": "date start",
+          "type": "text"
+        },
+        {
+          "name": "date end",
+          "type": "text"
+        },
+        {
+          "name": "date dynasty",
+          "type": "text",
+          "values": [
+            "contemporary",
+            "元",
+            "六朝",
+            "北宋",
+            "南宋",
+            "周",
+            "唐",
+            "宋",
+            "明",
+            "汉",
+            "清",
+            "辽",
+            "金"
+          ]
+        },
+        {
+          "name": "date description",
+          "type": "text"
+        },
+        {
+          "name": "date context",
+          "type": "text"
+        },
+        {
+          "name": "thickness",
+          "type": "measurement",
+          "description": "maximal thickness of layer"
+        }
+      ],
+      "parentId": "excavation"
+    },
+    {
+      "color": "#a069f9",
+      "id": "chute",
+      "label": "chute",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#8f1fba",
+      "id": "revetment",
+      "label": "revetment",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#c2fa36",
+      "id": "stake",
+      "label": "stake",
+      "parentId": "obj_part",
+      "properties": [
+        {
+          "name": "number of stakes",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "color": "#fe6d59",
+      "id": "baishou",
+      "label": "摆手",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#db2bce",
+      "id": "dam",
+      "label": "dam",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#5a1347",
+      "id": "embankment",
+      "label": "embankment",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#7d3bb0",
+      "id": "wall_foundation",
+      "label": "wall foundation",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#cded53",
+      "id": "outpost",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#7b0836",
+      "id": "paving",
+      "label": "paving",
+      "parentId": "obj_part",
+      "description": "pavings/surfaces of roads"
+    },
+    {
+      "color": "#160465",
+      "id": "palace",
+      "parentId": "obj_other"
+    },
+    {
+      "color": "#4cc4cd",
+      "id": "obj_main",
+      "label": "main object",
+      "parentId": "object"
+    },
+    {
+      "color": "#69016c",
+      "id": "obj_other",
+      "label": "object other",
+      "parentId": "object"
+    },
+    {
+      "color": "#4ae92c",
+      "id": "obj_military",
+      "label": "object military",
+      "parentId": "object"
+    },
+    {
+      "color": "#e56319",
+      "id": "fort",
+      "label": "fortress",
+      "parentId": "obj_military"
+    },
+    {
+      "color": "#0859be",
+      "id": "inner_wall",
+      "label": "inner_wall",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#e84023",
+      "id": "outer_wall",
+      "label": "outer wall",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#78a34f",
+      "id": "city_wall_barbican",
+      "label": "barbican",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#e77b23",
+      "id": "pass",
+      "label": "pass",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#a3a245",
+      "id": "arch",
+      "label": "arch",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#3f39e8",
+      "id": "ash_pit",
+      "label": "ash pit",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#9ea7fe",
+      "label": "road_hole",
+      "id": "hole",
+      "parentId": "obj_part",
+      "description": "holes on mountain roads "
+    },
+    {
+      "color": "#a46d81",
+      "id": "extensive_wall",
+      "label": "extensive wall",
+      "parentId": "obj_military",
+      "description": "a linear defensive structure (not an enclosed wall). It is often translated as Changcheng or long wall in Chinese. The Great Wall on the Sino-Mongolian frontier is a representative example, but such structures are also found in other areas, including the 190-kilometer Miao wall in west Hunan, used by Ming officials to isolate the Miao people. "
+    },
+    {
+      "color": "#f9ab30",
+      "id": "railing",
+      "label": "railing",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#f3dc14",
+      "id": "pillar",
+      "label": "pillar",
+      "parentId": "obj_part"
+    }
+  ],
+  "folderSchemas": [
+    {
+      "name": "journal article schema",
+      "properties": [
+        {
+          "name": "Source_title_ch ",
+          "type": "text",
+          "size": "L",
+          "description": "Article title in Chinese characters "
+        },
+        {
+          "name": "Source_title_py ",
+          "type": "text",
+          "description": "Pinyin transcription of the article title ",
+          "size": "L"
+        },
+        {
+          "name": "Source_title_en ",
+          "type": "text",
+          "size": "L",
+          "description": "Translated article title in English "
+        },
+        {
+          "name": "Source_author ",
+          "type": "text",
+          "values": [],
+          "description": "Author of article in Chinese \nformat: Surname, Name. \nif multiple authors separate the names with \";\" ",
+          "size": "L"
+        },
+        {
+          "name": "Publication_title",
+          "type": "text",
+          "description": "Journal name in Chinese characters "
+        },
+        {
+          "name": "Publication_time",
+          "type": "text",
+          "description": "year only"
+        },
+        {
+          "name": "Publication_place",
+          "type": "text",
+          "description": "Place where the journal was published, in Chinese characters  "
+        },
+        {
+          "name": "volume",
+          "type": "text"
+        },
+        {
+          "name": "issue",
+          "type": "text"
+        },
+        {
+          "name": "Page",
+          "type": "text",
+          "description": "Page span of article, use numbers with “-” and “+” "
+        },
+        {
+          "name": "DOI",
+          "type": "uri"
+        },
+        {
+          "name": "ISSN",
+          "type": "text"
+        },
+        {
+          "name": "Language",
+          "type": "enum",
+          "description": "Language of the article, choose between Chinese and English ",
+          "values": [
+            "Chinese",
+            "English"
+          ]
+        },
+        {
+          "name": "Date_dg",
+          "type": "text",
+          "description": "format: DD/MM/YYYY"
+        },
+        {
+          "name": "INstitution_dg",
+          "type": "text",
+          "size": "L",
+          "description": "Institution that did the digitization "
+        },
+        {
+          "description": "Person who created the metadata",
+          "name": "Person_dg",
+          "type": "text"
+        },
+        {
+          "name": "link to archive",
+          "type": "uri",
+          "description": "\nlink to archive \n\nURL \n\nLink to source in RegInfra Archive \n\n"
+        },
+        {
+          "name": "Place_covered",
+          "description": "",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "book schema",
+      "properties": [
+        {
+          "name": "Source_title_ch ",
+          "type": "text",
+          "size": "L",
+          "description": "Book title in Chinese characters "
+        },
+        {
+          "name": "Source_title_py ",
+          "type": "text",
+          "values": [
+            "author",
+            "contributor",
+            "editior",
+            "translator"
+          ],
+          "description": "Pinyin transcription of the book title "
+        },
+        {
+          "name": "Source_title_en ",
+          "type": "text",
+          "description": "Translated book title in English ",
+          "size": "L"
+        },
+        {
+          "name": "Source_author ",
+          "type": "text",
+          "values": [
+            "author",
+            "contributor",
+            "editor",
+            "translator"
+          ],
+          "description": "Author or editor of book in Chinese "
+        },
+        {
+          "name": "Publication_time ",
+          "type": "text",
+          "description": "Date of publication, year only "
+        },
+        {
+          "name": "Publication_place",
+          "type": "text",
+          "description": "Place where the book was published "
+        },
+        {
+          "name": "Publisher_ch",
+          "type": "text"
+        },
+        {
+          "name": "Publisher_py ",
+          "type": "text",
+          "description": "Pinyin transcription of publisher name "
+        },
+        {
+          "name": "ISBN",
+          "type": "text"
+        },
+        {
+          "name": "Language",
+          "type": "enum",
+          "values": [
+            "Chinese",
+            "English"
+          ],
+          "description": "Language of the book, choose between Chinese and English "
+        },
+        {
+          "name": "Institution_dg ",
+          "type": "text",
+          "size": "L",
+          "description": "Institution that did the digitization "
+        },
+        {
+          "name": "Date_dg",
+          "type": "text",
+          "description": "Date of digitization "
+        },
+        {
+          "description": "Person who created the metadata ",
+          "name": "Person_dg",
+          "type": "text"
+        },
+        {
+          "name": "Place_covered",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "imageSchemas": [
+    {
+      "name": "Archaeology Individual image Schema",
+      "properties": [
+        {
+          "name": "Image_title_ch",
+          "type": "text",
+          "description": "Image title in Chinese characters "
+        },
+        {
+          "name": "Image_title_py",
+          "type": "text",
+          "size": "L",
+          "description": "Pinyin transcription of the image title "
+        },
+        {
+          "name": "Image_title_en ",
+          "type": "text",
+          "description": "Translated image title in English "
+        },
+        {
+          "name": "Image_author",
+          "type": "text",
+          "size": "L",
+          "description": "Author of image. If unknown put “unknown” "
+        },
+        {
+          "name": "Image_no",
+          "type": "text",
+          "description": "Image number "
+        },
+        {
+          "name": "Page",
+          "type": "text",
+          "description": "Page number "
+        },
+        {
+          "name": "Publication_time ",
+          "type": "text",
+          "description": "Date of publication, year only "
+        },
+        {
+          "name": "Publication_place ",
+          "type": "text",
+          "description": "Place where the image was published "
+        },
+        {
+          "name": "Place_covered",
+          "type": "text",
+          "size": "L",
+          "description": "The main location(s) covered in the image. Use Chinese"
+        },
+        {
+          "name": "Image_format",
+          "type": "text",
+          "values": [
+            "jpg",
+            "png",
+            "tiff"
+          ],
+          "description": ".jpg, .tiff... "
+        },
+        {
+          "name": "Genre",
+          "type": "enum",
+          "description": "",
+          "values": [
+            "drawing",
+            "map",
+            "photograph",
+            "stratigraphy"
+          ]
+        },
+        {
+          "name": "Pixel_h",
+          "type": "measurement"
+        },
+        {
+          "name": "Pixel_w",
+          "type": "measurement"
+        },
+        {
+          "name": "Language ",
+          "type": "enum",
+          "description": "Language of the article, choose between Chinese and English ",
+          "values": [
+            "Chinese",
+            "English"
+          ]
+        },
+        {
+          "name": "date of image ",
+          "type": "text",
+          "description": "format: DD/MM/YYYY"
+        },
+        {
+          "name": "Institution_dg ",
+          "type": "text",
+          "description": "Institution that did the digitization "
+        },
+        {
+          "name": "Person_dg",
+          "type": "text",
+          "description": "Person who created the metadata "
+        }
+      ]
+    }
+  ],
+  "relationshipTypes": []
+}

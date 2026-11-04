@@ -1,0 +1,378 @@
+{
+  "entityTypes": [
+    {
+      "color": "#f97120",
+      "id": "object",
+      "label": "Object",
+      "properties": [
+        {
+          "name": "id",
+          "type": "text"
+        },
+        {
+          "name": "name",
+          "type": "text"
+        },
+        {
+          "name": "location",
+          "type": "text"
+        },
+        {
+          "name": "TGAZ",
+          "type": "external_authority",
+          "authorities": [
+            "TGAZ"
+          ]
+        },
+        {
+          "name": "descriptor",
+          "type": "text"
+        },
+        {
+          "name": "color",
+          "type": "enum",
+          "values": [
+            "black",
+            "grey",
+            "white"
+          ]
+        },
+        {
+          "name": "pattern",
+          "type": "enum",
+          "values": [
+            "bond",
+            "flagstone"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#798e2c",
+      "id": "geo_feature",
+      "label": "Geo_feature",
+      "properties": [
+        {
+          "name": "name",
+          "type": "text"
+        },
+        {
+          "name": "descriptor",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "color": "#9501fe",
+      "id": "obj_part",
+      "label": "Obj_part",
+      "properties": [
+        {
+          "name": "name",
+          "type": "text"
+        },
+        {
+          "name": "descriptor",
+          "type": "text"
+        },
+        {
+          "name": "color",
+          "type": "enum",
+          "values": [
+            "black",
+            "grey",
+            "white"
+          ]
+        },
+        {
+          "name": "pattern",
+          "type": "enum",
+          "values": [
+            "bond",
+            "flagstone",
+            "tile"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#238623",
+      "id": "bridge",
+      "label": "Bridge",
+      "parentId": "object"
+    },
+    {
+      "color": "#97abdc",
+      "id": "wall",
+      "label": "Wall",
+      "parentId": "object"
+    },
+    {
+      "color": "#27cf4b",
+      "id": "road",
+      "label": "Road",
+      "parentId": "object"
+    },
+    {
+      "color": "#08a7a1",
+      "id": "building",
+      "label": "Building",
+      "parentId": "object"
+    },
+    {
+      "color": "#d74627",
+      "id": "settlement",
+      "label": "Settlement",
+      "parentId": "object"
+    },
+    {
+      "color": "#26dc03",
+      "id": "arch",
+      "label": "Arch",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#54590c",
+      "id": "barbican",
+      "label": "Barbican",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#542f8f",
+      "id": "gate",
+      "label": "Gate",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#b571ce",
+      "id": "moat",
+      "label": "Moat",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#a1db7d",
+      "id": "tower",
+      "label": "Tower",
+      "parentId": "obj_part"
+    },
+    {
+      "color": "#4e48bb",
+      "id": "water",
+      "label": "Water",
+      "parentId": "geo_feature"
+    },
+    {
+      "color": "#20d632",
+      "id": "terrain",
+      "label": "Terrain",
+      "parentId": "geo_feature"
+    },
+    {
+      "color": "#933bdf",
+      "id": "vegetation",
+      "label": "Vegetation",
+      "parentId": "geo_feature"
+    },
+    {
+      "color": "#69a3d8",
+      "id": "figure",
+      "label": "Figure",
+      "properties": [
+        {
+          "name": "descriptor",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "color": "#879f5d",
+      "id": "human",
+      "label": "Human",
+      "parentId": "figure",
+      "properties": []
+    },
+    {
+      "color": "#52af4a",
+      "id": "animal",
+      "label": "Animal",
+      "parentId": "figure"
+    },
+    {
+      "color": "#4c6d97",
+      "id": "Text",
+      "properties": [
+        {
+          "name": "Descriptor",
+          "type": "text"
+        },
+        {
+          "name": "Number",
+          "type": "number"
+        }
+      ],
+      "label": "Text"
+    },
+    {
+      "color": "#cff0b7",
+      "id": "title",
+      "label": "Title",
+      "parentId": "Text"
+    },
+    {
+      "color": "#461b7d",
+      "id": "volume",
+      "label": "Volume",
+      "parentId": "Text"
+    },
+    {
+      "color": "#be709b",
+      "id": "page",
+      "label": "Page",
+      "parentId": "Text"
+    },
+    {
+      "color": "#641581",
+      "id": "stamp",
+      "label": "Stamp",
+      "parentId": "Text"
+    },
+    {
+      "color": "#e8dd68",
+      "id": "direction",
+      "label": "Direction",
+      "parentId": "Text",
+      "properties": [
+        {
+          "name": "options",
+          "type": "enum",
+          "values": [
+            "east",
+            "north",
+            "south",
+            "west"
+          ]
+        }
+      ]
+    },
+    {
+      "color": "#8e4250",
+      "id": "boundary",
+      "label": "Boundary",
+      "parentId": "Text"
+    },
+    {
+      "color": "#cb5bba",
+      "id": "marker",
+      "label": "Marker",
+      "properties": [
+        {
+          "name": "name",
+          "type": "text"
+        },
+        {
+          "name": "descriptor",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "color": "#ddfb2d",
+      "id": "watch_tower",
+      "label": "watch_tower",
+      "parentId": "marker"
+    },
+    {
+      "color": "#e2e63e",
+      "id": "shrine",
+      "label": "Shrine",
+      "parentId": "marker"
+    },
+    {
+      "color": "#5fa247",
+      "id": "border_stone",
+      "label": "border_stone",
+      "parentId": "marker"
+    }
+  ],
+  "folderSchemas": [
+    {
+      "name": "Gazetteer",
+      "properties": [
+        {
+          "name": "Title in Chinese",
+          "type": "text"
+        },
+        {
+          "name": "Title in pinyin",
+          "type": "text"
+        },
+        {
+          "name": "Title translated in English",
+          "type": "text"
+        },
+        {
+          "name": "Person Name",
+          "type": "text"
+        },
+        {
+          "name": "Person Role",
+          "type": "text"
+        },
+        {
+          "name": "Reign period",
+          "type": "text"
+        },
+        {
+          "name": "Date created",
+          "type": "number"
+        },
+        {
+          "name": "Province",
+          "type": "text"
+        },
+        {
+          "name": "County",
+          "type": "text"
+        },
+        {
+          "name": "Genre",
+          "type": "enum",
+          "values": [
+            "Gazetteer"
+          ]
+        }
+      ]
+    }
+  ],
+  "imageSchemas": [
+    {
+      "name": "Gazetteer",
+      "properties": [
+        {
+          "name": "Volume",
+          "type": "number"
+        },
+        {
+          "name": "page",
+          "type": "number"
+        },
+        {
+          "name": "Image number",
+          "type": "text"
+        },
+        {
+          "name": "Image identifier",
+          "type": "number"
+        },
+        {
+          "name": "Image URL",
+          "type": "uri"
+        },
+        {
+          "name": "Image title",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}

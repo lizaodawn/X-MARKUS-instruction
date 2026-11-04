@@ -1,0 +1,64 @@
+[
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "4290caa8-ee68-4ee8-b063-ac42b1d7227d",
+    "target": {
+      "source": "iiif:63017d8fef5b2039:3053356344"
+    },
+    "body": {
+      "source": " Topographical pictures",
+      "properties": {
+        "title": "Université de Louvain - Les Halles (façade principale). Vue prise par un temps de neige",
+        "date": [
+          1896,
+          null
+        ],
+        "topographical details": "lithograph(s) line block",
+        "additional info": " Biographical or historical data: Gezicht op de inkomhal van de Universiteitshal gezien vanuit de Zeelstraat. Enkele huizen in de Naamsestraat zijn ook zichtbaar. In de Zeelstraat gooit een jongen een sneeuwbal naar een vrouw met paraplu. Voor de ingang staan 4 studenten. illustratie uit Le Patriote Illustré, 1-11-1896 Inscriptions: F. GAILLIARD (in de voorstelling: onderaan, rechts) Inscriptions: Université de Louvain - Les Halles (façade principale). Vue prise par un temps de neige (buiten de voorstelling: onderaan, centraal)",
+        "creator": "Francois Gailliard",
+        "creator_wikipedia": "https://fr.wikipedia.org/wiki/Franz_Gailliard",
+        "creator_wikidata": "https://www.wikidata.org/wiki/Q2113391"
+      },
+      "purpose": "describing"
+    }
+  },
+  {
+    "id": "12df06fe-94a7-48ce-a09d-e074de018bb1",
+    "target": {
+      "source": "iiif:63017d8fef5b2039:3053356344",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"933.9257183466494,850.8782311523357 929.9876496583023,1385.253433956143 886.6654326186512,1413.3535248422952 902.4185727389977,1538.850227939096 922.1108632563894,1558.5421939438781 914.2338605127368,1909.058107120305 906.3570741108238,1940.565252727957 949.679291150475,1987.8257547976946 926.0489319447365,2054.7781147013447 859.0967883828258,2113.8539045448224 906.3570741108238,2188.683267192125 922.1108632563894,2310.772915567426 906.3570741108238,2350.2403790225508 941.8025047485623,2389.5411352505694 953.6175761805619,3047.250172558018 937.8640033767359,3315.0602611978393 1185.9820178409043,3370.1975496694904 1410.4698894410735,3405.6429803072283 1666.464690307155,3433.211624543054 1942.1513490071488,3468.6570551807927 2410.81873369966,3500.1696915369084 2836.16390135252,3586.8086348677466 2824.348613578781,818.1265437523296\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "819f6aa6-f43b-40f5-b52a-5657d6716edc",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "building",
+        "properties": {
+          "name": "Les Halles",
+          "identifier": "https://www.wikidata.org/wiki/Q1959442",
+          "date": [
+            1896,
+            null
+          ],
+          "scope": "facade"
+        },
+        "created": "2025-11-21T11:29:38.000Z",
+        "modified": "2025-11-21T11:29:56.496Z"
+      }
+    ],
+    "created": "2025-11-21T11:29:34.519Z",
+    "creator": {
+      "isGuest": true,
+      "id": "ZQMDfU6e3yNbDyzFadzH"
+    },
+    "modified": "2025-12-23T14:15:08.332Z"
+  }
+]

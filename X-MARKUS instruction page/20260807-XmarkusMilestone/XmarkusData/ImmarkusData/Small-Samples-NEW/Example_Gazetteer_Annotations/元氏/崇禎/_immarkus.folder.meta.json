@@ -1,0 +1,30 @@
+{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "type": "Annotation",
+  "id": "768eb514-fea4-49f2-a998-85a8fc4e71cb",
+  "body": {
+    "source": "Gazetteer",
+    "properties": {
+      "source_title_ch": "元氏縣志",
+      "source_title_py": "Yuanshi Xian Zhi",
+      "source_title_en": "County Gazetteer of Yuanshi",
+      "source_author": [
+        "張慎學",
+        "智鋌"
+      ],
+      "CBDB": "131679",
+      "publication_time": "1642",
+      "reprint": "no",
+      "place_covered": "元氏縣",
+      "TGAZ_cv": "https://maps.cga.harvard.edu/tgaz/placename/hvd_44989",
+      "genre": "gazetteer",
+      "type": "print",
+      "format": "woodblock print",
+      "data_source": "中國方志庫",
+      "data_source_url": "http://server.wenzibase.com/spring/front/read",
+      "language": "chinese",
+      "institution_dg": "北京愛如生數字化技術研究中心"
+    },
+    "purpose": "describing"
+  }
+}

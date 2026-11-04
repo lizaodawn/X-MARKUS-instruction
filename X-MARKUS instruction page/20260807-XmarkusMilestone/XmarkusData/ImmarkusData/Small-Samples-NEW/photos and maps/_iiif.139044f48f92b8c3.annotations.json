@@ -1,0 +1,111 @@
+[
+  {
+    "id": "69ddf4d4-a2fd-4034-8c6a-e0abe30f3114",
+    "target": {
+      "source": "iiif:139044f48f92b8c3:1304788724",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"2461.2083511964647,1280.0751717477244 2445.3229175684346,1384.2649276021573 2454.6672902908053,1395.478174869002 2532.2255838864817,1392.674863052291 2549.5126734228675,1386.1338021466313 2548.5782361506303,1373.518898971431 2539.701082064378,1377.2566480603793 2535.96333297543,1338.9447198986595 2508.864652080555,1329.1331285401704 2507.930214808318,1297.3622612841102 2493.446437088643,1299.698354464703 2492.044781180288,1332.4036589930004 2475.224910280021,1331.0020030846447 2475.224910280021,1331.0020030846447 2475.224910280021,1331.0020030846447 2475.224910280021,1331.0020030846447 2475.224910280021,1331.0020030846447\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "bda4a038-f4dc-44b7-985b-710af307aa40",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "church",
+        "properties": {
+          "name": "saint_peter's_church",
+          "URL": "https://en.wikipedia.org/wiki/Saint_Peter%27s_Church,_Leuven",
+          "color": "#a27b62"
+        },
+        "created": "2025-04-01T08:21:12.269Z"
+      }
+    ],
+    "created": "2025-04-01T08:22:18.047Z",
+    "creator": {
+      "isGuest": true,
+      "id": "_KKAAPHd5Eet47XaM_Ho"
+    }
+  },
+  {
+    "id": "e0c0e84d-1abc-4163-be3a-5ea9a1872050",
+    "target": {
+      "source": "iiif:139044f48f92b8c3:1304788724",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"2475.9489094354553,2024.8808942328387 2463.4791434555395,2056.6221167271688 2465.746373633706,2097.4322599341644 2494.0867508607867,2097.4322599341644 2498.6212112171193,2088.3633392214983 2496.353981038953,2043.0187356581698\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "ba5d0635-6cdb-4c85-bb01-720c52e759b4",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate",
+        "created": "2025-04-01T08:32:31.924Z"
+      }
+    ],
+    "created": "2025-04-01T08:31:59.684Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lpZlOJlmLAOQpzKa3cpq"
+    }
+  },
+  {
+    "id": "744f1278-8367-433a-9cf9-af7536c57c3d",
+    "target": {
+      "source": "iiif:139044f48f92b8c3:1304788724",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"2919.1924092669924,1660.9904506371263 2902.188182930744,1674.593831706125 2896.520107485328,1702.9342089332054 2899.9209527525777,1721.072050358537 2913.5243338215764,1722.20566544762 2930.5285601578244,1693.8652882205397\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "49435353-3ec9-4046-b8e4-826f00de238e",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate",
+        "created": "2025-04-01T08:32:47.020Z"
+      }
+    ],
+    "created": "2025-04-01T08:32:44.912Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lpZlOJlmLAOQpzKa3cpq"
+    }
+  },
+  {
+    "id": "e6617c2a-ab65-4d46-832a-1dec80140d18",
+    "target": {
+      "source": "iiif:139044f48f92b8c3:1304788724",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"2106.5356422445693,1932.0154775269232 2119.6561872571065,1932.6715047775501 2129.4965960165096,1952.3523222963559 2125.5604325127483,1972.0331398151616 2112.439887500211,1972.6891670657885 2097.3512607357934,1962.848758306386 2093.415097232032,1935.2956137800575\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "06e83345-bb5a-4e62-acc1-a155d10fd079",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall_gate",
+        "created": "2025-04-01T08:33:07.157Z"
+      }
+    ],
+    "created": "2025-04-01T08:33:05.142Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lpZlOJlmLAOQpzKa3cpq"
+    }
+  }
+]

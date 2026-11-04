@@ -1,0 +1,872 @@
+[
+  {
+    "id": "fb45dbfc-4619-4d31-a306-bf4620657efb",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"31.9403119314958,141.05224769781032 1090.6590997453982,116.26618926930497 1090.6590997453982,84.39836908380883 1193.3442477685585,38.367144248841115 1313.7336701761378,73.77577473702995 1349.1422189449768,169.37917586126346 1402.2552798272536,311.0138018204645 1451.8273669681366,417.2397750043813 1515.5629924810655,473.8936016151599 1582.8394728708781,523.465659039916 1586.3803277477618,615.5282424324248 1657.1976630144577,604.9056183695185 1685.5245020295288,682.8658129395712 1951.0894498473845,689.88637314375 1951.0894498473845,902.338200647074 1653.6566892730643,909.3794405046064 1667.8201087805996,944.8286968986995 1586.3802088832517,934.2061917003028 1582.839354006368,2396.5837727046965 1586.3802088832517,2446.1557409810703 1575.7576442526006,2598.413095009624 1423.5004090885568,2715.261662540319 1313.7335513116286,2669.2304302763205 1299.5143289085504,2566.5450445241404 488.7118094107356,2570.086018265534 449.7622869005036,2580.708464031676 690.5411911479177,2839.1919398247837 354.15890806336574,2839.191939824783 280.11273840117826,2711.40895500645 219.53870749064347,2775.597414689624 173.57483388425115,2803.7831533269255 42.56278741376515,2807.3241270683184\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "507e299c-0945-4857-a038-30b0cb856598",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall",
+        "properties": {
+          "id": "yuanshi_cheng",
+          "name": "元氏城",
+          "location": "元氏縣",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_44989",
+          "pattern": "plain"
+        },
+        "created": "2024-06-25T13:51:09.876Z"
+      }
+    ],
+    "created": "2024-04-08T14:50:24.117Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lMIEWFLhqd7SAHNn7Ba6"
+    },
+    "modified": "2024-06-25T14:43:49.058Z"
+  },
+  {
+    "id": "45425479-93d4-4009-95eb-067a436f23cb",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1541.258957204764,653.2437550310941 1580.601954259737,616.3597675187557 1666.6646468183924,613.9007992485206 1718.3021963177468,714.71713633899 1718.3021963177468,842.5817116780548 1659.2876181904894,931.1032486897476 1585.5198082554093,918.8086962453659 1541.258957204764,881.9246261882291\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "e25338ea-fc0e-4c9d-b98c-32470fe4e4aa",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "tower",
+        "properties": {
+          "direction": "east"
+        },
+        "created": "2024-06-25T13:58:31.540Z"
+      }
+    ],
+    "created": "2024-04-08T14:53:42.349Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lMIEWFLhqd7SAHNn7Ba6"
+    }
+  },
+  {
+    "id": "cc57f3be-52a1-43d9-baa2-4d84615767b7",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1116.9201975626142,263.8791549519019 1118.969303394144,192.16024448635605 1073.88883752582,177.81646927198008 1071.83973169429,147.07977861803215 1120.8278342580595,163.47265966393815 1110.7859536950025,87.64179191548561 1202.9828488488702,48.722354767932174 1278.8000397648082,71.26258770209414 1350.519019017686,163.47265966393815 1364.862691051064,216.749583252048 1305.4384843620298,292.56667098698796 1184.540827577768,300.76316310044007\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "90e022e5-c4eb-4022-9397-7d1f448b4e92",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "tower",
+        "properties": {
+          "direction": "northeast"
+        },
+        "created": "2024-06-25T14:14:37.009Z"
+      }
+    ],
+    "created": "2024-04-08T14:54:07.762Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lMIEWFLhqd7SAHNn7Ba6"
+    }
+  },
+  {
+    "id": "6a357162-3171-4726-982a-c05aceba61aa",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1348.177046514357,2428.4479658935747 1349.6000366751418,2508.1356537424217 1326.8321463336056,2533.7494766365467 1329.678126655175,2587.8232938222886 1331.1011168159598,2653.2811278322692 1429.2877722929693,2693.1248523342415 1577.279226704386,2587.8232938222886 1567.3182478099125,2488.64745764868 1577.279226704386,2431.137436965383 1510.3984503026013,2434.1399265367136 1511.8222968993357,2361.5653810212207 1419.3268411674765,2370.1051782254785\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "aa3042cb-58b8-4747-bbdf-6b21e558b971",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "tower",
+        "properties": {
+          "name": "魁星樓",
+          "direction": "southeast"
+        },
+        "created": "2024-06-25T14:15:02.253Z"
+      }
+    ],
+    "created": "2024-04-08T14:54:38.718Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lMIEWFLhqd7SAHNn7Ba6"
+    }
+  },
+  {
+    "id": "a657f0ec-8b67-4cb1-a151-4a4355fb6d8e",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"399.04143868691034,2524.3221674943393 440.0237272858402,2560.1816341916674 426.3629644195303,2667.759976960876 361.47438379664044,2725.8181474892226 269.26439208668376,2730.940969390824 226.5745439562003,2678.0055634413025 248.77327644860696,2625.070100169004 344.3985018672236,2536.2753421677075\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "861c7903-0e22-4b79-add2-5818bd9efbb5",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "tower",
+        "properties": {
+          "direction": "south"
+        },
+        "created": "2024-06-25T14:15:15.402Z"
+      }
+    ],
+    "created": "2024-04-08T14:55:07.577Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lMIEWFLhqd7SAHNn7Ba6"
+    }
+  },
+  {
+    "id": "cf524454-5728-4c57-936f-65c8c999d962",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1316.0190497898634,632.3088320828588 1508.9770314972616,686.9517689025455 1508.9770314972616,886.7402753500403 1310.8962852110383,922.5997420473686\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "e6eb4fdb-91ba-4be0-a41c-e3ab170f4eaf",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "gate",
+        "properties": {
+          "name": "長春門",
+          "direction": "east"
+        },
+        "created": "2024-04-08T14:55:33.529Z"
+      }
+    ],
+    "created": "2024-04-08T14:55:28.555Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lMIEWFLhqd7SAHNn7Ba6"
+    }
+  },
+  {
+    "id": "b1e0a4f6-65b4-4558-be33-d60d290f17d8",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"48.984712678333814,2481.6324770014917 48.984712678333814,2534.5678829510134 199.25293223941375,2599.4564062511267 247.0655162873337,2526.0298846635283 289.75539307920536,2493.5856516748595 337.56797712712535,2469.6793023281234 317.07686148904867,2278.428794168113 279.5098065987787,2286.966849778375 229.98957703514046,2305.7503772235104 190.71493395192869,2326.2414928615867 141.19476171106706,2356.9781376573137 100.2125304349137,2397.9604262562434 72.89100470229378,2440.650245725338\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "2b175a60-5ef9-4d1e-9d2c-1a2169d48e6d",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "created": "2024-04-08T14:56:32.394Z",
+        "source": "gate",
+        "properties": {
+          "direction": "south"
+        }
+      }
+    ],
+    "created": "2024-04-08T14:56:25.078Z",
+    "creator": {
+      "isGuest": true,
+      "id": "lMIEWFLhqd7SAHNn7Ba6"
+    }
+  },
+  {
+    "id": "664818a9-5c6b-4ec6-82a3-23c9381763fc",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1539.585479811788,137.8082867469442 1494.0704927053791,198.49511129546968 1531.9997759534326,262.9747877731728 1628.7193145436208,262.9747877731728 1666.6485977916745,196.59868533088087 1619.2370892261422,130.22239189951958\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "02a52355-e52b-4a8c-99df-0fca5a571acd",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_yili_tan",
+          "name": "邑厲壇",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T13:54:32.638Z"
+      },
+      {
+        "id": "dd0c63b5-e2ec-4be5-b080-862d881cfd93",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "outside\nCity ghosts",
+        "created": "2024-06-25T13:58:24.396Z"
+      }
+    ],
+    "created": "2024-04-18T10:01:08.299Z",
+    "creator": {
+      "isGuest": true,
+      "id": "MNHWFXeNDMqaVNsqpAba"
+    }
+  },
+  {
+    "id": "0aede70e-c8f9-466a-8975-43672557da75",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1746.3000162169594,420.38129415368843 1693.199134263126,462.1035248254544 1740.6106428286582,536.0655698624382 1833.5373294896692,536.0655698624382 1882.8453595143249,471.5858456374678 1812.6763573955884,420.38129415368843\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "1d3a0219-e6fd-45ba-96b6-90c2cc6aa70c",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_mashen_miao",
+          "name": "馬神廟",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T13:53:13.285Z"
+      },
+      {
+        "id": "161ef5e3-f778-4d1d-8b6d-ce333cb836ee",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "outside\ntemple of the horse king",
+        "created": "2024-06-25T13:54:15.304Z"
+      }
+    ],
+    "created": "2024-04-18T10:01:19.975Z",
+    "creator": {
+      "isGuest": true,
+      "id": "MNHWFXeNDMqaVNsqpAba"
+    }
+  },
+  {
+    "id": "1c38bd27-b6da-4085-b02f-cb9ea40da937",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"944.0960765976707,2662.00126087719 1031.3333898703804,2663.897591347244 1088.2273147424607,2735.963305914174 1063.573299730133,2775.7890151268166 940.3031291739586,2779.5817715614594 892.8915251138915,2716.998568795612 892.8915251138915,2716.998568795612 892.8915251138915,2716.998568795612 892.8915251138915,2716.998568795612 892.8915251138915,2716.998568795612\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "09afe32d-72ed-4e5b-a339-c50adf875393",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_guanwang_miao",
+          "name": "関王廟",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T14:15:46.503Z"
+      },
+      {
+        "id": "3eddc301-7bf5-4d61-aa07-3811b6f0cf9f",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "outside\ntemple of Guanggong/ Guangzu",
+        "created": "2024-06-25T14:18:31.358Z"
+      }
+    ],
+    "created": "2024-04-18T10:01:35.335Z",
+    "creator": {
+      "isGuest": true,
+      "id": "MNHWFXeNDMqaVNsqpAba"
+    }
+  },
+  {
+    "id": "18d415dd-107e-48bf-8711-da92739247b3",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1269.1459650035715,1376.520631268291 1319.7184381621778,1343.3325402577557 1373.4514621042074,1387.5832752192835 1387.6748955749604,1465.0223399276833 1332.361437083661,1509.2730748892116 1275.467544043092,1465.0223399276833\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "270e69c7-2ed0-40a0-895b-303b02fb8647",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_sanguan_miao",
+          "name": "三官廟",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T14:22:44.259Z"
+      },
+      {
+        "id": "ae1aca7e-a9bc-49d8-bf16-306841d50221",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside\nThree officials",
+        "created": "2024-06-25T14:23:40.742Z"
+      }
+    ],
+    "created": "2024-04-18T10:03:37.534Z",
+    "creator": {
+      "isGuest": true,
+      "id": "VkBZMEseoCdMaoOSwjCz"
+    }
+  },
+  {
+    "id": "416dec12-793c-4ab3-ad34-ec878f7b3a07",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1149.036759040471,1065.1844949368729 1221.7345201010623,1062.0237054171128 1273.8872686513803,1136.3018214481945 1231.2168090815644,1186.874294606801 1139.5544700599694,1186.874294606801 1090.5625110294113,1123.6587429479325\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "95ac1b42-38c3-4e97-9116-5c8cf8776be9",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "office",
+        "properties": {
+          "id": "yuanshi_yangji_yuan",
+          "name": "養濟院",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T14:46:24.596Z"
+      },
+      {
+        "id": "a708dda4-3739-4821-a3e4-5bcbccc2d4e5",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside\npoor relief",
+        "created": "2024-06-25T14:50:51.084Z"
+      }
+    ],
+    "created": "2024-04-18T10:04:13.131Z",
+    "creator": {
+      "isGuest": true,
+      "id": "VkBZMEseoCdMaoOSwjCz"
+    }
+  },
+  {
+    "id": "51fa166b-6aad-41dc-8204-e8184465ce88",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"265.67256004400696,1505.7164950101865 575.1754082140275,1503.4407838526797 577.4512339649756,2090.5859510204205 281.6028819268779,2083.758702954459\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "8570ba7f-8be3-4c9c-8ca0-de49e0f82ac2",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_mingtou_tang",
+          "name": "明偷堂",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T15:09:15.592Z"
+      },
+      {
+        "id": "03cc00ce-fc69-4314-8090-cf0e4ef92938",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside",
+        "created": "2024-06-25T15:10:40.430Z"
+      }
+    ],
+    "created": "2024-04-18T10:19:29.573Z",
+    "creator": {
+      "isGuest": true,
+      "id": "6uScmigNKtnLIVgAY4Wl"
+    }
+  },
+  {
+    "id": "061142a4-306d-4a97-b398-5ecaebd2eb38",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:591.1057300968984,1505.7164950101865,366.3967157453802,578.0422079442724"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "205fe836-8c22-448a-ac4c-497b73d3ba00",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_wen_miao",
+          "name": "文廟",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T14:59:39.858Z"
+      },
+      {
+        "id": "e7cde53a-17ec-46f3-9e6c-2e862813bd91",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside",
+        "created": "2024-06-25T15:00:18.681Z"
+      }
+    ],
+    "created": "2024-04-18T10:19:48.203Z",
+    "creator": {
+      "isGuest": true,
+      "id": "6uScmigNKtnLIVgAY4Wl"
+    }
+  },
+  {
+    "id": "11c34ec8-e5f7-419c-9cf6-a2e198b13aa4",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:975.708478882656,1505.7164950101865,345.9149715474962,571.2149598783112"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "dd3eab51-eb20-40fa-bed2-eb858de1cbdc",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_wenqing_ci",
+          "name": "文清祠",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T14:51:58.682Z"
+      },
+      {
+        "id": "ca63bcf8-ca1e-4fb2-8536-d122d0c12942",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside ",
+        "created": "2024-06-25T14:55:50.315Z"
+      }
+    ],
+    "created": "2024-04-18T10:19:53.355Z",
+    "creator": {
+      "isGuest": true,
+      "id": "6uScmigNKtnLIVgAY4Wl"
+    }
+  },
+  {
+    "id": "922ede21-346a-4d9a-a25e-1449e7355ee3",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:470.49063228677613,483.901902250569,223.02404798642561,882.9934619091175"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "a67601e7-5d2f-4963-9d59-791ce28d8938",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "police_station",
+        "properties": {
+          "id": "yuanshi_beicha_yuan",
+          "name": "北察院",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T15:11:01.489Z"
+      },
+      {
+        "id": "4f8b84b8-b963-4760-8a65-f773f9d2bef2",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside\nInvestigation Bureau",
+        "created": "2024-06-27T12:08:07.168Z"
+      }
+    ],
+    "created": "2024-04-18T10:20:09.373Z",
+    "creator": {
+      "isGuest": true,
+      "id": "6uScmigNKtnLIVgAY4Wl"
+    }
+  },
+  {
+    "id": "d6fc51d4-6bd3-4f22-92dd-9b5bc827658c",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:226.98472550902468,493.0048614740369,223.0240479864256,416.4635071449408"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "2ddcf4a4-c5b8-45da-a3b1-9704f8d877af",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "obj_other",
+        "properties": {
+          "id": "yuanshi_xiancheng_zhai",
+          "name": "縣丞宅",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-27T13:09:10.831Z"
+      },
+      {
+        "id": "184e3fe3-7b19-46a7-bc64-5704df7bbdce",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside\ncounty magistrate assistant's residence",
+        "created": "2024-06-27T13:09:58.739Z"
+      }
+    ],
+    "created": "2024-04-18T10:20:22.974Z",
+    "creator": {
+      "isGuest": true,
+      "id": "6uScmigNKtnLIVgAY4Wl"
+    }
+  },
+  {
+    "id": "c2bddac3-eb7e-45aa-a592-bcba6e47e99d",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:249.7422954578569,943.604723542226,218.47262567141266,430.11811787030535"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "b016ccc2-1af5-4f31-9fa5-4abd8c01670c",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "obj_other",
+        "properties": {
+          "id": "yuanshi_dianshi_zhai",
+          "name": "典史宅",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-27T13:07:55.227Z"
+      },
+      {
+        "id": "2ac176d3-0755-4eeb-ab64-47b4e11e12ce",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside\ndistrict jailor's residence ?",
+        "created": "2024-06-27T13:08:49.815Z"
+      }
+    ],
+    "created": "2024-04-18T10:20:28.971Z",
+    "creator": {
+      "isGuest": true,
+      "id": "6uScmigNKtnLIVgAY4Wl"
+    }
+  },
+  {
+    "id": "3f385d9e-f8c3-42ed-aac6-1acec8413f16",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:193.6894265505816,284.67751713970637,151.71703749767997,130.8559937826979"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "660e980d-3b4f-4a1d-b632-a19f5caa099c",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_longwang_tang",
+          "name": "龍王堂",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T14:44:08.769Z"
+      },
+      {
+        "id": "8dd59140-b738-41ee-be0a-0228b50071c1",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside\ndragon king hall",
+        "created": "2024-06-25T14:45:47.706Z"
+      }
+    ],
+    "created": "2024-04-18T10:21:28.413Z",
+    "creator": {
+      "isGuest": true,
+      "id": "6uScmigNKtnLIVgAY4Wl"
+    }
+  },
+  {
+    "id": "6f9a8c30-5dc2-458d-b2c3-78681bb0f1c6",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:1274.6738081310411,2071.1460132656634,98.61606004931195,142.23481218020106"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "ab735f7f-0c83-48c6-9529-7f6aa5a0c5c0",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "palace",
+        "properties": {
+          "id": "yuanshi_bixia_xinggong",
+          "name": "碧霞行宮",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T14:39:54.181Z"
+      },
+      {
+        "id": "2c730592-8801-4a53-8e47-62bb6baf055d",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside \ntemporary imperial residence?",
+        "created": "2024-06-25T14:41:18.825Z"
+      }
+    ],
+    "created": "2024-04-18T10:21:49.633Z",
+    "creator": {
+      "isGuest": true,
+      "id": "6uScmigNKtnLIVgAY4Wl"
+    }
+  },
+  {
+    "id": "b733bf8f-177a-4ba2-a719-e33609d8310f",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"367.13990451612136,1967.777678716534 333.7940352454132,1997.788871508604 367.13990451612136,2042.249881283603 467.1771391967161,2042.249881283603 484.96148340567106,1991.1196678039403 441.6120324568847,1964.4430768642019\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "41efbdb6-60a8-4288-935a-db1cfd0da296",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "school",
+        "properties": {
+          "id": "yuanshi_ruxue",
+          "name": "儒學",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T15:07:34.316Z"
+      }
+    ],
+    "created": "2024-04-29T10:14:53.053Z",
+    "creator": {
+      "isGuest": true,
+      "id": "4c03TcWXajOgJGEsI0XD"
+    }
+  },
+  {
+    "id": "2f48edb4-5332-4d5a-b8e3-578c0ee05ca3",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1256.3598015108778,1757.6994411115008 1241.909984527949,1765.4801290160715 1241.909984527949,1782.1529890251195 1211.8988663621844,1803.2719723995597 1201.8951354314947,1915.5373530182412 1229.6832105711394,1914.424459523904 1228.5717263712327,1996.6772753692378 1200.783576605282,2015.5732530307116 1205.2296626575207,2072.260962136214 1323.0513907996822,2074.4840051623337 1315.2707028951113,2015.5732530307116 1295.263241033731,2000.0118772215699 1293.040123381306,1912.2014164977845 1308.6014991904472,1915.5359064106576 1301.9322954857837,1799.9374078603805 1270.0721631979009,1777.002065321691 1273.4844314141205,1764.904018730813 1266.6598949816807,1758.3896875531734\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "809231e3-8124-4f76-9efc-ac7a9102687e",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "name": "文昌",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T14:56:06.641Z"
+      }
+    ],
+    "created": "2024-04-29T10:16:20.175Z",
+    "creator": {
+      "isGuest": true,
+      "id": "4c03TcWXajOgJGEsI0XD"
+    }
+  },
+  {
+    "id": "af51a916-3c37-45e4-bff1-880df794cc82",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1052.8050951755622,495.59403685866283 1021.3227976703627,538.8101007483036 1071.5892375403425,602.8338473624217 1150.0184641565345,606.0351905128542 1185.2315731521458,538.8101544792438 1151.6190014044003,497.19468156840895\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "5cda1e89-471a-4643-aa98-5b705689a86d",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_baiyi_tang",
+          "name": "白衣堂",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-25T14:33:57.330Z"
+      },
+      {
+        "id": "35adcc8a-eca2-4a97-998a-dd2d7292e0d4",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside\nbuddhist?",
+        "created": "2024-06-25T14:35:01.249Z"
+      }
+    ],
+    "created": "2024-04-29T10:26:04.435Z",
+    "creator": {
+      "isGuest": true,
+      "id": "4c03TcWXajOgJGEsI0XD"
+    }
+  },
+  {
+    "id": "a0c04a5a-7f42-46e5-9fae-55ef547fd9fb",
+    "target": {
+      "source": "崇禎元氏縣志_p29.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"789.8843655754534,522.8041909602442 847.5058557362281,519.6030090026323 903.5267011872567,569.2213830765567 879.5177827742273,620.440563053048 777.0796377450058,620.440563053048 737.0647020820365,570.8220815172431\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "b7433515-eff0-4e24-a453-ea9e642ce6d1",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "id": "yuanshi_yunqi_si",
+          "name": "雲祈寺",
+          "location": "元氏縣"
+        },
+        "created": "2024-06-27T12:09:42.053Z"
+      },
+      {
+        "id": "b6ff7949-5a3e-46f5-914e-99d6cd6f8646",
+        "type": "TextualBody",
+        "purpose": "commenting",
+        "value": "inside",
+        "created": "2024-06-27T12:12:55.434Z"
+      }
+    ],
+    "created": "2024-04-29T10:26:17.678Z",
+    "creator": {
+      "isGuest": true,
+      "id": "4c03TcWXajOgJGEsI0XD"
+    }
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "7c5daf44-9835-4964-bdc9-1b05384e0fc2",
+    "target": {
+      "source": "286232bb8d5bc300"
+    },
+    "body": {
+      "source": "Gazetteer",
+      "properties": {
+        "image_title_ch": "縣治之圖",
+        "image_title_py": "Xianzhi zhitu",
+        "image_title_en": "Map of the county seat",
+        "volume": "图",
+        "page": "2a",
+        "image_format": ".png",
+        "pixel_h": "2855",
+        "pixel_w": "1959"
+      },
+      "purpose": "describing"
+    }
+  }
+]

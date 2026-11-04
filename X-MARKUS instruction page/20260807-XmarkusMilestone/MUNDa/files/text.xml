@@ -1,0 +1,72 @@
+<doc_content><Paragraph>
+<Comment>
+<CommentItem Category="default">research note: indication of repair intervals, a bridge requires small repairs after 3-4 years, large repairs after 5-6 years, or complete renewal after 8-9 years. Leaving the bridge unrepaired for more than 10 years will result in collapse/destruction.</CommentItem>
+<CommentItem Category="default">盧 紳 江西南昌縣舉人八年八月任 蔡世鈸 江西玉山縣舉人九年十月由平和縣 調任<br/><br/>Magistrate Lu Shen 盧紳 became magistrate of Zhangping in Daoguang 8 (公元1828年:清宣宗)<br/>Magistrate Cai Shibo 蔡世鈸 became magistrate of Zhangping in Daoguang 9 (公元1829年:清宣宗) (See 漳平縣志 36626, 清道光 p. 344)</CommentItem>
+</Comment>
+道光_漳平縣志_卷首_補編_王之楫_浮橋記<br/><LocName RefId="hvd_40325" Term="hvd_40325">漳平</LocName><br/><Udef_work TagForConversion="{&quot;markus&quot;:&quot;work&quot;}">浮橋記</Udef_work>	<PersonName CbdbId="cbdb_王之楫,fl1828,r漳平" Term="cbdb_王之楫,fl1828,r漳平" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">王之楫</PersonName><br/><Udef_object RefId="markus_zhangping_wenchang_qiao" TagForConversion="{&quot;markus&quot;:&quot;object&quot;}" Term="markus_zhangping_wenchang_qiao">文昌橋</Udef_object>爲<LocName>漳南</LocName><LocName>龍江</LocName>虹渡自<Udef_action RefId="markus_create" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_create">創</Udef_action>爲浮梁鋪以<Udef_material RefId="markus_wood_plank" TagForConversion="{&quot;markus&quot;:&quot;material&quot;}" Term="markus_wood_plank">木板</Udef_material>維以<Udef_material RefId="markus_chain" TagForConversion="{&quot;markus&quot;:&quot;material&quot;}" Term="markus_chain">鐵鏈</Udef_material>翼以<Udef_obj_part RefId="markus_handrail" TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}" Term="markus_handrail">扶欄</Udef_obj_part>俾千萬人往過來續履險如夷者伊誰之賜歟葢賢<Office Type="officialTitle" RefId="markus_magistrate" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">司牧</Office>留心<Udef_soccat RefId="markus_people" TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}" Term="markus_people">民</Udef_soccat>瘼慈航普濟也特溪滙<LocName RefId="hvd_40324" Term="hvd_40324">巖</LocName><LocName RefId="hvd_40285" Term="hvd_40285">寜</LocName>兩州縣之水濶岸洪波橋横亘其中<Udef_action_cause RefId="markus_long_time" TagForConversion="{&quot;markus&quot;:&quot;action_cause&quot;}" Term="markus_long_time">風翻雨蕩</Udef_action_cause><Udef_action_cause RefId="markus_long_time" TagForConversion="{&quot;markus&quot;:&quot;action_cause&quot;}" Term="markus_long_time">日引月長</Udef_action_cause>勢必有飄流之失腐壞之虞以故<Udef_duration RefId="markus_3~4年" TagForConversion="{&quot;markus&quot;:&quot;duration&quot;}" Term="markus_3~4年">三四年</Udef_duration>小<Udef_action RefId="markus_renovate" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_renovate">修</Udef_action><Udef_duration RefId="markus_5~6年" TagForConversion="{&quot;markus&quot;:&quot;duration&quot;}" Term="markus_5~6年">五六年</Udef_duration>大<Udef_action RefId="markus_renovate" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_renovate">修</Udef_action>率<Udef_duration RefId="markus_8~9年" TagForConversion="{&quot;markus&quot;:&quot;duration&quot;}" Term="markus_8~9年">八九年</Udef_duration>間<Udef_action RefId="markus_reconstruct" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_reconstruct">新</Udef_action>而<Udef_action RefId="markus_construct" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_construct">造</Udef_action>之其或過十年以外則<Udef_action RefId="markus_destroy" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_destroy">毁缺</Udef_action><Udef_action RefId="markus_collapse" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_collapse">傾欹</Udef_action><Udef_soccat RefId="markus_traveler" TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}" Term="markus_traveler">行者</Udef_soccat>殊慄慄危懼矣自非心殷保障爲之引翼其間鮮不有及溺之患者歲<Date RefId="公元1828年:清宣宗" Term="公元1828年:清宣宗">戊子</Date>秋<LocName RefId="hvd_30144" Term="hvd_30144">江右</LocName><PersonName CbdbId="cbdb_盧紳,fl1828,o漳平" Term="cbdb_盧紳,fl1828,o漳平" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">盧侯</PersonName>蒞<LocName RefId="hvd_40325" Term="hvd_40325">平</LocName>邑下車觀風善俗循行城郭山川經是橋乘輿以過心摇摇若不克安坐於是舉此心而推諸<Udef_soccat RefId="markus_elder" TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}" Term="markus_elder">老者</Udef_soccat><Udef_soccat RefId="markus_child" TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}" Term="markus_child">穉者</Udef_soccat>以及<Udef_soccat RefId="markus_porter" TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}" Term="markus_porter">負戴者</Udef_soccat>何能安而行之歸而查問知斯橋歷十餘年矣遂慨然切<Udef_action RefId="markus_rebuild" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_rebuild">更新</Udef_action>之志倡<Udef_labor_cost_origin RefId="markus_donate" TagForConversion="{&quot;markus&quot;:&quot;labor_cost_origin&quot;}" Term="markus_donate">捐</Udef_labor_cost_origin>清俸<Udef_cost RefId="markus_100金" TagForConversion="{&quot;markus&quot;:&quot;cost&quot;}" Term="markus_100金">百金</Udef_cost>邑<Udef_soccat RefId="markus_gentry" TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}" Term="markus_gentry">紳士</Udef_soccat>聞之歡欣鼓無不匝月四里樂<Udef_labor_cost_origin RefId="markus_donate" TagForConversion="{&quot;markus&quot;:&quot;labor_cost_origin&quot;}" Term="markus_donate">輸</Udef_labor_cost_origin>公舉<Udef_soccat RefId="markus_overseer" TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}" Term="markus_overseer">董事</Udef_soccat>分任之事多仍舊惟<Udef_material RefId="markus_chain" TagForConversion="{&quot;markus&quot;:&quot;material&quot;}" Term="markus_chain">鏈</Udef_material>增以<Udef_material RefId="markus_double_plank" TagForConversion="{&quot;markus&quot;:&quot;material&quot;}" Term="markus_double_plank">雙板</Udef_material>加以厚<Udef_obj_part RefId="markus_railing" TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}" Term="markus_railing">欄</Udef_obj_part>樹以高取其鎭定堅緻也謀之臧辦之亟<Udef_duration RefId="markus_x1月" TagForConversion="{&quot;markus&quot;:&quot;duration&quot;}" Term="markus_x1月">不數月</Udef_duration>厥功<Udef_action RefId="markus_almost_complete" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_almost_complete">垂成</Udef_action>而<PersonName CbdbId="cbdb_蔡世鈸,fl1829,o漳平" Term="cbdb_蔡世鈸,fl1829,o漳平" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">蔡侯</PersonName>奉調來代有斯義舉未克圖終<LocName RefId="hvd_40325" Term="hvd_40325">平</LocName>之人竊然慮之顧<PersonName CbdbId="cbdb_盧紳,fl1828,o漳平" Term="cbdb_盧紳,fl1828,o漳平" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">盧侯</PersonName>以<LocName RefId="hvd_40325" Term="hvd_40325">平</LocName><Udef_soccat RefId="markus_people" TagForConversion="{&quot;markus&quot;:&quot;soccat&quot;}" Term="markus_people">民</Udef_soccat>之心為心而<PersonName CbdbId="cbdb_蔡世鈸,fl1829,o漳平" Term="cbdb_蔡世鈸,fl1829,o漳平" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">蔡侯</PersonName>即以<PersonName CbdbId="cbdb_盧紳,fl1828,o漳平" Term="cbdb_盧紳,fl1828,o漳平" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">盧侯</PersonName>之心爲心凡<PersonName CbdbId="cbdb_盧紳,fl1828,o漳平" Term="cbdb_盧紳,fl1828,o漳平" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">盧侯</PersonName>心有所未竟<PersonName CbdbId="cbdb_蔡世鈸,fl1829,o漳平" Term="cbdb_蔡世鈸,fl1829,o漳平" TagForConversion="{&quot;markus&quot;:&quot;fullname&quot;}">蔡侯</PersonName>無不體其意集其成直不啻取諸懷而予之也夫莫爲之前美弗彰莫爲之後盛弗傳兩賢<Office Type="officialTitle" RefId="markus_marquis" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">侯</Office>會逄其適而後先相濟不洵卓卓乎美益彰盛永傳歟是<Udef_labor_cost_origin RefId="markus_corvee" TagForConversion="{&quot;markus&quot;:&quot;labor_cost_origin&quot;}" Term="markus_corvee">役</Udef_labor_cost_origin><Udef_action RefId="markus_start" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_start">經始</Udef_action>於<Date RefId="公元1829年4月:清宣宗" Term="公元1829年4月:清宣宗">九年三月</Date><Udef_action RefId="markus_complete" TagForConversion="{&quot;markus&quot;:&quot;action&quot;}" Term="markus_complete">落成</Udef_action>於<Date RefId="公元1829年5月17日:清宣宗" Term="公元1829年5月17日:清宣宗">復月望日</Date>永清碧鑑一道長虹暎帶於波光水色之間天然圖畫也<Udef_work RefId="markus_樂府詩集" TagForConversion="{&quot;markus&quot;:&quot;work&quot;}" Term="markus_樂府詩集">樂歌</Udef_work>有文昌氣似珠太史明如鏡二語爲斯橋<Udef_obj_meaning RefId="markus_sing" TagForConversion="{&quot;markus&quot;:&quot;obj_meaning&quot;}" Term="markus_sing">咏</Udef_obj_meaning>耶爲斯溪咏耶抑以頌兩<Office Type="officialTitle" RefId="markus_marquis" TagForConversion="{&quot;markus&quot;:&quot;officialTitle&quot;}">侯</Office>之明通公溥耶詩語先得心銘矣爰勒之
+<Udef_obj_part RefId="markus_stele" TagForConversion="{&quot;markus&quot;:&quot;obj_part&quot;}" Term="markus_stele">碑</Udef_obj_part>以垂不朽是爲記</Paragraph>
+<Events>
+    <Event ComarkusId="c67862cf-a766-4c45-89eb-ce4c3d71b8e1" Key="Event:0">
+    <ComarkusBundle Type="EVENT_SOURCE_TEXT">
+        <Udef_Evt_EVENT_SOURCE_TEXT RefId="#doc_title" MarkusId="#xml_metadata">漳平縣志: 浮橋記</Udef_Evt_EVENT_SOURCE_TEXT>
+    </ComarkusBundle>
+    <ComarkusBundle Type="TIME">
+        <Udef_Evt_TIME RefId="1829-04" MarkusId="cfd64c38-8d79-494d-b5d3-4618d4e28273">BEGIN/九年三月</Udef_Evt_TIME>
+        <Udef_Evt_TIME RefId="1829-05-17" MarkusId="69ac18c3-d61c-4f1d-9e48-d7c23c07cf1a">END/復月望日</Udef_Evt_TIME>
+        <Udef_Evt_TIME RefId="x1月" MarkusId="4c7e518b-6c5c-4b37-8ac1-f81345feba6f">DURATION/不數月</Udef_Evt_TIME>
+    </ComarkusBundle>
+    <ComarkusBundle Type="INITIATOR">
+        <Udef_Evt_INITIATOR RefId="marquis" MarkusId="ccd1b930-e47b-498f-a2be-c6ae4f52a13d">侯</Udef_Evt_INITIATOR>
+        <Udef_Evt_INITIATOR RefId="盧紳|fl1828|o漳平" MarkusId="a1e983c3-5b80-4c86-b184-bf632358f288">盧侯</Udef_Evt_INITIATOR>
+    </ComarkusBundle>
+    <ComarkusBundle Type="EVENT">
+        <Udef_Evt_EVENT RefId="rebuild" MarkusId="b610b24f-3607-4c8e-bebe-c26c21a1139a">RENOVATION/更新</Udef_Evt_EVENT>
+    </ComarkusBundle>
+    <ComarkusBundle Type="MATERIAL">
+        <Udef_Evt_MATERIAL RefId="chain" MarkusId="455ef138-e754-4e03-a5e7-5b051d908caf">鏈</Udef_Evt_MATERIAL>
+        <Udef_Evt_MATERIAL RefId="double_plank" MarkusId="872d8ea5-5639-4799-91f4-ca1c3bc60fcb">雙板</Udef_Evt_MATERIAL>
+    </ComarkusBundle>
+    <ComarkusBundle Type="LOCATION">
+        <Udef_Evt_LOCATION RefId="hvd_40325" MarkusId="88e3b854-e8e5-4b0e-ad9d-607cadfab220">漳平</Udef_Evt_LOCATION>
+    </ComarkusBundle>
+    <ComarkusBundle Type="OBJECT_MAIN">
+        <Udef_Evt_OBJECT_MAIN RefId="zhangping_wenchang_qiao" MarkusId="db83f218-2e33-4a23-b7db-cb759c245e1d">bridge/文昌橋</Udef_Evt_OBJECT_MAIN>
+    </ComarkusBundle>
+    <ComarkusBundle Type="EVENT_CAUSE"/>
+    <ComarkusBundle Type="SPONSOR">
+        <Udef_Evt_SPONSOR RefId="gentry" MarkusId="6e29c507-aab0-4fce-84e7-b501ff0bdaf0">紳士</Udef_Evt_SPONSOR>
+    </ComarkusBundle>
+    <ComarkusBundle Type="COST">
+        <Udef_Evt_COST RefId="100金" MarkusId="f3db9279-9f74-4acb-8b50-7e4c41b40f1a">百金</Udef_Evt_COST>
+    </ComarkusBundle>
+    <ComarkusBundle Type="FUNDING_ORIGIN">
+        <Udef_Evt_FUNDING_ORIGIN RefId="donate" MarkusId="09c50695-3dbe-4f4a-bbad-050c3199898d">private/捐</Udef_Evt_FUNDING_ORIGIN>
+    </ComarkusBundle>
+    <ComarkusBundle Type="OBJECT_MEANING">
+        <Udef_Evt_OBJECT_MEANING RefId="sing" MarkusId="42039e40-111e-4fff-8a8c-10d3ecc3c450">咏</Udef_Evt_OBJECT_MEANING>
+    </ComarkusBundle>
+    <ComarkusBundle Type="OBJ_PART_LINKED">
+        <Udef_Evt_OBJ_PART RefId="railing" MarkusId="53ad655e-66a4-45a1-8d44-829d7bb612f7">欄</Udef_Evt_OBJ_PART>
+    </ComarkusBundle>
+    <ComarkusBundle Type="OBJ_PART_LINKED">
+        <Udef_Evt_OBJ_PART RefId="stele" MarkusId="99a62b93-05ef-4bd5-b3d2-bd119809c34f">碑</Udef_Evt_OBJ_PART>
+    </ComarkusBundle>
+</Event>
+<Udef_Event_Element>TIME/BEGIN/九年三月</Udef_Event_Element>
+<Udef_Event_Element>TIME/END/復月望日</Udef_Event_Element>
+<Udef_Event_Element>TIME/DURATION/不數月</Udef_Event_Element>
+<Udef_Event_Element>INITIATOR/侯</Udef_Event_Element>
+<Udef_Event_Element>INITIATOR/盧侯</Udef_Event_Element>
+<Udef_Event_Element>EVENT/RENOVATION/更新</Udef_Event_Element>
+<Udef_Event_Element>MATERIAL/鏈</Udef_Event_Element>
+<Udef_Event_Element>MATERIAL/雙板</Udef_Event_Element>
+<Udef_Event_Element>LOCATION/漳平</Udef_Event_Element>
+<Udef_Event_Element>OBJECT_MAIN/bridge/文昌橋</Udef_Event_Element>
+<Udef_Event_Element>SPONSOR/紳士</Udef_Event_Element>
+<Udef_Event_Element>COST/百金</Udef_Event_Element>
+<Udef_Event_Element>FUNDING_ORIGIN/private/捐</Udef_Event_Element>
+<Udef_Event_Element>OBJECT_MEANING/咏</Udef_Event_Element>
+<Udef_Event_Element>OBJ_PART/欄</Udef_Event_Element>
+<Udef_Event_Element>OBJ_PART/碑</Udef_Event_Element>
+</Events>
+</doc_content>

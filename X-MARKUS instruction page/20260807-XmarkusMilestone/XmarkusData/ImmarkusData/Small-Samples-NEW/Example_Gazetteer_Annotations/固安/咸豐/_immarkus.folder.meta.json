@@ -1,0 +1,30 @@
+{
+  "@context": "http://www.w3.org/ns/anno.jsonld",
+  "type": "Annotation",
+  "id": "70661cd7-5898-4f2a-a272-7a9775bdb867",
+  "body": {
+    "source": "Gazetteer",
+    "properties": {
+      "source_title_ch": "固安縣志",
+      "source_title_py": "Gu’an Xian Zhi",
+      "source_title_en": "County Gazetteer of Gu'an",
+      "source_author": [
+        "陳崇砥",
+        "陳福嘉"
+      ],
+      "CBDB": "82087",
+      "publication_place": "廊坊",
+      "publication_time": "1859",
+      "reprint": "no",
+      "place_covered": "固安縣",
+      "TGAZ_cv": "https://maps.cga.harvard.edu/tgaz/placename/hvd_88207",
+      "genre": "gazetteer",
+      "type": "print",
+      "format": "woodblock print",
+      "language": "chinese",
+      "institution_dg": "北京愛如生數字化技術研究中心",
+      "data_source_url": "http://server.wenzibase.com/spring/front/read"
+    },
+    "purpose": "describing"
+  }
+}

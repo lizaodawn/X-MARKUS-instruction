@@ -1,0 +1,16 @@
+{
+  "id": "aeaf1ebdc5637308",
+  "name": "L'ancienne halle des drapiers à Louvain, bâtie en 1317, que Jean IV, duc de Brabant, concéda à l'université en 1424",
+  "uri": "https://lib.is/IE980071/manifest?manifest=https://lib.is/IE980071/manifest",
+  "importedAt": "2025-11-19T13:03:04.254Z",
+  "type": "PRESENTATION_MANIFEST",
+  "majorVersion": 3,
+  "canvases": [
+    {
+      "id": "2235333605",
+      "uri": "https://lib.is/IE980071/canvas/canvas-FL980075.json",
+      "name": "TA00522",
+      "manifestId": "aeaf1ebdc5637308"
+    }
+  ]
+}

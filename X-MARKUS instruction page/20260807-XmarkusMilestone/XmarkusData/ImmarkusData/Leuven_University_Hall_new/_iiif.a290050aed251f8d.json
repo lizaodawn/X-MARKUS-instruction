@@ -1,0 +1,16 @@
+{
+  "id": "a290050aed251f8d",
+  "name": "véritable représentation des halles des drapiers",
+  "uri": "https://lib.is/IE979924/manifest?manifest=https://lib.is/IE979924/manifest",
+  "importedAt": "2025-11-19T12:57:27.904Z",
+  "type": "PRESENTATION_MANIFEST",
+  "majorVersion": 3,
+  "canvases": [
+    {
+      "id": "2491199450",
+      "uri": "https://lib.is/IE979924/canvas/canvas-FL979928.json",
+      "name": "TA00500",
+      "manifestId": "a290050aed251f8d"
+    }
+  ]
+}

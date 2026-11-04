@@ -1,0 +1,16 @@
+{
+  "id": "bfcc263a1e0e3d02",
+  "name": "Lovagno",
+  "uri": "https://lib.is/IE980477/manifest?manifest=https://lib.is/IE980477/manifest",
+  "importedAt": "2025-03-25T10:44:02.396Z",
+  "type": "PRESENTATION_MANIFEST",
+  "majorVersion": 2,
+  "canvases": [
+    {
+      "id": "3208964729",
+      "uri": "https://lib.is/IE980477/canvas/canvas-FL980481.json",
+      "name": "TB00306",
+      "manifestId": "bfcc263a1e0e3d02"
+    }
+  ]
+}

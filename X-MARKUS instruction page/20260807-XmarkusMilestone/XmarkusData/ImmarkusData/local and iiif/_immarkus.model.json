@@ -1,0 +1,27 @@
+{
+  "entityTypes": [
+    {
+      "color": "#4c4a58",
+      "id": "text",
+      "properties": [
+        {
+          "type": "text",
+          "name": "content"
+        }
+      ]
+    },
+    {
+      "color": "#d49a6b",
+      "id": "human figure",
+      "properties": [
+        {
+          "type": "color",
+          "name": "color"
+        }
+      ]
+    }
+  ],
+  "folderSchemas": [],
+  "imageSchemas": [],
+  "relationshipTypes": []
+}

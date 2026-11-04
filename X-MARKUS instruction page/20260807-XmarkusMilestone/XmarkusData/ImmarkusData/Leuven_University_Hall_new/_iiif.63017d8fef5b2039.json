@@ -1,0 +1,16 @@
+{
+  "id": "63017d8fef5b2039",
+  "name": "Université de Louvain - Les Halles (façade principale). Vue prise par un temps de neige",
+  "uri": "https://lib.is/IE979938/manifest?manifest=https://lib.is/IE979938/manifest",
+  "importedAt": "2025-11-19T12:57:03.686Z",
+  "type": "PRESENTATION_MANIFEST",
+  "majorVersion": 3,
+  "canvases": [
+    {
+      "id": "3053356344",
+      "uri": "https://lib.is/IE979938/canvas/canvas-FL979942.json",
+      "name": "TA00503",
+      "manifestId": "63017d8fef5b2039"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "entityTypes": [
+    {
+      "color": "#59b656",
+      "id": "building",
+      "properties": [
+        {
+          "name": "name",
+          "type": "text"
+        },
+        {
+          "name": "identifier",
+          "type": "uri"
+        },
+        {
+          "name": "date",
+          "type": "range"
+        },
+        {
+          "name": "scope",
+          "type": "enum",
+          "values": [
+            "elevation",
+            "facade"
+          ]
+        }
+      ],
+      "label": "hall building"
+    },
+    {
+      "color": "#f985e6",
+      "id": "facade statue"
+    },
+    {
+      "color": "#0c888a",
+      "id": "historical_building"
+    },
+    {
+      "color": "#55a56a",
+      "id": "human_figure",
+      "properties": [
+        {
+          "name": "type",
+          "type": "text"
+        }
+      ]
+    }
+  ],
+  "folderSchemas": [],
+  "imageSchemas": [
+    {
+      "properties": [
+        {
+          "name": "title",
+          "type": "text"
+        },
+        {
+          "name": "date",
+          "type": "range"
+        },
+        {
+          "name": "topographical details",
+          "type": "text"
+        },
+        {
+          "name": "additional info",
+          "type": "text"
+        },
+        {
+          "name": "creator",
+          "type": "text",
+          "multiple": true
+        },
+        {
+          "name": "creator_wikidata",
+          "type": "uri",
+          "multiple": true
+        },
+        {
+          "name": "engraver",
+          "type": "text"
+        },
+        {
+          "name": "engraver_wikidata",
+          "type": "uri",
+          "multiple": true
+        },
+        {
+          "name": "publisher",
+          "type": "text"
+        }
+      ],
+      "name": " Topographical pictures"
+    }
+  ],
+  "relationshipTypes": []
+}

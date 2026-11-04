@@ -1,0 +1,61 @@
+[
+  {
+    "id": "03f4dd42-90f3-458e-80fd-069f244534da",
+    "target": {
+      "source": "a3d3566a21e102b3",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:1574.1644783694264,2063.7524551314737,333.67279831729684,50.960936470278284"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "purpose": "commenting",
+        "value": "KODAK Gray Scale",
+        "creator": {
+          "type": "Software",
+          "id": "gemini-2.5-flash",
+          "name": "Google Gemini (gemini-2.5-flash)",
+          "homepage": "https://gemini.google.com/app"
+        },
+        "created": "2026-03-10T10:53:50.289Z"
+      }
+    ]
+  },
+  {
+    "id": "6ccf6d70-e853-46b9-9367-3ee965cb7121",
+    "target": {
+      "source": "K2A003131N000000005PAA.png",
+      "type": "SpecificResource",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:374.05212250811985,408.78303964757697,937.6927777597715,1296.4262114537446"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "e18b172a-259b-442e-8d2b-84b3d687838a",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "text",
+        "properties": {
+          "content": "何 如 文 對 一 文 宗 閂 ㄖ , 卡 每 一 曰 飭 治 朝 至 上 制 正 ~ 明 是 亠 肀 事 忄 』 」 刑 咑 鬦 叨 然 然 有 耸 不 心 力 莫 予 有 喜 喜 不 照 不 有 不 近 明 明 一 而 於 帝 事 , 不 天 ㄒ 臣 如 公 等 … 晦 射 隨 求 賢 仕 此 凣 聽 , 受 皿 五 人 所 謂 ~ 判 書 書 一 一 省 + 郎 」 ~ 一 黃 … 事 丶 忄 , , 岩 行 人 書 一 可 坷 不 不 … 鬦 才 大 鬏 序 國 舍 軍 … 書 中 安 不 日 ㄒ 較 奏 母 百 咑 皆 心 行 禾 月 司 阿 意 不 謂 元 一 乙 一 壬 目 , 食 上 論 士 傳 坐 事 雖 性 仁 非 亦 垺 勵 主 ~ 工 一 。 一 曰 亻 曹 書 予 屬 左 右 大 惟 者 乃 鬧 月 不 人 下 霟 然 贤 才 百 官 尺 之 由 宰 4 身 喜 人 丶 坷 天 憂 ㄒ officer"
+        },
+        "created": "2025-12-16T14:11:34.468Z",
+        "modified": "2025-12-16T14:11:36.933Z"
+      }
+    ],
+    "created": "2025-12-16T14:11:32.188Z",
+    "creator": {
+      "isGuest": true,
+      "id": "O5KIDC60BDnM6PPWFBQ2"
+    }
+  }
+]

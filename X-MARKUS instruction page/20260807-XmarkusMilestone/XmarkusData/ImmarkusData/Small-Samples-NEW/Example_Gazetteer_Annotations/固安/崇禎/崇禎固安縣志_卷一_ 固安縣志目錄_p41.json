@@ -1,0 +1,523 @@
+[
+  {
+    "id": "063669f9-3909-4112-848f-23fc1feb72e4",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1199.1499130020036,2075.902778989784 1196.2887998739661,2161.739438503208 194.8625622966605,2158.878325375171 200.58493262651348,1386.3494462953909 272.1154021800459,1386.3494462953909 283.56028691352964,2064.4581343792634\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "c76047aa-99aa-41a3-abcd-0a8a750f0f63",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "moat",
+        "created": "2024-09-30T11:12:27.147Z"
+      }
+    ],
+    "created": "2024-09-30T11:05:02.011Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "dcd72aa2-bb11-487f-9ea8-e59218e5e6d2",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"200.58493262651348,1166.0356673049407 269.2541930028231,1157.4520397732724 274.97665938186117,616.6818244174265 312.17247473494245,527.9840998005575 357.9519656442847,462.17609662606316 429.4823391486319,382.06197552856605 521.0414170165016,321.9764147208137 581.1269057873651,293.3641788748082 698.4368662502399,279.0580849641017 815.9013755420086,276.19687578687893 1207.7337326320423,279.0580849641017 1219.1785693409333,193.47368755353412 638.3512814301911,196.08280271397436 549.6536048379146,221.83375734586835 380.84168708665953,321.9846259676863 266.39298382560037,453.592325020617 214.89107456181256,553.7349823955624 197.7237234492907,748.2977827418224\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "c973a1c5-4f90-4bc2-8e99-89ada3be8352",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "moat",
+        "created": "2024-09-30T11:12:22.164Z"
+      }
+    ],
+    "created": "2024-09-30T11:05:39.341Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "a772e462-a594-478d-86e0-decd6df10828",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"583.988114964588,745.4365735645996 615.4615119632236,771.1875522087898 629.7676538985228,822.6894614725777 632.6288630757455,882.7750462926263 618.3227211404463,957.1665809496037 595.4330477226642,982.9176556429792 578.2656966101423,985.7787687710168 552.5147179659522,962.8890953532344 541.069881257061,918.9231987615012 529.6250445481699,882.7688241514722 541.069881257061,819.8282522953548 538.2086720798383,794.0772736511647\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "8defb896-aa69-41d2-9232-fe05444c412f",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "created": "2024-09-30T11:13:21.374Z"
+      }
+    ],
+    "created": "2024-09-30T11:06:07.376Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "61fb9a7d-156d-4375-8cad-6040df699aa8",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"592.5718385454414,1532.2714505059007 624.0452355440772,1543.7161911656067 638.3512814301911,1595.2182445031722 638.3512814301911,1649.5814109687753 661.2410508971585,1666.748666032112 727.0335161689696,1678.193502741003 764.2472654074236,1715.387101046376 775.6897061336252,1738.279183610237 755.6612418930656,1764.0301622544273 732.7714724260982,1781.197417317764 698.4368662502399,1775.4749989633183 669.8246784288268,1755.446630771944 624.0452355440772,1746.8629071910902 572.5432782556968,1692.4998367746725 555.375927143175,1669.6099712585199 552.5147179659522,1612.385691664879 546.7923956606917,1578.0510854890206\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "f0725fdd-584a-4f3c-83d8-60cd7759c1f9",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "created": "2024-09-30T11:13:15.744Z"
+      }
+    ],
+    "created": "2024-09-30T11:06:43.841Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "557765d4-4ec9-4bcd-ae4b-27c928fe78c6",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"878.6936207103857,1546.5776884903848 958.8077658201793,1549.4388976676075 993.1423719960375,1578.0510854890206 1004.5872087049288,1652.4427161951833 1007.4484178821515,1715.3895101924547 1021.7545598174505,1735.442447112988 1064.6727935249776,1744.0016019646823 1113.313541636135,1721.1119285469003 1127.619587522249,1683.9159210954485 1136.2032150539171,1632.4141559054385 1130.4807966994715,1575.1897802626127 1144.7869386347706,1497.9369403792273 1147.6481478119936,1472.1415917171985 1139.064520280325,1446.435079140032 1119.0359599905805,1423.5453096730644 1078.9789354602765,1414.9616821413963 1036.0606057035645,1414.9616821413963 1001.7259995277059,1403.5168454325053 944.5016238848799,1391.9432746206874 904.444599354576,1394.9330258024665 841.4978053573045,1434.9901463819558 830.0529686484134,1472.185961735037 821.469341116745,1517.9654046197866\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "83be102e-ba5e-4112-a1d0-7467c791584f",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "created": "2024-09-30T11:13:11.124Z"
+      }
+    ],
+    "created": "2024-09-30T11:07:34.008Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "0a252ccc-2918-4a30-af13-7470e5a1099f",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1239.2070335814929,336.2824846192238 1242.0683388079008,536.5677273322256 635.4900722529682,542.2901456866712 501.0128567267569,656.7388009231379 515.318998662056,705.3795970588881 515.318998662056,1824.1156510252906 1273.5417358065365,1829.8382614781065 1273.5417358065365,2024.4010618243665 326.4786166702415,2004.3723094362515 337.9235014037252,1309.9686946229197 343.64591975817075,602.3430235654088 463.81704137367564,456.4536302470248 558.2739351230719,382.0619034916772 669.8247744780119,347.72734534041115\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "e3e3e86c-70db-4036-ba26-c9fccf3842f2",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "city_wall",
+        "properties": {
+          "id": "gu'an_cheng",
+          "name": "固安城",
+          "location": "固安縣",
+          "TGAZ": "https://maps.cga.harvard.edu/tgaz/placename/hvd_88207",
+          "pattern": "stripe"
+        },
+        "created": "2024-09-30T11:12:33.664Z"
+      }
+    ],
+    "created": "2024-09-30T11:08:43.963Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "dfed3fda-7110-48f9-ac93-766b04c18b40",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"518.1802078392789,1151.729573394234 532.4863497745778,1140.2845445869725 575.4045834821047,1148.8683642170113 601.1554660771097,1188.9253887473153 606.8779804807405,1300.512834806559 581.1270018365502,1331.9862318051948 543.9311864834689,1329.1250226279722 518.1802078392789,1294.7904164521137\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "fce24ed0-1b30-4136-8ede-4e7429368331",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "tower",
+        "created": "2024-09-30T11:13:03.710Z"
+      }
+    ],
+    "created": "2024-09-30T11:09:08.562Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "f486e9d2-ac9b-4475-a1e9-9dc6e306175c",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"518.1802078392789,1681.0548079674109 552.5148140151372,1683.9161131938188 558.2496119205267,1752.5851334471656 618.3228171896316,1755.4464386735735 615.4616080124088,1812.6708143163994 515.3189986620561,1818.393232670845 515.3189986620561,1818.393232670845 515.3189986620561,1818.393232670845\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "ac2e4793-3908-4be4-a0ff-c1adf796e5b4",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "tower",
+        "created": "2024-09-30T11:12:56.882Z"
+      }
+    ],
+    "created": "2024-09-30T11:09:22.230Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "d438af3c-c0e6-4965-b83f-6b330fa94d94",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1227.7621968726016,1695.3607578043395 1276.4030410329444,1698.2220630307474 1276.4030410329444,1832.6993746061441 1213.456247035673,1824.1156510252906 1213.456247035673,1824.1156510252906 1213.456247035673,1824.1156510252906\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "b69f484e-cddc-4118-8bee-50aaa2f76641",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "tower",
+        "properties": {
+          "direction": "south"
+        },
+        "created": "2024-09-30T11:22:00.782Z"
+      }
+    ],
+    "created": "2024-09-30T11:09:30.687Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "3f417769-701d-4699-98e7-0d9487fd84ed",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"512.4577894848331,636.7103366825784 552.5148140151372,688.2122459463661 578.2657926593274,705.3795490342953 655.518728591898,639.5715458598012 658.3798417199356,582.3472182415678 641.212586656599,542.2901456866712 641.212586656599,542.2901456866712 641.212586656599,542.2901456866712\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "536619da-e220-4a04-b8f5-4a74982ded28",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "tower",
+        "created": "2024-09-30T11:12:50.254Z"
+      }
+    ],
+    "created": "2024-09-30T11:09:40.675Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "d6cc373d-1db9-41b7-b302-40dacf7ac7b0",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"1230.6235020990096,530.8452609531874 1227.7621968726016,633.8491275053556 1253.5131755167918,668.1837336812141 1276.4030410329444,668.1837336812141 1276.4030410329444,527.9840517759648\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "8c6b6955-5b8a-4409-af44-47d051baefbd",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "tower",
+        "created": "2024-09-30T11:12:43.625Z"
+      }
+    ],
+    "created": "2024-09-30T11:09:57.275Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "1ae4730c-a113-4f7e-b6d4-80ecda5e5b4c",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"572.5433743048819,1377.76577073913 612.600398835186,1377.76577073913 624.0452355440771,1414.961586092211 601.1555621262949,1443.573773913624 549.6536048379145,1452.1574014452924 526.7639314201323,1434.9901463819558 532.4863497745779,1389.210607448021\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "d259bfb7-26a2-4161-b74b-4b45165ee289",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "water",
+        "created": "2024-09-30T11:23:24.247Z"
+      }
+    ],
+    "created": "2024-09-30T11:23:18.932Z",
+    "creator": {
+      "isGuest": true,
+      "id": "iE62TtaGfdTmS8sUhuCj"
+    }
+  },
+  {
+    "id": "de4f70a7-cb74-47b8-8ab8-5f0231b783b6",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"337.9234533791327,1171.757989610201 423.76001684337155,1186.0642275946852 449.5108994383766,1228.9824613022122 452.37210861559936,1266.1782766552935 426.6212260205943,1300.512882831152 395.14782902195867,1317.6802339436738 332.2009870000945,1320.5414431208967 332.2009870000945,1320.5414431208967 332.2009870000945,1320.5414431208967\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "81a21287-14ed-4b1d-a74a-25fd512aab84",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "gate",
+        "properties": {
+          "direction": "west"
+        },
+        "created": "2024-09-30T14:21:05.811Z"
+      }
+    ],
+    "created": "2024-09-30T14:20:58.891Z",
+    "creator": {
+      "isGuest": true,
+      "id": "xGG5N59WFcxahItShquV"
+    }
+  },
+  {
+    "id": "08dcb5bf-6527-42d2-8f19-524154f1e183",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"335.6106138107417,1178.458686848126 332.9285975307457,1312.5554494638275 418.7505976294009,1296.46380193764 448.2518764017793,1237.4612443928831 432.16013884483414,1189.1863918450788\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "ebb3630c-8880-425e-a9c2-5f2263b89714",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "gate",
+        "properties": {
+          "direction": "east"
+        },
+        "created": "2024-10-07T12:56:24.213Z"
+      }
+    ],
+    "created": "2024-10-07T12:54:00.406Z",
+    "creator": {
+      "isGuest": true,
+      "id": "DjJBgdwJyooDUqAj_rh2"
+    }
+  },
+  {
+    "id": "552d0d48-aa75-43d8-b74a-05b6cc96f25a",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "SvgSelector",
+        "value": "<svg><polygon points=\"196.14990866580584,1170.4129081004112 284.6537449829414,1157.0031868234623 330.2469413737812,1202.596113122028 316.83704003531614,1393.013507033248 174.69449867190013,1390.331490753252 155.92092489647456,1229.4154656451683\" /></svg>"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "85cc072e-87e3-4123-943b-5c7853a17599",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "bridge",
+        "created": "2024-10-07T12:56:06.638Z"
+      }
+    ],
+    "created": "2024-10-07T12:54:32.687Z",
+    "creator": {
+      "isGuest": true,
+      "id": "DjJBgdwJyooDUqAj_rh2"
+    }
+  },
+  {
+    "id": "5b56eb61-d453-4da4-8116-32974710213d",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:884.4160390648314,1063.031848777365,160.22819417040148,114.44865523646672"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "5ce7d822-88ee-4a4e-b386-077c207b974f",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "name": "觀音寺",
+          "location": "固安縣"
+        },
+        "created": "2024-10-07T13:08:46.345Z"
+      }
+    ],
+    "created": "2024-10-07T13:07:00.153Z",
+    "creator": {
+      "isGuest": true,
+      "id": "IsiF9gv5kVqnYMWIPz4g"
+    }
+  },
+  {
+    "id": "3ec40cb2-bfdd-4241-bbe1-83e860258a5e",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:1056.089069944124,722.5469001468175,131.61600634898855,134.477119477026"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "27717988-756e-46f7-836e-9cfd95d163f4",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "school",
+        "properties": {
+          "name": "儒學",
+          "location": "固安縣"
+        },
+        "created": "2024-10-07T13:07:26.213Z"
+      }
+    ],
+    "created": "2024-10-07T13:07:15.379Z",
+    "creator": {
+      "isGuest": true,
+      "id": "IsiF9gv5kVqnYMWIPz4g"
+    }
+  },
+  {
+    "id": "f1ce02a4-3fb6-4e6e-8ed8-77258915ec2f",
+    "target": {
+      "source": "崇禎固安縣志_卷一_ 固安縣志目錄_p41.png",
+      "selector": {
+        "type": "FragmentSelector",
+        "conformsTo": "http://www.w3.org/TR/media-frags/",
+        "value": "xywh=pixel:586.8493241418107,1105.9499864357067,85.8365634642389,94.42028704509244"
+      }
+    },
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "body": [
+      {
+        "id": "c9fc35fb-dd1f-474e-b0b8-2108ace09e2f",
+        "type": "Dataset",
+        "purpose": "classifying",
+        "source": "temple",
+        "properties": {
+          "name": "関侯廟",
+          "location": "固安縣"
+        },
+        "created": "2024-10-07T13:09:49.014Z"
+      }
+    ],
+    "created": "2024-10-07T13:09:42.598Z",
+    "creator": {
+      "isGuest": true,
+      "id": "IsiF9gv5kVqnYMWIPz4g"
+    }
+  },
+  {
+    "@context": "http://www.w3.org/ns/anno.jsonld",
+    "type": "Annotation",
+    "id": "1bf295a2-f7d2-4ca6-8ec8-5d72b302e18c",
+    "target": {
+      "source": "a0be5070889a0567"
+    },
+    "body": {
+      "source": "Gazetteer",
+      "properties": {
+        "image_title_ch": "县城图",
+        "image_title_py": "Xiancheng tu",
+        "image_title_en": "Map of the County Capital",
+        "volume": "图",
+        "page": "3b",
+        "image_format": ".png",
+        "pixel_h": "2307",
+        "pixel_w": "1335"
+      },
+      "purpose": "describing"
+    }
+  }
+]

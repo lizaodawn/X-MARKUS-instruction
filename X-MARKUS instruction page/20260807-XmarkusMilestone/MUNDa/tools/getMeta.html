@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <title>Place Name</title>    
+</head>
+<body>
+	<div id="u" style='font-size:9pt'></div>
+	<script>
+        $(function() {
+            let id=$.urlParam('i');
+            let url = '';
+            //id="PL000000011848";,twgis_1,hvd_1,kplace_1
+
+            if (id.toLowerCase().indexOf("kplace_koreanplace_") >= 0) {
+                id=id.toLowerCase().replace("kplace_","");}
+
+            if (id.toLowerCase().indexOf("pl_") >= 0) { 
+                url = 'https://authority.dila.edu.tw/webwidget/getAuthorityData.php?type=place&id=' + id + '&jsoncallback=process_js';
+            } else if (id.toLowerCase().indexOf("twgis_") >= 0) { 
+                url = 'https://docusky.org.tw/DocuSky/webapi/GeoCode/tw.php?n=' + id + '';
+            } else if (id.toLowerCase().indexOf("kplace_") >= 0 || id.toLowerCase().indexOf("koreanplace_") >= 0) { 
+                url = 'https://docusky.org.tw/DocuSky/extApi/GeoCode/LeidenKrPlace/kr.php?n=' + id + '';
+                //url = 'http://localhost:8888/DocuSky/extApi/GeoCode/LeidenKrPlace/kr.php?n=' + id + '';
+            }else if (id.toLowerCase().indexOf("hvd_") >= 0){
+                //url = 'https://maps.cga.harvard.edu/tgaz/placename/html/' + id + '';
+                 url = 'https://chgis.hudci.org/tgaz/placename/html/' + id + '';
+                
+            }
+            //console.log(url);
+            $.ajax({
+            url: url
+            }).done(function(data) {
+                let desc='';
+                if (id.toLowerCase().indexOf("pl_") >= 0) {
+                    desc=eval(data)
+                }
+                else {
+                    desc=process_js(data);                    
+                }
+                //console.log(desc);
+                
+                $("#u").html(desc);
+       
+            });
+
+        
+        
+        });
+
+        $.urlParam = function(name){
+                var results = new RegExp('[\?&]' + name + '=([^]*)').exec(window.location.href);
+                if (results==null){
+                        return "";
+                }
+                else{
+                        //console.log(results[1])
+                        return results[1] || 0;
+            }}        
+
+         function process_js(js) { 
+            if (typeof js != 'object') return js;
+            return result = Object.entries(js).map(function (p) {
+                return (!p[1] || p[1] == [] || p[1] == {}) ? "" : `${p[0]} : <span style="color:blue">${process_js(p[1])}</span>`;
+            }).filter(x => x).join("<br />");
+        }
+
+
+	</script>
+</body>
+</html>
